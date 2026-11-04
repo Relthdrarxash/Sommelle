@@ -32,7 +32,7 @@ object PdfReport {
         val regular = ResourcesCompat.getFont(context, DsR.font.atkinson_regular) ?: Typeface.DEFAULT
         val bold = ResourcesCompat.getFont(context, DsR.font.atkinson_bold) ?: Typeface.DEFAULT_BOLD
         val document = PdfDocument()
-        val writer = Writer(document, regular, bold)
+        val writer = Writer(document, regular, bold) { context.getString(R.string.export_pdf_page, it) }
 
         writer.title(context.getString(R.string.export_title))
         writer.paragraph(
@@ -69,22 +69,25 @@ object PdfReport {
         if (report.outcome.isNotEmpty()) {
             writer.heading(context.getString(R.string.export_outcome))
             writer.table(
-                header = listOf("", "Observation", "7 dernières nuits"),
+                header = listOf("", context.getString(R.string.export_pdf_baseline), context.getString(R.string.export_pdf_last_7)),
                 widths = floatArrayOf(2f, 1f, 1f),
                 rows = report.outcome.map { listOf(it.metric.label, it.before, it.after) },
             )
         }
 
         if (report.nights.isNotEmpty()) {
-            writer.heading("Agenda : ${report.nights.size} dernières nuits")
+            writer.heading(context.getString(R.string.export_pdf_diary, report.nights.size))
             writer.table(
-                header = listOf("Nuit", "Coucher", "Lever", "Endorm.", "Éveils", "Dormi", "Effic.", "Qualité"),
+                header = listOf(
+                    R.string.export_pdf_col_night, R.string.export_pdf_col_bed, R.string.export_pdf_col_out, R.string.export_pdf_col_onset,
+                    R.string.export_pdf_col_awake, R.string.export_pdf_col_asleep, R.string.export_pdf_col_efficiency, R.string.export_pdf_col_quality,
+                ).map(context::getString),
                 widths = floatArrayOf(1.1f, 0.9f, 0.9f, 0.9f, 1.2f, 0.9f, 0.8f, 0.8f),
                 rows = report.nights.map { listOf(it.night, it.bedTime, it.outOfBed, it.sleepOnset, it.awake, it.totalSleep, it.efficiency, it.quality) },
             )
         }
 
-        writer.footerNote(context.getString(R.string.export_disclaimer) + " Généré le ${report.generatedOn}.")
+        writer.footerNote(context.getString(R.string.export_disclaimer) + " " + context.getString(R.string.export_pdf_generated, report.generatedOn))
         writer.finish()
 
         val file = File(File(context.cacheDir, "exports").apply { mkdirs() }, "sommelle-resume.pdf")
@@ -118,6 +121,7 @@ object PdfReport {
         private val document: PdfDocument,
         private val regular: Typeface,
         private val bold: Typeface,
+        private val pageLabel: (Int) -> String,
     ) {
         private var pageNumber = 0
         private lateinit var page: PdfDocument.Page
@@ -142,7 +146,7 @@ object PdfReport {
         }
 
         private fun finishPage() {
-            page.canvas.drawText("Sommelle · page $pageNumber", MARGIN, PAGE_HEIGHT - 24f, mutedPaint)
+            page.canvas.drawText(pageLabel(pageNumber), MARGIN, PAGE_HEIGHT - 24f, mutedPaint)
             document.finishPage(page)
         }
 

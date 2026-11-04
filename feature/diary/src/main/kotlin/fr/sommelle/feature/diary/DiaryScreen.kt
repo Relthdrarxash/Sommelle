@@ -48,7 +48,7 @@ import fr.sommelle.core.model.SleepQuality
 import fr.sommelle.core.presentation.DiaryChoices
 import fr.sommelle.core.presentation.DiaryDraft
 import fr.sommelle.core.presentation.DiaryStep
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.TimeField
 import fr.sommelle.core.protocol.DiaryIssue
 import java.time.Duration
@@ -169,7 +169,7 @@ private fun TimeQuestion(@StringRes title: Int, @StringRes hint: Int?, draft: Di
     Question(title, hint)
     val source = draft.prefillSource
     TimeStepper(
-        value = FrenchFormat.time(draft.time(field)),
+        value = Texts.current().time(draft.time(field)),
         onMinus = { actions.shift(field, -DiaryChoices.TIME_STEP_MINUTES) },
         onPlus = { actions.shift(field, DiaryChoices.TIME_STEP_MINUTES) },
         footer = if (source != null) {
@@ -191,8 +191,8 @@ private fun Summary(
 ) {
     val d = state.draft
     val rows = listOf(
-        Triple(DiaryStep.BED_TIME, stringResource(R.string.diary_row_bed), FrenchFormat.time(d.bedTime)),
-        Triple(DiaryStep.LIGHTS_OUT, stringResource(R.string.diary_row_lights), FrenchFormat.time(d.lightsOut)),
+        Triple(DiaryStep.BED_TIME, stringResource(R.string.diary_row_bed), Texts.current().time(d.bedTime)),
+        Triple(DiaryStep.LIGHTS_OUT, stringResource(R.string.diary_row_lights), Texts.current().time(d.lightsOut)),
         Triple(DiaryStep.SLEEP_ONSET, stringResource(R.string.diary_row_onset), onsetLabel(d.sleepOnsetMinutes)),
         Triple(
             DiaryStep.AWAKENINGS,
@@ -203,8 +203,8 @@ private fun Summary(
                 pluralStringResource(R.plurals.diary_awakenings_value, d.awakeningCount, d.awakeningCount, awakeLabel(d.awakeMinutes))
             },
         ),
-        Triple(DiaryStep.FINAL_WAKE, stringResource(R.string.diary_row_final), FrenchFormat.time(d.finalWake)),
-        Triple(DiaryStep.OUT_OF_BED, stringResource(R.string.diary_row_out), FrenchFormat.time(d.outOfBed)),
+        Triple(DiaryStep.FINAL_WAKE, stringResource(R.string.diary_row_final), Texts.current().time(d.finalWake)),
+        Triple(DiaryStep.OUT_OF_BED, stringResource(R.string.diary_row_out), Texts.current().time(d.outOfBed)),
         Triple(DiaryStep.QUALITY, stringResource(R.string.diary_row_quality), stringResource(d.quality.label())),
     )
     ScreenScaffold(
@@ -214,7 +214,7 @@ private fun Summary(
         },
     ) {
         BackPill(onBack)
-        Text(FrenchFormat.nightLabel(d.nightOf), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text(Texts.current().nightLabel(d.nightOf), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         ScreenTitle(stringResource(R.string.diary_summary_title))
         Text(stringResource(R.string.diary_summary_hint), style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
         state.blockingIssue?.let { IssueCard(it, onFixIssue) }
@@ -280,13 +280,13 @@ private fun PrefillLine(source: PrefillSource) {
 private fun onsetLabel(minutes: Long): String = when (minutes) {
     DiaryChoices.sleepOnsetMinutes.first() -> stringResource(R.string.diary_less_than_5)
     DiaryChoices.sleepOnsetMinutes.last() -> stringResource(R.string.diary_onset_more)
-    else -> FrenchFormat.duration(Duration.ofMinutes(minutes))
+    else -> Texts.current().duration(Duration.ofMinutes(minutes))
 }
 
 @Composable
 private fun awakeLabel(minutes: Long): String = when (minutes) {
     DiaryChoices.awakeMinutes.last() -> stringResource(R.string.diary_awake_more)
-    else -> FrenchFormat.duration(Duration.ofMinutes(minutes))
+    else -> Texts.current().duration(Duration.ofMinutes(minutes))
 }
 
 @Composable

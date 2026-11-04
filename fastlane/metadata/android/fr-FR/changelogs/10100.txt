@@ -1,0 +1,1 @@
+Sommelle est maintenant disponible en anglais : l'appli suit la langue du téléphone. Les heures de la fenêtre de sommeil s'affichent toujours sur une seule ligne.

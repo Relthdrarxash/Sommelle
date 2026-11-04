@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cog_title">Exercices</string>
-    <string name="cog_intro">Des exercices courts pour apaiser les pensées qui entretiennent l\'insomnie. Comptez cinq minutes chacun.</string>
-    <string name="cog_locked_all">Les premiers exercices arrivent en semaine 2, une fois vos nouveaux horaires installés.</string>
-    <string name="cog_next">Prochain exercice : semaine %1$d</string>
-    <string name="cog_done">Fait</string>
-    <string name="cog_todo">À faire</string>
-    <string name="cog_open">Ouvrir</string>
-    <string name="cog_finish">J\'ai terminé cet exercice</string>
-    <string name="cog_finished">Exercice terminé. Vous pouvez y revenir quand vous voulez.</string>
-    <string name="cog_out_of_scope">Ces exercices font partie du programme, qui n\'est pas adapté à votre situation. Parlez de votre sommeil à votre médecin.</string>
-    <string name="cog_step">Étape %1$d sur %2$d</string>
+    <string name="cog_title">Exercises</string>
+    <string name="cog_intro">Short exercises to calm the thoughts that keep insomnia going. Allow about five minutes for each.</string>
+    <string name="cog_locked_all">The first exercises arrive in week 2, once your new schedule is in place.</string>
+    <string name="cog_next">Next exercise: week %1$d</string>
+    <string name="cog_done">Done</string>
+    <string name="cog_todo">To do</string>
+    <string name="cog_open">Open</string>
+    <string name="cog_finish">I have finished this exercise</string>
+    <string name="cog_finished">Exercise finished. You can come back to it whenever you like.</string>
+    <string name="cog_out_of_scope">These exercises are part of the program, which is not suited to your situation. Talk to your doctor about your sleep.</string>
+    <string name="cog_step">Step %1$d of %2$d</string>
 
     <!-- Croyances sur le sommeil -->
-    <string name="cog_beliefs_title">Les idées sur le sommeil</string>
-    <string name="cog_beliefs_summary">Repérer les pensées qui mettent la pression, et les nuancer.</string>
-    <string name="cog_beliefs_intro">Certaines idées sur le sommeil sont très répandues. Elles semblent raisonnables, mais elles augmentent la tension au moment de se coucher, et donc l\'éveil. Pour chacune, demandez-vous si elle vous traverse l\'esprit, puis lisez la version plus juste.</string>
+    <string name="cog_beliefs_title">Ideas about sleep</string>
+    <string name="cog_beliefs_summary">Spot the thoughts that add pressure, and soften them.</string>
+    <string name="cog_beliefs_intro">Some ideas about sleep are very common. They seem reasonable, but they increase tension at bedtime, and so wakefulness. For each one, ask yourself whether it crosses your mind, then read the more accurate version.</string>
     <string-array name="cog_beliefs_steps">
-        <item>« Il me faut 8 heures de sommeil pour être en forme. »\n\nLe besoin de sommeil varie d\'une personne à l\'autre, et d\'une nuit à l\'autre. Beaucoup d\'adultes vont bien avec moins de 8 heures.</item>
-        <item>« Si je dors mal cette nuit, ma journée de demain est fichue. »\n\nAprès une mauvaise nuit, on fonctionne souvent mieux qu\'on ne le craint. La fatigue est réelle, mais rarement aussi forte que prévu.</item>
-        <item>« Je dois rattraper mon sommeil en restant plus longtemps au lit. »\n\nRester plus longtemps au lit rend le sommeil plus léger et plus haché. Des horaires stables sont ce qui le consolide.</item>
-        <item>« Je ne contrôle plus du tout mon sommeil. »\n\nVous agissez sur tout ce qui le favorise : vos horaires, un lit réservé au sommeil, le rythme de vos soirées. Le sommeil vient ensuite de lui-même.</item>
-        <item>« L\'insomnie va abîmer ma santé. »\n\nC\'est une inquiétude compréhensible, mais y penser la nuit entretient l\'éveil. L\'insomnie se traite, et la méthode que vous suivez est celle recommandée en premier.</item>
+        <item>“I need 8 hours of sleep to feel good.”\n\nThe need for sleep varies from one person to another, and from one night to the next. Many adults do well with less than 8 hours.</item>
+        <item>“If I sleep badly tonight, tomorrow is ruined.”\n\nAfter a bad night, people often function better than they fear. The tiredness is real, but rarely as strong as expected.</item>
+        <item>“I have to catch up on sleep by staying in bed longer.”\n\nStaying in bed longer makes sleep lighter and more broken. A steady schedule is what consolidates it.</item>
+        <item>“I have no control over my sleep anymore.”\n\nYou act on everything that helps it: your schedule, a bed kept for sleep, the pace of your evenings. Sleep then comes on its own.</item>
+        <item>“Insomnia is going to damage my health.”\n\nIt is an understandable worry, but thinking about it at night keeps you awake. Insomnia can be treated, and the method you are following is the one recommended first.</item>
     </string-array>
 
     <!-- Mettre sa journée au repos -->
-    <string name="cog_winddown_title">Mettre sa journée au repos</string>
-    <string name="cog_winddown_summary">Déposer ses soucis en début de soirée, pour ne pas les emporter au lit.</string>
-    <string name="cog_winddown_intro">Quand on se couche, l\'esprit profite souvent du calme pour repasser la journée et préparer le lendemain. Ce rituel lui donne un autre moment pour le faire, plus tôt.</string>
+    <string name="cog_winddown_title">Putting your day to rest</string>
+    <string name="cog_winddown_summary">Set your worries down early in the evening, so you don\'t take them to bed.</string>
+    <string name="cog_winddown_intro">When you lie down, the mind often uses the quiet to replay the day and plan the next one. This routine gives it another, earlier moment to do so.</string>
     <string-array name="cog_winddown_steps">
-        <item>En début de soirée, au moins une heure avant de vous coucher, prenez quinze minutes au calme avec une feuille et un stylo.</item>
-        <item>Notez ce qui vous préoccupe : le travail, la famille, les choses à faire. Sans chercher à tout régler.</item>
-        <item>À côté de chaque souci, écrivez la prochaine petite action, ou « rien à faire ce soir ».</item>
-        <item>Rangez la feuille. Si un souci revient au lit, rappelez-vous qu\'il est noté et que vous vous en occuperez demain.</item>
+        <item>Early in the evening, at least an hour before bed, take fifteen quiet minutes with a sheet of paper and a pen.</item>
+        <item>Write down what is on your mind: work, family, things to do. Without trying to solve everything.</item>
+        <item>Next to each worry, write the next small step, or “nothing to do tonight”.</item>
+        <item>Put the sheet away. If a worry comes back in bed, remind yourself that it is written down and that you will deal with it tomorrow.</item>
     </string-array>
 
     <!-- Intention paradoxale -->
-    <string name="cog_paradox_title">Arrêter de chercher le sommeil</string>
-    <string name="cog_paradox_summary">L\'effort pour dormir empêche le sommeil de venir. Essayez l\'inverse.</string>
-    <string name="cog_paradox_intro">Le sommeil ne se commande pas : plus on cherche à s\'endormir, plus on reste éveillé. Cet exercice retire cette pression.</string>
+    <string name="cog_paradox_title">Stop chasing sleep</string>
+    <string name="cog_paradox_summary">Trying hard to sleep keeps sleep away. Try the opposite.</string>
+    <string name="cog_paradox_intro">Sleep cannot be ordered: the harder you try to fall asleep, the more awake you stay. This exercise takes that pressure away.</string>
     <string-array name="cog_paradox_steps">
-        <item>Au lit, lumière éteinte, gardez les yeux ouverts dans le noir et dites-vous tranquillement que vous allez garder les yeux ouverts encore un peu.</item>
-        <item>Ne faites rien pour dormir. Ne regardez pas l\'heure. Laissez simplement le temps passer.</item>
-        <item>Si au bout d\'un long moment vous vous sentez tendu, appliquez la règle habituelle : levez-vous, et revenez au lit quand le sommeil vient.</item>
+        <item>In bed, with the light off, keep your eyes open in the dark and calmly tell yourself that you will keep them open a little longer.</item>
+        <item>Do nothing to fall asleep. Don\'t look at the time. Simply let the time pass.</item>
+        <item>If after a long while you feel tense, follow the usual rule: get up, and go back to bed when sleep comes.</item>
     </string-array>
 
     <!-- Décatastrophiser -->
-    <string name="cog_decatastrophize_title">Revenir au plus probable</string>
-    <string name="cog_decatastrophize_summary">Quatre questions quand une mauvaise nuit inquiète.</string>
-    <string name="cog_decatastrophize_intro">Quand la nuit s\'annonce mal, l\'esprit imagine souvent le pire pour le lendemain. Ces questions aident à revenir à ce qui est le plus probable. Vous pouvez y répondre dans votre tête ou sur papier, en soirée.</string>
+    <string name="cog_decatastrophize_title">Back to the most likely</string>
+    <string name="cog_decatastrophize_summary">Four questions for when a bad night worries you.</string>
+    <string name="cog_decatastrophize_intro">When the night is going badly, the mind often imagines the worst for the next day. These questions help bring you back to what is most likely. You can answer them in your head or on paper, in the evening.</string>
     <string-array name="cog_decatastrophize_steps">
-        <item>Qu\'est-ce que je crains exactement pour demain ?</item>
-        <item>Qu\'est-ce qui s\'est réellement passé les autres fois, après une mauvaise nuit ?</item>
-        <item>Qu\'est-ce qui est le plus probable cette fois-ci ?</item>
-        <item>Si demain est difficile, qu\'est-ce qui m\'aiderait à tenir ? Une pause, une marche, une tâche plus simple…</item>
+        <item>What exactly am I afraid of for tomorrow?</item>
+        <item>What actually happened the other times, after a bad night?</item>
+        <item>What is most likely this time?</item>
+        <item>If tomorrow is hard, what would help me get through it? A break, a walk, a simpler task…</item>
     </string-array>
 
     <!-- Relaxation -->
-    <string name="cog_relax_title">Relâcher le corps</string>
-    <string name="cog_relax_summary">Relaxation musculaire progressive, en dix minutes.</string>
-    <string name="cog_relax_intro">À faire en soirée, assis ou allongé, de préférence hors du lit les premières fois. Pour chaque partie du corps : contractez doucement pendant cinq secondes, puis relâchez pendant quinze secondes en remarquant la différence. Arrêtez si une contraction fait mal.</string>
+    <string name="cog_relax_title">Relaxing the body</string>
+    <string name="cog_relax_summary">Progressive muscle relaxation, in ten minutes.</string>
+    <string name="cog_relax_intro">Do this in the evening, sitting or lying down, preferably out of bed the first few times. For each part of the body: tense gently for five seconds, then relax for fifteen seconds, noticing the difference. Stop if tensing a muscle hurts.</string>
     <string-array name="cog_relax_steps">
-        <item>Les mains et les avant-bras : serrez les poings, puis relâchez.</item>
-        <item>Les bras : pliez les coudes et contractez les biceps, puis relâchez.</item>
-        <item>Les épaules et la nuque : montez les épaules vers les oreilles, puis laissez-les retomber.</item>
-        <item>Le visage : plissez le front et serrez les paupières, puis détendez tout le visage.</item>
-        <item>Le ventre et le dos : rentrez le ventre et redressez le dos, puis relâchez en respirant lentement.</item>
-        <item>Les jambes et les pieds : tendez les jambes et pointez les pieds, puis relâchez. Restez quelques instants dans cette détente.</item>
+        <item>Hands and forearms: clench your fists, then let go.</item>
+        <item>Arms: bend your elbows and tighten your biceps, then let go.</item>
+        <item>Shoulders and neck: raise your shoulders towards your ears, then let them drop.</item>
+        <item>Face: wrinkle your forehead and squeeze your eyes shut, then relax your whole face.</item>
+        <item>Stomach and back: pull in your stomach and straighten your back, then let go while breathing slowly.</item>
+        <item>Legs and feet: stretch your legs and point your toes, then let go. Stay in this relaxed state for a few moments.</item>
     </string-array>
 </resources>
