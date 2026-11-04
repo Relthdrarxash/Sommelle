@@ -62,7 +62,7 @@ import kotlinx.coroutines.launch
 import java.time.LocalTime
 
 private const val PRIVACY_URL = "https://relthdrarxash.github.io/sommelle/confidentialite.html"
-private const val CONTACT_EMAIL = "escale.apps@proton.me"
+private const val CONTACT_EMAIL = "pilmil.studio@proton.me"
 
 data class SettingsState(
     val reminders: ReminderSettings,
