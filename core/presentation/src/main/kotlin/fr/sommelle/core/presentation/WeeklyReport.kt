@@ -26,7 +26,12 @@ data class WeeklyReport(
     val requiredNights: Int,
 ) {
     companion object {
-        fun of(previous: SleepWindow, decision: WindowDecision, config: ProtocolConfig = ProtocolConfig.DEFAULT): WeeklyReport {
+        fun of(
+            previous: SleepWindow,
+            decision: WindowDecision,
+            config: ProtocolConfig = ProtocolConfig.DEFAULT,
+            text: TextFormat = Texts.current(),
+        ): WeeklyReport {
             val delta: Duration = decision.window.duration.minus(previous.duration)
             val tone = when (decision.change) {
                 WindowChange.INCREASED -> ReportTone.LONGER
@@ -39,10 +44,10 @@ data class WeeklyReport(
             val week = decision.week
             return WeeklyReport(
                 tone = tone,
-                efficiency = week?.takeIf { tone != ReportTone.MISSING_NIGHTS }?.let { FrenchFormat.percent(it.sleepEfficiency) },
-                change = if (tone == ReportTone.LONGER || tone == ReportTone.SHORTER) FrenchFormat.durationInWords(delta) else null,
-                bedTime = FrenchFormat.time(decision.window.bedTime),
-                wakeTime = FrenchFormat.time(decision.window.wakeTime),
+                efficiency = week?.takeIf { tone != ReportTone.MISSING_NIGHTS }?.let { text.percent(it.sleepEfficiency) },
+                change = if (tone == ReportTone.LONGER || tone == ReportTone.SHORTER) text.durationInWords(delta) else null,
+                bedTime = text.time(decision.window.bedTime),
+                wakeTime = text.time(decision.window.wakeTime),
                 loggedNights = week?.loggedNights ?: 0,
                 requiredNights = config.minimumLoggedNightsPerWeek,
             )
@@ -62,16 +67,16 @@ data class WeekBar(
 
 object WeekChart {
     /** [periods] : la ligne de base puis chaque semaine, dans l'ordre. Les périodes vides sont ignorées. */
-    fun bars(periods: List<PeriodSummary?>): List<WeekBar> {
+    fun bars(periods: List<PeriodSummary?>, text: TextFormat = Texts.current()): List<WeekBar> {
         val labelled = periods.mapIndexedNotNull { index, summary ->
-            summary?.let { (if (index == 0) "Au départ" else "Semaine $index") to it }
+            summary?.let { (if (index == 0) text.baseline() else text.week(index)) to it }
         }
         val max = labelled.maxOfOrNull { it.second.meanTimeInBed.toMinutes() }?.coerceAtLeast(1) ?: return emptyList()
         return labelled.map { (label, s) ->
             WeekBar(
                 label = label,
-                timeInBed = FrenchFormat.duration(s.meanTimeInBed),
-                totalSleep = FrenchFormat.duration(s.meanTotalSleepTime),
+                timeInBed = text.duration(s.meanTimeInBed),
+                totalSleep = text.duration(s.meanTotalSleepTime),
                 timeInBedFraction = s.meanTimeInBed.toMinutes().toFloat() / max,
                 totalSleepFraction = s.meanTotalSleepTime.toMinutes().toFloat() / max,
             )
@@ -79,6 +84,6 @@ object WeekChart {
     }
 
     /** Description complète lue par TalkBack à la place du graphique. */
-    fun accessibilityDescription(bars: List<WeekBar>): String =
-        "Évolution par semaine. " + bars.joinToString(" ") { "${it.label} : ${it.timeInBed} au lit, ${it.totalSleep} de sommeil." }
+    fun accessibilityDescription(bars: List<WeekBar>, text: TextFormat = Texts.current()): String =
+        text.chartDescription(bars)
 }

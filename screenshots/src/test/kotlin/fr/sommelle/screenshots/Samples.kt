@@ -8,7 +8,7 @@ import fr.sommelle.core.model.SleepQuality
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.presentation.DiaryDraft
 import fr.sommelle.core.presentation.DiaryStep
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ReportTone
 import fr.sommelle.core.presentation.ScreeningFlow
 import fr.sommelle.core.presentation.TimeField
@@ -91,15 +91,15 @@ object Samples {
     @Composable
     fun Week() {
         val bars = WeekChart.bars(listOf(period(510, 350), period(375, 315), period(375, 330)))
-        val bed = FrenchFormat.time(LocalTime.of(0, 15))
-        val wake = FrenchFormat.time(LocalTime.of(6, 45))
+        val bed = Texts.current().time(LocalTime.of(0, 15))
+        val wake = Texts.current().time(LocalTime.of(6, 45))
         WeekContent(
             WeekState(
                 restriction = true,
                 report = WeeklyReport(
                     tone = ReportTone.LONGER,
-                    efficiency = FrenchFormat.percent(0.88),
-                    change = FrenchFormat.durationInWords(Duration.ofMinutes(15)),
+                    efficiency = Texts.current().percent(0.88),
+                    change = Texts.current().durationInWords(Duration.ofMinutes(15)),
                     bedTime = bed,
                     wakeTime = wake,
                     loggedNights = 7,
@@ -120,7 +120,7 @@ object Samples {
     @Composable
     fun HomeWithQuestion() = HomeContent(
         s = HomeState(
-            date = FrenchFormat.longDate(tuesday),
+            date = Texts.current().longDate(tuesday),
             badge = WeekBadge.OBSERVATION,
             week = 0,
             pathway = Pathway.FULL,
@@ -140,10 +140,10 @@ object Samples {
         WeekContent(
             WeekState(
                 restriction = true,
-                report = WeeklyReport(ReportTone.STEADY, FrenchFormat.percent(0.9), null, FrenchFormat.time(LocalTime.of(0, 0)), FrenchFormat.time(LocalTime.of(6, 45)), 7, 5),
+                report = WeeklyReport(ReportTone.STEADY, Texts.current().percent(0.9), null, Texts.current().time(LocalTime.of(0, 0)), Texts.current().time(LocalTime.of(6, 45)), 7, 5),
                 window = window,
-                bedTime = FrenchFormat.time(LocalTime.of(0, 0)),
-                wakeTime = FrenchFormat.time(LocalTime.of(6, 45)),
+                bedTime = Texts.current().time(LocalTime.of(0, 0)),
+                wakeTime = Texts.current().time(LocalTime.of(6, 45)),
                 bars = bars,
                 chartDescription = WeekChart.accessibilityDescription(bars),
                 outcome = ProgramOutcome.compare(
@@ -219,7 +219,7 @@ object Samples {
     @Composable
     private fun home(step: WindowStep, badge: WeekBadge, week: Int) = HomeContent(
         s = HomeState(
-            date = FrenchFormat.longDate(tuesday),
+            date = Texts.current().longDate(tuesday),
             badge = badge,
             week = week,
             pathway = Pathway.FULL,

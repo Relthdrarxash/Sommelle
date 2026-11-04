@@ -20,7 +20,7 @@ import fr.sommelle.core.designsystem.SommelleButton
 import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.designsystem.TimeStepper
 import fr.sommelle.core.presentation.DiaryChoices
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.WindowStep
 import kotlinx.coroutines.launch
 import java.time.LocalTime
@@ -74,7 +74,7 @@ fun WakeTimeContent(
         ScreenTitle(stringResource(R.string.wake_title))
         Text(stringResource(R.string.wake_text), style = MaterialTheme.typography.bodyLarge)
         TimeStepper(
-            value = FrenchFormat.time(time),
+            value = Texts.current().time(time),
             onMinus = onMinus,
             onPlus = onPlus,
             footer = if (suggested) {

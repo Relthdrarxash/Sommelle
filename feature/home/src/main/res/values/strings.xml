@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="home_hello">Bonjour</string>
-    <string name="home_badge_observation">Semaine d\'observation</string>
-    <string name="home_badge_week">Semaine %1$d sur 6</string>
-    <string name="home_badge_maintenance">Maintien</string>
+    <string name="home_hello">Hello</string>
+    <string name="home_badge_observation">Observation week</string>
+    <string name="home_badge_week">Week %1$d of 6</string>
+    <string name="home_badge_maintenance">Maintenance</string>
 
-    <string name="home_window_title">Votre fenêtre de sommeil</string>
-    <string name="home_bedtime">Coucher</string>
-    <string name="home_waketime">Lever</string>
-    <string name="home_window_reason">Rester debout jusqu\'à %1$s, c\'est ce qui rend le sommeil plus profond.</string>
+    <string name="home_window_title">Your sleep window</string>
+    <string name="home_bedtime">Bedtime</string>
+    <string name="home_waketime">Rise time</string>
+    <string name="home_window_reason">Staying up until %1$s is what makes sleep deeper.</string>
 
-    <string name="home_baseline_title">Une semaine pour observer</string>
+    <string name="home_baseline_title">One week to observe</string>
     <plurals name="home_baseline_text">
-        <item quantity="one">Remplissez simplement votre agenda chaque matin. Vos horaires de sommeil seront calculés demain.</item>
-        <item quantity="many">Remplissez simplement votre agenda chaque matin. Vos horaires de sommeil seront calculés dans %1$d jours.</item>
-        <item quantity="other">Remplissez simplement votre agenda chaque matin. Vos horaires de sommeil seront calculés dans %1$d jours.</item>
+        <item quantity="one">Simply fill in your diary each morning. Your sleep schedule will be calculated tomorrow.</item>
+        <item quantity="other">Simply fill in your diary each morning. Your sleep schedule will be calculated in %1$d days.</item>
     </plurals>
-    <string name="home_extended_title">Encore quelques nuits</string>
-    <string name="home_extended_text">Il faut au moins %2$d nuits remplies sur les 7 derniers jours pour calculer vos horaires. Vous en avez %1$d pour l\'instant.</string>
-    <string name="home_wake_title">Choisissez votre heure de lever</string>
-    <string name="home_wake_text">Votre semaine d\'observation est terminée. Il reste à fixer l\'heure de lever, la même tous les jours.</string>
-    <string name="home_wake_button">Choisir mon heure de lever</string>
-    <string name="home_partial_title">Votre programme</string>
-    <string name="home_partial_text">Remplissez votre agenda chaque matin, et suivez les conseils si vous ne dormez pas la nuit.</string>
-    <string name="home_out_title">Parlez-en à votre médecin</string>
-    <string name="home_out_text">La méthode de Sommelle n\'est pas adaptée à votre situation. Un médecin pourra vous proposer une aide mieux adaptée.</string>
+    <string name="home_extended_title">A few more nights</string>
+    <string name="home_extended_text">At least %2$d nights out of the last 7 need to be filled in to calculate your schedule. You have %1$d so far.</string>
+    <string name="home_wake_title">Choose your rise time</string>
+    <string name="home_wake_text">Your observation week is over. All that is left is to set your rise time, the same every day.</string>
+    <string name="home_wake_button">Choose my rise time</string>
+    <string name="home_partial_title">Your program</string>
+    <string name="home_partial_text">Fill in your diary each morning, and follow the advice if you cannot sleep at night.</string>
+    <string name="home_out_title">Talk to your doctor</string>
+    <string name="home_out_text">Sommelle\'s method is not suited to your situation. A doctor can offer you better-suited help.</string>
 
-    <string name="home_night_missing">La %1$s n\'est pas encore remplie.</string>
-    <string name="home_fill_night">Remplir ma nuit</string>
-    <string name="home_night_done">Votre nuit est enregistrée. À demain matin.</string>
-    <string name="home_fix_night">Corriger ma dernière nuit</string>
-    <string name="home_cant_sleep">Je n\'arrive pas à dormir</string>
+    <string name="home_night_missing">Your %1$s is not filled in yet.</string>
+    <string name="home_fill_night">Log my night</string>
+    <string name="home_night_done">Your night is saved. See you tomorrow morning.</string>
+    <string name="home_fix_night">Correct my last night</string>
+    <string name="home_cant_sleep">I can\'t sleep</string>
 
-    <string name="wake_title">À quelle heure voulez-vous vous lever chaque matin ?</string>
-    <string name="wake_text">Choisissez une heure tenable tous les jours, week-end compris. C\'est le repère qui stabilise votre sommeil.</string>
-    <string name="wake_suggested">Proposé : votre heure de réveil habituelle cette semaine</string>
-    <string name="wake_confirm">Valider</string>
+    <string name="wake_title">What time do you want to get up every morning?</string>
+    <string name="wake_text">Choose a time you can keep every day, weekends included. It is the anchor that stabilizes your sleep.</string>
+    <string name="wake_suggested">Suggested: your usual wake-up time this week</string>
+    <string name="wake_confirm">Confirm</string>
 
-    <string name="home_impact_title">Une question rapide</string>
-    <string name="home_impact_question">En ce moment, à quel point vos nuits gênent-elles vos journées\u00A0?</string>
-    <string name="home_impact_0">Pas du tout</string>
-    <string name="home_impact_1">Un peu</string>
-    <string name="home_impact_2">Moyennement</string>
-    <string name="home_impact_3">Beaucoup</string>
-    <string name="home_impact_4">Énormément</string>
+    <string name="home_impact_title">A quick question</string>
+    <string name="home_impact_question">Right now, how much do your nights affect your days?</string>
+    <string name="home_impact_0">Not at all</string>
+    <string name="home_impact_1">A little</string>
+    <string name="home_impact_2">Moderately</string>
+    <string name="home_impact_3">A lot</string>
+    <string name="home_impact_4">Enormously</string>
 </resources>

@@ -1,8 +1,10 @@
 # Sommelle
 
+**Français** · [English](README.en.md)
+
 [![CI](https://github.com/Relthdrarxash/sommelle/actions/workflows/ci.yml/badge.svg)](https://github.com/Relthdrarxash/sommelle/actions/workflows/ci.yml)
 
-Application Android d'accompagnement à l'insomnie fondée sur la TCC-I (thérapie cognitivo-comportementale de l'insomnie), le traitement recommandé en premier par les recommandations européennes et américaines. Gratuite, en français, sans compte et sans publicité. Aucune donnée ne quitte le téléphone.
+Application Android d'accompagnement à l'insomnie fondée sur la TCC-I (thérapie cognitivo-comportementale de l'insomnie), le traitement recommandé en premier par les recommandations européennes et américaines. Gratuite, en français et en anglais, sans compte et sans publicité. Aucune donnée ne quitte le téléphone.
 
 Sommelle est un outil d'accompagnement et d'éducation. Ce n'est pas un dispositif médical et elle ne remplace pas un avis médical.
 
@@ -69,6 +71,10 @@ La thérapie cognitive et comportementale de l'insomnie (TCC-I) est le traitemen
 | [Principes d'interface](documentation/design.md) | Pour qui, et comment l'interface s'adapte à une personne fatiguée |
 | [Architecture](documentation/architecture.md) | Modules, données, accessibilité |
 | [Contribuer](CONTRIBUTING.md) | Compiler, tester, captures d'écran, site |
+
+## Langues
+
+L'appli suit la langue du téléphone : français sur un téléphone en français, anglais sinon. Les textes de l'interface sont des ressources Android (`values/` en anglais, `values-fr/` en français) ; les heures, durées et libellés composés à partir des données viennent de `TextFormat` dans `:core:presentation` (`FrenchFormat`, `EnglishFormat`).
 
 ## Compiler
 

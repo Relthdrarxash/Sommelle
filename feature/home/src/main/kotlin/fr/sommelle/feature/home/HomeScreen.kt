@@ -36,10 +36,17 @@ import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.presentation.DaytimeImpact
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
 import java.time.LocalDate
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 
 @Composable
 fun HomeScreen(
@@ -143,7 +150,7 @@ private fun ProgramCard(s: HomeState, onChooseWakeTime: () -> Unit) {
 /** Carte bleu nuit de la maquette : coucher et lever en grand, et la raison en une phrase. */
 @Composable
 private fun WindowCard(window: SleepWindow) {
-    val bed = FrenchFormat.time(window.bedTime)
+    val bed = Texts.current().time(window.bedTime)
     Surface(shape = MaterialTheme.shapes.large, color = SommelleColors.Night, contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -157,7 +164,7 @@ private fun WindowCard(window: SleepWindow) {
             }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 TimeTile(stringResource(R.string.home_bedtime), bed, Modifier.weight(1f))
-                TimeTile(stringResource(R.string.home_waketime), FrenchFormat.time(window.wakeTime), Modifier.weight(1f))
+                TimeTile(stringResource(R.string.home_waketime), Texts.current().time(window.wakeTime), Modifier.weight(1f))
             }
             Text(stringResource(R.string.home_window_reason, bed), style = MaterialTheme.typography.bodyMedium)
         }
@@ -169,7 +176,26 @@ private fun TimeTile(label: String, value: String, modifier: Modifier) {
     Surface(modifier = modifier, shape = MaterialTheme.shapes.medium, color = Color.White.copy(alpha = 0.12f), contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
             Text(label, style = MaterialTheme.typography.bodySmall, color = SommelleColors.LavenderOnNight)
-            Text(value, style = MaterialTheme.typography.headlineMedium)
+            val headline = MaterialTheme.typography.headlineMedium
+            // « 12:30 am » : le suffixe plus petit garde l'heure sur une ligne dans la tuile.
+            val suffix = value.substringAfterLast('\u00A0', "").takeIf { it == "am" || it == "pm" }
+            val text = if (suffix == null) {
+                AnnotatedString(value)
+            } else {
+                buildAnnotatedString {
+                    append(value.removeSuffix(suffix))
+                    withStyle(SpanStyle(fontSize = MaterialTheme.typography.titleMedium.fontSize)) { append(suffix) }
+                }
+            }
+            // Sur un écran étroit ou avec une grande taille de texte, on réduit la taille plutôt que de couper l'heure.
+            var style by remember(value) { mutableStateOf(headline) }
+            Text(
+                text,
+                style = style,
+                maxLines = 1,
+                softWrap = false,
+                onTextLayout = { if (it.didOverflowWidth && style.fontSize.value > 14f) style = style.copy(fontSize = style.fontSize * 0.9f) },
+            )
         }
     }
 }
@@ -191,7 +217,7 @@ private fun DiarySection(s: HomeState, onFillNight: (LocalDate) -> Unit) {
         val missing = s.nightsToFill.firstOrNull()
         if (missing != null) {
             Text(
-                stringResource(R.string.home_night_missing, FrenchFormat.nightLabel(missing).replaceFirstChar { it.lowercase() }),
+                stringResource(R.string.home_night_missing, Texts.current().nightLabel(missing).replaceFirstChar { it.lowercase() }),
                 style = MaterialTheme.typography.bodyLarge,
             )
             SommelleButton(

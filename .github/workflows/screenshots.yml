@@ -51,23 +51,33 @@ jobs:
 
       - name: Copier dans docs/captures et dans la fiche des stores
         run: |
-          STORE=fastlane/metadata/android/fr-FR/images/phoneScreenshots
-          mkdir -p docs/captures "$STORE"
+          STORE_FR=fastlane/metadata/android/fr-FR/images/phoneScreenshots
+          STORE_EN=fastlane/metadata/android/en-US/images/phoneScreenshots
+          mkdir -p docs/captures "$STORE_FR" "$STORE_EN"
           for f in screenshots/src/test/snapshots/images/*_ScreensTest_*.png; do
             name=$(basename "$f")
             cp "$f" "docs/captures/${name#*_ScreensTest_}"
           done
-          for f in screenshots/src/test/snapshots/images/*_StoreScreensTest_*.png; do
+          mkdir -p docs/captures/en
+          for f in screenshots/src/test/snapshots/images/*_ScreensEnTest_*.png; do
             name=$(basename "$f")
-            cp "$f" "$STORE/${name#*_StoreScreensTest_}"
+            cp "$f" "docs/captures/en/${name#*_ScreensEnTest_}"
           done
-          ls -la docs/captures "$STORE"
+          for f in screenshots/src/test/snapshots/images/*_StoreScreensFrTest_*.png; do
+            name=$(basename "$f")
+            cp "$f" "$STORE_FR/${name#*_StoreScreensFrTest_}"
+          done
+          for f in screenshots/src/test/snapshots/images/*_StoreScreensEnTest_*.png; do
+            name=$(basename "$f")
+            cp "$f" "$STORE_EN/${name#*_StoreScreensEnTest_}"
+          done
+          ls -la docs/captures docs/captures/en "$STORE_FR" "$STORE_EN"
 
       - name: Enregistrer si elles ont changé
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add docs/captures fastlane/metadata/android/fr-FR/images/phoneScreenshots
+          git add docs/captures fastlane/metadata/android/fr-FR/images/phoneScreenshots fastlane/metadata/android/en-US/images/phoneScreenshots
           if git diff --cached --quiet; then
             echo "Captures inchangées."
           else
