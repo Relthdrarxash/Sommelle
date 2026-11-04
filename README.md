@@ -48,6 +48,10 @@ Pendant six à huit semaines :
 
 Les captures sont générées à partir du code des écrans à chaque modification.
 
+## Pourquoi Sommelle est gratuite
+
+La thérapie cognitive et comportementale de l'insomnie (TCC-I) est le traitement recommandé en première intention, mais elle reste difficile d'accès : peu de praticiens formés, des délais longs, un coût souvent à la charge du patient. Sommelle veut aider le plus grand nombre de personnes possible, parce que tout le monde a droit à de l'aide pour mieux dormir. L'appli est gratuite, libre et ne collecte aucune donnée. Elle ne remplace pas un médecin, mais elle permet de commencer.
+
 ## Principes
 
 - **Fondée sur les recommandations.** Agenda du Consensus Sleep Diary, restriction du temps au lit et contrôle du stimulus selon les recommandations européennes (2023) et américaines (2021). Les règles, seuils et sources sont décrits dans le [dossier scientifique](https://relthdrarxash.github.io/sommelle/protocole.html), avec leurs limites.
