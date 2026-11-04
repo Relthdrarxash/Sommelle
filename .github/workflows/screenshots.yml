@@ -58,6 +58,11 @@ jobs:
             name=$(basename "$f")
             cp "$f" "docs/captures/${name#*_ScreensTest_}"
           done
+          mkdir -p docs/captures/en
+          for f in screenshots/src/test/snapshots/images/*_ScreensEnTest_*.png; do
+            name=$(basename "$f")
+            cp "$f" "docs/captures/en/${name#*_ScreensEnTest_}"
+          done
           for f in screenshots/src/test/snapshots/images/*_StoreScreensFrTest_*.png; do
             name=$(basename "$f")
             cp "$f" "$STORE_FR/${name#*_StoreScreensFrTest_}"
@@ -66,7 +71,7 @@ jobs:
             name=$(basename "$f")
             cp "$f" "$STORE_EN/${name#*_StoreScreensEnTest_}"
           done
-          ls -la docs/captures "$STORE_FR" "$STORE_EN"
+          ls -la docs/captures docs/captures/en "$STORE_FR" "$STORE_EN"
 
       - name: Enregistrer si elles ont changé
         run: |
