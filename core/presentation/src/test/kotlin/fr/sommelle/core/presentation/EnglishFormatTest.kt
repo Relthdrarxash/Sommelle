@@ -27,7 +27,8 @@ class EnglishFormatTest {
     @Test
     fun `durees en anglais`() {
         assertEquals(nb("45 min"), EnglishFormat.duration(Duration.ofMinutes(45)))
-        assertEquals("6 hr 15 min", EnglishFormat.duration(Duration.ofMinutes(375)))
+        assertEquals(nb("6h 15m"), EnglishFormat.duration(Duration.ofMinutes(375)))
+        assertEquals(nb("7h 05m"), EnglishFormat.duration(Duration.ofMinutes(425)))
         assertEquals("1h", EnglishFormat.duration(Duration.ofMinutes(60)))
         assertEquals(nb("15 minutes"), EnglishFormat.durationInWords(Duration.ofMinutes(-15)))
         assertEquals(nb("1 hour"), EnglishFormat.durationInWords(Duration.ofMinutes(60)))
