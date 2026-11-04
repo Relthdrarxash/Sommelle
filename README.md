@@ -77,7 +77,7 @@ L'APK de développement de chaque modification est aussi téléchargeable dans l
 
 ## Contact
 
-Questions, retours d'utilisation, remarques de professionnels de santé : [escale.apps@proton.me](mailto:escale.apps@proton.me).
+Questions, retours d'utilisation, remarques de professionnels de santé : [pilmil.studio@proton.me](mailto:pilmil.studio@proton.me).
 
 ## En cas de détresse
 
@@ -86,3 +86,7 @@ Si vous traversez une période difficile, le 3114 (numéro national de préventi
 ## Licence
 
 Sommelle est distribuée sous licence [GNU GPL v3.0](LICENSE). Vous pouvez l'utiliser, l'étudier, la modifier et la redistribuer, à condition que toute version redistribuée reste publiée sous la même licence, avec son code source.
+
+## Note sur le développement
+
+L'essentiel du code de Sommelle a été écrit avec Claude, l'assistant IA d'Anthropic. Je l'ai relu, testé et je le maintiens : le moteur du programme et la logique des écrans sont couverts par des tests automatiques, et je réponds moi-même aux tickets et aux messages.
