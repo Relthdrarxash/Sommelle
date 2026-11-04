@@ -8,6 +8,7 @@ import fr.sommelle.core.presentation.DiaryStep
 import fr.sommelle.feature.diary.DiaryMode
 import org.junit.Rule
 import org.junit.Test
+import java.util.Locale
 
 /**
  * Captures des écrans pour la documentation. Chaque méthode produit une image nommée d'après elle,
@@ -17,9 +18,14 @@ class ScreensTest {
 
     @get:Rule
     val paparazzi = Paparazzi(
-        deviceConfig = DeviceConfig.PIXEL_5,
+        deviceConfig = DeviceConfig.PIXEL_5.copy(locale = "fr"),
         theme = "android:Theme.Material.Light.NoActionBar",
     )
+
+    init {
+        // Les textes composés par core:presentation suivent la langue de la JVM, les ressources celle de Paparazzi.
+        Locale.setDefault(Locale.FRENCH)
+    }
 
     private fun snap(night: Boolean = false, content: @Composable () -> Unit) =
         paparazzi.snapshot { SommelleTheme(night = night) { content() } }

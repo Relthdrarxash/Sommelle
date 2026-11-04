@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.model.SleepWindow
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.OutcomeRow
 import fr.sommelle.core.presentation.ProgramOutcome
 import fr.sommelle.core.protocol.ProgramPlanner
@@ -49,8 +49,8 @@ class WeekViewModel(repository: SommelleRepository) : ViewModel() {
                 restriction = snapshot.program.screening.restrictionAllowed,
                 report = ProgramHistory.latestReport(snapshot.windows, snapshot.entries),
                 window = window,
-                bedTime = window?.let { FrenchFormat.time(it.bedTime) },
-                wakeTime = window?.let { FrenchFormat.time(it.wakeTime) },
+                bedTime = window?.let { Texts.current().time(it.bedTime) },
+                wakeTime = window?.let { Texts.current().time(it.wakeTime) },
                 bars = bars,
                 chartDescription = WeekChart.accessibilityDescription(bars),
                 outcome = outcome,

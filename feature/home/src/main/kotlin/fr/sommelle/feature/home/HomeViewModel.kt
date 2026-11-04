@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.model.Pathway
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ProgramOutcome
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
@@ -49,7 +49,7 @@ class HomeViewModel(private val repository: SommelleRepository) : ViewModel() {
             val endImpactDone = impacts.any { (planner.programWeek(snapshot.program.startDate, it.date) ?: 0) >= ProgramOutcome.AVAILABLE_FROM_WEEK }
             val inProgram = snapshot.program.screening.pathway != Pathway.OUT_OF_SCOPE
             HomeState(
-                date = FrenchFormat.longDate(today),
+                date = Texts.current().longDate(today),
                 badge = badge,
                 week = week,
                 pathway = snapshot.program.screening.pathway,
