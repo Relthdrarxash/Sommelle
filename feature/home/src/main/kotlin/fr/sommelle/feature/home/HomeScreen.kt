@@ -40,6 +40,10 @@ import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
 import java.time.LocalDate
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 
 @Composable
 fun HomeScreen(
@@ -169,7 +173,17 @@ private fun TimeTile(label: String, value: String, modifier: Modifier) {
     Surface(modifier = modifier, shape = MaterialTheme.shapes.medium, color = Color.White.copy(alpha = 0.12f), contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
             Text(label, style = MaterialTheme.typography.bodySmall, color = SommelleColors.LavenderOnNight)
-            Text(value, style = MaterialTheme.typography.headlineMedium)
+            // « 12:30 am » : le suffixe plus petit garde l'heure sur une ligne dans la tuile.
+            val suffix = value.substringAfterLast('\u00A0', "").takeIf { it == "am" || it == "pm" }
+            val text = if (suffix == null) {
+                AnnotatedString(value)
+            } else {
+                buildAnnotatedString {
+                    append(value.removeSuffix(suffix))
+                    withStyle(SpanStyle(fontSize = MaterialTheme.typography.titleMedium.fontSize)) { append(suffix) }
+                }
+            }
+            Text(text, style = MaterialTheme.typography.headlineMedium)
         }
     }
 }

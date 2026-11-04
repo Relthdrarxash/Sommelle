@@ -12,7 +12,7 @@ import java.time.Month
 import kotlin.math.roundToInt
 
 /**
- * Mise en forme anglaise : « 11:15 pm », « 6 hr 15 min », « Tuesday, November 3 ».
+ * Mise en forme anglaise : « 11:15 pm », « 6h 15m », « Tuesday, November 3 ».
  * Les unités restent attachées au nombre par une espace insécable, comme en français.
  */
 object EnglishFormat : TextFormat {
@@ -29,10 +29,11 @@ object EnglishFormat : TextFormat {
         val total = duration.toMinutes()
         val hours = total / 60
         val minutes = total % 60
+        // Forme courte, comme « 6 h 15 » en français : elle tient dans les tuiles et les graphiques.
         return when {
             hours == 0L -> "$minutes${NBSP}min"
-            minutes == 0L -> "$hours${NBSP}hr"
-            else -> "$hours${NBSP}hr $minutes${NBSP}min"
+            minutes == 0L -> "${hours}h"
+            else -> "${hours}h${NBSP}${minutes.toInt().twoDigits()}m"
         }
     }
 

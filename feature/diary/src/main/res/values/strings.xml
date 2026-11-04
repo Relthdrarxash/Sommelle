@@ -16,7 +16,7 @@
 
     <string name="diary_less_than_5">Less than 5 min</string>
     <string name="diary_onset_more">More than an hour</string>
-    <string name="diary_awake_more">2 hr or more</string>
+    <string name="diary_awake_more">2h or more</string>
     <string name="diary_none">None</string>
     <string name="diary_five_or_more">5 or more</string>
 
