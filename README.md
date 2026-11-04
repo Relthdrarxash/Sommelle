@@ -58,11 +58,13 @@ La thérapie cognitive et comportementale de l'insomnie (TCC-I) est le traitemen
 - **100 % locale.** Pas de compte, pas de serveur, pas de permission Internet, pas de traceur. Le code étant public, chacun peut le vérifier.
 - **Pour tout le monde.** Conçue pour une personne mal réveillée, y compris âgée ou peu à l'aise avec le numérique : grands boutons, pas de jargon, pas de geste caché, police Atkinson Hyperlegible, thème de nuit chaud. Les choix sont expliqués dans les [principes d'interface](documentation/design.md).
 - **Sans culpabilité.** Pas de score quotidien, pas de série à maintenir, pas de rouge.
+- **L'appli au strict nécessaire, les explications sur le site.** L'appli se limite à ce qu'il faut pour suivre le programme. Le pourquoi de chaque étape, ce qui relève d'une étude et ce qui relève d'un choix de conception, est sur la page [Pourquoi Sommelle est faite comme ça](https://relthdrarxash.github.io/sommelle/pourquoi.html).
 
 ## Documentation
 
 | Document | Contenu |
 |---|---|
+| [Pourquoi Sommelle est faite comme ça](https://relthdrarxash.github.io/sommelle/pourquoi.html) | Pour le grand public : chaque étape, sa raison, à quoi s'attendre les premières semaines, sources (source : `docs/pourquoi.html`) |
 | [Dossier scientifique](https://relthdrarxash.github.io/sommelle/protocole.html) | Pour les soignants : composantes de TCC-I, calculs avec exemple, sécurité, exercices, limites, sources (source : `docs/protocole.html`) |
 | [Principes d'interface](documentation/design.md) | Pour qui, et comment l'interface s'adapte à une personne fatiguée |
 | [Architecture](documentation/architecture.md) | Modules, données, accessibilité |
