@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="diary_q_bed">Hier soir, quelle était votre heure de coucher ?</string>
-    <string name="diary_h_bed">Une estimation suffit.</string>
-    <string name="diary_q_lights">À quelle heure avez-vous essayé de dormir ?</string>
-    <string name="diary_h_lights">Si vous avez lu ou regardé un écran au lit, indiquez l\'heure où vous avez éteint.</string>
-    <string name="diary_q_onset">Combien de temps avez-vous mis à vous endormir ?</string>
-    <string name="diary_h_onset">Ce que vous avez ressenti compte. Inutile de regarder l\'heure la nuit.</string>
-    <string name="diary_q_awakenings">Combien de réveils avez-vous eus dans la nuit ?</string>
-    <string name="diary_h_awakenings">Sans compter le réveil du matin.</string>
-    <string name="diary_q_awake_minutes">Combien de temps en tout ?</string>
-    <string name="diary_q_final">À quelle heure a eu lieu votre dernier réveil ?</string>
-    <string name="diary_h_final">Celui après lequel le sommeil n\'est pas revenu.</string>
-    <string name="diary_q_out">À quelle heure avez-vous quitté le lit ?</string>
-    <string name="diary_q_quality">Comment avez-vous trouvé votre nuit ?</string>
+    <string name="diary_q_bed">Last night, what time did you go to bed?</string>
+    <string name="diary_h_bed">An estimate is enough.</string>
+    <string name="diary_q_lights">What time did you try to go to sleep?</string>
+    <string name="diary_h_lights">If you read or looked at a screen in bed, give the time you turned off the light.</string>
+    <string name="diary_q_onset">How long did it take you to fall asleep?</string>
+    <string name="diary_h_onset">What you felt is what counts. No need to check the time at night.</string>
+    <string name="diary_q_awakenings">How many times did you wake up during the night?</string>
+    <string name="diary_h_awakenings">Not counting waking up in the morning.</string>
+    <string name="diary_q_awake_minutes">How long in total?</string>
+    <string name="diary_q_final">What time was your final awakening?</string>
+    <string name="diary_h_final">The one after which sleep did not come back.</string>
+    <string name="diary_q_out">What time did you get out of bed?</string>
+    <string name="diary_q_quality">How would you rate your night?</string>
 
-    <string name="diary_less_than_5">Moins de 5 min</string>
-    <string name="diary_onset_more">Plus d\'une heure</string>
-    <string name="diary_awake_more">2 h ou plus</string>
-    <string name="diary_none">Aucun</string>
-    <string name="diary_five_or_more">5 ou plus</string>
+    <string name="diary_less_than_5">Less than 5 min</string>
+    <string name="diary_onset_more">More than an hour</string>
+    <string name="diary_awake_more">2 hr or more</string>
+    <string name="diary_none">None</string>
+    <string name="diary_five_or_more">5 or more</string>
 
-    <string name="diary_quality_1">Très mauvaise</string>
-    <string name="diary_quality_2">Mauvaise</string>
-    <string name="diary_quality_3">Moyenne</string>
-    <string name="diary_quality_4">Bonne</string>
-    <string name="diary_quality_5">Très bonne</string>
+    <string name="diary_quality_1">Very poor</string>
+    <string name="diary_quality_2">Poor</string>
+    <string name="diary_quality_3">Fair</string>
+    <string name="diary_quality_4">Good</string>
+    <string name="diary_quality_5">Very good</string>
 
-    <string name="diary_next">Suivant</string>
-    <string name="diary_save">Enregistrer</string>
-    <string name="diary_back_to_summary">Revenir au résumé</string>
+    <string name="diary_next">Next</string>
+    <string name="diary_save">Save</string>
+    <string name="diary_back_to_summary">Back to the summary</string>
 
-    <string name="diary_summary_title">Votre nuit, en résumé</string>
-    <string name="diary_summary_hint">Appuyez sur une ligne pour la corriger.</string>
-    <string name="diary_row_bed">Coucher</string>
-    <string name="diary_row_lights">Extinction</string>
-    <string name="diary_row_onset">Endormissement</string>
-    <string name="diary_row_awakenings">Réveils</string>
-    <string name="diary_row_final">Réveil final</string>
-    <string name="diary_row_out">Lever</string>
-    <string name="diary_row_quality">Qualité</string>
+    <string name="diary_summary_title">Your night at a glance</string>
+    <string name="diary_summary_hint">Tap a line to correct it.</string>
+    <string name="diary_row_bed">Bedtime</string>
+    <string name="diary_row_lights">Lights out</string>
+    <string name="diary_row_onset">Falling asleep</string>
+    <string name="diary_row_awakenings">Awakenings</string>
+    <string name="diary_row_final">Final awakening</string>
+    <string name="diary_row_out">Out of bed</string>
+    <string name="diary_row_quality">Quality</string>
     <plurals name="diary_awakenings_value">
-        <item quantity="one">%1$d fois, %2$s</item>
-        <item quantity="many">%1$d fois, %2$s</item>
-        <item quantity="other">%1$d fois, %2$s</item>
+        <item quantity="one">%1$d time, %2$s</item>
+        <item quantity="other">%1$d times, %2$s</item>
     </plurals>
-    <string name="diary_edit_row">Modifier : %1$s, %2$s</string>
-    <string name="diary_confirm">C\'est bien ça</string>
-    <string name="diary_guided">Remplir question par question</string>
+    <string name="diary_edit_row">Edit: %1$s, %2$s</string>
+    <string name="diary_confirm">That\'s right</string>
+    <string name="diary_guided">Answer question by question</string>
 
-    <string name="diary_prefill_previous">Proposé : comme votre nuit précédente</string>
-    <string name="diary_prefill_watch">Proposé à partir de votre montre</string>
-    <string name="diary_prefill_screen">Proposé à partir de l\'utilisation de votre téléphone</string>
+    <string name="diary_prefill_previous">Suggested: same as your previous night</string>
+    <string name="diary_prefill_watch">Suggested from your watch</string>
+    <string name="diary_prefill_screen">Suggested from your phone use</string>
 
-    <string name="diary_issue_awake_too_long">Le temps passé éveillé dépasse la durée de la nuit. Vérifiez les heures ou les durées.</string>
-    <string name="diary_issue_order">Les heures ne se suivent pas. Vérifiez le coucher, le réveil et le lever.</string>
-    <string name="diary_issue_ok">Corriger</string>
+    <string name="diary_issue_awake_too_long">The time spent awake is longer than the night. Check the times or durations.</string>
+    <string name="diary_issue_order">The times are not in order. Check bedtime, waking up and getting up.</string>
+    <string name="diary_issue_ok">Correct</string>
 </resources>

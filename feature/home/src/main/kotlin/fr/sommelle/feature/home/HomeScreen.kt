@@ -36,7 +36,7 @@ import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.presentation.DaytimeImpact
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
 import java.time.LocalDate
@@ -143,7 +143,7 @@ private fun ProgramCard(s: HomeState, onChooseWakeTime: () -> Unit) {
 /** Carte bleu nuit de la maquette : coucher et lever en grand, et la raison en une phrase. */
 @Composable
 private fun WindowCard(window: SleepWindow) {
-    val bed = FrenchFormat.time(window.bedTime)
+    val bed = Texts.current().time(window.bedTime)
     Surface(shape = MaterialTheme.shapes.large, color = SommelleColors.Night, contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
@@ -157,7 +157,7 @@ private fun WindowCard(window: SleepWindow) {
             }
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 TimeTile(stringResource(R.string.home_bedtime), bed, Modifier.weight(1f))
-                TimeTile(stringResource(R.string.home_waketime), FrenchFormat.time(window.wakeTime), Modifier.weight(1f))
+                TimeTile(stringResource(R.string.home_waketime), Texts.current().time(window.wakeTime), Modifier.weight(1f))
             }
             Text(stringResource(R.string.home_window_reason, bed), style = MaterialTheme.typography.bodyMedium)
         }
@@ -191,7 +191,7 @@ private fun DiarySection(s: HomeState, onFillNight: (LocalDate) -> Unit) {
         val missing = s.nightsToFill.firstOrNull()
         if (missing != null) {
             Text(
-                stringResource(R.string.home_night_missing, FrenchFormat.nightLabel(missing).replaceFirstChar { it.lowercase() }),
+                stringResource(R.string.home_night_missing, Texts.current().nightLabel(missing).replaceFirstChar { it.lowercase() }),
                 style = MaterialTheme.typography.bodyLarge,
             )
             SommelleButton(

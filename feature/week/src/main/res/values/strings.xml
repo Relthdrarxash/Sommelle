@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="week_label">Bilan de la semaine</string>
+    <string name="week_label">Weekly review</string>
 
-    <string name="week_longer_title">Vos nuits sont plus pleines</string>
-    <string name="week_longer_text">Cette semaine, vous avez dormi %1$s du temps passé au lit. Votre fenêtre s\'allonge donc de %2$s.</string>
-    <string name="week_shorter_title">Votre fenêtre se resserre un peu</string>
-    <string name="week_shorter_text">Cette semaine, vous avez dormi %1$s du temps passé au lit. Votre fenêtre raccourcit de %2$s : c\'est ce qui aide le sommeil à se consolider.</string>
-    <string name="week_steady_title">Vous êtes sur la bonne voie</string>
-    <string name="week_steady_text">Cette semaine, vous avez dormi %1$s du temps passé au lit. Votre fenêtre reste la même.</string>
-    <string name="week_floor_title">Votre fenêtre reste stable</string>
-    <string name="week_floor_text">Cette semaine, vous avez dormi %1$s du temps passé au lit. Votre fenêtre est déjà au plus court prévu : elle ne descend pas plus bas.</string>
-    <string name="week_max_title">Votre sommeil s\'est bien rétabli</string>
-    <string name="week_max_text">Cette semaine, vous avez dormi %1$s du temps passé au lit. Votre fenêtre a atteint sa durée maximale.</string>
-    <string name="week_missing_title">Il manque quelques nuits</string>
-    <string name="week_missing_text">Pour ajuster votre fenêtre, il faut au moins %2$d nuits remplies sur 7. Vous en avez rempli %1$d : votre fenêtre reste la même.</string>
+    <string name="week_longer_title">Your nights are fuller</string>
+    <string name="week_longer_text">This week, you slept %1$s of your time in bed. So your window grows by %2$s.</string>
+    <string name="week_shorter_title">Your window narrows a little</string>
+    <string name="week_shorter_text">This week, you slept %1$s of your time in bed. Your window shrinks by %2$s: this is what helps sleep consolidate.</string>
+    <string name="week_steady_title">You are on the right track</string>
+    <string name="week_steady_text">This week, you slept %1$s of your time in bed. Your window stays the same.</string>
+    <string name="week_floor_title">Your window stays steady</string>
+    <string name="week_floor_text">This week, you slept %1$s of your time in bed. Your window is already at its shortest planned length: it will not go any lower.</string>
+    <string name="week_max_title">Your sleep has recovered well</string>
+    <string name="week_max_text">This week, you slept %1$s of your time in bed. Your window has reached its maximum length.</string>
+    <string name="week_missing_title">A few nights are missing</string>
+    <string name="week_missing_text">To adjust your window, at least %2$d of the 7 nights need to be filled in. You filled in %1$d: your window stays the same.</string>
 
-    <string name="week_first_title">Votre première fenêtre</string>
-    <string name="week_first_text">Elle est calculée à partir de votre semaine d\'observation. Premier bilan dans une semaine.</string>
-    <string name="week_pending_title">Votre premier bilan arrive bientôt</string>
-    <string name="week_pending_text">Il sera prêt après votre semaine d\'observation.</string>
-    <string name="week_partial_title">Votre sommeil, semaine après semaine</string>
-    <string name="week_partial_text">Voici l\'évolution de votre temps au lit et de votre temps de sommeil.</string>
+    <string name="week_first_title">Your first window</string>
+    <string name="week_first_text">It is calculated from your observation week. First review in a week.</string>
+    <string name="week_pending_title">Your first review is coming soon</string>
+    <string name="week_pending_text">It will be ready after your observation week.</string>
+    <string name="week_partial_title">Your sleep, week after week</string>
+    <string name="week_partial_text">Here is how your time in bed and your sleep time are changing.</string>
 
-    <string name="week_window_current">Votre fenêtre actuelle</string>
-    <string name="week_bedtime">Coucher</string>
-    <string name="week_waketime">Lever</string>
+    <string name="week_window_current">Your current window</string>
+    <string name="week_bedtime">Bedtime</string>
+    <string name="week_waketime">Rise time</string>
 
-    <string name="week_chart_title">Temps au lit et temps dormi</string>
-    <string name="week_legend_bed">Au lit</string>
-    <string name="week_legend_sleep">Dormi</string>
-    <string name="week_chart_empty">Le graphique apparaîtra après quelques nuits remplies.</string>
+    <string name="week_chart_title">Time in bed and time asleep</string>
+    <string name="week_legend_bed">In bed</string>
+    <string name="week_legend_sleep">Asleep</string>
+    <string name="week_chart_empty">The chart will appear after a few nights have been filled in.</string>
 
-    <string name="week_how_title">Comment est calculée ma fenêtre ?</string>
-    <string name="week_how_text" formatted="false">Chaque semaine, Sommelle compare le temps dormi au temps passé au lit. En général, au-delà de 85 %, la fenêtre s\'allonge de 15 minutes ; en dessous de 80 %, elle raccourcit de 15 minutes, sans descendre sous un plancher de sécurité. Entre les deux, elle reste la même. L\'heure de lever ne change jamais.</string>
+    <string name="week_how_title">How is my window calculated?</string>
+    <string name="week_how_text" formatted="false">Each week, Sommelle compares the time you slept with the time you spent in bed. As a rule, above 85%, the window grows by 15 minutes; below 80%, it shrinks by 15 minutes, without going under a safety floor. In between, it stays the same. Your rise time never changes.</string>
 
-    <string name="week_outcome_title">Bilan du programme</string>
-    <string name="week_outcome_text">Votre semaine d\'observation comparée à vos sept dernières nuits.</string>
-    <string name="week_outcome_before">Au départ</string>
-    <string name="week_outcome_after">Aujourd\'hui</string>
+    <string name="week_outcome_title">Program results</string>
+    <string name="week_outcome_text">Your observation week compared with your last seven nights.</string>
+    <string name="week_outcome_before">At the start</string>
+    <string name="week_outcome_after">Today</string>
 </resources>

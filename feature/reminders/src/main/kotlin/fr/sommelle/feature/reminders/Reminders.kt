@@ -19,7 +19,7 @@ import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.data.SommelleRepositoryProvider
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ReminderKind
 import fr.sommelle.core.presentation.ReminderPlanner
 import fr.sommelle.core.presentation.ReminderSettings
@@ -84,7 +84,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
                     if (window != null) {
                         notify(
                             kind,
-                            applicationContext.getString(R.string.reminder_evening_title, FrenchFormat.time(window.bedTime)),
+                            applicationContext.getString(R.string.reminder_evening_title, Texts.current().time(window.bedTime)),
                             applicationContext.getString(R.string.reminder_evening_text),
                         )
                     }

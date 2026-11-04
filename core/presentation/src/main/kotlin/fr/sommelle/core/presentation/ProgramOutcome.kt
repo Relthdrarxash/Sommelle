@@ -20,20 +20,28 @@ data class DaytimeImpact(val date: LocalDate, val score: Int) {
     }
 }
 
-enum class OutcomeMetric(val label: String) {
-    SLEEP_ONSET("Temps d'endormissement"),
-    AWAKE_AT_NIGHT("Éveils nocturnes"),
-    TOTAL_SLEEP("Temps de sommeil"),
-    EFFICIENCY("Efficacité du sommeil"),
-    QUALITY("Qualité ressentie"),
-    DAYTIME_IMPACT("Gêne dans la journée, de 0 à 4"),
+enum class OutcomeMetric {
+    SLEEP_ONSET,
+    AWAKE_AT_NIGHT,
+    TOTAL_SLEEP,
+    EFFICIENCY,
+    QUALITY,
+    DAYTIME_IMPACT,
+    ;
+
+    /** Libellé dans la langue de l'appli. */
+    val label: String get() = Texts.current().metric(this)
 }
 
 /** Sens de l'évolution, du point de vue du sommeil. Jamais présenté comme un échec. */
-enum class Trend(val word: String) {
-    BETTER("En amélioration"),
-    STABLE("Stable"),
-    WORSE("En recul"),
+enum class Trend {
+    BETTER,
+    STABLE,
+    WORSE,
+    ;
+
+    /** Libellé dans la langue de l'appli. */
+    val word: String get() = Texts.current().trend(this)
 }
 
 data class OutcomeRow(val metric: OutcomeMetric, val before: String, val after: String, val trend: Trend)
@@ -58,22 +66,23 @@ object ProgramOutcome {
         recent: PeriodSummary?,
         impactBefore: DaytimeImpact?,
         impactAfter: DaytimeImpact?,
+        text: TextFormat = Texts.current(),
     ): List<OutcomeRow> {
         val rows = mutableListOf<OutcomeRow>()
         if (baseline != null && recent != null) {
-            rows += minutesRow(OutcomeMetric.SLEEP_ONSET, baseline.meanSleepOnsetLatency.toMinutes(), recent.meanSleepOnsetLatency.toMinutes(), lowerIsBetter = true)
-            rows += minutesRow(OutcomeMetric.AWAKE_AT_NIGHT, baseline.meanWakeAfterSleepOnset.toMinutes(), recent.meanWakeAfterSleepOnset.toMinutes(), lowerIsBetter = true)
-            rows += minutesRow(OutcomeMetric.TOTAL_SLEEP, baseline.meanTotalSleepTime.toMinutes(), recent.meanTotalSleepTime.toMinutes(), lowerIsBetter = false)
+            rows += minutesRow(OutcomeMetric.SLEEP_ONSET, baseline.meanSleepOnsetLatency.toMinutes(), recent.meanSleepOnsetLatency.toMinutes(), lowerIsBetter = true, text)
+            rows += minutesRow(OutcomeMetric.AWAKE_AT_NIGHT, baseline.meanWakeAfterSleepOnset.toMinutes(), recent.meanWakeAfterSleepOnset.toMinutes(), lowerIsBetter = true, text)
+            rows += minutesRow(OutcomeMetric.TOTAL_SLEEP, baseline.meanTotalSleepTime.toMinutes(), recent.meanTotalSleepTime.toMinutes(), lowerIsBetter = false, text)
             rows += OutcomeRow(
                 OutcomeMetric.EFFICIENCY,
-                FrenchFormat.percent(baseline.sleepEfficiency),
-                FrenchFormat.percent(recent.sleepEfficiency),
+                text.percent(baseline.sleepEfficiency),
+                text.percent(recent.sleepEfficiency),
                 trend(recent.sleepEfficiency - baseline.sleepEfficiency, threshold = 0.02, lowerIsBetter = false),
             )
             rows += OutcomeRow(
                 OutcomeMetric.QUALITY,
-                qualityText(baseline.meanQualityScore),
-                qualityText(recent.meanQualityScore),
+                text.quality(baseline.meanQualityScore),
+                text.quality(recent.meanQualityScore),
                 trend(recent.meanQualityScore - baseline.meanQualityScore, threshold = 0.3, lowerIsBetter = false),
             )
         }
@@ -88,10 +97,10 @@ object ProgramOutcome {
         return rows
     }
 
-    private fun minutesRow(metric: OutcomeMetric, before: Long, after: Long, lowerIsBetter: Boolean) = OutcomeRow(
+    private fun minutesRow(metric: OutcomeMetric, before: Long, after: Long, lowerIsBetter: Boolean, text: TextFormat) = OutcomeRow(
         metric,
-        FrenchFormat.duration(java.time.Duration.ofMinutes(before)),
-        FrenchFormat.duration(java.time.Duration.ofMinutes(after)),
+        text.duration(java.time.Duration.ofMinutes(before)),
+        text.duration(java.time.Duration.ofMinutes(after)),
         trend((after - before).toDouble(), threshold = 5.0, lowerIsBetter = lowerIsBetter),
     )
 
@@ -101,9 +110,6 @@ object ProgramOutcome {
         else -> Trend.WORSE
     }
 
-    /** Moyenne de la qualité ressentie, sur 5, avec une décimale à la française. */
-    fun qualityText(score: Double): String {
-        val tenths = (score * 10).roundToInt()
-        return "${tenths / 10},${tenths % 10} / 5"
-    }
+    /** Moyenne de la qualité ressentie, sur 5, avec une décimale. */
+    fun qualityText(score: Double, text: TextFormat = Texts.current()): String = text.quality(score)
 }

@@ -51,7 +51,7 @@ import fr.sommelle.core.designsystem.SommelleButton
 import fr.sommelle.core.designsystem.SommelleButtonStyle
 import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.designsystem.TimeStepper
-import fr.sommelle.core.presentation.FrenchFormat
+import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ReminderPlanner
 import fr.sommelle.core.presentation.ReminderSettings
 import kotlinx.coroutines.flow.SharingStarted
@@ -61,7 +61,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 
-private const val PRIVACY_URL = "https://relthdrarxash.github.io/sommelle/confidentialite.html"
 private const val CONTACT_EMAIL = "pilmil.studio@proton.me"
 
 data class SettingsState(
@@ -158,7 +157,7 @@ fun SettingsContent(
             if (state.reminders.morningEnabled) {
                 Text(stringResource(R.string.settings_morning_time), style = MaterialTheme.typography.titleSmall)
                 TimeStepper(
-                    value = FrenchFormat.time(state.morningTime),
+                    value = Texts.current().time(state.morningTime),
                     onMinus = { onMorningShift(-15) },
                     onPlus = { onMorningShift(15) },
                 )
@@ -180,9 +179,10 @@ fun SettingsContent(
             SommelleButton(stringResource(R.string.settings_report), onOpenReport, style = SommelleButtonStyle.Outlined)
         }
 
+        val privacyUrl = stringResource(R.string.settings_privacy_url)
         Section(stringResource(R.string.settings_data)) {
             InfoLine(SommelleIcons.History, stringResource(R.string.settings_data_hint))
-            SommelleButton(stringResource(R.string.settings_privacy), { uriHandler.openSafely(PRIVACY_URL) }, style = SommelleButtonStyle.Quiet)
+            SommelleButton(stringResource(R.string.settings_privacy), { uriHandler.openSafely(privacyUrl) }, style = SommelleButtonStyle.Quiet)
             SommelleButton(stringResource(R.string.settings_erase), { confirmErase = true }, style = SommelleButtonStyle.Quiet)
         }
 
