@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scientific dossier: Sommelle</title>
+  <meta name="description" content="Sommelle scientific dossier for health professionals: CBT-I components, sleep window calculation, safety rules, cognitive exercises, summary for the doctor, limitations and sources.">
+  <link rel="icon" href="../img/icone.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="fr" href="../protocole.html">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#F2C27B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/><path d="M12 7v5l3.2 2.2"/></svg>
+        Sommelle
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="./#methode">The method</a>
+        <a href="why.html">Why</a>
+        <a href="professionals.html" aria-current="page">Health professionals</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="../protocole.html" lang="fr" hreflang="fr">Français</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="wrap">
+    <article class="prose">
+      <p class="eyebrow"><a href="professionals.html">Health professionals</a></p>
+      <h1>Scientific dossier</h1>
+      <p>This dossier describes what Sommelle does, rule by rule, and which guidelines each rule is based on. It is intended for doctors, psychologists, pharmacists and other health professionals who want to know exactly what the app offers their patients before recommending it, or who want to help us improve it.</p>
+      <p>Everything written here matches how the app actually works. The numerical values are gathered in a single place in the source code, which is public.</p>
+
+      <div class="actions no-print">
+        <button class="btn btn-primary" type="button" onclick="window.print()">Print this dossier</button>
+      </div>
+
+      <div class="callout">
+        <p><strong>Status.</strong> Sommelle is a self-help and education tool, not a medical device. It makes no diagnosis, does not replace a consultation and claims no therapeutic effect of its own. Its effectiveness has not been evaluated in a clinical study.</p>
+      </div>
+
+      <nav class="toc" aria-label="Dossier contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#tcci">CBT-I in brief</a></li>
+          <li><a href="#deroule">Program outline</a></li>
+          <li><a href="#agenda">The sleep diary</a></li>
+          <li><a href="#restriction">The sleep window (sleep restriction)</a></li>
+          <li><a href="#stimulus">Stimulus control</a></li>
+          <li><a href="#cognitif">The cognitive exercises</a></li>
+          <li><a href="#securite">Safety and referral</a></li>
+          <li><a href="#suivi">Follow-up: before/after review and summary for the doctor</a></li>
+          <li><a href="#limites">What Sommelle does not do, and points to validate</a></li>
+          <li><a href="#sources">Sources</a></li>
+          <li><a href="#retours">Give us feedback</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="tcci">1. CBT-I in brief</h2>
+      <p>Cognitive behavioral therapy for insomnia (CBT-I) is the first-line treatment for chronic insomnia in adults, ahead of hypnotics, according to European (2023) and American (2021) guidelines. It combines several components: sleep diary, sleep restriction, stimulus control, cognitive work and sleep education.</p>
+      <p>Digital versions of CBT-I are effective in trials, with smaller effects without human support. The main challenge is for the patient to complete the program: this is what guides Sommelle's design (quick entry, nothing that makes the patient feel guilty).</p>
+
+      <h2 id="deroule">2. Program outline</h2>
+      <table>
+        <thead><tr><th>Week</th><th>What the patient experiences</th></tr></thead>
+        <tbody>
+          <tr><td>Before starting</td><td>A 2 to 3 minute entry questionnaire (safety and profile), leading to one of the three pathways described in section 7.</td></tr>
+          <tr><td>0</td><td>Observation week: sleep diary every morning, with no demanding instructions.</td></tr>
+          <tr><td>1</td><td>First sleep window (bedtime and rise time) and stimulus control instructions.</td></tr>
+          <tr><td>2 to 5</td><td>Window adjusted each week; a new cognitive exercise unlocks each week.</td></tr>
+          <tr><td>6</td><td>Before/after review.</td></tr>
+          <tr><td>After that</td><td>Maintenance: the patient can keep up the diary, and the window keeps adjusting.</td></tr>
+        </tbody>
+      </table>
+      <p>A forgotten night can be filled in up to 48 hours later. There is no daily score, no streak to maintain and no red: a bad week is presented as information, never as a failure.</p>
+
+      <h2 id="agenda">3. The sleep diary</h2>
+      <p>The diary uses the Core version of the Consensus Sleep Diary (Carney et al., 2012). Each morning, the patient enters:</p>
+      <ul>
+        <li>the time they went to bed and the time they turned off the light;</li>
+        <li>the time it took to fall asleep;</li>
+        <li>the number and total duration of night awakenings;</li>
+        <li>the time of final awakening and the time they got out of bed;</li>
+        <li>the perceived quality of the night.</li>
+      </ul>
+      <p>Durations are <strong>estimated</strong> from simple choices ("less than 5 min", "15 min", "30 min"…), never timed: asking for exact minutes would push the patient to check the time at night, which maintains insomnia (Tang et al., 2007). An entry takes about twenty seconds. The app checks that times are consistent and flags inconsistencies without blocking the patient.</p>
+
+      <h3>Calculations from the diary</h3>
+      <ul>
+        <li><strong>Time in bed</strong> = out of bed − into bed.</li>
+        <li><strong>Total sleep time</strong> = (final awakening − lights out) − sleep onset latency − wake after sleep onset.</li>
+        <li><strong>Sleep efficiency</strong> = total sleep time ÷ time in bed.</li>
+        <li><strong>Weekly efficiency</strong> = sum of sleep times ÷ sum of times in bed. Each night is therefore weighted by its length.</li>
+      </ul>
+      <p>Time spent in bed before turning off the light counts towards time in bed but not towards sleep, which is consistent with the instruction to keep the bed for sleep.</p>
+
+      <figure class="schema">
+        <div class="schema-scroll">
+<svg class="fig" viewBox="0 0 720 330" role="img" aria-labelledby="fig1-t fig1-d">
+<title id="fig1-t">A night broken down</title>
+<desc id="fig1-d">Into bed at 11 pm, lights out at 11:15 pm, asleep after 45 minutes, two awakenings of 25 and 15 minutes, final awakening at 6:15 am, out of bed at 6:45 am. Time in bed: 7 hours 45 minutes. Total sleep time: 5 hours 35 minutes. Efficiency: 72%.</desc>
+<line class="grid" x1="97.6" y1="104" x2="97.6" y2="154"/>
+<text class="tick" x="97.6" y="170" text-anchor="middle">23:00</text>
+<line class="grid" x1="172.9" y1="104" x2="172.9" y2="154"/>
+<text class="tick" x="172.9" y="170" text-anchor="middle">0:00</text>
+<line class="grid" x1="248.2" y1="104" x2="248.2" y2="154"/>
+<text class="tick" x="248.2" y="170" text-anchor="middle">1:00</text>
+<line class="grid" x1="323.5" y1="104" x2="323.5" y2="154"/>
+<text class="tick" x="323.5" y="170" text-anchor="middle">2:00</text>
+<line class="grid" x1="398.8" y1="104" x2="398.8" y2="154"/>
+<text class="tick" x="398.8" y="170" text-anchor="middle">3:00</text>
+<line class="grid" x1="474.1" y1="104" x2="474.1" y2="154"/>
+<text class="tick" x="474.1" y="170" text-anchor="middle">4:00</text>
+<line class="grid" x1="549.4" y1="104" x2="549.4" y2="154"/>
+<text class="tick" x="549.4" y="170" text-anchor="middle">5:00</text>
+<line class="grid" x1="624.7" y1="104" x2="624.7" y2="154"/>
+<text class="tick" x="624.7" y="170" text-anchor="middle">6:00</text>
+<line class="grid" x1="700.0" y1="104" x2="700.0" y2="154"/>
+<text class="tick" x="700.0" y="170" text-anchor="middle">7:00</text>
+<rect class="idle" x="97.6" y="112" width="18.8" height="34"/>
+<rect class="awake" x="116.5" y="112" width="56.5" height="34"/>
+<rect class="sleep" x="172.9" y="112" width="163.1" height="34"/>
+<rect class="awake" x="336.1" y="112" width="31.4" height="34"/>
+<rect class="sleep" x="367.5" y="112" width="131.8" height="34"/>
+<rect class="awake" x="499.2" y="112" width="18.8" height="34"/>
+<rect class="sleep" x="518.0" y="112" width="125.5" height="34"/>
+<rect class="idle" x="643.5" y="112" width="37.6" height="34"/>
+<text class="in" x="254.5" y="134" text-anchor="middle">sleep</text>
+<text class="in" x="580.8" y="134" text-anchor="middle">sleep</text>
+<line class="mark" x1="97.6" y1="42" x2="97.6" y2="112"/>
+<text class="lab" x="101.6" y="28" text-anchor="start">Into bed</text>
+<text class="val" x="101.6" y="44" text-anchor="start">23:00</text>
+<line class="mark" x1="116.5" y1="74" x2="116.5" y2="112"/>
+<text class="lab" x="120.5" y="60" text-anchor="start">Lights out</text>
+<text class="val" x="120.5" y="76" text-anchor="start">23:15</text>
+<line class="mark" x1="643.5" y1="74" x2="643.5" y2="112"/>
+<text class="lab" x="639.5" y="60" text-anchor="end">Final awakening</text>
+<text class="val" x="639.5" y="76" text-anchor="end">6:15</text>
+<line class="mark" x1="681.2" y1="42" x2="681.2" y2="112"/>
+<text class="lab" x="677.2" y="28" text-anchor="end">Out of bed</text>
+<text class="val" x="677.2" y="44" text-anchor="end">6:45</text>
+<text class="small" x="351.8" y="100" text-anchor="middle">awake 25 min</text>
+<text class="small" x="508.6" y="100" text-anchor="middle">awake 15 min</text>
+<text class="small" x="144.7" y="188" text-anchor="middle">falling asleep 45 min</text>
+<path class="brace" d="M97.6 224 V232 H681.2 V224"/>
+<text class="lab" x="389.4" y="252" text-anchor="middle">Time in bed: 23:00 → 6:45 = 7:45</text>
+<path class="brace" d="M116.5 274 V282 H643.5 V274"/>
+<text class="lab" x="380.0" y="302" text-anchor="middle">Sleep: 7:00 − 45 min − 40 min = 5:35</text>
+</svg>
+        </div>
+        <ul class="legende" aria-hidden="true">
+          <li><span class="sw sw-sleep"></span>Sleep</li>
+          <li><span class="sw sw-awake"></span>Awake in the dark (falling asleep, awakenings)</li>
+          <li><span class="sw sw-idle"></span>In bed, light on or about to get up</li>
+        </ul>
+        <figcaption><strong>Figure 1.</strong> A night as the patient describes it in the diary. Sleep efficiency for the night: 5 h 35 min ÷ 7 h 45 min = <strong>72%</strong>. The fifteen minutes of reading before lights out and the half hour in bed after waking count towards time in bed, not sleep.</figcaption>
+      </figure>
+
+      <h2 id="restriction">4. The sleep window (sleep restriction)</h2>
+      <p>The principle (Spielman et al., 1987): temporarily reduce time in bed to the time actually slept, to consolidate sleep, then gradually extend it.</p>
+      <table>
+        <thead><tr><th>Rule</th><th>Value in Sommelle</th></tr></thead>
+        <tbody>
+          <tr><td>Observation period before any restriction</td><td>7 days</td></tr>
+          <tr><td>Logged nights required</td><td>At least 5 out of 7, otherwise the window is kept and the patient is told</td></tr>
+          <tr><td>Initial window</td><td>Mean total sleep time during the observation week, rounded up to the next quarter hour</td></tr>
+          <tr><td>Minimum length</td><td>5 h 30 min; 6 h for people at risk if drowsy; never below 5 h, whatever the setting</td></tr>
+          <tr><td>Maximum length</td><td>9 h</td></tr>
+          <tr><td>Anchor</td><td>Fixed rise time, chosen by the patient, 7 days a week; the bedtime follows from it</td></tr>
+          <tr><td>Weekly adjustment</td><td>Efficiency ≥ 85%: +15 min; &lt; 80%: −15 min (without going below the minimum); in between: unchanged</td></tr>
+          <tr><td>From age 65</td><td>Thresholds lowered by 5 points (80% and 75%), as sleep is naturally more fragmented</td></tr>
+        </tbody>
+      </table>
+
+      <figure class="schema">
+        <div class="schema-scroll">
+<svg class="fig" viewBox="0 0 720 200" role="img" aria-labelledby="fig3-t fig3-d">
+<title id="fig3-t">Weekly adjustment rule</title>
+<desc id="fig3-d">Under 65: efficiency below 80%, the window shrinks by 15 minutes; from 80 to 85%, it is unchanged; 85% and above, it grows by 15 minutes. From age 65, the thresholds are 75% and 80%.</desc>
+<text class="lab" x="10" y="54">Under 65</text>
+<rect class="down" x="170.0" y="30" width="176.7" height="38"/>
+<text class="in2" x="258.3" y="54" text-anchor="middle">−15 min</text>
+<rect class="same" x="346.7" y="30" width="88.3" height="38"/>
+<text class="in2" x="390.8" y="54" text-anchor="middle">unchanged</text>
+<rect class="up" x="435.0" y="30" width="265.0" height="38"/>
+<text class="in2" x="567.5" y="54" text-anchor="middle">+15 min</text>
+<line class="mark" x1="346.7" y1="26" x2="346.7" y2="72"/>
+<line class="mark" x1="435.0" y1="26" x2="435.0" y2="72"/>
+<text class="lab" x="10" y="124">65 and over</text>
+<rect class="down" x="170.0" y="100" width="88.3" height="38"/>
+<text class="in2" x="214.2" y="124" text-anchor="middle">−15 min</text>
+<rect class="same" x="258.3" y="100" width="88.3" height="38"/>
+<text class="in2" x="302.5" y="124" text-anchor="middle">unchanged</text>
+<rect class="up" x="346.7" y="100" width="353.3" height="38"/>
+<text class="in2" x="523.3" y="124" text-anchor="middle">+15 min</text>
+<line class="mark" x1="258.3" y1="96" x2="258.3" y2="142"/>
+<line class="mark" x1="346.7" y1="96" x2="346.7" y2="142"/>
+<text class="tick" x="170.0" y="168" text-anchor="middle">70%</text>
+<text class="tick" x="258.3" y="168" text-anchor="middle">75%</text>
+<text class="tick" x="346.7" y="168" text-anchor="middle">80%</text>
+<text class="tick" x="435.0" y="168" text-anchor="middle">85%</text>
+<text class="tick" x="523.3" y="168" text-anchor="middle">90%</text>
+<text class="tick" x="611.7" y="168" text-anchor="middle">95%</text>
+<text class="tick" x="700.0" y="168" text-anchor="middle">100%</text>
+<text class="small" x="346.7" y="190" text-anchor="middle">Weekly efficiency (sleep time ÷ time in bed)</text>
+</svg>
+        </div>
+        <figcaption><strong>Figure 2.</strong> Each week, the efficiency calculated over the logged nights decides the adjustment. The window never goes below the minimum length and never exceeds 9 h.</figcaption>
+      </figure>
+
+      <h3>Example</h3>
+      <p>During the observation week, a 50-year-old patient spends on average 8 h 30 min in bed and sleeps 5 h 50 min: her efficiency is 69%. Her initial window is 6 h (5 h 50 min rounded up to the next quarter hour). She chooses to get up at 6:45 am: she will go to bed at 12:45 am.</p>
+      <p>The following week, she sleeps 88% of her time in bed. The window grows by 15 minutes: bedtime at 12:30 am. If her efficiency had stayed between 80 and 85%, the window would not have changed.</p>
+
+      <figure class="schema">
+        <div class="schema-scroll">
+<svg class="fig" viewBox="0 0 720 360" role="img" aria-labelledby="fig2-t fig2-d">
+<title id="fig2-t">The sleep window over the weeks</title>
+<desc id="fig2-d">Example. Observation: in bed from 10:15 pm to 6:45 am, efficiency 69%. Week 1: window from 12:45 am to 6:45 am, efficiency 88%, the window grows. Week 2: 12:30 am, 91%, it grows. Week 3: 12:15 am, 83%, unchanged. Week 4: 12:15 am, 87%, it grows. Week 5: midnight, 86%, it grows to 7 hours.</desc>
+<line class="grid" x1="150.0" y1="42" x2="150.0" y2="306"/>
+<text class="tick" x="150.0" y="34" text-anchor="middle">22:00</text>
+<line class="grid" x1="190.0" y1="42" x2="190.0" y2="306"/>
+<text class="tick" x="190.0" y="34" text-anchor="middle">23:00</text>
+<line class="grid" x1="230.0" y1="42" x2="230.0" y2="306"/>
+<text class="tick" x="230.0" y="34" text-anchor="middle">0:00</text>
+<line class="grid" x1="270.0" y1="42" x2="270.0" y2="306"/>
+<text class="tick" x="270.0" y="34" text-anchor="middle">1:00</text>
+<line class="grid" x1="310.0" y1="42" x2="310.0" y2="306"/>
+<text class="tick" x="310.0" y="34" text-anchor="middle">2:00</text>
+<line class="grid" x1="350.0" y1="42" x2="350.0" y2="306"/>
+<text class="tick" x="350.0" y="34" text-anchor="middle">3:00</text>
+<line class="grid" x1="390.0" y1="42" x2="390.0" y2="306"/>
+<text class="tick" x="390.0" y="34" text-anchor="middle">4:00</text>
+<line class="grid" x1="430.0" y1="42" x2="430.0" y2="306"/>
+<text class="tick" x="430.0" y="34" text-anchor="middle">5:00</text>
+<line class="grid" x1="470.0" y1="42" x2="470.0" y2="306"/>
+<text class="tick" x="470.0" y="34" text-anchor="middle">6:00</text>
+<line class="grid" x1="510.0" y1="42" x2="510.0" y2="306"/>
+<text class="tick" x="510.0" y="34" text-anchor="middle">7:00</text>
+<line class="anchor" x1="500.0" y1="42" x2="500.0" y2="314"/>
+<text class="lab" x="500.0" y="332" text-anchor="middle">Fixed rise time 6:45</text>
+<text class="head" x="538" y="34">Efficiency, decision</text>
+<text class="lab" x="10" y="72">Observation</text>
+<rect class="bed" x="160.0" y="56" width="340.0" height="22"/>
+<rect class="sleep" x="160.0" y="71" width="234.6" height="7"/>
+<text class="val" x="154.0" y="72" text-anchor="end">22:15</text>
+<text class="val" x="538" y="66">69%</text>
+<text class="small" x="538" y="82">initial window 6:00</text>
+<text class="lab" x="10" y="116">Week 1</text>
+<rect class="bed" x="260.0" y="100" width="240.0" height="22"/>
+<rect class="sleep" x="260.0" y="115" width="211.2" height="7"/>
+<text class="val" x="254.0" y="116" text-anchor="end">0:45</text>
+<text class="val" x="538" y="110">88%</text>
+<text class="small" x="538" y="126">≥ 85%: +15 min</text>
+<text class="lab" x="10" y="160">Week 2</text>
+<rect class="bed" x="250.0" y="144" width="250.0" height="22"/>
+<rect class="sleep" x="250.0" y="159" width="227.5" height="7"/>
+<text class="val" x="244.0" y="160" text-anchor="end">0:30</text>
+<text class="val" x="538" y="154">91%</text>
+<text class="small" x="538" y="170">≥ 85%: +15 min</text>
+<text class="lab" x="10" y="204">Week 3</text>
+<rect class="bed" x="240.0" y="188" width="260.0" height="22"/>
+<rect class="sleep" x="240.0" y="203" width="215.8" height="7"/>
+<text class="val" x="234.0" y="204" text-anchor="end">0:15</text>
+<text class="val" x="538" y="198">83%</text>
+<text class="small" x="538" y="214">80-85%: unchanged</text>
+<text class="lab" x="10" y="248">Week 4</text>
+<rect class="bed" x="240.0" y="232" width="260.0" height="22"/>
+<rect class="sleep" x="240.0" y="247" width="226.2" height="7"/>
+<text class="val" x="234.0" y="248" text-anchor="end">0:15</text>
+<text class="val" x="538" y="242">87%</text>
+<text class="small" x="538" y="258">≥ 85%: +15 min</text>
+<text class="lab" x="10" y="292">Week 5</text>
+<rect class="bed" x="230.0" y="276" width="270.0" height="22"/>
+<rect class="sleep" x="230.0" y="291" width="232.2" height="7"/>
+<text class="val" x="224.0" y="292" text-anchor="end">0:00</text>
+<text class="val" x="538" y="286">86%</text>
+<text class="small" x="538" y="302">≥ 85%: +15 min</text>
+</svg>
+        </div>
+        <ul class="legende" aria-hidden="true">
+          <li><span class="sw sw-bed"></span>Time spent in bed (the window)</li>
+          <li><span class="sw sw-sleep"></span>Share of that time spent asleep</li>
+        </ul>
+        <figcaption><strong>Figure 3.</strong> The same example over six weeks. The rise time does not move; only the bedtime moves earlier or later by a quarter of an hour. The window starts clearly shorter than the time spent in bed during observation, then grows as sleep fills the time in bed.</figcaption>
+      </figure>
+
+      <h3>Precautions</h3>
+      <p>Restriction causes transient daytime sleepiness, objectively measurable (Kyle et al., 2014). A warning about driving and dangerous activities is shown at the start of the program. Restriction is never offered in the situations listed in section 7.</p>
+
+      <h2 id="stimulus">5. Stimulus control</h2>
+      <p>Stimulus control (Bootzin, 1972) aims to re-associate the bed with sleep. In Sommelle, it relies on three elements:</p>
+      <ul>
+        <li>a <strong>fixed rise time</strong>, the same 7 days a week, even after a bad night;</li>
+        <li>a <strong>bedtime</strong> given by the sleep window, with an evening reminder that explains why;</li>
+        <li>an <strong>"I can't sleep"</strong> button that opens, at night, an almost black screen in warm colors and reduced brightness, with no time or numbers. It recalls the instruction: get up, go to another room, do something calm away from screens, go back to bed when sleep comes. It closes by itself after a minute and a half.</li>
+      </ul>
+      <p>The other classic instructions (keep the bed for sleep, avoid naps or limit them to a short nap before 3 pm) are not yet presented in the app: they should be reinforced during consultations.</p>
+
+      <h2 id="cognitif">6. The cognitive exercises</h2>
+      <p>Five short exercises (about five minutes each) unlock over the course of the program. They remain available once unlocked.</p>
+      <table>
+        <thead><tr><th>Week</th><th>Exercise</th><th>What the patient does</th><th>Technique</th></tr></thead>
+        <tbody>
+          <tr><td>2</td><td>Ideas about sleep</td><td>Spots five common beliefs ("I need 8 hours", "I have to catch up in bed"…) and reads a more nuanced version of each</td><td>Cognitive restructuring of dysfunctional beliefs (Morin)</td></tr>
+          <tr><td>2</td><td>Putting your day to rest</td><td>Early in the evening, writes down their concerns and the next small action for each, then puts the sheet away</td><td>Wind-down time and "constructive worry" (Carney and Waters, 2006)</td></tr>
+          <tr><td>3</td><td>Stop chasing sleep</td><td>In bed, calmly keeps their eyes open in the dark instead of trying to sleep</td><td>Paradoxical intention (Espie and Lindsay, 1985)</td></tr>
+          <tr><td>4</td><td>Back to the most likely</td><td>Answers four questions about what they fear for the next day and what actually happened the other times</td><td>Decatastrophizing</td></tr>
+          <tr><td>5</td><td>Relaxing the body</td><td>Tenses then relaxes six muscle groups, in the evening</td><td>Progressive muscle relaxation (Jacobson)</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="securite">7. Safety and referral</h2>
+      <p>The entry questionnaire leads to one of three pathways: <strong>full program</strong>, <strong>program without restriction</strong> (stimulus control, cognitive exercises, education), or <strong>referral to a doctor</strong> without a program.</p>
+      <table>
+        <thead><tr><th>Reported situation</th><th>What the app does</th></tr></thead>
+        <tbody>
+          <tr><td>Loud snoring with observed breathing pauses, or marked daytime sleepiness</td><td>No restriction; advice to see a doctor (possible sleep apnea)</td></tr>
+          <tr><td>Bipolar disorder, epilepsy</td><td>No restriction; advice to talk to the treating doctor</td></tr>
+          <tr><td>Pregnancy</td><td>No restriction</td></tr>
+          <tr><td>Driving for work, dangerous machinery, safety-critical job</td><td>Restriction with the minimum raised to 6 h and a stronger warning, or no restriction, as the patient chooses</td></tr>
+          <tr><td>Very late schedule with normal sleep once asleep</td><td>No restriction; possible delayed sleep phase flagged and advice to see a doctor</td></tr>
+          <tr><td>Shift or night work, nights interrupted by someone else (infant, sick relative), under 18</td><td>Outside the app's scope; referral</td></tr>
+          <tr><td>Distress expressed</td><td>Crisis line highlighted (3114, the French suicide prevention line, always present in the app, with advice to contact a local crisis line elsewhere)</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="suivi">8. Follow-up: before/after review and summary for the doctor</h2>
+      <h3>Before/after review</h3>
+      <p>From week 6, the app compares the observation week with the last 7 nights: sleep onset latency, wake after sleep onset, total sleep time, efficiency and perceived quality. The change is written out in words: "Improving", "Stable" or "Declining".</p>
+      <p>A question about daytime impact (from 0 to 4) is asked at the start and end of the program. <strong>It is not a validated scale.</strong> The Insomnia Severity Index (ISI) would be the reference tool, but it is subject to a license and is not included at this time.</p>
+
+      <h3>Summary for the doctor</h3>
+      <p>The patient can show you a summary directly on screen, or send it to you:</p>
+      <ul>
+        <li><strong>as a PDF</strong>: pathway followed, current window, week-by-week table, before/after review and details of the last 28 nights;</li>
+        <li><strong>as a spreadsheet</strong> (CSV file, readable in Excel or LibreOffice): the full diary.</li>
+      </ul>
+      <p>These files are created on the phone and it is the patient who chooses to share them (messaging, printing…). Sommelle has no server and sends nothing by itself.</p>
+
+      <h2 id="limites">9. What Sommelle does not do, and points to validate</h2>
+      <ul>
+        <li>It does not diagnose insomnia or any other sleep disorder.</li>
+        <li>It does not manage tapering or stopping hypnotics, which remains for the doctor to supervise.</li>
+        <li>It does not offer follow-up by a professional: it can, however, support existing follow-up through the summary.</li>
+        <li>It does not yet present all sleep hygiene and stimulus control instructions (see section 5).</li>
+        <li>Its own effectiveness has not been evaluated in a clinical study.</li>
+      </ul>
+      <p>Several parameters are reasoned design choices rather than established values. We would like them to be reviewed by sleep professionals:</p>
+      <ul>
+        <li>the minimum length of 5 h 30 min and the adjustment thresholds, especially the lowering from age 65;</li>
+        <li>calculating weekly efficiency on totals rather than as a mean of nights, and rounding the initial window up;</li>
+        <li>the maximum length of 9 h;</li>
+        <li>the content of the cognitive exercises and the order in which they unlock;</li>
+        <li>the daytime impact question, pending a validated scale;</li>
+        <li>the referral rules and the wording of messages, including the drowsiness warning and when it is shown.</li>
+      </ul>
+
+      <h2 id="sources">10. Sources</h2>
+      <ul class="refs">
+        <li>Riemann D. et al. The European Insomnia Guideline: an update on the diagnosis and treatment of insomnia 2023. <em>J Sleep Res</em>, 2023.</li>
+        <li>Edinger J.D. et al. Behavioral and psychological treatments for chronic insomnia disorder in adults: an American Academy of Sleep Medicine clinical practice guideline. <em>J Clin Sleep Med</em>, 2021.</li>
+        <li>Zachariae R. et al. Efficacy of internet-delivered cognitive-behavioral therapy for insomnia: a systematic review and meta-analysis of randomized controlled trials. <em>Sleep Med Rev</em>, 2016.</li>
+        <li>Soh H.L. et al. Efficacy of digital cognitive behavioural therapy for insomnia: a meta-analysis of randomised controlled trials. <em>Sleep Med Rev</em>, 2020.</li>
+        <li>Carney C.E. et al. The Consensus Sleep Diary: standardizing prospective sleep self-monitoring. <em>Sleep</em>, 2012.</li>
+        <li>Spielman A.J., Saskin P., Thorpy M.J. Treatment of chronic insomnia by restriction of time in bed. <em>Sleep</em>, 1987.</li>
+        <li>Kyle S.D. et al. Sleep restriction therapy for insomnia is associated with reduced objective total sleep time, increased daytime somnolence, and objectively impaired vigilance. <em>Sleep</em>, 2014.</li>
+        <li>Bootzin R.R. Stimulus control treatment for insomnia. <em>Proceedings of the American Psychological Association</em>, 1972.</li>
+        <li>Morin C.M., Vallières A., Ivers H. Dysfunctional Beliefs and Attitudes about Sleep (DBAS): validation of a brief version (DBAS-16). <em>Sleep</em>, 2007.</li>
+        <li>Carney C.E., Waters W.F. Effects of a structured problem-solving procedure on pre-sleep cognitive arousal in college students with insomnia. <em>Behav Sleep Med</em>, 2006.</li>
+        <li>Espie C.A., Lindsay W.R. Paradoxical intention in the treatment of chronic insomnia. <em>Behav Res Ther</em>, 1985.</li>
+        <li>Tang N.K.Y., Schmidt D.A., Harvey A.G. Sleeping with the enemy: clock monitoring in the maintenance of insomnia. <em>J Behav Ther Exp Psychiatry</em>, 2007.</li>
+        <li>Baron K.G. et al. Orthosomnia: are some patients taking the quantified self too far? <em>J Clin Sleep Med</em>, 2017.</li>
+      </ul>
+
+      <h2 id="retours">11. Give us feedback</h2>
+      <p>Your comments on the protocol, thresholds or wording are valuable, whether you are a sleep physician, a psychologist trained in CBT-I, a general practitioner or a pharmacist. Write to us at <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>. If you use GitHub, you can also open an issue on <a href="https://github.com/Relthdrarxash/sommelle/issues">the project's issue tracker</a>.</p>
+      <p class="small">For those who want to check how it works in the code: all the values in this dossier are grouped in the <code>ProtocolConfig.kt</code> file of the <a href="https://github.com/Relthdrarxash/sommelle">source code</a>, with a version number changed at each update.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="why.html">Why these choices</a>
+        <a href="./">Home</a>
+        <a href="professionals.html">Health professionals</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="https://github.com/Relthdrarxash/sommelle">Source code</a>
+        <a href="mailto:pilmil.studio@proton.me">Contact</a>
+      </div>
+      <p>Sommelle is free software distributed under the GNU GPL v3.0 license. It is not a medical device.</p>
+    </div>
+  </footer>
+</body>
+</html>

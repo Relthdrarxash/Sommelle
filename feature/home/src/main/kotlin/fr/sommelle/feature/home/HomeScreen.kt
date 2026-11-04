@@ -44,6 +44,9 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 
 @Composable
 fun HomeScreen(
@@ -173,6 +176,7 @@ private fun TimeTile(label: String, value: String, modifier: Modifier) {
     Surface(modifier = modifier, shape = MaterialTheme.shapes.medium, color = Color.White.copy(alpha = 0.12f), contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
             Text(label, style = MaterialTheme.typography.bodySmall, color = SommelleColors.LavenderOnNight)
+            val headline = MaterialTheme.typography.headlineMedium
             // « 12:30 am » : le suffixe plus petit garde l'heure sur une ligne dans la tuile.
             val suffix = value.substringAfterLast('\u00A0', "").takeIf { it == "am" || it == "pm" }
             val text = if (suffix == null) {
@@ -183,7 +187,15 @@ private fun TimeTile(label: String, value: String, modifier: Modifier) {
                     withStyle(SpanStyle(fontSize = MaterialTheme.typography.titleMedium.fontSize)) { append(suffix) }
                 }
             }
-            Text(text, style = MaterialTheme.typography.headlineMedium)
+            // Sur un écran étroit ou avec une grande taille de texte, on réduit la taille plutôt que de couper l'heure.
+            var style by remember(value) { mutableStateOf(headline) }
+            Text(
+                text,
+                style = style,
+                maxLines = 1,
+                softWrap = false,
+                onTextLayout = { if (it.didOverflowWidth && style.fontSize.value > 14f) style = style.copy(fontSize = style.fontSize * 0.9f) },
+            )
         }
     }
 }
