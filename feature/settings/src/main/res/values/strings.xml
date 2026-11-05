@@ -14,6 +14,8 @@
     <string name="settings_report_hint">A summary of your program and your diary, to show or share.</string>
     <string name="settings_data">Your data</string>
     <string name="settings_data_hint">Everything stays on your phone. Nothing is sent.</string>
+    <string name="settings_import_csv">Import a CSV diary</string>
+    <string name="settings_import_result">%1$d night(s) imported into your diary.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/en/privacy.html</string>
     <string name="settings_privacy">Privacy policy</string>
     <string name="settings_erase">Erase all my data</string>

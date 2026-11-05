@@ -2,11 +2,14 @@ package fr.sommelle.core.presentation
 
 import fr.sommelle.core.model.DiaryEntry
 import fr.sommelle.core.model.ScreeningResult
+import fr.sommelle.core.model.SleepQuality
 import fr.sommelle.core.protocol.NightMetrics
 import fr.sommelle.core.protocol.PeriodSummary
 import fr.sommelle.core.protocol.ProgramPlanner
 import fr.sommelle.core.protocol.ProtocolConfig
+import java.time.Duration
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 /** Une ligne du tableau hebdomadaire du résumé. */
 data class ReportWeek(
@@ -182,4 +185,43 @@ object DiaryCsv {
             ).append("\r\n")
         }
     }
+
+    /**
+     * Restaure des nuits depuis un fichier CSV exporté par Sommelle (séparateur `;` ou `,`).
+     * Les lignes d'en-tête ou mal formées sont ignorées sans erreur.
+     */
+    fun parse(csv: String): List<DiaryEntry> =
+        csv.removePrefix(BOM)
+            .lineSequence()
+            .map { it.trim() }
+            .filter { it.isNotEmpty() && !it.startsWith("nuit") }
+            .mapNotNull { line ->
+                val delimiter = if (';' in line) ';' else ','
+                val cols = line.split(delimiter)
+                if (cols.size < 9) return@mapNotNull null
+                runCatching {
+                    val nightOf = LocalDate.parse(cols[0].trim())
+                    val bedTime = LocalDateTime.parse(cols[1].trim())
+                    val lightsOutTime = LocalDateTime.parse(cols[2].trim())
+                    val sleepOnsetLatency = Duration.ofMinutes(cols[3].trim().toLong().coerceAtLeast(0))
+                    val awakeningCount = cols[4].trim().toInt().coerceAtLeast(0)
+                    val wakeAfterSleepOnset = Duration.ofMinutes(cols[5].trim().toLong().coerceAtLeast(0))
+                    val finalWakeTime = LocalDateTime.parse(cols[6].trim())
+                    val outOfBedTime = LocalDateTime.parse(cols[7].trim())
+                    val qualityScore = cols[8].trim().toInt().coerceIn(1, 5)
+                    val quality = SleepQuality.entries.first { it.score == qualityScore }
+                    DiaryEntry(
+                        nightOf = nightOf,
+                        bedTime = bedTime,
+                        lightsOutTime = lightsOutTime,
+                        sleepOnsetLatency = sleepOnsetLatency,
+                        awakeningCount = awakeningCount,
+                        wakeAfterSleepOnset = wakeAfterSleepOnset,
+                        finalWakeTime = finalWakeTime,
+                        outOfBedTime = outOfBedTime,
+                        quality = quality,
+                    )
+                }.getOrNull()
+            }
+            .toList()
 }

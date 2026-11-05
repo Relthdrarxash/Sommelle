@@ -1,5 +1,6 @@
 package fr.sommelle.feature.cognitive
 
+import android.content.Context
 import androidx.annotation.ArrayRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
@@ -17,12 +18,19 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -39,6 +47,8 @@ import fr.sommelle.core.designsystem.BackPill
 import fr.sommelle.core.designsystem.ScreenScaffold
 import fr.sommelle.core.designsystem.ScreenTitle
 import fr.sommelle.core.designsystem.SommelleButton
+import fr.sommelle.core.designsystem.SommelleButtonStyle
+import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.presentation.CognitiveModule
 import fr.sommelle.core.protocol.ProgramPlanner
@@ -140,17 +150,84 @@ private fun ModuleRow(module: CognitiveModule, done: Boolean, onClick: () -> Uni
 fun ModuleScreen(repository: SommelleRepository, module: CognitiveModule, onBack: () -> Unit) {
     val viewModel: ModulesViewModel = viewModel { ModulesViewModel(repository) }
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val context = LocalContext.current
+    val prefs = remember(context) { context.getSharedPreferences("sommelle_evening_notepad", Context.MODE_PRIVATE) }
+    var worryText by rememberSaveable { mutableStateOf(prefs.getString("worry", "") ?: "") }
+    var actionText by rememberSaveable { mutableStateOf(prefs.getString("action", "") ?: "") }
+    var putAway by rememberSaveable { mutableStateOf(prefs.getBoolean("put_away", false)) }
+    var isSpeaking by remember { mutableStateOf(false) }
+    val guide = remember(context) {
+        VoiceExerciseGuide(context, onFinished = { isSpeaking = false })
+    }
+    DisposableEffect(guide) {
+        onDispose { guide.release() }
+    }
+    val intro = stringResource(module.intro())
+    val steps = stringArrayResource(module.steps()).toList()
+    val pauseMs = if (module == CognitiveModule.RELAXATION) 12_000L else 4_500L
+
     ModuleContent(
         module = module,
         done = state?.completed?.contains(module) == true,
-        onBack = onBack,
-        onFinish = { viewModel.complete(module, onBack) },
+        onBack = {
+            guide.stop()
+            onBack()
+        },
+        onFinish = {
+            guide.stop()
+            viewModel.complete(module, onBack)
+        },
+        isSpeaking = isSpeaking,
+        onToggleVoice = {
+            if (isSpeaking) {
+                guide.stop()
+                isSpeaking = false
+            } else {
+                isSpeaking = true
+                guide.start(intro, steps, pauseMs)
+            }
+        },
+        worryText = worryText,
+        onWorryChange = {
+            worryText = it
+            prefs.edit().putString("worry", it).apply()
+        },
+        actionText = actionText,
+        onActionChange = {
+            actionText = it
+            prefs.edit().putString("action", it).apply()
+        },
+        worryPutAway = putAway,
+        onPutAwayChange = {
+            putAway = it
+            prefs.edit().putBoolean("put_away", it).apply()
+        },
+        onClearWorry = {
+            worryText = ""
+            actionText = ""
+            putAway = false
+            prefs.edit().clear().apply()
+        },
     )
 }
 
 /** Un exercice : une introduction, puis des étapes courtes, une par carte. */
 @Composable
-fun ModuleContent(module: CognitiveModule, done: Boolean, onBack: () -> Unit, onFinish: () -> Unit) {
+fun ModuleContent(
+    module: CognitiveModule,
+    done: Boolean,
+    onBack: () -> Unit,
+    onFinish: () -> Unit,
+    isSpeaking: Boolean = false,
+    onToggleVoice: () -> Unit = {},
+    worryText: String = "",
+    onWorryChange: (String) -> Unit = {},
+    actionText: String = "",
+    onActionChange: (String) -> Unit = {},
+    worryPutAway: Boolean = false,
+    onPutAwayChange: (Boolean) -> Unit = {},
+    onClearWorry: () -> Unit = {},
+) {
     val steps = stringArrayResource(module.steps())
     ScreenScaffold(
         bottom = {
@@ -164,6 +241,21 @@ fun ModuleContent(module: CognitiveModule, done: Boolean, onBack: () -> Unit, on
         BackPill(onBack)
         ScreenTitle(stringResource(module.title()))
         Text(stringResource(module.intro()), style = MaterialTheme.typography.bodyLarge)
+
+        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            SommelleButton(
+                text = stringResource(if (isSpeaking) R.string.cog_voice_stop else R.string.cog_voice_start),
+                onClick = onToggleVoice,
+                style = SommelleButtonStyle.Outlined,
+                icon = SommelleIcons.Moon,
+            )
+            Text(
+                text = stringResource(R.string.cog_voice_hint),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+
         steps.forEachIndexed { index, step ->
             Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface, shadowElevation = 1.dp) {
                 Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -174,6 +266,74 @@ fun ModuleContent(module: CognitiveModule, done: Boolean, onBack: () -> Unit, on
                         modifier = Modifier.semantics { heading() },
                     )
                     Text(step, style = MaterialTheme.typography.bodyLarge)
+                }
+            }
+        }
+
+        if (module == CognitiveModule.WIND_DOWN) {
+            WorryNotepadCard(
+                worryText = worryText,
+                onWorryChange = onWorryChange,
+                actionText = actionText,
+                onActionChange = onActionChange,
+                putAway = worryPutAway,
+                onPutAwayChange = onPutAwayChange,
+                onClear = onClearWorry,
+            )
+        }
+    }
+}
+
+@Composable
+private fun WorryNotepadCard(
+    worryText: String,
+    onWorryChange: (String) -> Unit,
+    actionText: String,
+    onActionChange: (String) -> Unit,
+    putAway: Boolean,
+    onPutAwayChange: (Boolean) -> Unit,
+    onClear: () -> Unit,
+) {
+    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface, shadowElevation = 1.dp) {
+        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(
+                stringResource(R.string.cog_worry_card_title),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.semantics { heading() },
+            )
+            if (putAway) {
+                Text(stringResource(R.string.cog_worry_stored), style = MaterialTheme.typography.bodyMedium)
+                SommelleButton(
+                    text = stringResource(R.string.cog_worry_reopen),
+                    onClick = { onPutAwayChange(false) },
+                    style = SommelleButtonStyle.Quiet,
+                )
+            } else {
+                OutlinedTextField(
+                    value = worryText,
+                    onValueChange = onWorryChange,
+                    label = { Text(stringResource(R.string.cog_worry_field_label)) },
+                    modifier = Modifier.fillMaxWidth(),
+                    minLines = 2,
+                )
+                OutlinedTextField(
+                    value = actionText,
+                    onValueChange = onActionChange,
+                    label = { Text(stringResource(R.string.cog_worry_action_label)) },
+                    modifier = Modifier.fillMaxWidth(),
+                    minLines = 1,
+                )
+                SommelleButton(
+                    text = stringResource(R.string.cog_worry_put_away),
+                    onClick = { onPutAwayChange(true) },
+                    style = SommelleButtonStyle.Outlined,
+                )
+                if (worryText.isNotBlank() || actionText.isNotBlank()) {
+                    SommelleButton(
+                        text = stringResource(R.string.cog_worry_clear),
+                        onClick = onClear,
+                        style = SommelleButtonStyle.Quiet,
+                    )
                 }
             }
         }

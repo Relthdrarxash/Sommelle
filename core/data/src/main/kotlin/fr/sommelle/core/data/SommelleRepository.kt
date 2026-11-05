@@ -11,6 +11,7 @@ import fr.sommelle.core.data.db.ModuleProgressEntity
 import fr.sommelle.core.data.db.SettingsEntity
 import fr.sommelle.core.presentation.CognitiveModule
 import fr.sommelle.core.presentation.DaytimeImpact
+import fr.sommelle.core.presentation.DiaryCsv
 import fr.sommelle.core.presentation.ProgramEngine
 import fr.sommelle.core.presentation.ReminderSettings
 import fr.sommelle.core.presentation.StoredWindow
@@ -89,6 +90,14 @@ class SommelleRepository(
     suspend fun previousEntry(nightOf: LocalDate): DiaryEntry? = dao.entryBefore(nightOf)?.toModel()
 
     suspend fun saveEntry(entry: DiaryEntry) = dao.upsertEntry(entry.toEntity())
+
+    /** Restaure les nuits issues d'un fichier CSV exporté par Sommelle et recalcule les fenêtres. */
+    suspend fun importCsv(content: String): Int {
+        val parsed = DiaryCsv.parse(content)
+        parsed.forEach { dao.upsertEntry(it.toEntity()) }
+        if (parsed.isNotEmpty()) synchronize()
+        return parsed.size
+    }
 
     /**
      * Enregistre les fenêtres dues (initiale et ajustements hebdomadaires, y compris en rattrapage

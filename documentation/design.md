@@ -98,7 +98,9 @@ D'où ces choix :
 
 **Le matin : remplir l'agenda.** Interface claire et douce, grandes cibles, un rappel optionnel une demi-heure après l'heure de lever.
 
-**Le soir : l'heure du coucher.** Un rappel optionnel une demi-heure avant le début de la fenêtre, qui explique plutôt qu'il n'ordonne : « Restez debout jusque-là : c'est ce qui rend le sommeil plus profond. » La restriction est la partie la plus contre-intuitive du programme, et celle où l'on décroche le plus.
+**Le soir : l'heure du coucher et la mise au repos.** Un rappel optionnel une demi-heure avant le début de la fenêtre, qui explique plutôt qu'il n'ordonne : « Restez debout jusque-là : c'est ce qui rend le sommeil plus profond. » La restriction est la partie la plus contre-intuitive du programme, et celle où l'on décroche le plus. Pour éviter de regarder l'écran pendant la relaxation musculaire progressive ou les exercices cognitifs, un mode **« Écouter les étapes les yeux fermés »** utilise la synthèse vocale hors ligne du téléphone à débit ralenti, ponctuée d'une cloche acoustique douce générée mathématiquement (0 Mo d'audio embarqué), et l'exercice *Mettre sa journée au repos* inclut un **carnet du soir interactif** sur le téléphone que l'on peut ranger pour la nuit ou effacer d'un geste.
+
+**Sur l'écran d'accueil et lors d'un changement de téléphone :** un **widget discret** rappelle la fenêtre de sommeil du soir et ouvre directement l'agenda au réveil, et les réglages permettent d'**importer un agenda CSV** exporté depuis Sommelle.
 
 **La nuit : « Je n'arrive pas à dormir ».** Un gros bouton sur l'accueil ouvre un écran presque noir, aux couleurs chaudes, avec la luminosité abaissée et la barre d'état masquée. Il rappelle la règle du contrôle du stimulus (se lever, aller dans une autre pièce, revenir quand le sommeil revient). Aucun chiffre, aucune heure, aucun défilement. L'écran se ferme seul au bout d'une minute et demie : on ne doit pas rester sur son téléphone au lit.
 

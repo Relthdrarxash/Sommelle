@@ -18,10 +18,10 @@ Over six to eight weeks:
 - **A sleep diary** is filled in each morning in about twenty seconds, without a keyboard, with reassuring guidance during the first week of sleep restriction.
 - **A sleep window** (bedtime and rise time) is calculated after an observation week, then adjusted each week based on your nights.
 - **A night screen**, almost black, reminds you what to do when sleep does not come.
-- **Five cognitive exercises** unlock over the program: ideas about sleep, putting the day to rest, paradoxical intention, decatastrophizing, relaxation.
+- **Five cognitive exercises** unlock over the program: ideas about sleep, putting the day to rest (with an interactive evening notepad on the phone), paradoxical intention, decatastrophizing, relaxation — each playable **with your eyes closed** via a calm offline voice guide and gentle acoustic chime.
 - **A before/after review** compares the observation week with the latest nights.
-- **A summary for the doctor**, to show on screen or share as a PDF and a spreadsheet.
-- Optional **reminders** in the morning and evening.
+- **A summary for the doctor**, to show on screen or share as a PDF and a spreadsheet, plus **CSV backup import** in settings.
+- Optional **reminders** in the morning and evening, and a **discreet home screen widget** showing the evening sleep window.
 
 ## Preview
 

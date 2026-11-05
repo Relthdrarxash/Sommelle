@@ -92,6 +92,13 @@ class SettingsViewModel(private val repository: SommelleRepository) : ViewModel(
             onDone()
         }
     }
+
+    fun importCsv(content: String, onDone: (Int) -> Unit) {
+        viewModelScope.launch {
+            val count = repository.importCsv(content)
+            onDone(count)
+        }
+    }
 }
 
 @Composable
@@ -101,8 +108,16 @@ fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onE
     val s = state ?: return
     val context = LocalContext.current
     var notificationsAllowed by remember { mutableStateOf(NotificationManagerCompat.from(context).areNotificationsEnabled()) }
+    var importedCount by rememberSaveable { mutableStateOf<Int?>(null) }
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         notificationsAllowed = granted
+    }
+    val csvPicker = rememberLauncherForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        val selected = uri ?: return@rememberLauncherForActivityResult
+        val text = runCatching {
+            context.contentResolver.openInputStream(selected)?.bufferedReader()?.use { it.readText() }
+        }.getOrNull() ?: return@rememberLauncherForActivityResult
+        viewModel.importCsv(text) { count -> importedCount = count }
     }
 
     fun ensurePermission() {
@@ -126,6 +141,8 @@ fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onE
             viewModel.update { r, _ -> r.copy(eveningEnabled = enabled) }
         },
         onOpenReport = onOpenReport,
+        onImportCsv = { csvPicker.launch("*/*") },
+        importedCount = importedCount,
         onErase = { viewModel.erase(onErased) },
     )
 }
@@ -140,6 +157,8 @@ fun SettingsContent(
     onEvening: (Boolean) -> Unit,
     onOpenReport: () -> Unit,
     onErase: () -> Unit,
+    onImportCsv: () -> Unit = {},
+    importedCount: Int? = null,
 ) {
     val uriHandler = LocalUriHandler.current
     var confirmErase by rememberSaveable { mutableStateOf(false) }
@@ -182,6 +201,10 @@ fun SettingsContent(
         val privacyUrl = stringResource(R.string.settings_privacy_url)
         Section(stringResource(R.string.settings_data)) {
             InfoLine(SommelleIcons.History, stringResource(R.string.settings_data_hint))
+            SommelleButton(stringResource(R.string.settings_import_csv), onImportCsv, style = SommelleButtonStyle.Outlined)
+            if (importedCount != null) {
+                Text(stringResource(R.string.settings_import_result, importedCount), style = MaterialTheme.typography.bodySmall)
+            }
             SommelleButton(stringResource(R.string.settings_privacy), { uriHandler.openSafely(privacyUrl) }, style = SommelleButtonStyle.Quiet)
             SommelleButton(stringResource(R.string.settings_erase), { confirmErase = true }, style = SommelleButtonStyle.Quiet)
         }

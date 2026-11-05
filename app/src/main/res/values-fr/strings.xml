@@ -6,4 +6,8 @@
     <string name="nav_exercises">Exercices</string>
     <string name="nav_settings">Réglages</string>
     <string name="nav_label">Navigation principale</string>
+    <string name="widget_description">Fenêtre de sommeil du soir et accès rapide à votre agenda</string>
+    <string name="widget_window_title">Ma fenêtre ce soir</string>
+    <string name="widget_observation">Semaine d\'observation · Noter ma nuit</string>
+    <string name="widget_tap_hint">Toucher pour ouvrir l\'agenda du matin</string>
 </resources>

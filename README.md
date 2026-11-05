@@ -18,10 +18,10 @@ Pendant six à huit semaines :
 - **Un agenda du sommeil** se remplit chaque matin en une vingtaine de secondes, sans clavier, avec un accompagnement rassurant pendant la première semaine de restriction.
 - **Une fenêtre de sommeil** (heures de coucher et de lever) est calculée après une semaine d'observation, puis ajustée chaque semaine selon les nuits.
 - **Un écran pour la nuit**, presque noir, rappelle quoi faire quand le sommeil ne vient pas.
-- **Cinq exercices cognitifs** se débloquent au fil du programme : idées sur le sommeil, mise au repos de la journée, intention paradoxale, décatastrophisation, relaxation.
+- **Cinq exercices cognitifs** se débloquent au fil du programme : idées sur le sommeil, mise au repos de la journée (avec un carnet du soir interactif sur le téléphone), intention paradoxale, décatastrophisation, relaxation — chacun pouvant être écouté **les yeux fermés** grâce à une lecture vocale hors ligne à débit apaisé et une cloche acoustique douce.
 - **Un bilan avant/après** compare la semaine d'observation aux dernières nuits.
-- **Un résumé pour le médecin**, à montrer à l'écran ou à partager en PDF et en tableur.
-- **Des rappels** optionnels le matin et le soir.
+- **Un résumé pour le médecin**, à montrer à l'écran ou à partager en PDF et en tableur, ainsi qu'un **import de sauvegarde CSV** dans les réglages.
+- **Des rappels** optionnels le matin et le soir, et un **widget discret sur l'écran d'accueil** affichant la fenêtre de sommeil du soir.
 
 ## Aperçu
 
