@@ -78,7 +78,7 @@ Questions, feedback, comments from health professionals: [pilmil.studio@proton.m
 
 ## If you are in distress
 
-If you are going through a hard time, call your local emergency number or a crisis line in your country. In France, 3114 (the national suicide prevention line) is free, 24/7.
+If you are going through a hard time, call your local emergency number or a crisis line in your country, such as 988 in the United States. In France, 3114 (the national suicide prevention line) is free, 24/7.
 
 ## License
 
