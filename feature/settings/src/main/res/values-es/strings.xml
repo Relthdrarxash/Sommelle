@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_reminders">Recordatorios</string>
+    <string name="settings_morning">Recordatorio matutino</string>
+    <string name="settings_morning_hint">Para anotar tu noche en el diario. No se enviará si ya lo has hecho.</string>
+    <string name="settings_morning_time">Hora del recordatorio</string>
+    <string name="settings_evening">Recordatorio vespertino</string>
+    <string name="settings_evening_hint">Treinta minutos antes del inicio de tu ventana de sueño.</string>
+    <string name="settings_evening_unavailable">Disponible una vez calculada tu ventana de sueño.</string>
+    <string name="settings_notifications_off">Las notificaciones de Sommelle están desactivadas en los ajustes del teléfono: los recordatorios no se podrán mostrar.</string>
+    <string name="settings_for_doctor">Para tu médico</string>
+    <string name="settings_report">Resumen para mi médico</string>
+    <string name="settings_report_hint">Un resumen de tu programa y de tu diario, para mostrar o compartir.</string>
+    <string name="settings_data">Tus datos</string>
+    <string name="settings_data_hint">Todo se queda en tu teléfono. No se envía nada.</string>
+    <string name="settings_import_csv">Importar un diario en CSV</string>
+    <string name="settings_import_result">%1$d noche(s) importada(s) en tu diario.</string>
+    <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
+    <string name="settings_privacy">Política de privacidad</string>
+    <string name="settings_erase">Borrar todos mis datos</string>
+    <string name="settings_erase_title">¿Borrar todos tus datos?</string>
+    <string name="settings_erase_text">Tu diario, tus horarios y tus respuestas se eliminarán de este teléfono. Esta acción es definitiva.</string>
+    <string name="settings_erase_confirm">Borrar todo</string>
+    <string name="settings_erase_cancel">Cancelar</string>
+    <string name="settings_help">Si estás pasando por un momento difícil, dispones de líneas de apoyo telefónico gratuitas.</string>
+    <string name="settings_call_3114">Llamar al 024 (España)</string>
+    <string name="settings_contact">Escríbenos</string>
+    <string name="settings_contact_hint">¿Una duda sobre la app, una incidencia o sugerencia? Escríbenos. Para cuestiones de salud, consulta a tu médico.</string>
+    <string name="settings_contact_button">Enviar un correo</string>
+    <string name="settings_on">Activado</string>
+    <string name="settings_off">Desactivado</string>
+</resources>

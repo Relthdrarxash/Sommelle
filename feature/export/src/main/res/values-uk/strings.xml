@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="export_title">Звіт для вашого лікаря</string>
+    <string name="export_intro">Ви можете показати цей екран своєму лікарю або надіслати йому підсумок. Він не містить вашого імені чи персональних ідентифікаторів.</string>
+    <string name="export_share_pdf">Поділитися звітом (PDF)</string>
+    <string name="export_share_csv">Поділитися всім щоденником (таблиця)</string>
+    <string name="export_share_hint">Файл створюється на вашому телефоні. Ви самі обираєте, кому його надіслати.</string>
+    <string name="export_chooser">Поділитися через…</string>
+    <string name="export_program">Програма</string>
+    <string name="export_started">Початок: %1$s</string>
+    <string name="export_week">%1$s</string>
+    <string name="export_age">Вік: %1$s</string>
+    <string name="export_pathway">Маршрут: %1$s</string>
+    <string name="export_window">Поточне вікно сну: %1$s</string>
+    <string name="export_safety">На старті програми</string>
+    <string name="export_weeks">Тиждень за тижнем</string>
+    <string name="export_nights">Записано ночей: %1$d</string>
+    <string name="export_in_bed">У ліжку</string>
+    <string name="export_asleep">Сон</string>
+    <string name="export_efficiency">Ефективність</string>
+    <string name="export_onset">Засинання</string>
+    <string name="export_awake">Пробудження</string>
+    <string name="export_quality">Якість</string>
+    <string name="export_window_short">Вікно</string>
+    <string name="export_outcome">Підсумок програми</string>
+    <string name="export_empty">Дані з\'являться після кількох заповнених ночей.</string>
+    <string name="export_disclaimer">Дані внесені самостійно у щоденник сну (Consensus Sleep Diary). Sommelle — це інструмент супроводу на основі КПТ-Б, а не медичний виріб.</string>
+    <string name="export_pdf_baseline">Спостереження</string>
+    <string name="export_pdf_last_7">Останні 7 ночей</string>
+    <string name="export_pdf_diary">Щоденник: останні %1$d ночей</string>
+    <string name="export_pdf_col_night">Ніч</string>
+    <string name="export_pdf_col_bed">Сон</string>
+    <string name="export_pdf_col_out">Підйом</string>
+    <string name="export_pdf_col_onset">Засин.</string>
+    <string name="export_pdf_col_awake">Пробудж.</string>
+    <string name="export_pdf_col_asleep">Сон</string>
+    <string name="export_pdf_col_efficiency">Ефект.</string>
+    <string name="export_pdf_col_quality">Якість</string>
+    <string name="export_pdf_generated">Сформовано %1$s.</string>
+    <string name="export_pdf_page">Sommelle · сторінка %1$d</string>
+</resources>

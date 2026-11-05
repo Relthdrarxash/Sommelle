@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="export_title">Resumen para tu médico</string>
+    <string name="export_intro">Puedes mostrar esta pantalla a tu médico o compartir el resumen. No contiene tu nombre ni ningún dato identificativo.</string>
+    <string name="export_share_pdf">Compartir el resumen (PDF)</string>
+    <string name="export_share_csv">Compartir el diario completo (hoja de cálculo)</string>
+    <string name="export_share_hint">El archivo se crea en tu teléfono. Tú eliges a quién enviarlo.</string>
+    <string name="export_chooser">Compartir con…</string>
+    <string name="export_program">Programa</string>
+    <string name="export_started">Inicio: %1$s</string>
+    <string name="export_week">%1$s</string>
+    <string name="export_age">Edad: %1$s</string>
+    <string name="export_pathway">Itinerario: %1$s</string>
+    <string name="export_window">Ventana de sueño actual: %1$s</string>
+    <string name="export_safety">Al inicio del programa</string>
+    <string name="export_weeks">Semana a semana</string>
+    <string name="export_nights">%1$d noches anotadas</string>
+    <string name="export_in_bed">En la cama</string>
+    <string name="export_asleep">Dormido</string>
+    <string name="export_efficiency">Eficiencia</string>
+    <string name="export_onset">Conciliación</string>
+    <string name="export_awake">Despertares</string>
+    <string name="export_quality">Calidad</string>
+    <string name="export_window_short">Ventana</string>
+    <string name="export_outcome">Balance del programa</string>
+    <string name="export_empty">Los datos aparecerán tras anotar algunas noches.</string>
+    <string name="export_disclaimer">Datos declarados por el usuario en su diario de sueño (Consensus Sleep Diary). Sommelle es una herramienta de apoyo basada en la TCC-I, no un dispositivo médico.</string>
+    <string name="export_pdf_baseline">Observación</string>
+    <string name="export_pdf_last_7">Últimas 7 noches</string>
+    <string name="export_pdf_diary">Diario: últimas %1$d noches</string>
+    <string name="export_pdf_col_night">Noche</string>
+    <string name="export_pdf_col_bed">Acostarse</string>
+    <string name="export_pdf_col_out">Levantarse</string>
+    <string name="export_pdf_col_onset">Concil.</string>
+    <string name="export_pdf_col_awake">Desp.</string>
+    <string name="export_pdf_col_asleep">Dormido</string>
+    <string name="export_pdf_col_efficiency">Efic.</string>
+    <string name="export_pdf_col_quality">Calidad</string>
+    <string name="export_pdf_generated">Generado el %1$s.</string>
+    <string name="export_pdf_page">Sommelle · página %1$d</string>
+</resources>

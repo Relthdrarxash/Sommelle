@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diary_q_bed">Um wie viel Uhr bist du gestern Abend ins Bett gegangen?</string>
+    <string name="diary_h_bed">Eine ungefähre Angabe reicht aus.</string>
+    <string name="diary_q_lights">Wann hast du versucht einzuschlafen?</string>
+    <string name="diary_h_lights">Wenn du im Bett gelesen oder auf ein Display geschaut hast, gib die Zeit an, zu der du das Licht ausgemacht hast.</string>
+    <string name="diary_q_onset">Wie lange hat es gedauert, bis du eingeschlafen bist?</string>
+    <string name="diary_h_onset">Dein Gefühl zählt. Nachts musst du nicht auf die Uhr schauen.</string>
+    <string name="diary_q_awakenings">Wie oft bist du in der Nacht aufgewacht?</string>
+    <string name="diary_h_awakenings">Das Aufstehen am Morgen nicht mitgezählt.</string>
+    <string name="diary_q_awake_minutes">Wie lange insgesamt?</string>
+    <string name="diary_q_final">Wann war dein letztes Aufwachen?</string>
+    <string name="diary_h_final">Nach dem du nicht mehr einschlafen konntest.</string>
+    <string name="diary_q_out">Um wie viel Uhr bist du aufgestanden?</string>
+    <string name="diary_q_quality">Wie bewertest du deine Nacht?</string>
+    <string name="diary_less_than_5">Weniger als 5 Min.</string>
+    <string name="diary_onset_more">Mehr als eine Stunde</string>
+    <string name="diary_awake_more">2 Std. oder mehr</string>
+    <string name="diary_none">Keines</string>
+    <string name="diary_five_or_more">5 oder mehr</string>
+    <string name="diary_quality_1">Sehr schlecht</string>
+    <string name="diary_quality_2">Schlecht</string>
+    <string name="diary_quality_3">Mittelmäßig</string>
+    <string name="diary_quality_4">Gut</string>
+    <string name="diary_quality_5">Sehr gut</string>
+    <string name="diary_next">Weiter</string>
+    <string name="diary_save">Speichern</string>
+    <string name="diary_back_to_summary">Zurück zur Übersicht</string>
+    <string name="diary_summary_title">Deine Nacht im Überblick</string>
+    <string name="diary_summary_hint">Tippe auf eine Zeile, um sie zu korrigieren.</string>
+    <string name="diary_row_bed">Bettzeit</string>
+    <string name="diary_row_lights">Licht aus</string>
+    <string name="diary_row_onset">Einschlafen</string>
+    <string name="diary_row_awakenings">Aufwachen</string>
+    <string name="diary_row_final">Letztes Aufwachen</string>
+    <string name="diary_row_out">Aufstehen</string>
+    <string name="diary_row_quality">Qualität</string>
+    <plurals name="diary_awakenings_value">
+        <item quantity="one">%1$d Aufwachen (%2$s)</item>
+        <item quantity="other">%1$d Aufwachen (%2$s)</item>
+    </plurals>
+    <string name="diary_edit_row">Bearbeiten: %1$s, %2$s</string>
+    <string name="diary_confirm">Stimmt so</string>
+    <string name="diary_guided">Frage für Frage beantworten</string>
+    <string name="diary_prefill_previous">Vorschlag: wie in der vorherigen Nacht</string>
+    <string name="diary_prefill_watch">Vorschlag von deiner Uhr</string>
+    <string name="diary_prefill_screen">Vorschlag anhand deiner Smartphonenutzung</string>
+    <string name="diary_issue_awake_too_long">Die Wachzeit ist länger als die gesamte Nacht. Bitte überprüfe Zeiten und Dauern.</string>
+    <string name="diary_issue_order">Die Uhrzeiten sind nicht in der richtigen Reihenfolge. Bitte prüfe Bettzeit, Aufwachen und Aufstehen.</string>
+    <string name="diary_issue_ok">Richtig</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="night_title">Ви не можете заснути. Це трапляється, і в цьому немає нічого страшного.</string>
+    <string name="night_intro">Лежати в ліжку й чекати на сон лише віддаляє його. Ось що можна зробити.</string>
+    <string name="night_step_1">Підведіться та перейдіть в іншу кімнату.</string>
+    <string name="night_step_2">Зробіть щось спокійне при м\'якому світлі, подалі від екранів.</string>
+    <string name="night_step_3">Повертайтеся в ліжко, коли відчуєте, що сон повертається.</string>
+    <string name="night_bell_start">М\'яко нагадати через 20 хв (без годинника)</string>
+    <string name="night_bell_active">Нагадування увімкнено: покладіть телефон. М\'який дзвіночок пролунає приблизно за двадцять хвилин, без показу годинника.</string>
+    <string name="night_bell_done">Дзвіночок пролунав: якщо повіки важчають, можете повертатися в ліжко.</string>
+    <string name="night_ok">Добре, я підводжуся</string>
+    <string name="night_auto_close">Цей екран закриється автоматично.</string>
+</resources>

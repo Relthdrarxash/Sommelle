@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_hello">Вітаємо</string>
+    <string name="home_badge_observation">Тиждень спостереження</string>
+    <string name="home_badge_week">Тиждень %1$d з 6</string>
+    <string name="home_badge_maintenance">Підтримка</string>
+    <string name="home_window_title">Ваше вікно сну</string>
+    <string name="home_bedtime">Сон</string>
+    <string name="home_waketime">Підйом</string>
+    <string name="home_window_reason">Не лягати спати до %1$s — саме це робить сон глибшим.</string>
+    <string name="home_window_landmarks">Спокійний відпочинок з %1$s · Остання кава або чай до %2$s</string>
+    <string name="home_window_week1">Перший тиждень часто найважчий: це нормально і тимчасово. Ваше вікно збільшуватиметься зі зміцненням сну.</string>
+    <string name="home_window_maintenance">6-тижневу програму завершено: ви можете припинити вести щоденник або повертатися до нього за потреби.</string>
+    <string name="home_baseline_title">Один тиждень спостереження</string>
+    <plurals name="home_baseline_text">
+        <item quantity="one">Просто заповнюйте щоденник щоранку. Ваш розклад сну буде розраховано завтра.</item>
+        <item quantity="few">Просто заповнюйте щоденник щоранку. Ваш розклад сну буде розраховано через %1$d дні.</item>
+        <item quantity="many">Просто заповнюйте щоденник щоранку. Ваш розклад сну буде розраховано через %1$d днів.</item>
+        <item quantity="other">Просто заповнюйте щоденник щоранку. Ваш розклад сну буде розраховано через %1$d днів.</item>
+    </plurals>
+    <string name="home_extended_title">Ще кілька ночей</string>
+    <string name="home_extended_text">Потрібно щонайменше %2$d ночей з останніх 7, щоб розрахувати розклад. Наразі є %1$d.</string>
+    <string name="home_wake_title">Оберіть час підйому</string>
+    <string name="home_wake_text">Тиждень спостереження завершено. Залишилося встановити однаковий час підйому на щодень.</string>
+    <string name="home_wake_button">Обрати час підйому</string>
+    <string name="home_partial_title">Ваша програма</string>
+    <string name="home_partial_text">Заповнюйте щоденник щоранку та дотримуйтеся порад, якщо не вдається заснути вночі.</string>
+    <string name="home_out_title">Зверніться до лікаря</string>
+    <string name="home_out_text">Метод Sommelle не підходить для вашої ситуації. Лікар зможе підібрати належну допомогу.</string>
+    <string name="home_night_missing">Вашу %1$s ще не записано.</string>
+    <string name="home_fill_night">Записати ніч</string>
+    <string name="home_night_done">Ніч збережено. До завтрашнього ранку.</string>
+    <string name="home_fix_night">Виправити останню ніч</string>
+    <string name="home_cant_sleep">Не можу заснути</string>
+    <string name="wake_title">О котрій годині ви хочете прокидатися щоранку?</string>
+    <string name="wake_text">Оберіть час, якого зможете дотримуватися щодня, включно з вихідними. Це якір, який стабілізує ваш сон.</string>
+    <string name="wake_suggested">Рекомендація: ваш звичний час підйому цього тижня</string>
+    <string name="wake_confirm">Підтвердити</string>
+    <string name="home_impact_title">Коротке запитання</string>
+    <string name="home_impact_question">Наскільки ваші ночі зараз впливають на самопочуття вдень?</string>
+    <string name="home_impact_0">Зовсім ні</string>
+    <string name="home_impact_1">Трохи</string>
+    <string name="home_impact_2">Помірно</string>
+    <string name="home_impact_3">Сильно</string>
+    <string name="home_impact_4">Надзвичайно сильно</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reminders_channel">Нагадування програми</string>
+    <string name="reminders_channel_description">Ранкове нагадування про щоденник і вечірнє нагадування перед сном.</string>
+    <string name="reminder_morning_title">Як минула ваша ніч?</string>
+    <string name="reminder_morning_text">Двадцять секунд, щоб записати її у щоденник.</string>
+    <string name="reminder_evening_title">Ваше вікно сну починається о %1$s</string>
+    <string name="reminder_evening_text">Не лягайте спати до цього часу: саме це робить сон глибшим.</string>
+</resources>

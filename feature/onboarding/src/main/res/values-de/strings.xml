@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onb_welcome_title">Willkommen bei Sommelle</string>
+    <string name="onb_welcome_1">Sommelle begleitet dich mit der Methode erster Wahl bei Schlafstörungen: der kognitiven Verhaltenstherapie für Insomnie (KVT-I).</string>
+    <string name="onb_welcome_2">Das Ziel: Weniger Zeit wach im Bett verbringen, damit der Schlaf wieder tief und erholsam wird – und deine Nächte Woche für Woche verlängern.</string>
+    <string name="onb_welcome_3">Das Programm umfasst 1 Beobachtungswoche und 6 Wochen Trainingsprogramm: Jeden Morgen trägst du deine Nacht in 20 Sekunden ein, und Sommelle passt wöchentlich deine Zeiten an.</string>
+    <string name="onb_welcome_4">Deine Daten bleiben auf deinem Gerät (kein Account, keine Server-Übertragung). Sommelle ersetzt keine ärztliche Beratung.</string>
+    <string name="onb_welcome_start">Starten</string>
+    <string name="onb_intro_questions">Zunächst ein paar Fragen, um zu prüfen, ob das Programm für dich geeignet ist. Dauer: 2 bis 3 Minuten.</string>
+    <string name="onb_age_title">Wie alt bist du?</string>
+    <string name="onb_age_under_18">Unter 18 Jahre</string>
+    <string name="onb_age_18_24">18 bis 24 Jahre</string>
+    <string name="onb_age_25_44">25 bis 44 Jahre</string>
+    <string name="onb_age_45_64">45 bis 64 Jahre</string>
+    <string name="onb_age_65">65 Jahre und älter</string>
+    <string name="onb_next">Weiter</string>
+    <string name="onb_q_shift_work">Arbeitest du nachts oder im Schichtdienst?</string>
+    <string name="onb_h_shift_work">Zum Beispiel in Wechselschicht oder mit regelmäßigen Nachtschichten.</string>
+    <string name="onb_q_external">Werden deine Nächte hauptsächlich durch andere gestört?</string>
+    <string name="onb_h_external">Ein Baby, pflegebedürftige Angehörige…</string>
+    <string name="onb_q_snoring">Schnarchst du laut oder hat jemand Atemaussetzer bemerkt?</string>
+    <string name="onb_q_sleepiness">Schläfst du tagsüber manchmal ungewollt ein?</string>
+    <string name="onb_h_sleepiness">In Besprechungen, in der Bahn oder am Steuer.</string>
+    <string name="onb_q_bipolar">Wurde bei dir eine bipolare Störung diagnostiziert?</string>
+    <string name="onb_q_epilepsy">Hast du Epilepsie?</string>
+    <string name="onb_q_pregnancy">Bist du schwanger?</string>
+    <string name="onb_q_safety">Fährst du beruflich Auto oder bedienst gefährliche Maschinen?</string>
+    <string name="onb_h_safety">Oder ein Beruf, in dem eine Unaufmerksamkeit gefährlich sein kann.</string>
+    <string name="onb_q_prefers_no_restriction">Bevorzugst du ein Programm ohne Verkürzung der Bettzeit?</string>
+    <string name="onb_h_prefers_no_restriction">Diese Komponente kann anfangs die Tagesmüdigkeit verstärken. Auch ohne sie ist das Programm wirksam, mit schrittweiserem Verlauf.</string>
+    <string name="onb_q_late">Gehst du sehr spät schlafen und stehst spät auf, schläfst dann aber gut durch?</string>
+    <string name="onb_q_distress">Fühlst du dich in letzter Zeit überfordert oder hoffnungslos?</string>
+    <string name="onb_h_private">Deine Antwort bleibt auf deinem Gerät.</string>
+    <string name="onb_result_full_title">Das vollständige Programm ist passend für dich</string>
+    <string name="onb_result_full_text">1. In einer 1-wöchigen Beobachtungsphase schläfst du wie gewohnt und erfasst jeden Morgen deine Nacht.
+2. In den folgenden 6 Wochen passt Sommelle die Bettzeit an deine tatsächliche Schlafdauer an, um den Schlaf zu festigen, und verlängert sie dann schrittweise.
+3. Nach 6 Wochen ist das Training abgeschlossen und du kannst das Tagebuch beenden.</string>
+    <string name="onb_result_partial_title">Ein angepasstes Programm für dich</string>
+    <string name="onb_result_partial_text">Anhand deiner Antworten wird Sommelle deine Bettzeit nicht einschränken. Während 6 Wochen nutzt du das Morgentagebuch, Orientierungshilfen für die Nacht und eine wöchentliche Entspannungsübung.</string>
+    <string name="onb_result_out_title">Sommelle ist nicht für deine Situation geeignet</string>
+    <string name="onb_result_out_text">Die Methode von Sommelle richtet sich an Erwachsene mit chronischer Insomnie. Eine Ärztin oder ein Arzt kann dir eine passendere Unterstützung anbieten.</string>
+    <string name="onb_result_good_to_know">Gut zu wissen</string>
+    <string name="onb_start_program">Programm starten</string>
+    <string name="onb_understood">Verstanden</string>
+    <string name="onb_ref_minor">Sommelle ist für Erwachsene konzipiert. Bitte sprich mit deiner Ärztin / deinem Arzt über deinen Schlaf.</string>
+    <string name="onb_ref_apnea">Schnarchen mit Atemaussetzern: Bitte ärztlich abklären lassen. Dies kann auf eine Schlafapnoe hinweisen, die gut behandelbar ist.</string>
+    <string name="onb_ref_sleepiness">Ungewolltes Einschlafen am Tag: Bitte ärztlich abklären lassen. Fahre bei Schläfrigkeit vorerst kein Auto.</string>
+    <string name="onb_ref_bipolar">Bipolare Störung: Eine Verkürzung der Bettzeit kann die Stimmungslage destabilisieren. Sprich bitte mit deiner behandelnden Fachkraft.</string>
+    <string name="onb_ref_epilepsy">Epilepsie: Schlafmangel kann Anfälle begünstigen. Sprich bitte mit deiner behandelnden Fachkraft.</string>
+    <string name="onb_ref_delayed">Sehr späte Schlafzeiten: Möglicherweise liegt eine circadiane Phasenverzögerung statt einer Insomnie vor. Eine ärztliche Abklärung hilft.</string>
+    <string name="onb_ref_shift">Schicht- oder Nachtarbeit: Das Standardprogramm ist nicht auf diesen Rhythmus ausgelegt. Eine arbeits- oder schlafmedizinische Beratung ist empfehlenswert.</string>
+    <string name="onb_notice_drowsiness">In den ersten Wochen kann die Müdigkeit zunehmen. Wenn du Schläfrigkeit verspürst, fahre nicht Auto und bediene keine gefährlichen Maschinen.</string>
+    <string name="onb_notice_external">Wenn Nächte durch andere Personen gestört werden, ist Schlafmangel keine klassische Insomnie. Sprich mit deiner Ärztin / deinem Arzt, falls dich die Erschöpfung belastet.</string>
+    <string name="onb_notice_pregnancy">In der Schwangerschaft schränkt Sommelle deine Bettzeit nicht ein.</string>
+    <string name="onb_notice_crisis">Wenn du dich in einer seelischen Krise befindest, ist die TelefonSeelsorge rund um die Uhr kostenfrei für dich da.</string>
+    <string name="onb_call_3114">0800 111 0 111 anrufen (D)</string>
+</resources>

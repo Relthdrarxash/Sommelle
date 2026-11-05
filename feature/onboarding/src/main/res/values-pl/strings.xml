@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onb_welcome_title">Witamy w Sommelle</string>
+    <string name="onb_welcome_1">Sommelle wspiera Cię metodą pierwszego wyboru w leczeniu bezsenności: terapią poznawczo-behawioralną bezsenności (CBT-I).</string>
+    <string name="onb_welcome_2">Cel: spędzać mniej czasu bez snu w łóżku, aby sen stał się głęboki i ciągły, a następnie wydłużać noce z tygodnia na tydzień.</string>
+    <string name="onb_welcome_3">Program obejmuje 1 tydzień obserwacji oraz 6 tygodni programu: każdego ranka poświęcasz 20 sekund na zapisanie nocy, a co tydzień Sommelle dopasowuje Twój plan.</string>
+    <string name="onb_welcome_4">Twoje dane pozostają na telefonie (brak konta, nic nie jest wysyłane). Sommelle nie zastępuje porady lekarskiej.</string>
+    <string name="onb_welcome_start">Rozpocznij</string>
+    <string name="onb_intro_questions">Kilka pytań na początek, aby upewnić się, że program jest dla Ciebie odpowiedni. Zajmie to 2–3 minuty.</string>
+    <string name="onb_age_title">Ile masz lat?</string>
+    <string name="onb_age_under_18">Poniżej 18 lat</string>
+    <string name="onb_age_18_24">18–24 lata</string>
+    <string name="onb_age_25_44">25–44 lata</string>
+    <string name="onb_age_45_64">45–64 lata</string>
+    <string name="onb_age_65">65 lat i więcej</string>
+    <string name="onb_next">Dalej</string>
+    <string name="onb_q_shift_work">Czy pracujesz na nocne zmiany lub w nieregularnych godzinach?</string>
+    <string name="onb_h_shift_work">Na przykład w systemie zmianowym lub z regularnymi nockami.</string>
+    <string name="onb_q_external">Czy Twoje noce są przerywane głównie przez inną osobę?</string>
+    <string name="onb_h_external">Niemowlę, bliska osoba wymagająca opieki w nocy…</string>
+    <string name="onb_q_snoring">Czy głośno chrapiesz i ktoś zauważył u Ciebie bezdechy?</string>
+    <string name="onb_q_sleepiness">Czy zdarza Ci się mimowolnie zasnąć w ciągu dnia?</string>
+    <string name="onb_h_sleepiness">Na spotkaniach, w transporcie publicznym lub za kierownicą.</string>
+    <string name="onb_q_bipolar">Czy lekarz zdiagnozował u Ciebie chorobę afektywną dwubiegunową?</string>
+    <string name="onb_q_epilepsy">Czy chorujesz na padaczkę?</string>
+    <string name="onb_q_pregnancy">Czy jesteś w ciąży?</string>
+    <string name="onb_q_safety">Czy prowadzisz zawodowo pojazdy lub obsługujesz niebezpieczne maszyny?</string>
+    <string name="onb_h_safety">Lub wykonujesz zawód, w którym chwila nieuwagi stwarza poważne ryzyko.</string>
+    <string name="onb_q_prefers_no_restriction">Czy wolisz program bez ograniczania czasu w łóżku?</string>
+    <string name="onb_h_prefers_no_restriction">Ten element może początkowo zwiększać zmęczenie w ciągu dnia. Bez niego program nadal jest pomocny, z bardziej stopniowym efektem.</string>
+    <string name="onb_q_late">Czy kładziesz się i wstajesz bardzo późno, lecz śpisz dobrze po zaśnięciu?</string>
+    <string name="onb_q_distress">Czy w ostatnim czasie czujesz się przytłoczony lub pozbawiony nadziei?</string>
+    <string name="onb_h_private">Twoja odpowiedź pozostaje na Twoim telefonie.</string>
+    <string name="onb_result_full_title">Pełny program jest dla Ciebie odpowiedni</string>
+    <string name="onb_result_full_text">1. Przez 1 tydzień obserwacji śpisz jak dotychczas i każdego ranka zapisujesz noc.
+2. Przez 6 tygodni Sommelle najpierw zbliża czas w łóżku do rzeczywistego snu, by go skonsolidować, a następnie co tydzień wydłuża noc.
+3. Po 6 tygodniach program jest zakończony i możesz odłożyć dziennik.</string>
+    <string name="onb_result_partial_title">Program dostosowany do Ciebie</string>
+    <string name="onb_result_partial_text">Na podstawie Twoich odpowiedzi Sommelle nie ograniczy czasu spędzanego w łóżku. Przez 6 tygodni korzystasz z porannego dziennika, wskazówek na noc oraz jednego ćwiczenia w tygodniu.</string>
+    <string name="onb_result_out_title">Sommelle nie jest dostosowane do Twojej sytuacji</string>
+    <string name="onb_result_out_text">Metoda Sommelle jest przeznaczona dla dorosłych z bezsennością. Lekarz może zaproponować bardziej odpowiednią pomoc.</string>
+    <string name="onb_result_good_to_know">Warto wiedzieć</string>
+    <string name="onb_start_program">Rozpocznij program</string>
+    <string name="onb_understood">Rozumiem</string>
+    <string name="onb_ref_minor">Sommelle zostało zaprojektowane dla osób dorosłych. Skonsultuj swój sen z lekarzem.</string>
+    <string name="onb_ref_apnea">Chrapanie z przerwami w oddychaniu: skonsultuj się z lekarzem. Może to wskazywać na bezdech senny, który można skutecznie leczyć.</string>
+    <string name="onb_ref_sleepiness">Zasypianie w ciągu dnia: skonsultuj się z lekarzem. Do tego czasu unikaj prowadzenia pojazdów w stanie senności.</string>
+    <string name="onb_ref_bipolar">Choroba afektywna dwubiegunowa: ograniczenie czasu w łóżku może destabilizować nastrój. Skonsultuj się z lekarzem prowadzącym.</string>
+    <string name="onb_ref_epilepsy">Padaczka: niedobór snu może prowokować napady. Skonsultuj się z lekarzem prowadzącym.</string>
+    <string name="onb_ref_delayed">Bardzo późne pory: może to być zespół opóźnionej fazy snu, a nie bezsenność. Lekarz może wskazać właściwe postępowanie.</string>
+    <string name="onb_ref_shift">Praca zmianowa lub nocna: klasyczny program nie jest dostosowany do takiego rytmu. Lekarz medycyny pracy lub poradnia snu udzieli wskazówek.</string>
+    <string name="onb_notice_drowsiness">W pierwszych tygodniach zmęczenie może wzrosnąć. W razie uczucia senności nie prowadź pojazdów ani nie obsługuj maszyn.</string>
+    <string name="onb_notice_external">Gdy noce są przerywane przez kogoś innego, brak snu nie wynika z bezsenności. Porozmawiaj z lekarzem, jeśli zmęczenie jest uciążliwe.</string>
+    <string name="onb_notice_pregnancy">W trakcie ciąży Sommelle nie będzie ograniczać Twojego czasu w łóżku.</string>
+    <string name="onb_notice_crisis">Jeśli przechodzisz trudne chwile, możesz skorzystać z bezpłatnej linii wsparcia kryzysowego.</string>
+    <string name="onb_call_3114">Zadzwoń pod 116 123 (Polska)</string>
+</resources>

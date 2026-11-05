@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sommelle</string>
+    <string name="nav_home">Start</string>
+    <string name="nav_week">Mój tydzień</string>
+    <string name="nav_exercises">Ćwiczenia</string>
+    <string name="nav_settings">Ustawienia</string>
+    <string name="nav_label">Nawigacja główna</string>
+    <string name="widget_description">Wieczorne okno snu i szybki dostęp do dziennika snu</string>
+    <string name="widget_window_title">Moje okno na tę noc</string>
+    <string name="widget_observation">Tydzień obserwacji · Zapisz noc</string>
+    <string name="widget_tap_hint">Dotknij, aby otworzyć poranny dziennik</string>
+</resources>

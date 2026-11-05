@@ -47,7 +47,11 @@ class EnglishFormatTest {
     fun `choix de la langue`() {
         assertSame(FrenchFormat, Texts.forLanguage("fr"))
         assertSame(EnglishFormat, Texts.forLanguage("en"))
-        assertSame(EnglishFormat, Texts.forLanguage("de"))
+        assertSame(GermanFormat, Texts.forLanguage("de"))
+        assertSame(SpanishFormat, Texts.forLanguage("es"))
+        assertSame(PolishFormat, Texts.forLanguage("pl"))
+        assertSame(UkrainianFormat, Texts.forLanguage("uk"))
+        assertSame(EnglishFormat, Texts.forLanguage("it"))
     }
 
     @Test

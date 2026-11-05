@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diary_q_bed">O której godzinie poszedłeś spać zeszłej nocy?</string>
+    <string name="diary_h_bed">Wystarczy przybliżony czas.</string>
+    <string name="diary_q_lights">O której godzinie zgasiłeś światło, by zasnąć?</string>
+    <string name="diary_h_lights">Jeśli czytałeś lub korzystałeś z telefonu w łóżku, podaj godzinę zgaszenia światła.</string>
+    <string name="diary_q_onset">Ile czasu zajęło Ci zaśnięcie?</string>
+    <string name="diary_h_onset">Liczy się Twoje odczucie. Nie musisz sprawdzać godziny w nocy.</string>
+    <string name="diary_q_awakenings">Ile razy wybudziłeś się w nocy?</string>
+    <string name="diary_h_awakenings">Nie licząc porannego przebudzenia.</string>
+    <string name="diary_q_awake_minutes">Ile łącznie czasu?</string>
+    <string name="diary_q_final">O której godzinie nastąpiło Twoje ostatnie wybudzenie?</string>
+    <string name="diary_h_final">To, po którym sen już nie nadszedł.</string>
+    <string name="diary_q_out">O której godzinie wstałeś z łóżka?</string>
+    <string name="diary_q_quality">Jak oceniasz tę noc?</string>
+    <string name="diary_less_than_5">Mniej niż 5 min</string>
+    <string name="diary_onset_more">Ponad godzinę</string>
+    <string name="diary_awake_more">2 godz. lub więcej</string>
+    <string name="diary_none">Brak</string>
+    <string name="diary_five_or_more">5 lub więcej</string>
+    <string name="diary_quality_1">Bardzo zła</string>
+    <string name="diary_quality_2">Zła</string>
+    <string name="diary_quality_3">Przeciętna</string>
+    <string name="diary_quality_4">Dobra</string>
+    <string name="diary_quality_5">Bardzo dobra</string>
+    <string name="diary_next">Dalej</string>
+    <string name="diary_save">Zapisz</string>
+    <string name="diary_back_to_summary">Wróć do podsumowania</string>
+    <string name="diary_summary_title">Twoja noc w skrócie</string>
+    <string name="diary_summary_hint">Dotknij wiersza, aby go poprawić.</string>
+    <string name="diary_row_bed">Pora snu</string>
+    <string name="diary_row_lights">Zgaszenie światła</string>
+    <string name="diary_row_onset">Zasypianie</string>
+    <string name="diary_row_awakenings">Wybudzenia</string>
+    <string name="diary_row_final">Ostatnie wybudzenie</string>
+    <string name="diary_row_out">Pobudka</string>
+    <string name="diary_row_quality">Jakość</string>
+    <plurals name="diary_awakenings_value">
+        <item quantity="one">%1$d wybudzenie (%2$s)</item>
+        <item quantity="few">%1$d wybudzenia (%2$s)</item>
+        <item quantity="many">%1$d wybudzeń (%2$s)</item>
+        <item quantity="other">%1$d wybudzenia (%2$s)</item>
+    </plurals>
+    <string name="diary_edit_row">Edytuj: %1$s, %2$s</string>
+    <string name="diary_confirm">Zgadza się</string>
+    <string name="diary_guided">Odpowiadaj pytanie po pytaniu</string>
+    <string name="diary_prefill_previous">Sugestia: tak jak poprzedniej nocy</string>
+    <string name="diary_prefill_watch">Sugestia z Twojego zegarka</string>
+    <string name="diary_prefill_screen">Sugestia na podstawie użycia telefonu</string>
+    <string name="diary_issue_awake_too_long">Czas czuwania jest dłuższy niż cała noc. Sprawdź godziny lub czasy trwania.</string>
+    <string name="diary_issue_order">Godziny nie są w porządku chronologicznym. Sprawdź porę snu, wybudzenie i wstanie.</string>
+    <string name="diary_issue_ok">Prawidłowo</string>
+</resources>

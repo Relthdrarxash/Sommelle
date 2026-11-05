@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reminders_channel">Recordatorios del programa</string>
+    <string name="reminders_channel_description">Recordatorio matutino para el diario y recordatorio vespertino antes de acostarse.</string>
+    <string name="reminder_morning_title">¿Cómo ha ido tu noche?</string>
+    <string name="reminder_morning_text">Veinte segundos para anotarla en tu diario.</string>
+    <string name="reminder_evening_title">Tu ventana comienza a las %1$s</string>
+    <string name="reminder_evening_text">Permanece despierto hasta esa hora: es lo que hace que el sueño sea más profundo.</string>
+</resources>

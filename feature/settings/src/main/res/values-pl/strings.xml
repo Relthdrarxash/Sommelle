@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_reminders">Przypomnienia</string>
+    <string name="settings_morning">Poranne przypomnienie</string>
+    <string name="settings_morning_hint">Aby zapisać noc w dzienniku. Brak powiadomienia, jeśli już zapisano.</string>
+    <string name="settings_morning_time">Godzina przypomnienia</string>
+    <string name="settings_evening">Wieczorne przypomnienie</string>
+    <string name="settings_evening_hint">Trzydzieści minut przed rozpoczęciem okna snu.</string>
+    <string name="settings_evening_unavailable">Dostępne po obliczeniu Twojego okna snu.</string>
+    <string name="settings_notifications_off">Powiadomienia dla Sommelle są wyłączone w ustawieniach telefonu: przypomnienia nie będą się wyświetlać.</string>
+    <string name="settings_for_doctor">Dla Twojego lekarza</string>
+    <string name="settings_report">Podsumowanie dla lekarza</string>
+    <string name="settings_report_hint">Podsumowanie programu i dziennika snu, do pokazania lub udostępnienia.</string>
+    <string name="settings_data">Twoje dane</string>
+    <string name="settings_data_hint">Wszystko pozostaje na Twoim telefonie. Nic nie jest wysyłane.</string>
+    <string name="settings_import_csv">Importuj dziennik z pliku CSV</string>
+    <string name="settings_import_result">Zaimportowano %1$d nocy do dziennika.</string>
+    <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
+    <string name="settings_privacy">Polityka prywatności</string>
+    <string name="settings_erase">Usuń wszystkie moje dane</string>
+    <string name="settings_erase_title">Usunąć wszystkie dane?</string>
+    <string name="settings_erase_text">Twój dziennik, harmonogramy i odpowiedzi zostaną usunięte z tego telefonu. Tej operacji nie można cofnąć.</string>
+    <string name="settings_erase_confirm">Usuń wszystko</string>
+    <string name="settings_erase_cancel">Anuluj</string>
+    <string name="settings_help">Jeśli przeżywasz trudny okres, możesz bezpłatnie skorzystać z telefonu zaufania.</string>
+    <string name="settings_call_3114">Zadzwoń pod 116 123 (Polska)</string>
+    <string name="settings_contact">Napisz do nas</string>
+    <string name="settings_contact_hint">Masz pytanie o aplikację, problem lub sugestię? Napisz do nas. W sprawach zdrowotnych skonsultuj się z lekarzem.</string>
+    <string name="settings_contact_button">Wyślij e-mail</string>
+    <string name="settings_on">Włączone</string>
+    <string name="settings_off">Wyłączone</string>
+</resources>

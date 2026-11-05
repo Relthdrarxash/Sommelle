@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_hello">Hallo</string>
+    <string name="home_badge_observation">Beobachtungswoche</string>
+    <string name="home_badge_week">Woche %1$d von 6</string>
+    <string name="home_badge_maintenance">Erhaltungsphase</string>
+    <string name="home_window_title">Dein Schlaffenster</string>
+    <string name="home_bedtime">Bettzeit</string>
+    <string name="home_waketime">Aufstehen</string>
+    <string name="home_window_reason">Bis %1$s wach zu bleiben, vertieft deinen Schlaf.</string>
+    <string name="home_window_landmarks">Ruhige Abendzeit ab %1$s · Letzter Kaffee oder Tee vor %2$s</string>
+    <string name="home_window_week1">Die erste Woche ist oft die anstrengendste: Das ist normal und vergeht. Dein Fenster verlängert sich, sobald der Schlaf gefestigt ist.</string>
+    <string name="home_window_maintenance">Das 6-Wochen-Programm ist abgeschlossen: Du kannst das tägliche Tagebuch beenden oder es bei Bedarf weiterführen.</string>
+    <string name="home_baseline_title">Eine Woche beobachten</string>
+    <plurals name="home_baseline_text">
+        <item quantity="one">Fülle einfach jeden Morgen dein Tagebuch aus. Dein Schlafplan wird morgen berechnet.</item>
+        <item quantity="other">Fülle einfach jeden Morgen dein Tagebuch aus. Dein Schlafplan wird in %1$d Tagen berechnet.</item>
+    </plurals>
+    <string name="home_extended_title">Noch ein paar Nächte</string>
+    <string name="home_extended_text">Mindestens %2$d der letzten 7 Nächte müssen eingetragen sein, um deinen Plan zu berechnen. Bisher sind es %1$d.</string>
+    <string name="home_wake_title">Wähle deine Aufstehzeit</string>
+    <string name="home_wake_text">Deine Beobachtungswoche ist vorbei. Lege nun deine tägliche, feste Aufstehzeit fest.</string>
+    <string name="home_wake_button">Meine Aufstehzeit wählen</string>
+    <string name="home_partial_title">Dein Programm</string>
+    <string name="home_partial_text">Fülle jeden Morgen dein Tagebuch aus und beachte die Tipps, falls du nachts wach liegst.</string>
+    <string name="home_out_title">Sprich mit deiner Ärztin / deinem Arzt</string>
+    <string name="home_out_text">Die Methode von Sommelle ist für deine Situation nicht geeignet. Eine ärztliche Beratung kann dir gezielt weiterhelfen.</string>
+    <string name="home_night_missing">Deine %1$s ist noch nicht eingetragen.</string>
+    <string name="home_fill_night">Nacht erfassen</string>
+    <string name="home_night_done">Deine Nacht ist gespeichert. Bis morgen früh.</string>
+    <string name="home_fix_night">Letzte Nacht korrigieren</string>
+    <string name="home_cant_sleep">Ich kann nicht schlafen</string>
+    <string name="wake_title">Um wie viel Uhr möchtest du morgens aufstehen?</string>
+    <string name="wake_text">Wähle eine Zeit, die du täglich einhalten kannst – auch am Wochenende. Sie ist der Anker für deinen Schlafrhythmus.</string>
+    <string name="wake_suggested">Vorschlag: deine durchschnittliche Aufstehzeit dieser Woche</string>
+    <string name="wake_confirm">Bestätigen</string>
+    <string name="home_impact_title">Eine kurze Frage</string>
+    <string name="home_impact_question">Wie stark beeinflussen deine Nächte derzeit deinen Alltag?</string>
+    <string name="home_impact_0">Gar nicht</string>
+    <string name="home_impact_1">Ein wenig</string>
+    <string name="home_impact_2">Mäßig</string>
+    <string name="home_impact_3">Ziemlich stark</string>
+    <string name="home_impact_4">Extrem stark</string>
+</resources>
