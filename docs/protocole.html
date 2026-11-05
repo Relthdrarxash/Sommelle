@@ -291,17 +291,18 @@
       <h3>Précautions</h3>
       <p>La restriction entraîne une somnolence diurne transitoire, mesurable objectivement (Kyle et al., 2014). Un avertissement sur la conduite et les activités dangereuses s'affiche au début du programme. La restriction n'est jamais proposée dans les situations listées en section 7.</p>
 
-      <h2 id="stimulus">5. Le contrôle du stimulus</h2>
-      <p>Le contrôle du stimulus (Bootzin, 1972) vise à réassocier le lit au sommeil. Dans Sommelle, il passe par trois éléments :</p>
+      <h2 id="stimulus">5. Le contrôle du stimulus et les repères d'hygiène du soir</h2>
+      <p>Le contrôle du stimulus (Bootzin, 1972 ; <em>CBT-i Coach</em>) vise à réassocier le lit au sommeil. Dans Sommelle, il passe par cinq éléments :</p>
       <ul>
         <li>une <strong>heure de lever fixe</strong>, la même 7 jours sur 7, même après une mauvaise nuit ;</li>
-        <li>une <strong>heure de coucher</strong> donnée par la fenêtre de sommeil, avec un rappel le soir qui en explique la raison ;</li>
-        <li>un bouton <strong>« Je n'arrive pas à dormir »</strong> qui ouvre, la nuit, un écran presque noir aux couleurs chaudes et à luminosité réduite, sans heure ni chiffre. Il rappelle la consigne : se lever, aller dans une autre pièce, faire quelque chose de calme loin des écrans, revenir au lit quand le sommeil vient. Il se ferme seul au bout d'une minute et demie.</li>
+        <li>une <strong>heure de coucher</strong> donnée par la fenêtre de sommeil, accompagnée sur l'accueil de <strong>deux repères horaires personnalisés</strong> calculés automatiquement : le début du sas calme (<code>coucher − 45 min</code>) et l'heure limite conseillée pour le café ou le thé (<code>lever + 9 h</code>, plafonnée entre 14 h et 17 h) ;</li>
+        <li>un bouton <strong>« Je n'arrive pas à dormir »</strong> qui ouvre, la nuit, un écran presque noir aux couleurs chaudes et à luminosité réduite, sans heure ni chiffre. Il rappelle la consigne : se lever, aller dans une autre pièce, faire quelque chose de calme loin des écrans, revenir au lit quand le sommeil vient ;</li>
+        <li>un <strong>repère doux à 20 minutes (sans horloge)</strong> sur cet écran nocturne : si le patient souhaite être prévenu au bout d'une vingtaine de minutes hors du lit sans jamais regarder l'heure (Tang et al., 2007), une cloche discrète retentit après 20 minutes sans afficher aucun décompte chiffré ;</li>
+        <li>une carte interactive <strong>« Mes repères du soir et de la chambre »</strong> dans l'onglet Exercices (5 habitudes cochables inspirées du module <em>Create New Sleep Habits</em> de <em>CBT-i Coach</em> : sas calme de 45 min, arrêt de la caféine l'après-midi, chambre fraîche/sombre sans horloge visible, lit réservé au sommeil, pas de sieste après 15 h).</li>
       </ul>
-      <p>Les autres consignes classiques (réserver le lit au sommeil, éviter les siestes ou les limiter à une sieste courte avant 15 h) ne sont pas encore présentées dans l'application : elles sont à rappeler en consultation.</p>
 
-      <h2 id="cognitif">6. Les exercices cognitifs</h2>
-      <p>Cinq exercices courts (environ cinq minutes chacun) se débloquent au fil du programme. Ils restent accessibles une fois débloqués.</p>
+      <h2 id="cognitif">6. Les exercices cognitifs et de relaxation</h2>
+      <p>Six exercices courts (environ cinq minutes chacun, plus un guide de respiration apaisante 4 s / 6 s disponible dès le premier jour) se débloquent au fil du programme et restent accessibles ensuite.</p>
       <table>
         <thead><tr><th>Semaine</th><th>Exercice</th><th>Ce que fait le patient</th><th>Technique</th></tr></thead>
         <tbody>
@@ -376,9 +377,44 @@
         <li>Baron K.G. et al. Orthosomnia: are some patients taking the quantified self too far? <em>J Clin Sleep Med</em>, 2017.</li>
       </ul>
 
-      <h2 id="retours">11. Nous faire un retour</h2>
-      <p>Vos remarques sur le protocole, les seuils ou les formulations sont précieuses, que vous soyez médecin du sommeil, psychologue formé à la TCC-I, généraliste ou pharmacien. Écrivez-nous à <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a>. Si vous utilisez GitHub, vous pouvez aussi ouvrir une demande sur <a href="https://github.com/Relthdrarxash/sommelle/issues">la page de suivi du projet</a>.</p>
-      <p class="small">Pour les personnes qui souhaitent vérifier le fonctionnement dans le code : toutes les valeurs de ce dossier sont regroupées dans le fichier <code>ProtocolConfig.kt</code> du <a href="https://github.com/Relthdrarxash/sommelle">code source</a>, avec un numéro de version modifié à chaque changement.</p>
+      <h2 id="retours">11. Auditabilité du code et des formules (correspondance fichier par fichier)</h2>
+      <p>Sommelle n'embarque aucune intelligence artificielle : toutes les règles du protocole sont purement déterministes, isolées dans le module <code>core/protocol</code> sans aucune dépendance à Android, et vérifiées par des tests unitaires automatiques à chaque compilation.</p>
+      <table>
+        <thead><tr><th>Composante clinique</th><th>Formule et seuils exacts dans le code</th><th>Fichier source et tests à auditer</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Paramètres cliniques versionnés</strong></td>
+            <td><code>baselineDays = 7</code>, <code>minimumLoggedNightsPerWeek = 5</code>, <code>defaultMinimumWindow = 5h30</code>, <code>safetyCriticalMinimumWindow = 6h00</code>, <code>absoluteMinimumWindow = 5h00</code>, <code>maximumWindow = 9h00</code>, <code>increaseThreshold = 0.85</code>, <code>decreaseThreshold = 0.80</code>, <code>seniorThresholdOffset = 0.05</code>.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/ProtocolConfig.kt"><code>ProtocolConfig.kt</code></a></td>
+          </tr>
+          <tr>
+            <td><strong>Calculs de l'agenda (TIB, TST, SE)</strong></td>
+            <td><code>TIB = outOfBed − inBed</code> ; <code>TST = (finalWake − lightsOff) − SOL − WASO</code> ; efficacité hebdomadaire pondérée <code>SE = &Sigma;TST / &Sigma;TIB</code>.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/SleepMetrics.kt"><code>SleepMetrics.kt</code></a><br><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/test/kotlin/fr/sommelle/core/protocol/SleepMetricsTest.kt"><code>SleepMetricsTest.kt</code></a></td>
+          </tr>
+          <tr>
+            <td><strong>Fenêtre de sommeil et ajustement</strong></td>
+            <td>Fenêtre initiale = moyenne du TST sur la ligne de base arrondie aux 15 min supérieures, bornée dans <code>[minWindow, 9h00]</code>. Ajustement hebdomadaire (si <code>&ge; 5</code> nuits saisies) : <code>+15 min</code> si <code>SE &ge; 85 %</code> (<code>80 %</code> dès 65 ans), <code>−15 min</code> si <code>SE &lt; 80 %</code> (<code>75 %</code> dès 65 ans), inchangée sinon.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/SleepWindowCalculator.kt"><code>SleepWindowCalculator.kt</code></a><br><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/test/kotlin/fr/sommelle/core/protocol/SleepWindowCalculatorTest.kt"><code>SleepWindowCalculatorTest.kt</code></a></td>
+          </tr>
+          <tr>
+            <td><strong>Orientation de sécurité à l'entrée</strong></td>
+            <td>Arbre de décision excluant la restriction en cas de suspicion d'apnée, trouble bipolaire, épilepsie, grossesse ou retard de phase, et relevant le plancher à <code>6h00</code> pour les métiers de sécurité ou de conduite.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/ScreeningEvaluator.kt"><code>ScreeningEvaluator.kt</code></a><br><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/test/kotlin/fr/sommelle/core/protocol/ScreeningEvaluatorTest.kt"><code>ScreeningEvaluatorTest.kt</code></a></td>
+          </tr>
+          <tr>
+            <td><strong>Validation de cohérence de l'agenda</strong></td>
+            <td>Vérification de l'ordre chronologique (<code>inBed &le; lightsOff &le; finalWake &le; outOfBed</code>) et de la durée des éveils sans bloquer le patient.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/DiaryValidator.kt"><code>DiaryValidator.kt</code></a><br><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/test/kotlin/fr/sommelle/core/protocol/DiaryValidatorTest.kt"><code>DiaryValidatorTest.kt</code></a></td>
+          </tr>
+          <tr>
+            <td><strong>Progression et maintien (prévention des rechutes)</strong></td>
+            <td>Ordonnancement des 6 semaines, bilan avant/après et guide de maintien en cas de mauvaise nuit isolée ou de reprise sur plusieurs semaines.</td>
+            <td><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/main/kotlin/fr/sommelle/core/protocol/ProgramPlanner.kt"><code>ProgramPlanner.kt</code></a><br><a href="https://github.com/Relthdrarxash/sommelle/blob/main/core/protocol/src/test/kotlin/fr/sommelle/core/protocol/ProgramPlannerTest.kt"><code>ProgramPlannerTest.kt</code></a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Vos remarques sur le protocole, les seuils ou les formulations sont précieuses, que vous soyez médecin du sommeil, psychologue formé à la TCC-I, généraliste ou pharmacien. Écrivez-nous à <a href="mailto:pilmil.studio@proton.me">pilmil.studio@proton.me</a> ou ouvrez un ticket sur <a href="https://github.com/Relthdrarxash/sommelle/issues">GitHub</a>.</p>
     </article>
   </main>
 
