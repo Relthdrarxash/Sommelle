@@ -27,11 +27,11 @@
     <string name="onb_q_epilepsy">Do you have epilepsy?</string>
     <string name="onb_q_pregnancy">Are you pregnant?</string>
     <string name="onb_q_safety">Do you drive for work, or operate dangerous machinery?</string>
-    <string name="onb_h_safety">Or do you work in a job where a moment of inattention can be serious.</string>
+    <string name="onb_h_safety">Or a job where a moment of inattention could have serious consequences.</string>
     <string name="onb_q_prefers_no_restriction">Would you prefer a program without reducing your time in bed?</string>
     <string name="onb_h_prefers_no_restriction">This part of the program can increase daytime tiredness at first. Without it, the program is still useful, with a more gradual effect.</string>
     <string name="onb_q_late">Do you go to bed and get up very late, but sleep well once you fall asleep?</string>
-    <string name="onb_q_distress">Lately, do you feel at the end of your rope, or hopeless?</string>
+    <string name="onb_q_distress">Lately, have you been feeling at the end of your rope, or hopeless?</string>
     <string name="onb_h_private">Your answer stays on your phone.</string>
 
     <string name="onb_result_full_title">The full program is right for you</string>
@@ -55,6 +55,6 @@
     <string name="onb_notice_drowsiness">In the first weeks, tiredness may increase. If you feel drowsy, do not drive or operate dangerous machinery.</string>
     <string name="onb_notice_external">When your nights are interrupted by someone else, the lack of sleep does not come from insomnia. Talk to your doctor if tiredness weighs on you.</string>
     <string name="onb_notice_pregnancy">During pregnancy, Sommelle will not reduce your time in bed.</string>
-    <string name="onb_notice_crisis">If you are going through a hard time, please reach out now: call your local emergency number or a crisis line in your country. In France, 3114 is free, day and night, with trained people who listen.</string>
+    <string name="onb_notice_crisis">If you are going through a hard time, please reach out now: call your local emergency number or a crisis line in your country, such as 988 in the United States. In France, 3114 is free, day and night, with trained people who listen.</string>
     <string name="onb_call_3114">Call 3114 (France)</string>
 </resources>
