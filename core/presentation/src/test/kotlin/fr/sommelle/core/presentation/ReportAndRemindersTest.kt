@@ -132,12 +132,16 @@ class ReportAndRemindersTest {
     }
 
     @Test
-    fun `export csv`() {
-        val csv = DiaryCsv.export(listOf(night(start.plusDays(1), 480, 420), night(start, 480, 360)))
+    fun `export et import csv`() {
+        val original = listOf(night(start, 480, 360), night(start.plusDays(1), 480, 420, SleepQuality.GOOD))
+        val csv = DiaryCsv.export(original)
         val lines = csv.removePrefix("﻿").trim().split("\r\n")
         assertEquals(3, lines.size)
         assertEquals(DiaryCsv.HEADER.joinToString(";"), lines[0])
         assertTrue(lines[1].startsWith("2026-11-02;"))
         assertTrue(lines[1].endsWith(";480;360;75"))
+
+        val imported = DiaryCsv.parse(csv)
+        assertEquals(original, imported)
     }
 }

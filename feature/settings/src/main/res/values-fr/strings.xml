@@ -14,6 +14,8 @@
     <string name="settings_report_hint">Un résumé de votre programme et de votre agenda, à montrer ou à partager.</string>
     <string name="settings_data">Vos données</string>
     <string name="settings_data_hint">Tout reste sur votre téléphone. Rien n\'est envoyé.</string>
+    <string name="settings_import_csv">Importer un agenda CSV</string>
+    <string name="settings_import_result">%1$d nuit(s) importée(s) dans votre agenda.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
     <string name="settings_privacy">Politique de confidentialité</string>
     <string name="settings_erase">Effacer toutes mes données</string>

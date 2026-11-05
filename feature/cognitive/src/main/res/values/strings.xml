@@ -11,6 +11,16 @@
     <string name="cog_finished">Exercise finished. You can come back to it whenever you like.</string>
     <string name="cog_out_of_scope">These exercises are part of the program, which is not suited to your situation. Talk to your doctor about your sleep.</string>
     <string name="cog_step">Step %1$d of %2$d</string>
+    <string name="cog_voice_start">Listen to the steps with your eyes closed</string>
+    <string name="cog_voice_stop">Stop voice guide</string>
+    <string name="cog_voice_hint">Calm offline voice and gentle chime between each step, so you can set the screen down.</string>
+    <string name="cog_worry_card_title">My evening notepad (on this phone)</string>
+    <string name="cog_worry_field_label">What is on my mind tonight</string>
+    <string name="cog_worry_action_label">Next small step tomorrow (or “nothing to do tonight”)</string>
+    <string name="cog_worry_put_away">Put away for the night</string>
+    <string name="cog_worry_stored">Written down and put away for the night. If this worry comes back in bed, remind yourself you will deal with it tomorrow.</string>
+    <string name="cog_worry_reopen">Reopen or clear notepad</string>
+    <string name="cog_worry_clear">Clear notepad</string>
 
     <!-- Croyances sur le sommeil -->
     <string name="cog_beliefs_title">Ideas about sleep</string>

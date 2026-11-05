@@ -23,6 +23,7 @@ class SommelleApplication : Application(), SommelleRepositoryProvider {
         // Un seul endroit replanifie les rappels : à chaque changement de réglages, d'heure de lever ou de fenêtre.
         scope.launch {
             combine(repository.reminderSettings, repository.snapshot) { settings, snapshot ->
+                SommelleWidget.refreshAll(this@SommelleApplication, snapshot)
                 Triple(settings, snapshot?.program?.wakeTime, snapshot?.windows?.maxByOrNull { it.window.effectiveFrom }?.window?.bedTime)
             }
                 .distinctUntilChanged()

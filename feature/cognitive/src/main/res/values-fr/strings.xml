@@ -11,6 +11,16 @@
     <string name="cog_finished">Exercice terminé. Vous pouvez y revenir quand vous voulez.</string>
     <string name="cog_out_of_scope">Ces exercices font partie du programme, qui n\'est pas adapté à votre situation. Parlez de votre sommeil à votre médecin.</string>
     <string name="cog_step">Étape %1$d sur %2$d</string>
+    <string name="cog_voice_start">Écouter les étapes les yeux fermés</string>
+    <string name="cog_voice_stop">Arrêter la lecture vocale</string>
+    <string name="cog_voice_hint">Voix posée hors ligne et cloche douce entre chaque étape, pour garder l\'écran posé.</string>
+    <string name="cog_worry_card_title">Mon carnet de ce soir (sur ce téléphone)</string>
+    <string name="cog_worry_field_label">Ce qui me préoccupe ce soir</string>
+    <string name="cog_worry_action_label">Prochaine petite action demain (ou « rien à faire ce soir »)</string>
+    <string name="cog_worry_put_away">Ranger pour la nuit</string>
+    <string name="cog_worry_stored">C\'est noté et rangé pour la nuit. Si ce souci revient au lit, rappelez-vous que vous vous en occuperez demain.</string>
+    <string name="cog_worry_reopen">Rouvrir ou effacer le carnet</string>
+    <string name="cog_worry_clear">Effacer le carnet</string>
 
     <!-- Croyances sur le sommeil -->
     <string name="cog_beliefs_title">Les idées sur le sommeil</string>
