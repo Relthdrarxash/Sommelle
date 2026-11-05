@@ -242,19 +242,12 @@ fun ModuleContent(
         ScreenTitle(stringResource(module.title()))
         Text(stringResource(module.intro()), style = MaterialTheme.typography.bodyLarge)
 
-        Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            SommelleButton(
-                text = stringResource(if (isSpeaking) R.string.cog_voice_stop else R.string.cog_voice_start),
-                onClick = onToggleVoice,
-                style = SommelleButtonStyle.Outlined,
-                icon = SommelleIcons.Moon,
-            )
-            Text(
-                text = stringResource(R.string.cog_voice_hint),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
+        SommelleButton(
+            text = stringResource(if (isSpeaking) R.string.cog_voice_stop else R.string.cog_voice_start),
+            onClick = onToggleVoice,
+            style = SommelleButtonStyle.Quiet,
+            icon = SommelleIcons.Moon,
+        )
 
         steps.forEachIndexed { index, step ->
             Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface, shadowElevation = 1.dp) {
