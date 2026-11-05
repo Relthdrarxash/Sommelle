@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ds_back">Zurück</string>
+    <string name="ds_next">Weiter</string>
+    <string name="ds_step_of">Frage %1$d von %2$d</string>
+    <string name="ds_minus_15">− 15 Min.</string>
+    <string name="ds_plus_15">+ 15 Min.</string>
+    <string name="ds_minus_15_description">Fünfzehn Minuten früher</string>
+    <string name="ds_plus_15_description">Fünfzehn Minuten später</string>
+    <string name="ds_yes">Ja</string>
+    <string name="ds_no">Nein</string>
+</resources>

@@ -60,5 +60,12 @@ object Texts {
     /** Langue de l'appli : le français pour un téléphone en français, l'anglais sinon. */
     fun current(): TextFormat = forLanguage(Locale.getDefault().language)
 
-    fun forLanguage(language: String): TextFormat = if (language == "fr") FrenchFormat else EnglishFormat
+    fun forLanguage(language: String): TextFormat = when (language) {
+        "fr" -> FrenchFormat
+        "es" -> SpanishFormat
+        "de" -> GermanFormat
+        "pl" -> PolishFormat
+        "uk" -> UkrainianFormat
+        else -> EnglishFormat
+    }
 }

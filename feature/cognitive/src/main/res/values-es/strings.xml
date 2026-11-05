@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cog_title">Ejercicios</string>
+    <string name="cog_intro">Ejercicios breves para calmar los pensamientos que alimentan el insomnio. Unos cinco minutos cada uno.</string>
+    <string name="cog_locked_all">Los primeros ejercicios se desbloquean en la semana 2, una vez fijados tus nuevos horarios.</string>
+    <string name="cog_next">Próximo ejercicio: semana %1$d</string>
+    <string name="cog_done">Hecho</string>
+    <string name="cog_todo">Por hacer</string>
+    <string name="cog_open">Abrir</string>
+    <string name="cog_finish">He terminado este ejercicio</string>
+    <string name="cog_finished">Ejercicio terminado. Puedes volver a consultarlo cuando quieras.</string>
+    <string name="cog_out_of_scope">Estos ejercicios forman parte del programa, el cual no está adaptado a tu situación. Consulta a tu médico sobre tu sueño.</string>
+    <string name="cog_step">Paso %1$d de %2$d</string>
+    <string name="cog_voice_start">Escuchar los pasos con los ojos cerrados</string>
+    <string name="cog_voice_stop">Detener la guía de voz</string>
+    <string name="cog_voice_hint">Voz pausada sin conexión y campana suave entre cada paso, para poder dejar la pantalla a un lado.</string>
+    <string name="cog_worry_card_title">Mi libreta de noche (en este móvil)</string>
+    <string name="cog_worry_field_label">Lo que me preocupa esta noche</string>
+    <string name="cog_worry_action_label">Próxima pequeña acción mañana (o «nada que hacer esta noche»)</string>
+    <string name="cog_worry_put_away">Guardar para la noche</string>
+    <string name="cog_worry_stored">Anotado y guardado para la noche. Si esta preocupación vuelve en la cama, recuerda que te ocuparás de ella mañana.</string>
+    <string name="cog_worry_reopen">Reabrir o vaciar la libreta</string>
+    <string name="cog_worry_clear">Vaciar libreta</string>
+    <string name="cog_habits_title">Mis pautas de noche y de dormitorio</string>
+    <string name="cog_habits_subtitle">Elige de 1 a 3 hábitos sencillos para acompañar tu ventana de sueño esta semana.</string>
+    <string-array name="cog_habits_list">
+        <item>Dar la vuelta u ocultar el reloj por la noche</item>
+        <item>Reservar la cama solo para dormir (sin pantallas ni trabajo)</item>
+        <item>Evitar café, té y refrescos al menos 8 horas antes de acostarse</item>
+        <item>Exponerse a la luz natural en la primera hora tras levantarse</item>
+        <item>Evitar las siestas (o máximo 20 minutos antes de las 15:00)</item>
+    </string-array>
+    <string name="cog_beliefs_title">Ideas sobre el sueño</string>
+    <string name="cog_beliefs_summary">Identificar pensamientos que generan presión y matizarlos.</string>
+    <string name="cog_beliefs_intro">Algunas ideas sobre el sueño están muy extendidas. Parecen razonables, pero aumentan la tensión al acostarse y, con ello, el estado de alerta. Pregúntate si las has tenido y lee la versión más ajustada.</string>
+    <string-array name="cog_beliefs_steps">
+        <item>«Necesito 8 horas de sueño para estar bien.»
+
+La necesidad de sueño varía de una persona a otra y de una noche a otra. Muchos adultos funcionan perfectamente con menos de 8 horas.</item>
+        <item>«Si duermo mal esta noche, mi día de mañana estará arruinado.»
+
+Tras una mala noche se suele rendir mejor de lo que se teme. El cansancio existe, pero rara vez es tan incapacitante como se anticipa.</item>
+        <item>«Tengo que recuperar sueño pasando más tiempo en la cama.»
+
+Quedarse más tiempo en la cama hace que el sueño sea más ligero y fragmentado. Unos horarios regulares son los que realmente lo consolidan.</item>
+        <item>«He perdido por completo el control sobre mi sueño.»
+
+Puedes actuar sobre todo lo que lo favorece: tus horarios, una cama reservada al descanso y el ritmo de tus noches. El sueño llega después por sí solo.</item>
+        <item>«El insomnio va a destrozar mi salud.»
+
+Es una preocupación comprensible, pero pensar en ello por la noche perpetúa el desvelo. El insomnio tiene tratamiento, y el método que estás siguiendo es el recomendado en primer lugar.</item>
+    </string-array>
+    <string name="cog_winddown_title">Poner la jornada en pausa</string>
+    <string name="cog_winddown_summary">Aparcar las preocupaciones a primera hora de la noche para no llevarlas a la cama.</string>
+    <string name="cog_winddown_intro">Al acostarse, la mente suele aprovechar el silencio para repasar el día y planificar el siguiente. Esta rutina le proporciona un momento previo para hacerlo.</string>
+    <string-array name="cog_winddown_steps">
+        <item>A primera hora de la noche, al menos una hora antes de acostarte, dedica quince minutos tranquilos con papel y boli.</item>
+        <item>Apunta lo que te preocupa: trabajo, familia, tareas pendientes. Sin intentar resolverlo todo de inmediato.</item>
+        <item>Al lado de cada preocupación, anota el próximo pequeño paso o «nada que hacer esta noche».</item>
+        <item>Guarda la hoja. Si una preocupación reaparece en la cama, recuerda que ya está anotada y que te ocuparás de ella mañana.</item>
+    </string-array>
+    <string name="cog_paradox_title">Dejar de perseguir el sueño</string>
+    <string name="cog_paradox_summary">El esfuerzo por dormir aleja el sueño. Prueba lo contrario.</string>
+    <string name="cog_paradox_intro">El sueño no responde a órdenes: cuanto más se intenta forzarlo, más se activa el cerebro. Este ejercicio retira esa presión.</string>
+    <string-array name="cog_paradox_steps">
+        <item>En la cama, con la luz apagada, mantén los ojos abiertos en la oscuridad y dite con calma que vas a mantenerlos abiertos un ratito más.</item>
+        <item>No hagas nada por dormirte. No mires la hora. Deja simplemente pasar el tiempo.</item>
+        <item>Si tras un buen rato sientes tensión, aplica la regla habitual: levántate y vuelve a la cama cuando notes que el sueño regresa.</item>
+    </string-array>
+    <string name="cog_decatastrophize_title">Volver a lo más probable</string>
+    <string name="cog_decatastrophize_summary">Cuatro preguntas para cuando una mala noche genera inquietud.</string>
+    <string name="cog_decatastrophize_intro">Cuando la noche se tuerce, la mente suele anticipar lo peor para el día siguiente. Estas preguntas ayudan a regresar a lo más plausible. Puedes responderlas mentalmente o por escrito.</string>
+    <string-array name="cog_decatastrophize_steps">
+        <item>¿Qué temo exactamente para el día de mañana?</item>
+        <item>¿Qué ocurrió en realidad en ocasiones anteriores tras haber dormido mal?</item>
+        <item>¿Qué es lo más probable que ocurra esta vez?</item>
+        <item>Si mañana es un día exigente, ¿qué me ayudaría a sobrellevarlo? Una pausa, un paseo, una tarea más sencilla…</item>
+    </string-array>
+    <string name="cog_relax_title">Relajar el cuerpo</string>
+    <string name="cog_relax_summary">Relajación muscular progresiva en diez minutos.</string>
+    <string name="cog_relax_intro">Para hacer al anochecer, sentado o tumbado, preferiblemente fuera de la cama las primeras veces. Para cada zona corporal: tensa suavemente durante cinco segundos y luego relaja durante quince segundos notando la diferencia. Detente si la tensión provoca dolor.</string>
+    <string-array name="cog_relax_steps">
+        <item>Manos y antebrazos: aprieta los puños y luego afloja.</item>
+        <item>Brazos: flexiona los codos y contrae los bíceps, luego suelta.</item>
+        <item>Hombros y cuello: eleva los hombros hacia las orejas y déjalos caer suavemente.</item>
+        <item>Cara: frunce el ceño y aprieta los párpados, luego relaja todo el rostro.</item>
+        <item>Abdomen y espalda: mete el abdomen y endereza la espalda, luego relaja respirando con lentitud.</item>
+        <item>Piernas y pies: estira las piernas y extiende las puntas de los pies, luego suelta. Permanece unos instantes disfrutando de esta relajación.</item>
+    </string-array>
+</resources>

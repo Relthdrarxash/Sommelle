@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="night_title">No consigues dormir. Es normal, y no pasa nada.</string>
+    <string name="night_intro">Quedarse en la cama esperando el sueño lo aleja. Esto es lo que puedes hacer.</string>
+    <string name="night_step_1">Levántate y ve a otra habitación.</string>
+    <string name="night_step_2">Haz algo tranquilo, con luz tenue, lejos de pantallas.</string>
+    <string name="night_step_3">Vuelve a la cama cuando sientas que vuelve el sueño.</string>
+    <string name="night_bell_start">Avisarme suavemente en 20 min (sin reloj)</string>
+    <string name="night_bell_active">Aviso activado: deja el móvil. Un timbre suave sonará en unos veinte minutos, sin mostrar la hora.</string>
+    <string name="night_bell_done">El timbre ha sonado: si sientes los párpados pesados, puedes volver a acostarte.</string>
+    <string name="night_ok">De acuerdo, me levanto</string>
+    <string name="night_auto_close">Esta pantalla se cerrará sola.</string>
+</resources>

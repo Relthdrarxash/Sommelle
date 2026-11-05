@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="week_label">Wochenbilanz</string>
+    <string name="week_longer_title">Deine Nächte sind erholsamer</string>
+    <string name="week_longer_text">Diese Woche hast du %1$s deiner Zeit im Bett geschlafen. Dein Fenster verlängert sich um %2$s.</string>
+    <string name="week_shorter_title">Dein Schlaffenster verkürzt sich leicht</string>
+    <string name="week_shorter_text">Diese Woche hast du %1$s deiner Zeit im Bett geschlafen. Dein Fenster verkürzt sich um %2$s: Das hilft, den Schlaf zu festigen.</string>
+    <string name="week_steady_title">Du bist auf dem richtigen Weg</string>
+    <string name="week_steady_text">Diese Woche hast du %1$s deiner Zeit im Bett geschlafen. Dein Fenster bleibt unverändert.</string>
+    <string name="week_floor_title">Dein Fenster bleibt stabil</string>
+    <string name="week_floor_text">Diese Woche hast du %1$s deiner Zeit im Bett geschlafen. Dein Fenster hat bereits das Sicherheitsminimum erreicht und verkürzt sich nicht weiter.</string>
+    <string name="week_max_title">Dein Schlaf hat sich gut stabilisiert</string>
+    <string name="week_max_text">Diese Woche hast du %1$s deiner Zeit im Bett geschlafen. Dein Fenster hat die maximale Dauer erreicht.</string>
+    <string name="week_missing_title">Einige Nächte fehlen</string>
+    <string name="week_missing_text">Um dein Fenster anzupassen, müssen mindestens %2$d von 7 Nächten erfasst sein. Du hast %1$d eingetragen: Dein Fenster bleibt gleich.</string>
+    <string name="week_first_title">Dein erstes Schlaffenster</string>
+    <string name="week_first_text">Es entspricht der durchschnittlichen Zeit, die du tatsächlich schläfst, um Wachzeiten im Bett zu verringern und den Schlaf zu vertiefen. Nach deinem nächsten Wochenbericht in 7 Tagen kann es sich wöchentlich um 15 Minuten verlängern.</string>
+    <string name="week_pending_title">Deine erste Wochenbilanz steht bald an</string>
+    <string name="week_pending_text">Sie wird nach deiner Beobachtungswoche bereitstehen.</string>
+    <string name="week_partial_title">Dein Schlaf, Woche für Woche</string>
+    <string name="week_partial_text">Hier siehst du den Verlauf deiner Bettzeit und Schlafzeit.</string>
+    <string name="week_window_current">Dein aktuelles Fenster</string>
+    <string name="week_bedtime">Bettzeit</string>
+    <string name="week_waketime">Aufstehen</string>
+    <string name="week_chart_title">Zeit im Bett und Schlafzeit</string>
+    <string name="week_legend_bed">Im Bett</string>
+    <string name="week_legend_sleep">Geschlafen</string>
+    <string name="week_chart_empty">Das Diagramm erscheint nach einigen erfassten Nächten.</string>
+    <string name="week_how_title">Wie wird mein Schlaffenster berechnet?</string>
+    <string name="week_how_text" formatted="false">Jede Woche vergleicht Sommelle die geschlafene Zeit mit der Zeit im Bett. Liegt der Wert über 85 %, verlängert sich das Fenster um 15 Minuten; unter 80 % verkürzt es sich um 15 Minuten (jedoch nie unter das Sicherheitsminimum). Dazwischen bleibt es gleich. Die Aufstehzeit bleibt immer fest.</string>
+    <string name="week_relapse_title">Was tun bei einer schlechten Nacht?</string>
+    <string name="week_relapse_text">Eine einzelne schlechte Nacht (Stress, Reisen, Ereignisse) ist normal und bedeutet nicht, dass die Schlafstörung zurückkehrt:
+• Am nächsten Morgen: Behalte deine gewohnte Aufstehzeit bei, ohne auszuschlafen.
+• Am Tag: Vermeide Nickerchen, um den Schlafdruck für den Abend aufzubauen.
+• In der Nacht: Wenn der Schlaf ausbleibt, stehe für ca. 20 Minuten auf, ohne auf die Uhr zu schauen.
+• Wenn unruhige Nächte länger als 5 Tage anhalten: Nutze für 1–2 Wochen wieder dein verkürztes Schlaffenster.</string>
+    <string name="week_outcome_title">Programmergebnis</string>
+    <string name="week_outcome_text">Deine Beobachtungswoche im Vergleich zu deinen letzten sieben Nächten.</string>
+    <string name="week_outcome_before">Zu Beginn</string>
+    <string name="week_outcome_after">Heute</string>
+</resources>

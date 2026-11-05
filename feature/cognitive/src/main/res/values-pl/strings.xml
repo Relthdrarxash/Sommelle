@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cog_title">Ćwiczenia</string>
+    <string name="cog_intro">Krótkie ćwiczenia pomagające wyciszyć myśli podtrzymujące bezsenność. Przeznacz na każde około 5 minut.</string>
+    <string name="cog_locked_all">Pierwsze ćwiczenia odblokują się w 2. tygodniu, po ustabilizowaniu nowych godzin snu.</string>
+    <string name="cog_next">Kolejne ćwiczenie: tydzień %1$d</string>
+    <string name="cog_done">Zrobione</string>
+    <string name="cog_todo">Do zrobienia</string>
+    <string name="cog_open">Otwórz</string>
+    <string name="cog_finish">Ukończyłem to ćwiczenie</string>
+    <string name="cog_finished">Ćwiczenie zakończone. Możesz do niego wrócić w dowolnym momencie.</string>
+    <string name="cog_out_of_scope">Te ćwiczenia są częścią programu, który nie jest dostosowany do Twojej sytuacji. Skonsultuj swój sen z lekarzem.</string>
+    <string name="cog_step">Krok %1$d z %2$d</string>
+    <string name="cog_voice_start">Słuchaj instrukcji z zamkniętymi oczami</string>
+    <string name="cog_voice_stop">Zatrzymaj lektora</string>
+    <string name="cog_voice_hint">Spokojny głos offline i delikatny dzwonek między krokami, aby móc odłożyć telefon.</string>
+    <string name="cog_worry_card_title">Mój wieczorny notatnik (na tym telefonie)</string>
+    <string name="cog_worry_field_label">Co zaprząta mi głowę tego wieczoru</string>
+    <string name="cog_worry_action_label">Najbliższy mały krok jutro (lub „nic do zrobienia dziś wieczorem”)</string>
+    <string name="cog_worry_put_away">Zamknij na noc</string>
+    <string name="cog_worry_stored">Zapisane i odłożone na noc. Jeśli ta myśl powróci w łóżku, przypomnij sobie, że zajmiesz się nią jutro.</string>
+    <string name="cog_worry_reopen">Otwórz ponownie lub wyczyść notatnik</string>
+    <string name="cog_worry_clear">Wyczyść notatnik</string>
+    <string name="cog_habits_title">Nawyki wieczorne i sypialniane</string>
+    <string name="cog_habits_subtitle">Wybierz 1 do 3 prostych nawyków, które będą wspierać Twoje okno snu w tym tygodniu.</string>
+    <string-array name="cog_habits_list">
+        <item>Odwróć lub zasłoń zegarek w nocy</item>
+        <item>Łóżko przeznaczaj wyłącznie na sen (bez ekranów i pracy)</item>
+        <item>Nie pij kawy, herbaty ani coli co najmniej 8 godzin przed snem</item>
+        <item>Zadbaj o światło dzienne w ciągu godziny od pobudki</item>
+        <item>Unikaj drzemek w ciągu dnia (lub maks. 20 min przed 15:00)</item>
+    </string-array>
+    <string name="cog_beliefs_title">Przekonania o śnie</string>
+    <string name="cog_beliefs_summary">Rozpoznawanie i modyfikowanie myśli wywołujących presję.</string>
+    <string name="cog_beliefs_intro">Niektóre poglądy na temat snu są bardzo powszechne. Brzmią racjonalnie, ale nasilają napięcie przed snem i pobudzają czuwanie. Zastanów się, czy miewasz te myśli, i przeczytaj ich bardziej realistyczną wersję.</string>
+    <string-array name="cog_beliefs_steps">
+        <item>„Muszę przespać 8 godzin, żeby normalnie funkcjonować.”
+
+Zapotrzebowanie na sen różni się między ludźmi i z nocy na noc. Wielu dorosłych czuje się świetnie przy krótszym śnie.</item>
+        <item>„Jeśli dziś źle prześpię noc, jutrzejszy dzień będzie stracony.”
+
+Po gorszej nocy zwykle radzimy sobie znacznie lepiej, niż się obawiamy. Zmęczenie bywa odczuwalne, ale rzadko paraliżuje dzień.</item>
+        <item>„Muszę odespać, zostając dłużej w łóżku.”
+
+Dłuższe leżenie w łóżku sprawia, że sen staje się płytszy i bardziej pofragmentowany. To stałe pory wstawania scalają sen.</item>
+        <item>„Całkowicie straciłem kontrolę nad swoim snem.”
+
+Masz wpływ na wszystko, co sprzyja zasypianiu: stałe godziny, łóżko przeznaczone do snu, spokojny wieczór. Sen przychodzi potem sam.</item>
+        <item>„Bezsenność zniszczy moje zdrowie.”
+
+To zrozumiały lęk, lecz nocne rozmyślanie o tym tylko podtrzymuje czuwanie. Bezsenność poddaje się terapii, a metoda, którą stosujesz, jest metodą pierwszego wyboru.</item>
+    </string-array>
+    <string name="cog_winddown_title">Wyciszenie dnia</string>
+    <string name="cog_winddown_summary">Odłóż troski wczesnym wieczorem, aby nie zabierać ich do łóżka.</string>
+    <string name="cog_winddown_intro">Kiedy kładziemy się spać, umysł często wykorzystuje ciszę do analizowania dnia i planowania jutra. Ten rytuał daje mu na to wcześniejszy, wyznaczony czas.</string>
+    <string-array name="cog_winddown_steps">
+        <item>Wczesnym wieczorem, co najmniej godzinę przed snem, wygospodaruj 15 spokojnych minut z kartką i długopisem.</item>
+        <item>Wypisz sprawy, które Cię trapią: praca, rodzina, obowiązki. Bez próby rozwiązywania wszystkiego od razu.</item>
+        <item>Obok każdej kwestii dopisz najbliższy mały krok lub „nic do zrobienia dziś wieczorem”.</item>
+        <item>Odłóż kartkę. Jeśli myśl powróci w nocy, przypomnij sobie, że jest zapisana i zajmiesz się nią jutro.</item>
+    </string-array>
+    <string name="cog_paradox_title">Przestań zmuszać się do snu</string>
+    <string name="cog_paradox_summary">Wysiłek, by zasnąć, oddala sen. Spróbuj odwrotnego podejścia.</string>
+    <string name="cog_paradox_intro">Snu nie można wymusić: im mocniej starasz się zasnąć, tym bardziej czuwasz. To ćwiczenie zdejmuje tę presję.</string>
+    <string-array name="cog_paradox_steps">
+        <item>W łóżku przy zgaszonym świetle: miej otwarte oczy w ciemności i spokojnie powiedz sobie, że jeszcze przez chwilę nie będziesz ich zamykać.</item>
+        <item>Nie rób nic, aby zasnąć. Nie sprawdzaj godziny. Po prostu pozwól upływać czasowi.</item>
+        <item>Jeśli po dłuższej chwili poczujesz narastające napięcie, zastosuj zasadę: wstań i wróć do łóżka dopiero wtedy, gdy poczujesz senność.</item>
+    </string-array>
+    <string name="cog_decatastrophize_title">Powrót do prawdopodobieństwa</string>
+    <string name="cog_decatastrophize_summary">Cztery pytania, gdy niepokoisz się gorszą nocą.</string>
+    <string name="cog_decatastrophize_intro">Gdy noc nie układa się dobrze, umysł często wyobraża sobie najgorsze scenariusze na jutro. Te pytania pomagają powrócić do tego, co najbardziej prawdopodobne.</string>
+    <string-array name="cog_decatastrophize_steps">
+        <item>Czego dokładnie obawiam się w związku z jutrzejszym dniem?</item>
+        <item>Co tak naprawdę wydarzyło się poprzednim razem, gdy źle spałem?</item>
+        <item>Co jest najbardziej prawdopodobne tym razem?</item>
+        <item>Gdyby jutro było trudniejsze, co pomogłoby mi przetrwać dzień? Krótka przerwa, spacer, lżejsze zadanie…</item>
+    </string-array>
+    <string name="cog_relax_title">Rozluźnienie ciała</string>
+    <string name="cog_relax_summary">Progresywna relaksacja mięśniowa w 10 minut.</string>
+    <string name="cog_relax_intro">Do wykonania wieczorem na siedząco lub leżąco, najlepiej z początku poza łóżkiem. Dla każdej partii ciała: napnij lekko mięśnie na 5 sekund, a następnie rozluźnij na 15 sekund, zauważając różnicę. Przerwij, jeśli napięcie wywołuje ból.</string>
+    <string-array name="cog_relax_steps">
+        <item>Dłonie i przedramiona: zaciśnij pięści, a następnie rozluźnij.</item>
+        <item>Ramiona: ugnij łokcie i napnij bicepsy, po czym rozluźnij.</item>
+        <item>Barki i kark: unieś ramiona w stronę uszu, a potem pozwól im swobodnie opaść.</item>
+        <item>Twarz: zmarszcz czoło i zaciśnij powieki, po czym rozluźnij całą twarz.</item>
+        <item>Brzuch i plecy: wciągnij lekko brzuch i wyprostuj plecy, a następnie rozluźnij z powolnym wydechem.</item>
+        <item>Nogi i stopy: wyprostuj nogi i obciągnij palce stóp, po czym rozluźnij. Pozostań przez chwilę w stanie pełnego odprężenia.</item>
+    </string-array>
+</resources>

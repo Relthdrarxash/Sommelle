@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cog_title">Übungen</string>
+    <string name="cog_intro">Kurze Übungen, um Gedanken zu beruhigen, die Schlafprobleme aufrechterhalten. Dauer: jeweils ca. fünf Minuten.</string>
+    <string name="cog_locked_all">Die ersten Übungen stehen ab Woche 2 bereit, sobald sich deine neuen Schlafzeiten eingespielt haben.</string>
+    <string name="cog_next">Nächste Übung: Woche %1$d</string>
+    <string name="cog_done">Erledigt</string>
+    <string name="cog_todo">Offen</string>
+    <string name="cog_open">Öffnen</string>
+    <string name="cog_finish">Übung beendet</string>
+    <string name="cog_finished">Übung abgeschlossen. Du kannst jederzeit darauf zurückgreifen.</string>
+    <string name="cog_out_of_scope">Diese Übungen sind Teil des Programms, das nicht für deine Situation geeignet ist. Bitte sprich mit deiner Ärztin / deinem Arzt über deinen Schlaf.</string>
+    <string name="cog_step">Schritt %1$d von %2$d</string>
+    <string name="cog_voice_start">Schritte mit geschlossenen Augen anhören</string>
+    <string name="cog_voice_stop">Sprachbegleitung stoppen</string>
+    <string name="cog_voice_hint">Ruhige Offline-Stimme und sanfter Ton zwischen den Schritten, sodass du das Handy ablegen kannst.</string>
+    <string name="cog_worry_card_title">Mein Abendnotizbuch (auf diesem Handy)</string>
+    <string name="cog_worry_field_label">Was mich heute Abend beschäftigt</string>
+    <string name="cog_worry_action_label">Nächster kleiner Schritt morgen (oder „heute nichts zu tun“)</string>
+    <string name="cog_worry_put_away">Für die Nacht ablegen</string>
+    <string name="cog_worry_stored">Notiert und für die Nacht abgelegt. Wenn der Gedanke im Bett wiederkehrt, erinnere dich daran, dass du dich morgen darum kümmerst.</string>
+    <string name="cog_worry_reopen">Notizbuch öffnen oder leeren</string>
+    <string name="cog_worry_clear">Notizbuch leeren</string>
+    <string name="cog_habits_title">Meine Abend- und Schlafzimmergewohnheiten</string>
+    <string name="cog_habits_subtitle">Wähle 1 bis 3 einfache Vorsätze, die dein Schlaffenster diese Woche unterstützen.</string>
+    <string-array name="cog_habits_list">
+        <item>Die Uhr nachts wegdrehen oder abdecken</item>
+        <item>Das Bett nur zum Schlafen nutzen (kein Display, keine Arbeit)</item>
+        <item>Kaffee, Tee und Cola mindestens 8 Stunden vor dem Schlafengehen stoppen</item>
+        <item>Innerhalb der ersten Stunde nach dem Aufstehen Tageslicht tanken</item>
+        <item>Tagsüber kein Nickerchen (oder maximal 20 Minuten vor 15:00 Uhr)</item>
+    </string-array>
+    <string name="cog_beliefs_title">Gedanken über den Schlaf</string>
+    <string name="cog_beliefs_summary">Druckerzeugende Denkmuster erkennen und entschärfen.</string>
+    <string name="cog_beliefs_intro">Manche Vorstellungen über den Schlaf sind weit verbreitet. Sie klingen plausibel, erhöhen aber die Anspannung vor dem Einschlafen und damit die Wachheit. Prüfe, ob du diese Gedanken kennst, und lies die hilfreichere Sichtweise.</string>
+    <string-array name="cog_beliefs_steps">
+        <item>„Ich brauche 8 Stunden Schlaf, um fit zu sein.“
+
+Das Schlafbedürfnis ist individuell verschieden und schwankt von Nacht zu Nacht. Viele Erwachsene fühlen sich auch mit weniger als 8 Stunden voll leistungsfähig.</item>
+        <item>„Wenn ich heute schlecht schlafe, ist der morgige Tag gelaufen.“
+
+Nach einer unruhigen Nacht funktioniert man meist erstaunlich gut. Die Müdigkeit ist spürbar, aber selten so einschränkend wie befürchtet.</item>
+        <item>„Ich muss Schlaf nachholen, indem ich länger im Bett bleibe.“
+
+Längeres Liegenbleiben macht den Schlaf nur oberflächlicher und unruhiger. Ein fester Rhythmus ist das, was ihn wirklich stabilisiert.</item>
+        <item>„Ich habe überhaupt keine Kontrolle mehr über meinen Schlaf.“
+
+Du kannst die idealen Rahmenbedingungen schaffen: feste Zeiten, ein reines Schlafbett, entspannte Abende. Der Schlaf stellt sich dann von selbst ein.</item>
+        <item>„Die Schlaflosigkeit ruiniert meine Gesundheit.“
+
+Eine verständliche Sorge, aber nächtliches Grübeln darüber verlängert das Wachsein. Schlafstörungen lassen sich wirksam behandeln – und du nutzt bereits die empfohlene Methode.</item>
+    </string-array>
+    <string name="cog_winddown_title">Den Tag zur Ruhe bringen</string>
+    <string name="cog_winddown_summary">Sorgen am frühen Abend ablegen, um sie nicht mit ins Bett zu nehmen.</string>
+    <string name="cog_winddown_intro">Im Bett nutzt der Kopf oft die Stille, um den Tag Revue passieren zu lassen und den nächsten zu planen. Dieses Ritual schafft dafür schon früher am Abend Raum.</string>
+    <string-array name="cog_winddown_steps">
+        <item>Nimm dir am frühen Abend – mindestens eine Stunde vor dem Schlafen – 15 ruhige Minuten mit Stift und Papier.</item>
+        <item>Schreibe auf, was dir durch den Kopf geht: Arbeit, Familie, To-dos. Ohne den Anspruch, jetzt alles zu lösen.</item>
+        <item>Notiere neben jeden Punkt den nächsten kleinen Schritt oder „heute nichts zu tun“.</item>
+        <item>Lege das Blatt weg. Kehrt ein Gedanke im Bett zurück, erinnere dich daran, dass er notiert ist und du dich morgen darum kümmerst.</item>
+    </string-array>
+    <string name="cog_paradox_title">Aufhören, den Schlaf zu erzwingen</string>
+    <string name="cog_paradox_summary">Die Anstrengung einzuschlafen hält wach. Probiere das Gegenteil.</string>
+    <string name="cog_paradox_intro">Schlaf lässt sich nicht befehlen: Je krampfhafter man es versucht, desto wacher bleibt man. Diese Übung nimmt diesen Leistungsdruck.</string>
+    <string-array name="cog_paradox_steps">
+        <item>Im Bett bei gelöschtem Licht: Halte die Augen im Dunkeln geöffnet und sage dir ganz gelassen, dass du sie noch ein wenig offen hältst.</item>
+        <item>Tue absolut nichts, um einzuschlafen. Schaue nicht auf die Uhr. Lass die Zeit einfach verstreichen.</item>
+        <item>Wenn du nach längerer Zeit Unruhe verspürst, befolge die Grundregel: Aufstehen und erst wieder hinlegen, wenn die Müdigkeit spürbar wird.</item>
+    </string-array>
+    <string name="cog_decatastrophize_title">Zurück zum Wahrscheinlichen</string>
+    <string name="cog_decatastrophize_summary">Vier Fragen, wenn eine unruhige Nacht Sorgen bereitet.</string>
+    <string name="cog_decatastrophize_intro">Läuft die Nacht schlecht an, malt sich der Kopf oft das Schlimmste für den Folgetag aus. Diese Fragen helfen, die Dinge realistisch einzuordnen.</string>
+    <string-array name="cog_decatastrophize_steps">
+        <item>Was genau befürchte ich eigentlich für morgen?</item>
+        <item>Wie ist es in der Vergangenheit tatsächlich gelaufen, nachdem ich schlecht geschlafen habe?</item>
+        <item>Was ist für morgen das realistischste Szenario?</item>
+        <item>Falls der Tag anstrengend wird: Was könnte mir helfen durchzuhalten? Eine Pause, ein Spaziergang, leichtere Aufgaben…</item>
+    </string-array>
+    <string name="cog_relax_title">Körper entspannen</string>
+    <string name="cog_relax_summary">Progressive Muskelentspannung in zehn Minuten.</string>
+    <string name="cog_relax_intro">Am Abend im Sitzen oder Liegen durchführen – die ersten Male am besten außerhalb des Bettes. Für jede Muskelgruppe: 5 Sekunden sanft anspannen, dann 15 Sekunden loslassen und den Unterschied spüren. Bei Schmerzen sofort lockern.</string>
+    <string-array name="cog_relax_steps">
+        <item>Hände und Unterarme: Fäuste sanft ballen, dann bewusst loslassen.</item>
+        <item>Arme: Ellbogen anwinkeln und Bizeps anspannen, dann lockerlassen.</item>
+        <item>Schultern und Nacken: Schultern zu den Ohren hochziehen und sanft fallen lassen.</item>
+        <item>Gesicht: Stirn runzeln, Augen sanft zusammenkneifen, dann das ganze Gesicht entspannen.</item>
+        <item>Bauch und Rücken: Bauch leicht einziehen, Rücken strecken, dann mit ruhigem Atem loslassen.</item>
+        <item>Beine und Füße: Beine strecken und Zehen anziehen, dann vollkommen entspannen. Verweile noch einen Moment in diesem gelösten Zustand.</item>
+    </string-array>
+</resources>

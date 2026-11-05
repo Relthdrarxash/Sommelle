@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Einstellungen</string>
+    <string name="settings_reminders">Erinnerungen</string>
+    <string name="settings_morning">Morgendliche Erinnerung</string>
+    <string name="settings_morning_hint">Um deine Nacht im Tagebuch einzutragen. Keine Erinnerung, falls schon erledigt.</string>
+    <string name="settings_morning_time">Uhrzeit der Erinnerung</string>
+    <string name="settings_evening">Abendliche Erinnerung</string>
+    <string name="settings_evening_hint">Dreißig Minuten vor Beginn deines Schlaffensters.</string>
+    <string name="settings_evening_unavailable">Verfügbar, sobald dein Schlaffenster berechnet wurde.</string>
+    <string name="settings_notifications_off">Mitteilungen für Sommelle sind in den Telefoneinstellungen deaktiviert: Erinnerungen können nicht angezeigt werden.</string>
+    <string name="settings_for_doctor">Für deine Ärztin / deinen Arzt</string>
+    <string name="settings_report">Bericht für die Arztpraxis</string>
+    <string name="settings_report_hint">Eine Übersicht über dein Programm und Tagebuch zum Zeigen oder Teilen.</string>
+    <string name="settings_data">Deine Daten</string>
+    <string name="settings_data_hint">Alles bleibt auf deinem Handy. Nichts wird übertragen.</string>
+    <string name="settings_import_csv">CSV-Tagebuch importieren</string>
+    <string name="settings_import_result">%1$d Nacht/Nächte in dein Tagebuch importiert.</string>
+    <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
+    <string name="settings_privacy">Datenschutzerklärung</string>
+    <string name="settings_erase">Alle meine Daten löschen</string>
+    <string name="settings_erase_title">Alle Daten löschen?</string>
+    <string name="settings_erase_text">Dein Tagebuch, deine Zeiten und deine Antworten werden unwiderruflich von diesem Gerät gelöscht.</string>
+    <string name="settings_erase_confirm">Alles löschen</string>
+    <string name="settings_erase_cancel">Abbrechen</string>
+    <string name="settings_help">Wenn du eine schwere Zeit durchmachst, ist die TelefonSeelsorge rund um die Uhr kostenlos erreichbar.</string>
+    <string name="settings_call_3114">0800 111 0 111 anrufen (D)</string>
+    <string name="settings_contact">Kontakt</string>
+    <string name="settings_contact_hint">Fragen zur App, Probleme oder Feedback? Schreibe uns. Bei gesundheitlichen Fragen wende dich bitte an medizinisches Fachpersonal.</string>
+    <string name="settings_contact_button">E-Mail schreiben</string>
+    <string name="settings_on">Ein</string>
+    <string name="settings_off">Aus</string>
+</resources>

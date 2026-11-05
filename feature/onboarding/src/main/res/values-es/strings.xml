@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="onb_welcome_title">Te damos la bienvenida a Sommelle</string>
+    <string name="onb_welcome_1">Sommelle te acompaña con el método de primera elección contra el insomnio: la terapia cognitivo-conductual del insomnio (TCC-I).</string>
+    <string name="onb_welcome_2">El objetivo: pasar menos tiempo despierto en la cama para que tu sueño vuelva a ser profundo y continuo, y alargar tus noches semana tras semana.</string>
+    <string name="onb_welcome_3">El recorrido dura 1 semana de observación y 6 semanas de programa: cada mañana anotas tu noche en 20 segundos y cada semana Sommelle ajusta tus horarios.</string>
+    <string name="onb_welcome_4">Tus datos se quedan en tu teléfono (sin cuenta, nada se envía a servidores). Sommelle no sustituye el consejo médico.</string>
+    <string name="onb_welcome_start">Empezar</string>
+    <string name="onb_intro_questions">Primero unas breves preguntas para comprobar que el programa es adecuado para ti. Llevará de dos a tres minutos.</string>
+    <string name="onb_age_title">¿Qué edad tienes?</string>
+    <string name="onb_age_under_18">Menos de 18 años</string>
+    <string name="onb_age_18_24">18 a 24 años</string>
+    <string name="onb_age_25_44">25 a 44 años</string>
+    <string name="onb_age_45_64">45 a 64 años</string>
+    <string name="onb_age_65">65 años o más</string>
+    <string name="onb_next">Siguiente</string>
+    <string name="onb_q_shift_work">¿Trabajas de noche o en turnos rotativos?</string>
+    <string name="onb_h_shift_work">Por ejemplo en turnos alternos o con noches de trabajo periódicas.</string>
+    <string name="onb_q_external">¿Tus noches se ven interrumpidas principalmente por otra persona?</string>
+    <string name="onb_h_external">Un bebé, un familiar que necesita cuidados nocturnos…</string>
+    <string name="onb_q_snoring">¿Roncas fuerte o alguien ha notado pausas en tu respiración?</string>
+    <string name="onb_q_sleepiness">¿Te ocurre quedarte dormido involuntariamente durante el día?</string>
+    <string name="onb_h_sleepiness">En reuniones, en el transporte público o conduciendo.</string>
+    <string name="onb_q_bipolar">¿Te ha diagnosticado un médico un trastorno bipolar?</string>
+    <string name="onb_q_epilepsy">¿Tienes epilepsia?</string>
+    <string name="onb_q_pregnancy">¿Estás embarazada?</string>
+    <string name="onb_q_safety">¿Conduces por trabajo o manejas maquinaria pesada/peligrosa?</string>
+    <string name="onb_h_safety">O ejerces una profesión en la que un despiste pueda tener consecuencias graves.</string>
+    <string name="onb_q_prefers_no_restriction">¿Prefieres un programa sin reducción del tiempo en la cama?</string>
+    <string name="onb_h_prefers_no_restriction">Esta parte del programa puede aumentar la fatiga diurna al principio. Sin ella, el programa sigue siendo útil, de forma más gradual.</string>
+    <string name="onb_q_late">¿Te acuestas y te levantas muy tarde, pero duermes bien una vez conciliado el sueño?</string>
+    <string name="onb_q_distress">¿Últimamente te sientes al límite o sin esperanza?</string>
+    <string name="onb_h_private">Tu respuesta se queda en tu teléfono.</string>
+    <string name="onb_result_full_title">El programa completo es adecuado para ti</string>
+    <string name="onb_result_full_text">1. Durante 1 semana de observación, duerme con normalidad y anota tu noche cada mañana.
+2. Durante 6 semanas, Sommelle ajusta inicialmente el tiempo en la cama a tu tiempo de sueño real para consolidarlo, y luego alarga tu descanso semanalmente.
+3. Tras las 6 semanas, el programa concluye y puedes dejar el diario.</string>
+    <string name="onb_result_partial_title">Un programa adaptado para ti</string>
+    <string name="onb_result_partial_text">Según tus respuestas, Sommelle no reducirá tu tiempo en la cama. Durante 6 semanas seguirás el diario matutino, las pautas nocturnas y un ejercicio semanal para mejorar el descanso.</string>
+    <string name="onb_result_out_title">Sommelle no se adapta a tu situación</string>
+    <string name="onb_result_out_text">El método de Sommelle está diseñado para el insomnio en adultos. Un médico podrá orientarte hacia una solución más apropiada.</string>
+    <string name="onb_result_good_to_know">Información importante</string>
+    <string name="onb_start_program">Comenzar el programa</string>
+    <string name="onb_understood">Entendido</string>
+    <string name="onb_ref_minor">Sommelle está diseñada para personas adultas. Consulta a un médico sobre tu descanso.</string>
+    <string name="onb_ref_apnea">Ronquidos con pausas respiratorias: consulta a tu médico. Pueden indicar apnea del sueño, un trastorno que tiene tratamiento.</string>
+    <string name="onb_ref_sleepiness">Quedarse dormido durante el día: consulta a tu médico. Mientras tanto, evita conducir si sientes somnolencia.</string>
+    <string name="onb_ref_bipolar">Trastorno bipolar: reducir el tiempo en la cama puede desestabilizar el estado de ánimo. Consulta a tu especialista.</string>
+    <string name="onb_ref_epilepsy">Epilepsia: la falta de sueño puede desencadenar crisis. Consulta a tu especialista.</string>
+    <string name="onb_ref_delayed">Horarios muy tardíos: podría tratarse de un retraso de fase del ritmo circadiano más que de insomnio. Un médico puede orientarte.</string>
+    <string name="onb_ref_shift">Trabajo nocturno o a turnos: el programa convencional no está adaptado a este ritmo. La medicina del trabajo o del sueño te puede asesorar.</string>
+    <string name="onb_notice_drowsiness">Las primeras semanas la fatiga puede aumentar. Si notas somnolencia, no conduzcas ni manejes maquinaria peligrosa.</string>
+    <string name="onb_notice_external">Cuando las noches se ven interrumpidas por otra persona, el déficit de sueño no se debe a insomnio. Consulta a tu médico si el cansancio te pesa.</string>
+    <string name="onb_notice_pregnancy">Durante el embarazo, Sommelle no reducirá tu tiempo en la cama.</string>
+    <string name="onb_notice_crisis">Si estás pasando por un momento difícil, dispones de líneas de atención gratuitas para ayudarte.</string>
+    <string name="onb_call_3114">Llamar al 024 (España)</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_hello">Witaj</string>
+    <string name="home_badge_observation">Tydzień obserwacji</string>
+    <string name="home_badge_week">Tydzień %1$d z 6</string>
+    <string name="home_badge_maintenance">Utrwalanie</string>
+    <string name="home_window_title">Twoje okno snu</string>
+    <string name="home_bedtime">Pora snu</string>
+    <string name="home_waketime">Pobudka</string>
+    <string name="home_window_reason">Pozostanie na nogach do %1$s pogłębia Twój sen.</string>
+    <string name="home_window_landmarks">Wyciszenie od %1$s · Ostatnia kawa lub herbata przed %2$s</string>
+    <string name="home_window_week1">Pierwszy tydzień bywa najbardziej męczący: to normalne i przejściowe. Twoje okno wydłuży się, gdy sen się skonsoliduje.</string>
+    <string name="home_window_maintenance">Program 6 tygodni został ukończony: możesz przestać wypełniać dziennik lub korzystać z niego w razie potrzeby.</string>
+    <string name="home_baseline_title">Tydzień obserwacji</string>
+    <plurals name="home_baseline_text">
+        <item quantity="one">Po prostu wypełniaj dziennik każdego ranka. Twój harmonogram snu zostanie obliczony jutro.</item>
+        <item quantity="few">Po prostu wypełniaj dziennik każdego ranka. Twój harmonogram snu zostanie obliczony za %1$d dni.</item>
+        <item quantity="many">Po prostu wypełniaj dziennik każdego ranka. Twój harmonogram snu zostanie obliczony za %1$d dni.</item>
+        <item quantity="other">Po prostu wypełniaj dziennik każdego ranka. Twój harmonogram snu zostanie obliczony za %1$d dni.</item>
+    </plurals>
+    <string name="home_extended_title">Jeszcze kilka nocy</string>
+    <string name="home_extended_text">Potrzeba co najmniej %2$d nocy z ostatnich 7, aby obliczyć harmonogram. Masz dotąd %1$d.</string>
+    <string name="home_wake_title">Wybierz porę wstawania</string>
+    <string name="home_wake_text">Tydzień obserwacji dobiegł końca. Pozostało tylko ustawić stałą porę wstawania na każdy dzień.</string>
+    <string name="home_wake_button">Wybierz porę wstawania</string>
+    <string name="home_partial_title">Twój program</string>
+    <string name="home_partial_text">Wypełniaj dziennik każdego ranka i stosuj wskazówki, gdy nie możesz zasnąć w nocy.</string>
+    <string name="home_out_title">Porozmawiaj z lekarzem</string>
+    <string name="home_out_text">Metoda Sommelle nie jest dostosowana do Twojej sytuacji. Lekarz zaproponuje odpowiedniejszą pomoc.</string>
+    <string name="home_night_missing">Twoja %1$s nie została jeszcze zapisana.</string>
+    <string name="home_fill_night">Zapisz noc</string>
+    <string name="home_night_done">Noc została zapisana. Do jutra rano.</string>
+    <string name="home_fix_night">Popraw ostatnią noc</string>
+    <string name="home_cant_sleep">Nie mogę spać</string>
+    <string name="wake_title">O której godzinie chcesz wstawać każdego ranka?</string>
+    <string name="wake_text">Wybierz porę, którą możesz utrzymać każdego dnia, również w weekendy. To kotwica stabilizująca Twój sen.</string>
+    <string name="wake_suggested">Sugestia: Twoja typowa pora pobudki w tym tygodniu</string>
+    <string name="wake_confirm">Zatwierdź</string>
+    <string name="home_impact_title">Krótkie pytanie</string>
+    <string name="home_impact_question">W jakim stopniu Twoje noce wpływają obecnie na funkcjonowanie w ciągu dnia?</string>
+    <string name="home_impact_0">Wcale</string>
+    <string name="home_impact_1">Trochę</string>
+    <string name="home_impact_2">Umiarkowanie</string>
+    <string name="home_impact_3">Mocno</string>
+    <string name="home_impact_4">Ogromnie</string>
+</resources>

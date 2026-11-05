@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diary_q_bed">О котрій годині ви лягли в ліжко минулого вечора?</string>
+    <string name="diary_h_bed">Достатньо приблизного часу.</string>
+    <string name="diary_q_lights">О котрій годині ви спробували заснути?</string>
+    <string name="diary_h_lights">Якщо ви читали чи дивилися на екран у ліжку, вкажіть час, коли вимкнули світло.</string>
+    <string name="diary_q_onset">Скільки часу вам знадобилося, щоб заснути?</string>
+    <string name="diary_h_onset">Важливе ваше власне відчуття. Не потрібно дивитися на годинник уночі.</string>
+    <string name="diary_q_awakenings">Скільки разів ви прокидалися протягом ночі?</string>
+    <string name="diary_h_awakenings">Не враховуючи остаточний підйом уранці.</string>
+    <string name="diary_q_awake_minutes">Скільки часу загалом?</string>
+    <string name="diary_q_final">О котрій годині відбулося ваше останнє пробудження?</string>
+    <string name="diary_h_final">Те, після якого сон більше не повернувся.</string>
+    <string name="diary_q_out">О котрій годині ви підвелися з ліжка?</string>
+    <string name="diary_q_quality">Як би ви оцінили цю ніч?</string>
+    <string name="diary_less_than_5">Менше 5 хв</string>
+    <string name="diary_onset_more">Більше години</string>
+    <string name="diary_awake_more">2 год або більше</string>
+    <string name="diary_none">Жодного</string>
+    <string name="diary_five_or_more">5 або більше</string>
+    <string name="diary_quality_1">Дуже погана</string>
+    <string name="diary_quality_2">Погана</string>
+    <string name="diary_quality_3">Середня</string>
+    <string name="diary_quality_4">Добра</string>
+    <string name="diary_quality_5">Дуже добра</string>
+    <string name="diary_next">Далі</string>
+    <string name="diary_save">Зберегти</string>
+    <string name="diary_back_to_summary">Повернутися до огляду</string>
+    <string name="diary_summary_title">Ваша ніч у підсумку</string>
+    <string name="diary_summary_hint">Торкніться рядка, щоб виправити.</string>
+    <string name="diary_row_bed">Сон</string>
+    <string name="diary_row_lights">Вимкнення світла</string>
+    <string name="diary_row_onset">Засинання</string>
+    <string name="diary_row_awakenings">Пробудження</string>
+    <string name="diary_row_final">Останнє пробудження</string>
+    <string name="diary_row_out">Підйом</string>
+    <string name="diary_row_quality">Якість</string>
+    <plurals name="diary_awakenings_value">
+        <item quantity="one">%1$d пробудження (%2$s)</item>
+        <item quantity="few">%1$d пробудження (%2$s)</item>
+        <item quantity="many">%1$d пробуджень (%2$s)</item>
+        <item quantity="other">%1$d пробудження (%2$s)</item>
+    </plurals>
+    <string name="diary_edit_row">Редагувати: %1$s, %2$s</string>
+    <string name="diary_confirm">Усе вірно</string>
+    <string name="diary_guided">Відповідати запитання за запитанням</string>
+    <string name="diary_prefill_previous">Підказка: так само, як минулої ночі</string>
+    <string name="diary_prefill_watch">Підказка з вашого смарт-годинника</string>
+    <string name="diary_prefill_screen">Підказка на основі використання телефона</string>
+    <string name="diary_issue_awake_too_long">Час без сну довший за всю ніч. Перевірте вказаний час або тривалість.</string>
+    <string name="diary_issue_order">Час вказано не по порядку. Перевірте час, коли лягли, прокинулися та встали.</string>
+    <string name="diary_issue_ok">Правильно</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reminders_channel">Przypomnienia programu</string>
+    <string name="reminders_channel_description">Poranne przypomnienie o dzienniku i wieczorne przypomnienie przed porą snu.</string>
+    <string name="reminder_morning_title">Jak minęła noc?</string>
+    <string name="reminder_morning_text">Dwadzieścia sekund, aby zapisać ją w dzienniku.</string>
+    <string name="reminder_evening_title">Twoje okno snu zaczyna się o %1$s</string>
+    <string name="reminder_evening_text">Pozostań na nogach do tej pory: to właśnie pogłębia sen.</string>
+</resources>

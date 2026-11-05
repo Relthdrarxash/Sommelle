@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_hello">Hola</string>
+    <string name="home_badge_observation">Semana de observación</string>
+    <string name="home_badge_week">Semana %1$d de 6</string>
+    <string name="home_badge_maintenance">Mantenimiento</string>
+    <string name="home_window_title">Tu ventana de sueño</string>
+    <string name="home_bedtime">Acostarse</string>
+    <string name="home_waketime">Levantarse</string>
+    <string name="home_window_reason">Permanecer despierto hasta las %1$s es lo que hace que el sueño sea más profundo.</string>
+    <string name="home_window_landmarks">Desconexión tranquila desde las %1$s · Último café o té antes de las %2$s</string>
+    <string name="home_window_week1">La primera semana suele ser la más cansada: es normal y temporal, tu ventana se ampliará a medida que el sueño se consolide.</string>
+    <string name="home_window_maintenance">El programa de 6 semanas ha concluido: puedes dejar de rellenar el diario a diario o seguir usándolo cuando lo necesites.</string>
+    <string name="home_baseline_title">Una semana para observar</string>
+    <plurals name="home_baseline_text">
+        <item quantity="one">Basta con rellenar el diario cada mañana. Tu horario de sueño se calculará mañana.</item>
+        <item quantity="other">Basta con rellenar el diario cada mañana. Tu horario de sueño se calculará dentro de %1$d días.</item>
+    </plurals>
+    <string name="home_extended_title">Unas noches más</string>
+    <string name="home_extended_text">Se necesitan al menos %2$d noches de las últimas 7 para calcular tu horario. Llevas %1$d.</string>
+    <string name="home_wake_title">Elige tu hora de levantarte</string>
+    <string name="home_wake_text">Tu semana de observación ha terminado. Solo falta fijar tu hora de levantarte, la misma cada día.</string>
+    <string name="home_wake_button">Elegir mi hora de levantarme</string>
+    <string name="home_partial_title">Tu programa</string>
+    <string name="home_partial_text">Rellena el diario cada mañana y sigue las pautas si no consigues dormir por la noche.</string>
+    <string name="home_out_title">Consulta a tu médico</string>
+    <string name="home_out_text">El método de Sommelle no se adapta a tu situación. Un médico podrá ofrecerte una orientación adecuada.</string>
+    <string name="home_night_missing">Tu %1$s aún no está registrada.</string>
+    <string name="home_fill_night">Anotar mi noche</string>
+    <string name="home_night_done">Noche guardada. Hasta mañana por la mañana.</string>
+    <string name="home_fix_night">Corregir mi última noche</string>
+    <string name="home_cant_sleep">No consigo dormir</string>
+    <string name="wake_title">¿A qué hora deseas levantarte cada mañana?</string>
+    <string name="wake_text">Elige una hora que puedas mantener a diario, fines de semana incluidos. Es el ancla que estabiliza tu sueño.</string>
+    <string name="wake_suggested">Sugerencia: tu hora habitual de despertar esta semana</string>
+    <string name="wake_confirm">Confirmar</string>
+    <string name="home_impact_title">Una pregunta breve</string>
+    <string name="home_impact_question">En este momento, ¿hasta qué punto tus noches afectan a tus días?</string>
+    <string name="home_impact_0">Nada</string>
+    <string name="home_impact_1">Un poco</string>
+    <string name="home_impact_2">Moderadamente</string>
+    <string name="home_impact_3">Bastante</string>
+    <string name="home_impact_4">Enormemente</string>
+</resources>

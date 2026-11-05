@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="night_title">Nie możesz zasnąć. To się zdarza i nie ma w tym nic złego.</string>
+    <string name="night_intro">Czekanie w łóżku na sen tylko go oddala. Oto co możesz zrobić.</string>
+    <string name="night_step_1">Wstań i przejdź do innego pokoju.</string>
+    <string name="night_step_2">Zajmij się czymś spokojnym, przy przyćmionym świetle, z dala od ekranów.</string>
+    <string name="night_step_3">Wróć do łóżka, gdy poczujesz senność.</string>
+    <string name="night_bell_start">Delikatnie przypomnij za 20 min (bez zegarka)</string>
+    <string name="night_bell_active">Przypomnienie włączone: odłóż telefon. Cichy dzwonek zabrzmi za około dwadzieścia minut, bez pokazywania godziny.</string>
+    <string name="night_bell_done">Dźwięk zabrzmiał: jeśli czujesz ciężkie powieki, możesz wrócić do łóżka.</string>
+    <string name="night_ok">Dobrze, wstaję</string>
+    <string name="night_auto_close">Ten ekran zamknie się samoczynnie.</string>
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="export_title">Bericht für deine Ärztin / deinen Arzt</string>
+    <string name="export_intro">Du kannst diesen Bildschirm in der Arztpraxis vorzeigen oder den Bericht teilen. Er enthält weder deinen Namen noch andere identifizierende Daten.</string>
+    <string name="export_share_pdf">Bericht teilen (PDF)</string>
+    <string name="export_share_csv">Vollständiges Tagebuch teilen (Tabelle)</string>
+    <string name="export_share_hint">Die Datei wird lokal auf deinem Handy erstellt. Du entscheidest, an wen du sie sendest.</string>
+    <string name="export_chooser">Teilen mit…</string>
+    <string name="export_program">Programm</string>
+    <string name="export_started">Beginn: %1$s</string>
+    <string name="export_week">%1$s</string>
+    <string name="export_age">Alter: %1$s</string>
+    <string name="export_pathway">Verlauf: %1$s</string>
+    <string name="export_window">Aktuelles Schlaffenster: %1$s</string>
+    <string name="export_safety">Bei Programmbeginn</string>
+    <string name="export_weeks">Woche für Woche</string>
+    <string name="export_nights">%1$d erfasste Nächte</string>
+    <string name="export_in_bed">Im Bett</string>
+    <string name="export_asleep">Geschlafen</string>
+    <string name="export_efficiency">Effizienz</string>
+    <string name="export_onset">Einschlafen</string>
+    <string name="export_awake">Wachzeit</string>
+    <string name="export_quality">Qualität</string>
+    <string name="export_window_short">Fenster</string>
+    <string name="export_outcome">Programmergebnis</string>
+    <string name="export_empty">Die Daten erscheinen nach den ersten erfassten Nächten.</string>
+    <string name="export_disclaimer">Vom Nutzer im Schlaftagebuch (Consensus Sleep Diary) selbst angegebene Daten. Sommelle ist ein auf KVT-I basierendes Hilfsmittel und kein Medizinprodukt.</string>
+    <string name="export_pdf_baseline">Beobachtung</string>
+    <string name="export_pdf_last_7">Letzte 7 Nächte</string>
+    <string name="export_pdf_diary">Tagebuch: letzte %1$d Nächte</string>
+    <string name="export_pdf_col_night">Nacht</string>
+    <string name="export_pdf_col_bed">Bettzeit</string>
+    <string name="export_pdf_col_out">Aufstehen</string>
+    <string name="export_pdf_col_onset">Einschlaf.</string>
+    <string name="export_pdf_col_awake">Wach</string>
+    <string name="export_pdf_col_asleep">Schlaf</string>
+    <string name="export_pdf_col_efficiency">Effiz.</string>
+    <string name="export_pdf_col_quality">Qualität</string>
+    <string name="export_pdf_generated">Erstellt am %1$s.</string>
+    <string name="export_pdf_page">Sommelle · Seite %1$d</string>
+</resources>

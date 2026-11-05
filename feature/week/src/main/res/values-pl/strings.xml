@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="week_label">Podsumowanie tygodnia</string>
+    <string name="week_longer_title">Twoje noce są pełniejsze</string>
+    <string name="week_longer_text">W tym tygodniu przespałeś %1$s czasu spędzonego w łóżku. Twoje okno wydłuża się o %2$s.</string>
+    <string name="week_shorter_title">Twoje okno snu nieco się skraca</string>
+    <string name="week_shorter_text">W tym tygodniu przespałeś %1$s czasu spędzonego w łóżku. Twoje okno skraca się o %2$s: to pomaga skonsolidować sen.</string>
+    <string name="week_steady_title">Jesteś na dobrej drodze</string>
+    <string name="week_steady_text">W tym tygodniu przespałeś %1$s czasu spędzonego w łóżku. Twoje okno pozostaje bez zmian.</string>
+    <string name="week_floor_title">Twoje okno pozostaje stabilne</string>
+    <string name="week_floor_text">W tym tygodniu przespałeś %1$s czasu spędzonego w łóżku. Twoje okno osiągnęło już dolny limit bezpieczeństwa: nie skróci się bardziej.</string>
+    <string name="week_max_title">Twój sen wyraźnie się poprawił</string>
+    <string name="week_max_text">W tym tygodniu przespałeś %1$s czasu w łóżku. Twoje okno osiągnęło maksymalną przewidzianą długość.</string>
+    <string name="week_missing_title">Brakuje kilku nocy</string>
+    <string name="week_missing_text">Aby dostosować okno, potrzeba co najmniej %2$d zapisanych nocy z 7. Zapisano %1$d: Twoje okno pozostaje bez zmian.</string>
+    <string name="week_first_title">Twoje pierwsze okno snu</string>
+    <string name="week_first_text">Odpowiada średniej długości snu, aby skrócić czuwanie w łóżku i pogłębić sen. Po podsumowaniu za 7 dni okno będzie mogło wydłużać się o 15 minut co tydzień.</string>
+    <string name="week_pending_title">Twoje pierwsze podsumowanie wkrótce</string>
+    <string name="week_pending_text">Będzie gotowe po zakończeniu tygodnia obserwacji.</string>
+    <string name="week_partial_title">Twój sen tydzień po tygodniu</string>
+    <string name="week_partial_text">Oto zmiana czasu spędzanego w łóżku oraz rzeczywistego snu.</string>
+    <string name="week_window_current">Twoje bieżące okno</string>
+    <string name="week_bedtime">Pora snu</string>
+    <string name="week_waketime">Pobudka</string>
+    <string name="week_chart_title">Czas w łóżku i czas snu</string>
+    <string name="week_legend_bed">W łóżku</string>
+    <string name="week_legend_sleep">Sen</string>
+    <string name="week_chart_empty">Wykres pojawi się po zapisaniu kilku nocy.</string>
+    <string name="week_how_title">Jak obliczane jest moje okno?</string>
+    <string name="week_how_text" formatted="false">W każdym tygodniu Sommelle porównuje czas snu z czasem spędzonym w łóżku. Jeśli efektywność przekracza 85%, okno wydłuża się o 15 minut; poniżej 80% skraca się o 15 minut (nie schodząc poniżej bezpiecznego progu). Pomiędzy tymi wartościami pozostaje bez zmian. Godzina wstawania nigdy się nie zmienia.</string>
+    <string name="week_relapse_title">Co zrobić, gdy gorsza noc powróci?</string>
+    <string name="week_relapse_text">Pojedyncza gorsza noc (stres, podróż, wydarzenie) jest czymś normalnym i nie oznacza powrotu bezsenności:
+• Następnego ranka: wstań o stałej porze, nie dosypiaj.
+• W ciągu dnia: unikaj drzemek, aby zachować presję snu na wieczór.
+• W nocy: jeśli sen nie przychodzi, wyjdź z łóżka na około 20 minut i nie sprawdzaj godziny.
+• Jeśli trudne noce trwają dłużej niż 5 dni: wróć do zawężonego okna snu na 1–2 tygodnie.</string>
+    <string name="week_outcome_title">Podsumowanie programu</string>
+    <string name="week_outcome_text">Twój tydzień obserwacji w porównaniu z ostatnimi siedmioma nocami.</string>
+    <string name="week_outcome_before">Na początku</string>
+    <string name="week_outcome_after">Dziś</string>
+</resources>

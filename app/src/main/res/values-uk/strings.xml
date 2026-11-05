@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sommelle</string>
+    <string name="nav_home">Головна</string>
+    <string name="nav_week">Мій тиждень</string>
+    <string name="nav_exercises">Вправи</string>
+    <string name="nav_settings">Налаштування</string>
+    <string name="nav_label">Основна навігація</string>
+    <string name="widget_description">Вечірнє вікно сну та швидкий доступ до щоденника</string>
+    <string name="widget_window_title">Моє вікно цієї ночі</string>
+    <string name="widget_observation">Тиждень спостереження · Записати ніч</string>
+    <string name="widget_tap_hint">Торкніться, щоб відкрити ранковий щоденник</string>
+</resources>

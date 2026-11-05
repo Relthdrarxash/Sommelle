@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="week_label">Balance de la semana</string>
+    <string name="week_longer_title">Tus noches son más completas</string>
+    <string name="week_longer_text">Esta semana has dormido el %1$s del tiempo en la cama. Tu ventana se amplía en %2$s.</string>
+    <string name="week_shorter_title">Tu ventana se reduce un poco</string>
+    <string name="week_shorter_text">Esta semana has dormido el %1$s del tiempo en la cama. Tu ventana se reduce en %2$s: esto ayuda a consolidar el sueño.</string>
+    <string name="week_steady_title">Vas por buen camino</string>
+    <string name="week_steady_text">Esta semana has dormido el %1$s del tiempo en la cama. Tu ventana se mantiene igual.</string>
+    <string name="week_floor_title">Tu ventana se mantiene estable</string>
+    <string name="week_floor_text">Esta semana has dormido el %1$s del tiempo en la cama. Tu ventana ya está en el límite mínimo de seguridad: no bajará más.</string>
+    <string name="week_max_title">Tu sueño se ha restablecido bien</string>
+    <string name="week_max_text">Esta semana has dormido el %1$s del tiempo en la cama. Tu ventana ha alcanzado su duración máxima.</string>
+    <string name="week_missing_title">Faltan algunas noches</string>
+    <string name="week_missing_text">Para ajustar tu ventana se necesitan al menos %2$d noches de 7. Has rellenado %1$d: tu ventana no cambia.</string>
+    <string name="week_first_title">Tu primera ventana</string>
+    <string name="week_first_text">Corresponde al tiempo medio que ya duermes, para reducir el tiempo despierto en la cama y hacer el sueño más profundo. A partir de tu balance en 7 días, podrá ampliarse 15 minutos por semana.</string>
+    <string name="week_pending_title">Tu primer balance llegará pronto</string>
+    <string name="week_pending_text">Estará listo al finalizar tu semana de observación.</string>
+    <string name="week_partial_title">Tu sueño, semana tras semana</string>
+    <string name="week_partial_text">Evolución de tu tiempo en la cama y de tu tiempo de sueño.</string>
+    <string name="week_window_current">Tu ventana actual</string>
+    <string name="week_bedtime">Acostarse</string>
+    <string name="week_waketime">Levantarse</string>
+    <string name="week_chart_title">Tiempo en la cama y tiempo dormido</string>
+    <string name="week_legend_bed">En la cama</string>
+    <string name="week_legend_sleep">Dormido</string>
+    <string name="week_chart_empty">El gráfico aparecerá tras anotar algunas noches.</string>
+    <string name="week_how_title">¿Cómo se calcula mi ventana?</string>
+    <string name="week_how_text" formatted="false">Cada semana, Sommelle compara el tiempo dormido con el tiempo en la cama. Por norma general, por encima del 85 %, la ventana se amplía 15 minutos; por debajo del 80 %, se reduce 15 minutos, sin bajar de un mínimo de seguridad. En valores intermedios se mantiene igual. La hora de levantarse no varía.</string>
+    <string name="week_relapse_title">¿Qué hacer si reaparece una mala noche más adelante?</string>
+    <string name="week_relapse_text">Una mala noche aislada (estrés, viaje, imprevisto) es normal y no significa una recaída del insomnio crónico:
+• A la mañana siguiente: mantén tu hora habitual de levantarte, sin remolonear en la cama.
+• Durante el día: evita siestas para acumular presión de sueño para la noche.
+• Por la noche: si no logras dormir, levántate unos veinte minutos sin mirar el reloj.
+• Si las noches difíciles se prolongan más de 5 días: retoma tu ventana de sueño reducida durante una o dos semanas.</string>
+    <string name="week_outcome_title">Balance del programa</string>
+    <string name="week_outcome_text">Tu semana de observación comparada con tus últimas siete noches.</string>
+    <string name="week_outcome_before">Al inicio</string>
+    <string name="week_outcome_after">Hoy</string>
+</resources>

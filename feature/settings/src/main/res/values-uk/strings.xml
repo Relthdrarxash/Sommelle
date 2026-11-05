@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Налаштування</string>
+    <string name="settings_reminders">Нагадування</string>
+    <string name="settings_morning">Ранкове нагадування</string>
+    <string name="settings_morning_hint">Щоб записати ніч у щоденник. Без нагадування, якщо запис уже зроблено.</string>
+    <string name="settings_morning_time">Час нагадування</string>
+    <string name="settings_evening">Вечірнє нагадування</string>
+    <string name="settings_evening_hint">За 30 хвилин до початку вашого вікна сну.</string>
+    <string name="settings_evening_unavailable">Буде доступно після розрахунку вашого вікна сну.</string>
+    <string name="settings_notifications_off">Сповіщення Sommelle вимкнено в налаштуваннях телефона: нагадування не відображатимуться.</string>
+    <string name="settings_for_doctor">Для вашого лікаря</string>
+    <string name="settings_report">Звіт для лікаря</string>
+    <string name="settings_report_hint">Огляд програми та щоденника сну, щоб показати або надіслати лікарю.</string>
+    <string name="settings_data">Ваші дані</string>
+    <string name="settings_data_hint">Усі дані залишаються на телефоні. Нічого нікуди не передається.</string>
+    <string name="settings_import_csv">Імпортувати щоденник із CSV</string>
+    <string name="settings_import_result">Імпортовано ночей: %1$d.</string>
+    <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
+    <string name="settings_privacy">Політика конфіденційності</string>
+    <string name="settings_erase">Видалити всі мої дані</string>
+    <string name="settings_erase_title">Видалити всі дані?</string>
+    <string name="settings_erase_text">Ваш щоденник, розклад і відповіді буде видалено з цього пристрою. Цю дію не можна скасувати.</string>
+    <string name="settings_erase_confirm">Видалити все</string>
+    <string name="settings_erase_cancel">Скасувати</string>
+    <string name="settings_help">Якщо ви переживаєте кризовий стан, цілодобово доступні безкоштовні лінії психологічної підтримки.</string>
+    <string name="settings_call_3114">Зателефонувати на 7333 (Україна)</string>
+    <string name="settings_contact">Зв\'язатися з нами</string>
+    <string name="settings_contact_hint">Маєте запитання про застосунок, труднощі чи пропозиції? Напишіть нам. Із медичних питань зверніться до лікаря.</string>
+    <string name="settings_contact_button">Надіслати листа</string>
+    <string name="settings_on">Увімкнено</string>
+    <string name="settings_off">Вимкнено</string>
+</resources>

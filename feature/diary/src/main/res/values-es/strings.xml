@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diary_q_bed">¿A qué hora te acostaste anoche?</string>
+    <string name="diary_h_bed">Basta con una estimación.</string>
+    <string name="diary_q_lights">¿A qué hora intentaste dormirte?</string>
+    <string name="diary_h_lights">Si leíste o miraste una pantalla en la cama, indica la hora a la que apagaste.</string>
+    <string name="diary_q_onset">¿Cuánto tiempo tardaste en dormirte?</string>
+    <string name="diary_h_onset">Lo que cuenta es tu sensación. No hace falta mirar el reloj por la noche.</string>
+    <string name="diary_q_awakenings">¿Cuántas veces te despertaste durante la noche?</string>
+    <string name="diary_h_awakenings">Sin contar el despertar de la mañana.</string>
+    <string name="diary_q_awake_minutes">¿Cuánto tiempo en total?</string>
+    <string name="diary_q_final">¿A qué hora fue tu último despertar?</string>
+    <string name="diary_h_final">Aquel tras el cual no volviste a dormirte.</string>
+    <string name="diary_q_out">¿A qué hora te levantaste de la cama?</string>
+    <string name="diary_q_quality">¿Cómo calificarías tu noche?</string>
+    <string name="diary_less_than_5">Menos de 5 min</string>
+    <string name="diary_onset_more">Más de una hora</string>
+    <string name="diary_awake_more">2 h o más</string>
+    <string name="diary_none">Ninguno</string>
+    <string name="diary_five_or_more">5 o más</string>
+    <string name="diary_quality_1">Muy mala</string>
+    <string name="diary_quality_2">Mala</string>
+    <string name="diary_quality_3">Regular</string>
+    <string name="diary_quality_4">Buena</string>
+    <string name="diary_quality_5">Muy buena</string>
+    <string name="diary_next">Siguiente</string>
+    <string name="diary_save">Guardar</string>
+    <string name="diary_back_to_summary">Volver al resumen</string>
+    <string name="diary_summary_title">Tu noche en resumen</string>
+    <string name="diary_summary_hint">Toca una línea para corregirla.</string>
+    <string name="diary_row_bed">Acostarse</string>
+    <string name="diary_row_lights">Apagar la luz</string>
+    <string name="diary_row_onset">Conciliación</string>
+    <string name="diary_row_awakenings">Despertares</string>
+    <string name="diary_row_final">Último despertar</string>
+    <string name="diary_row_out">Levantarse</string>
+    <string name="diary_row_quality">Calidad</string>
+    <plurals name="diary_awakenings_value">
+        <item quantity="one">%1$d despertar (%2$s)</item>
+        <item quantity="other">%1$d despertares (%2$s)</item>
+    </plurals>
+    <string name="diary_edit_row">Modificar: %1$s, %2$s</string>
+    <string name="diary_confirm">Es correcto</string>
+    <string name="diary_guided">Responder pregunta a pregunta</string>
+    <string name="diary_prefill_previous">Sugerencia: igual que la noche anterior</string>
+    <string name="diary_prefill_watch">Sugerencia a partir de tu reloj</string>
+    <string name="diary_prefill_screen">Sugerencia según el uso del teléfono</string>
+    <string name="diary_issue_awake_too_long">El tiempo despierto supera la duración de la noche. Revisa las horas o duraciones.</string>
+    <string name="diary_issue_order">Las horas no están en orden cronológico. Revisa acostarse, despertar y levantarse.</string>
+    <string name="diary_issue_ok">Correcto</string>
+</resources>

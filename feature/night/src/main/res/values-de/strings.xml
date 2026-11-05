@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="night_title">Du schläfst nicht. Das kommt vor und ist nicht schlimm.</string>
+    <string name="night_intro">Im Bett zu liegen und auf Schlaf zu warten, vertreibt ihn nur. Das kannst du tun.</string>
+    <string name="night_step_1">Steh auf und gehe in einen anderen Raum.</string>
+    <string name="night_step_2">Mache etwas Ruhiges bei gedämpftem Licht, fern von Bildschirmen.</string>
+    <string name="night_step_3">Gehe wieder ins Bett, wenn du die Müdigkeit spürst.</string>
+    <string name="night_bell_start">Sanft nach 20 Min. erinnern (ohne Uhr)</string>
+    <string name="night_bell_active">Erinnerung aktiviert: Lege das Handy beiseite. Ein sanfter Ton erklingt in etwa zwanzig Minuten, ohne die Uhrzeit anzuzeigen.</string>
+    <string name="night_bell_done">Der Ton ist verklungen: Wenn deine Augenlider schwer sind, kannst du wieder ins Bett gehen.</string>
+    <string name="night_ok">Alles klar, ich stehe auf</string>
+    <string name="night_auto_close">Dieser Bildschirm schließt sich von selbst.</string>
+</resources>

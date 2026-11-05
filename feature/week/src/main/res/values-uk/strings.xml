@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="week_label">Підсумок тижня</string>
+    <string name="week_longer_title">Ваші ночі стали спокійнішими</string>
+    <string name="week_longer_text">Цього тижня ви спали %1$s часу, проведеного в ліжку. Ваше вікно сну збільшується на %2$s.</string>
+    <string name="week_shorter_title">Ваше вікно сну трохи скорочується</string>
+    <string name="week_shorter_text">Цього тижня ви спали %1$s часу, проведеного в ліжку. Ваше вікно скорочується на %2$s: це допомагає зміцнити сон.</string>
+    <string name="week_steady_title">Ви на правильному шляху</string>
+    <string name="week_steady_text">Цього тижня ви спали %1$s часу в ліжку. Ваше вікно залишається незмінним.</string>
+    <string name="week_floor_title">Ваше вікно залишається стабільним</string>
+    <string name="week_floor_text">Цього тижня ви спали %1$s часу в ліжку. Ваше вікно досягло безпечного мінімуму і більше не скорочуватиметься.</string>
+    <string name="week_max_title">Ваш сон добре відновився</string>
+    <string name="week_max_text">Цього тижня ви спали %1$s часу в ліжку. Ваше вікно досягло максимальної тривалості.</string>
+    <string name="week_missing_title">Бракує кількох ночей</string>
+    <string name="week_missing_text">Для налаштування вікна потрібно щонайменше %2$d заповнених ночей із 7. Заповнено %1$d: ваше вікно залишається незмінним.</string>
+    <string name="week_first_title">Ваше перше вікно сну</string>
+    <string name="week_first_text">Воно відповідає середній тривалості сну, щоб скоротити час без сну в ліжку та зробити сон глибшим. Після звіту за 7 днів воно зможе збільшуватися на 15 хвилин щотижня.</string>
+    <string name="week_pending_title">Ваш перший підсумок скоро буде готовий</string>
+    <string name="week_pending_text">Він буде готовий після завершення тижня спостереження.</string>
+    <string name="week_partial_title">Ваш сон тиждень за тижнем</string>
+    <string name="week_partial_text">Ось як змінюється ваш час у ліжку та тривалість сну.</string>
+    <string name="week_window_current">Ваше поточне вікно</string>
+    <string name="week_bedtime">Сон</string>
+    <string name="week_waketime">Підйом</string>
+    <string name="week_chart_title">Час у ліжку та час сну</string>
+    <string name="week_legend_bed">У ліжку</string>
+    <string name="week_legend_sleep">Сон</string>
+    <string name="week_chart_empty">Графік з\'явиться після кількох заповнених ночей.</string>
+    <string name="week_how_title">Як розраховується моє вікно сну?</string>
+    <string name="week_how_text" formatted="false">Щотижня Sommelle порівнює час сну із часом у ліжку. Зазвичай при ефективності понад 85% вікно подовжується на 15 хвилин; нижче 80% — скорочується на 15 хвилин (не опускаючись нижче безпечного мінімуму). Між цими значеннями воно не змінюється. Час підйому залишається фіксованим.</string>
+    <string name="week_relapse_title">Що робити, якщо трапиться погана ніч?</string>
+    <string name="week_relapse_text">Окрема погана ніч (стрес, подорож, несподіванка) є нормальною і не свідчить про повернення хронічного безсоння:
+• Наступного ранку: підводьтеся у звичний час, без тривалого досипання.
+• Удень: уникайте денного сну, щоб зберегти потребу у сні до вечора.
+• Уночі: якщо сон не йде, встаньте приблизно на 20 хвилин, не дивлячись на годинник.
+• Якщо труднощі тривають понад 5 днів: поверніться до звуженого вікна сну на 1–2 тижні.</string>
+    <string name="week_outcome_title">Підсумок програми</string>
+    <string name="week_outcome_text">Порівняння тижня спостереження з останніми 7 ночами.</string>
+    <string name="week_outcome_before">На старті</string>
+    <string name="week_outcome_after">Сьогодні</string>
+</resources>
