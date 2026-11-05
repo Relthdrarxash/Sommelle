@@ -9,6 +9,7 @@
     <string name="home_bedtime">Bedtime</string>
     <string name="home_waketime">Rise time</string>
     <string name="home_window_reason">Staying up until %1$s is what makes sleep deeper.</string>
+    <string name="home_window_landmarks">Quiet wind-down from %1$s · Last coffee or tea before %2$s</string>
     <string name="home_window_week1">The first week is often the most tiring: this is normal and temporary, your window will lengthen as your sleep becomes more consolidated.</string>
     <string name="home_window_maintenance">The 6-week program is complete: you can stop filling in the daily diary, or keep using it whenever you need.</string>
 

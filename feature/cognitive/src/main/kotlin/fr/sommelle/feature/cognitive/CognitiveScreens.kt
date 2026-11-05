@@ -114,6 +114,70 @@ fun ModulesContent(state: ModulesState, onOpen: (CognitiveModule) -> Unit) {
         state.nextLocked?.takeIf { state.available.isNotEmpty() }?.let {
             Text(stringResource(R.string.cog_next, it.week), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
         }
+        SleepHabitsCard()
+    }
+}
+
+@Composable
+private fun SleepHabitsCard() {
+    val context = LocalContext.current
+    val prefs = remember(context) {
+        runCatching { context.getSharedPreferences("sommelle_evening_notepad", Context.MODE_PRIVATE) }.getOrNull()
+    }
+    val habits = stringArrayResource(R.array.cog_habits_list)
+    var selected by rememberSaveable {
+        val initial = habits.indices.filter { idx -> prefs?.getBoolean("habit_$idx", false) == true }.toSet()
+        mutableStateOf(initial)
+    }
+
+    Surface(shape = MaterialTheme.shapes.large, color = MaterialTheme.colorScheme.surface, shadowElevation = 1.dp) {
+        Column(Modifier.padding(20.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(
+                stringResource(R.string.cog_habits_title),
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.semantics { heading() },
+            )
+            Text(
+                stringResource(R.string.cog_habits_subtitle),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            habits.forEachIndexed { index, habit ->
+                val checked = index in selected
+                Surface(
+                    shape = MaterialTheme.shapes.medium,
+                    color = if (checked) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f),
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable {
+                                val next = if (checked) selected - index else selected + index
+                                selected = next
+                                prefs?.edit()?.putBoolean("habit_$index", !checked)?.apply()
+                            }
+                            .semantics { role = Role.Checkbox }
+                            .padding(horizontal = 16.dp, vertical = 12.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        if (checked) {
+                            Icon(
+                                Icons.Filled.Check,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onPrimaryContainer,
+                                modifier = Modifier.size(20.dp),
+                            )
+                            Spacer(Modifier.width(10.dp))
+                        }
+                        Text(
+                            habit,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = if (checked) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface,
+                        )
+                    }
+                }
+            }
+        }
     }
 }
 

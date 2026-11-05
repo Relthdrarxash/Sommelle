@@ -21,6 +21,15 @@
     <string name="cog_worry_stored">C\'est noté et rangé pour la nuit. Si ce souci revient au lit, rappelez-vous que vous vous en occuperez demain.</string>
     <string name="cog_worry_reopen">Rouvrir ou effacer le carnet</string>
     <string name="cog_worry_clear">Effacer le carnet</string>
+    <string name="cog_habits_title">Mes repères du soir et de la chambre</string>
+    <string name="cog_habits_subtitle">Choisissez 1 à 3 habitudes simples pour accompagner votre fenêtre de sommeil cette semaine.</string>
+    <string-array name="cog_habits_list">
+        <item>Retourner ou cacher l\'heure la nuit</item>
+        <item>Garder le lit uniquement pour dormir (ni écran, ni travail)</item>
+        <item>Arrêter café, thé et cola au moins 8 h avant le coucher</item>
+        <item>Prendre la lumière du jour dans l\'heure qui suit le lever</item>
+        <item>Éviter les siestes (ou 20 min maximum avant 15 h)</item>
+    </string-array>
 
     <!-- Croyances sur le sommeil -->
     <string name="cog_beliefs_title">Les idées sur le sommeil</string>

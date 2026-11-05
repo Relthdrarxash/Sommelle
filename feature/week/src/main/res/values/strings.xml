@@ -34,6 +34,9 @@
     <string name="week_how_title">How is my window calculated?</string>
     <string name="week_how_text" formatted="false">Each week, Sommelle compares the time you slept with the time you spent in bed. As a rule, above 85%, the window grows by 15 minutes; below 80%, it shrinks by 15 minutes, without going under a safety floor. In between, it stays the same. Your rise time never changes.</string>
 
+    <string name="week_relapse_title">What if a bad night comes back later?</string>
+    <string name="week_relapse_text">An occasional bad night (stress, travel, life event) is normal and does not mean chronic insomnia is back:\n• The next morning: keep your usual rise time, without sleeping in.\n• During the day: skip naps so your evening sleep drive stays strong.\n• At night: if sleep does not come, get out of bed for about twenty minutes without checking the clock.\n• If hard nights last more than 5 days: return to a tighter sleep window for one to two weeks.</string>
+
     <string name="week_outcome_title">Program results</string>
     <string name="week_outcome_text">Your observation week compared with your last seven nights.</string>
     <string name="week_outcome_before">At the start</string>

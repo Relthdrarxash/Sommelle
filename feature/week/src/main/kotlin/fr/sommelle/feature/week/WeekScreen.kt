@@ -55,6 +55,7 @@ fun WeekScreen(repository: SommelleRepository) {
 @Composable
 fun WeekContent(s: WeekState) {
     var showHow by rememberSaveable { mutableStateOf(false) }
+    var showRelapse by rememberSaveable { mutableStateOf(false) }
 
     ScreenScaffold {
         Text(stringResource(R.string.week_label), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -89,6 +90,15 @@ fun WeekContent(s: WeekState) {
             if (showHow) {
                 Text(stringResource(R.string.week_how_text), style = MaterialTheme.typography.bodyMedium)
             }
+        }
+
+        SommelleButton(
+            text = stringResource(R.string.week_relapse_title),
+            onClick = { showRelapse = !showRelapse },
+            style = SommelleButtonStyle.Quiet,
+        )
+        if (showRelapse) {
+            Text(stringResource(R.string.week_relapse_text), style = MaterialTheme.typography.bodyMedium)
         }
     }
 }
