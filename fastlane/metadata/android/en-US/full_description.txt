@@ -5,18 +5,20 @@ HOW IT WORKS
 • An observation week: each morning, you log your night in about twenty seconds. An estimate is enough.
 • Your sleep window: a bedtime and a rise time, adjusted every week based on your nights.
 • Support at night: if you can't sleep, a button reminds you what to do, on a dark screen, with no numbers or clock.
-• A review every week, explained in one sentence, with a simple chart.
+• Four calming exercises with an eyes-closed voice guide: slow breathing, muscle relaxation, calming imagery and an interactive evening notepad, with offline speech synthesis and a soft 432 Hz acoustic chime.
+• A weekly review explained in one sentence, plus a structured clinician report you can copy or share with your doctor.
 
 DESIGNED FOR EVERYONE
 • Large text, big buttons, plain language.
 • No clock dial: big buttons to move forward or back by 15 minutes.
 • Built for TalkBack and large text sizes.
-• A warm, dark night theme, automatic in the evening.
+• A warm, dark night theme, automatic in the evening, and a discreet home screen widget.
 
 YOUR DATA STAYS WITH YOU
 • No account, no ads, no trackers.
 • The app has no Internet access: nothing is sent.
-• Free and open source: the code is public and anyone can check it.
+• Sleep diary CSV export and import, plus Android encrypted device-to-device backup.
+• Free and open source (GPL-3.0): the code is public and anyone can check it.
 
 GOOD TO KNOW
 Sommelle is a self-help and education tool, not a medical device. It does not replace medical advice. It is designed for adults; it is not suited to night work or to nights interrupted by someone else (a baby, a relative who needs help). If you snore with pauses in breathing or fall asleep during the day, talk to your doctor.
