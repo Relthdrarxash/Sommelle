@@ -21,6 +21,15 @@
     <string name="cog_worry_stored">Written down and put away for the night. If this worry comes back in bed, remind yourself you will deal with it tomorrow.</string>
     <string name="cog_worry_reopen">Reopen or clear notepad</string>
     <string name="cog_worry_clear">Clear notepad</string>
+    <string name="cog_habits_title">My evening and bedroom habits</string>
+    <string name="cog_habits_subtitle">Choose 1 to 3 simple commitments to support your sleep window this week.</string>
+    <string-array name="cog_habits_list">
+        <item>Turn away or hide the clock at night</item>
+        <item>Keep the bed only for sleep (no screens or work)</item>
+        <item>Stop coffee, tea and cola at least 8 hours before bed</item>
+        <item>Get daylight within an hour of getting up</item>
+        <item>Avoid naps (or keep under 20 minutes before 3 PM)</item>
+    </string-array>
 
     <!-- Croyances sur le sommeil -->
     <string name="cog_beliefs_title">Ideas about sleep</string>

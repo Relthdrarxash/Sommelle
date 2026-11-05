@@ -5,6 +5,9 @@
     <string name="night_step_1">Levez-vous et allez dans une autre pièce.</string>
     <string name="night_step_2">Faites quelque chose de calme, sous une lumière douce, loin des écrans.</string>
     <string name="night_step_3">Revenez au lit quand vous sentez le sommeil venir.</string>
+    <string name="night_bell_start">Me prévenir doucement dans 20 min (sans horloge)</string>
+    <string name="night_bell_active">Repère activé : posez le téléphone. Un timbre doux sonnera dans une vingtaine de minutes, sans afficher l\'heure.</string>
+    <string name="night_bell_done">Le timbre a sonné : si vos paupières sont lourdes, vous pouvez retourner vous coucher.</string>
     <string name="night_ok">D\'accord, je me lève</string>
     <string name="night_auto_close">Cet écran se fermera tout seul.</string>
 </resources>

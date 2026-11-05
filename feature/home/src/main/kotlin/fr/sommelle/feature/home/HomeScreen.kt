@@ -166,7 +166,14 @@ private fun WindowCard(window: SleepWindow, badge: WeekBadge, week: Int) {
                 TimeTile(stringResource(R.string.home_bedtime), bed, Modifier.weight(1f))
                 TimeTile(stringResource(R.string.home_waketime), Texts.current().time(window.wakeTime), Modifier.weight(1f))
             }
+            val windDown = Texts.current().time(window.bedTime.minusHours(1))
+            val lastCaffeine = Texts.current().time(window.bedTime.minusHours(8))
             Text(stringResource(R.string.home_window_reason, bed), style = MaterialTheme.typography.bodyMedium)
+            Text(
+                stringResource(R.string.home_window_landmarks, windDown, lastCaffeine),
+                style = MaterialTheme.typography.bodySmall,
+                color = SommelleColors.LavenderOnNight,
+            )
             if (badge == WeekBadge.PROGRAM_WEEK && week == 1) {
                 Text(
                     stringResource(R.string.home_window_week1),
