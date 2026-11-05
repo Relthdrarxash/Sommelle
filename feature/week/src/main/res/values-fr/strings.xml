@@ -16,7 +16,7 @@
     <string name="week_missing_text">Pour ajuster votre fenêtre, il faut au moins %2$d nuits remplies sur 7. Vous en avez rempli %1$d : votre fenêtre reste la même.</string>
 
     <string name="week_first_title">Votre première fenêtre</string>
-    <string name="week_first_text">Elle est calculée à partir de votre semaine d\'observation. Premier bilan dans une semaine.</string>
+    <string name="week_first_text">Elle reprend la durée que vous dormez déjà en moyenne, pour réduire l\'éveil au lit et rendre le sommeil plus profond. Dès votre bilan dans 7 jours, elle pourra s\'allonger de 15 minutes par semaine.</string>
     <string name="week_pending_title">Votre premier bilan arrive bientôt</string>
     <string name="week_pending_text">Il sera prêt après votre semaine d\'observation.</string>
     <string name="week_partial_title">Votre sommeil, semaine après semaine</string>

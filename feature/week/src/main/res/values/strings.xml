@@ -16,7 +16,7 @@
     <string name="week_missing_text">To adjust your window, at least %2$d of the 7 nights need to be filled in. You filled in %1$d: your window stays the same.</string>
 
     <string name="week_first_title">Your first window</string>
-    <string name="week_first_text">It is calculated from your observation week. First review in a week.</string>
+    <string name="week_first_text">It matches the time you already sleep on average, to reduce wakefulness in bed and make sleep deeper. Starting at your review in 7 days, it can grow by 15 minutes each week.</string>
     <string name="week_pending_title">Your first review is coming soon</string>
     <string name="week_pending_text">It will be ready after your observation week.</string>
     <string name="week_partial_title">Your sleep, week after week</string>
