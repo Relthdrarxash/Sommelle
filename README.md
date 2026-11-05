@@ -50,11 +50,11 @@ Pendant six à huit semaines :
 
 Les captures sont générées à partir du code des écrans à chaque modification.
 
-## Ce que Sommelle refuse de faire
+## Parti pris
 
-- **Pas de « score de sommeil » sur 100 le matin** : afficher un score quotidien imprécis entretient l'anxiété de performance (*orthosomnie*). Sommelle consolide le sommeil sur la semaine, sans juger une nuit isolée.
-- **Pas d'horloge ni de compte à rebours la nuit** : regarder l'heure à 3 h du matin réactive l'éveil. L'écran de nuit masque la barre d'état et propose un timbre doux à 20 minutes sans chiffre.
-- **Pas de permission Internet ni d'abonnement** : l'accès au protocole complet de TCC-I est gratuit, libre et 100 % hors ligne.
+- **Pas de note sur 100 chaque matin** : une mauvaise nuit est une information pour ajuster vos horaires de la semaine, pas un échec à noter.
+- **Pas d'horloge ni de décompte la nuit** : regarder l'heure à 3 h du matin entretient l'éveil. L'écran de nuit masque l'heure et propose un timbre doux à 20 minutes sans afficher de chiffre.
+- **Pas de permission Internet ni d'abonnement** : l'ensemble du programme de 6 à 8 semaines fonctionne hors ligne et gratuitement.
 
 ## Du même atelier (Pilmil Studio)
 

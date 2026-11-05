@@ -45,11 +45,11 @@ Over six to eight weeks:
 
 Screenshots are generated from the screen code on every change.
 
-## What Sommelle refuses to do
+## Design commitments
 
-- **No morning "sleep score out of 100"**: grading every night fuels performance anxiety (*orthosomnia*). Sommelle consolidates sleep week by week without judging an isolated night.
-- **No clock or countdown at night**: checking the time at 3 AM reactivates alertness. The night screen hides the status bar clock and offers a clock-free 20-minute gentle chime.
-- **No Internet permission or subscription**: the full CBT-I protocol is free, open source and 100% offline.
+- **No morning score out of 100**: a hard night is information used to adjust your weekly schedule, not a failure to grade.
+- **No clock or countdown at night**: checking the time at 3 AM keeps you awake. The night screen hides the status bar clock and offers a gentle 20-minute chime with no numbers on screen.
+- **No Internet permission or subscription**: the full 6-to-8-week program works offline and for free.
 
 ## From the same studio (Pilmil Studio)
 
