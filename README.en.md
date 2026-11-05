@@ -97,4 +97,4 @@ Sommelle is distributed under the [GNU GPL v3.0](LICENSE) license. You can use, 
 
 ## A note on development
 
-Most of Sommelle's code was written with Claude, Anthropic's AI assistant. I reviewed it, tested it and maintain it: the program engine and screen logic are covered by automated tests, and I answer issues and messages myself.
+Sommelle's code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all content and calculations rely on the clinical CBT-I protocol (HAS, Réseau Morphée, ESRS, CBT-i Coach), the program engine and screen logic are deterministic and covered by automated tests, and I personally maintain the project and answer issues and messages myself.
