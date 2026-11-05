@@ -14,8 +14,8 @@ Sommelle is a self-help and education tool. It is not a medical device and does 
 
 Over six to eight weeks:
 
-- **An entry questionnaire** rules out sleep restriction when it is not advised (possible apnea, bipolar disorder, epilepsy, pregnancy, safety-critical job) and points to a doctor when needed.
-- **A sleep diary** is filled in each morning in about twenty seconds, without a keyboard.
+- **An entry questionnaire and clear 6-week roadmap** rule out sleep restriction when it is not advised (possible apnea, bipolar disorder, epilepsy, pregnancy, safety-critical job), explain the three stages of the program upfront, and point to a doctor when needed.
+- **A sleep diary** is filled in each morning in about twenty seconds, without a keyboard, with reassuring guidance during the first week of sleep restriction.
 - **A sleep window** (bedtime and rise time) is calculated after an observation week, then adjusted each week based on your nights.
 - **A night screen**, almost black, reminds you what to do when sleep does not come.
 - **Five cognitive exercises** unlock over the program: ideas about sleep, putting the day to rest, paradoxical intention, decatastrophizing, relaxation.
