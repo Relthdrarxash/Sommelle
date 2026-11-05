@@ -8,7 +8,7 @@ An Android app that supports people with insomnia, based on CBT-I (cognitive beh
 
 Sommelle is a self-help and education tool. It is not a medical device and does not replace medical advice.
 
-**[Sommelle website](https://relthdrarxash.github.io/sommelle/en/)** · [For health professionals](https://relthdrarxash.github.io/sommelle/en/professionals.html) · [Privacy](https://relthdrarxash.github.io/sommelle/en/privacy.html)
+**[Sommelle website](https://relthdrarxash.github.io/sommelle/en/)** · **[Download APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [For health professionals](https://relthdrarxash.github.io/sommelle/en/professionals.html) · [Scientific dossier](https://relthdrarxash.github.io/sommelle/en/protocol.html) · [Privacy](https://relthdrarxash.github.io/sommelle/en/privacy.html)
 
 ## What the app does
 
@@ -44,6 +44,17 @@ Over six to eight weeks:
 </table>
 
 Screenshots are generated from the screen code on every change.
+
+## What Sommelle refuses to do
+
+- **No morning "sleep score out of 100"**: grading every night fuels performance anxiety (*orthosomnia*). Sommelle consolidates sleep week by week without judging an isolated night.
+- **No clock or countdown at night**: checking the time at 3 AM reactivates alertness. The night screen hides the status bar clock and offers a clock-free 20-minute gentle chime.
+- **No Internet permission or subscription**: the full CBT-I protocol is free, open source and 100% offline.
+
+## From the same studio (Pilmil Studio)
+
+- **[Lunaison](https://github.com/Relthdrarxash/lunaison)**: free, open-source offline menstrual cycle tracker with referenced medical guides and serverless partner sharing.
+- **[Respire](https://github.com/Relthdrarxash/respire)**: a short breathing pause before the apps you open on autopilot, especially helpful in the evening before bed.
 
 ## Why Sommelle is free
 

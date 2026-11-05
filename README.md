@@ -8,7 +8,7 @@ Application Android d'accompagnement à l'insomnie fondée sur la TCC-I (thérap
 
 Sommelle est un outil d'accompagnement et d'éducation. Ce n'est pas un dispositif médical et elle ne remplace pas un avis médical.
 
-**[Site de Sommelle](https://relthdrarxash.github.io/sommelle/)** · [Pour les professionnels de santé](https://relthdrarxash.github.io/sommelle/professionnels.html) · [Confidentialité](https://relthdrarxash.github.io/sommelle/confidentialite.html)
+**[Site de Sommelle](https://relthdrarxash.github.io/sommelle/)** · **[Télécharger l'APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [Pour les professionnels de santé](https://relthdrarxash.github.io/sommelle/professionnels.html) · [Dossier scientifique](https://relthdrarxash.github.io/sommelle/protocole.html) · [Confidentialité](https://relthdrarxash.github.io/sommelle/confidentialite.html)
 
 ## Ce que fait l'appli
 
@@ -49,6 +49,17 @@ Pendant six à huit semaines :
 </table>
 
 Les captures sont générées à partir du code des écrans à chaque modification.
+
+## Ce que Sommelle refuse de faire
+
+- **Pas de « score de sommeil » sur 100 le matin** : afficher un score quotidien imprécis entretient l'anxiété de performance (*orthosomnie*). Sommelle consolide le sommeil sur la semaine, sans juger une nuit isolée.
+- **Pas d'horloge ni de compte à rebours la nuit** : regarder l'heure à 3 h du matin réactive l'éveil. L'écran de nuit masque la barre d'état et propose un timbre doux à 20 minutes sans chiffre.
+- **Pas de permission Internet ni d'abonnement** : l'accès au protocole complet de TCC-I est gratuit, libre et 100 % hors ligne.
+
+## Du même atelier (Pilmil Studio)
+
+- **[Lunaison](https://github.com/Relthdrarxash/lunaison)** : suivi du cycle menstruel libre, gratuit et sans accès à Internet, avec fiches médicales sourcées et partage partenaire hors-ligne.
+- **[Respire](https://github.com/Relthdrarxash/respire)** : une courte pause de respiration avant les applications que l'on ouvre par réflexe, particulièrement utile le soir avant le coucher.
 
 ## Pourquoi Sommelle est gratuite
 
