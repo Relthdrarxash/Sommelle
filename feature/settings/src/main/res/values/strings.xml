@@ -21,7 +21,7 @@
     <string name="settings_erase_text">Your diary, your schedule and your answers will be deleted from this phone. This cannot be undone.</string>
     <string name="settings_erase_confirm">Erase everything</string>
     <string name="settings_erase_cancel">Cancel</string>
-    <string name="settings_help">If you are going through a hard time, reach out now: call your local emergency number or a crisis line in your country. In France, 3114 is free, day and night.</string>
+    <string name="settings_help">If you are going through a hard time, reach out now: call your local emergency number or a crisis line in your country, such as 988 in the United States. In France, 3114 is free, day and night.</string>
     <string name="settings_call_3114">Call 3114 (France)</string>
     <string name="settings_contact">Contact us</string>
     <string name="settings_contact_hint">A question about the app, a problem, a suggestion? Write to us. For a question about your health, please see your doctor.</string>
