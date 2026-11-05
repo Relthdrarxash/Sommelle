@@ -112,4 +112,4 @@ Sommelle est distribuée sous licence [GNU GPL v3.0](LICENSE). Vous pouvez l'uti
 
 ## Note sur le développement
 
-L'essentiel du code de Sommelle a été écrit avec Claude, l'assistant IA d'Anthropic. Je l'ai relu, testé et je le maintiens : le moteur du programme et la logique des écrans sont couverts par des tests automatiques, et je réponds moi-même aux tickets et aux messages.
+Le code de Sommelle a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, tous les contenus et calculs reposent sur le protocole clinique de la TCC-I (HAS, Réseau Morphée, ESRS, CBT-i Coach), le moteur du programme et la logique des écrans sont déterministes et couverts par des tests automatiques, et je maintiens personnellement le projet en répondant moi-même aux tickets et aux messages.
