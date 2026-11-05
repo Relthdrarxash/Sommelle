@@ -125,7 +125,7 @@ private fun Header(s: HomeState) {
 @Composable
 private fun ProgramCard(s: HomeState, onChooseWakeTime: () -> Unit) {
     when (val step = s.step) {
-        is WindowStep.Current -> WindowCard(step.window)
+        is WindowStep.Current -> WindowCard(step.window, s.badge, s.week)
         is WindowStep.Baseline -> InfoCard(
             title = stringResource(R.string.home_baseline_title),
             text = pluralStringResource(R.plurals.home_baseline_text, step.daysLeft, step.daysLeft),
@@ -149,7 +149,7 @@ private fun ProgramCard(s: HomeState, onChooseWakeTime: () -> Unit) {
 
 /** Carte bleu nuit de la maquette : coucher et lever en grand, et la raison en une phrase. */
 @Composable
-private fun WindowCard(window: SleepWindow) {
+private fun WindowCard(window: SleepWindow, badge: WeekBadge, week: Int) {
     val bed = Texts.current().time(window.bedTime)
     Surface(shape = MaterialTheme.shapes.large, color = SommelleColors.Night, contentColor = SommelleColors.Cream) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
@@ -167,6 +167,19 @@ private fun WindowCard(window: SleepWindow) {
                 TimeTile(stringResource(R.string.home_waketime), Texts.current().time(window.wakeTime), Modifier.weight(1f))
             }
             Text(stringResource(R.string.home_window_reason, bed), style = MaterialTheme.typography.bodyMedium)
+            if (badge == WeekBadge.PROGRAM_WEEK && week == 1) {
+                Text(
+                    stringResource(R.string.home_window_week1),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SommelleColors.LavenderOnNight,
+                )
+            } else if (badge == WeekBadge.MAINTENANCE) {
+                Text(
+                    stringResource(R.string.home_window_maintenance),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = SommelleColors.LavenderOnNight,
+                )
+            }
         }
     }
 }
