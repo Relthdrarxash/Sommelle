@@ -9,6 +9,8 @@
     <string name="home_bedtime">Coucher</string>
     <string name="home_waketime">Lever</string>
     <string name="home_window_reason">Rester debout jusqu\'à %1$s, c\'est ce qui rend le sommeil plus profond.</string>
+    <string name="home_window_week1">La première semaine est souvent la plus fatigante : c\'est normal et passager, votre fenêtre s\'allongera dès que le sommeil sera plus dense.</string>
+    <string name="home_window_maintenance">Les 6 semaines sont terminées : vous pouvez arrêter l\'agenda quotidien, ou continuer à votre rythme.</string>
 
     <string name="home_baseline_title">Une semaine pour observer</string>
     <plurals name="home_baseline_text">
