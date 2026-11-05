@@ -1,1 +1,4 @@
-Première version : questionnaire de départ, agenda du sommeil guidé et résumé, fenêtre de sommeil ajustée chaque semaine, bilan hebdomadaire et écran de nuit.
+• Guide vocal hors-ligne et timbre acoustique doux (432 Hz) pour pratiquer les exercices les yeux fermés.
+• Carnet du soir interactif dans l'exercice « Mettre sa journée au repos » (stocké uniquement sur le téléphone).
+• Restauration et import d'une sauvegarde CSV de l'agenda du sommeil, en complément de l'export et du bilan médecin.
+• Widget discret d'écran d'accueil affichant la fenêtre de sommeil du soir.
