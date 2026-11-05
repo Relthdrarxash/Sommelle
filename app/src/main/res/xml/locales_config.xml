@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Langues proposées dans le sélecteur de langue par appli d'Android 13+.
+    N'ajouter une langue ici qu'une fois TOUS les dossiers values-xx/ de tous les modules traduits et relus.
+    Voir documentation/internationalisation.md.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="fr" />
+    <locale android:name="en" />
+</locale-config>
