@@ -8,7 +8,9 @@ import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ProgramOutcome
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
+import fr.sommelle.core.presentation.RecentNightUi
 import fr.sommelle.core.presentation.nightsToFill
+import fr.sommelle.core.presentation.recentNights
 import fr.sommelle.core.presentation.weekBadge
 import fr.sommelle.core.protocol.ProgramPlanner
 import kotlinx.coroutines.flow.SharingStarted
@@ -32,6 +34,7 @@ data class HomeState(
     val lastNight: LocalDate,
     /** Vrai quand il faut demander le ressenti de la journée : au début, puis à partir de la semaine 6. */
     val askDaytimeImpact: Boolean = false,
+    val recentNights: List<RecentNightUi> = emptyList(),
 )
 
 @OptIn(ExperimentalCoroutinesApi::class)
@@ -48,16 +51,18 @@ class HomeViewModel(private val repository: SommelleRepository) : ViewModel() {
             val (badge, week) = weekBadge(programWeek)
             val endImpactDone = impacts.any { (planner.programWeek(snapshot.program.startDate, it.date) ?: 0) >= ProgramOutcome.AVAILABLE_FROM_WEEK }
             val inProgram = snapshot.program.screening.pathway != Pathway.OUT_OF_SCOPE
+            val toFill = nightsToFill(today, snapshot.entries.map { it.nightOf }.toSet())
             HomeState(
                 date = Texts.current().longDate(today),
                 badge = badge,
                 week = week,
                 pathway = snapshot.program.screening.pathway,
                 step = step,
-                nightsToFill = nightsToFill(today, snapshot.entries.map { it.nightOf }.toSet()),
+                nightsToFill = toFill,
                 lastNight = today,
                 askDaytimeImpact = inProgram &&
                     (impacts.isEmpty() || ((programWeek ?: 0) >= ProgramOutcome.AVAILABLE_FROM_WEEK && !endImpactDone)),
+                recentNights = recentNights(today, snapshot.entries, toFill),
             )
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)

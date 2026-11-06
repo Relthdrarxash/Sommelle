@@ -38,4 +38,5 @@
     <string name="week_outcome_text">Deine Beobachtungswoche im Vergleich zu deinen letzten sieben Nächten.</string>
     <string name="week_outcome_before">Zu Beginn</string>
     <string name="week_outcome_after">Heute</string>
+    <string name="week_report_button">Bericht für meine Ärztin / meinen Arzt</string>
 </resources>

@@ -1,13 +1,19 @@
 package fr.sommelle.feature.home
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.Icon
@@ -36,12 +42,14 @@ import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.presentation.DaytimeImpact
+import fr.sommelle.core.presentation.RecentNightUi
 import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WindowStep
 import java.time.LocalDate
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
 import androidx.compose.runtime.mutableStateOf
@@ -253,6 +261,83 @@ private fun DiarySection(s: HomeState, onFillNight: (LocalDate) -> Unit) {
                 onClick = { onFillNight(s.lastNight) },
                 style = SommelleButtonStyle.Quiet,
             )
+        }
+
+        if (s.recentNights.isNotEmpty()) {
+            RecentNightsStrip(
+                recentNights = s.recentNights,
+                onNightClick = onFillNight,
+            )
+        }
+    }
+}
+
+@Composable
+private fun RecentNightsStrip(
+    recentNights: List<RecentNightUi>,
+    onNightClick: (LocalDate) -> Unit,
+) {
+    val colors = MaterialTheme.colorScheme
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            recentNights.forEach { night ->
+                val containerColor = when {
+                    night.isFilled -> colors.primaryContainer
+                    night.isMissingToFill -> colors.errorContainer.copy(alpha = 0.6f)
+                    else -> colors.surfaceVariant.copy(alpha = 0.35f)
+                }
+                val contentColor = when {
+                    night.isFilled -> colors.onPrimaryContainer
+                    night.isMissingToFill -> colors.onErrorContainer
+                    else -> colors.onSurfaceVariant
+                }
+                val borderColor = when {
+                    night.isMissingToFill -> colors.error
+                    night.isFilled -> colors.primary.copy(alpha = 0.5f)
+                    else -> colors.outlineVariant.copy(alpha = 0.3f)
+                }
+
+                Surface(
+                    onClick = { onNightClick(night.date) },
+                    shape = RoundedCornerShape(12.dp),
+                    color = containerColor,
+                    border = BorderStroke(1.dp, borderColor),
+                    modifier = Modifier
+                        .weight(1f)
+                        .heightIn(min = 54.dp),
+                ) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center,
+                        modifier = Modifier.padding(vertical = 6.dp, horizontal = 2.dp),
+                    ) {
+                        Text(
+                            text = night.dayLabel,
+                            style = MaterialTheme.typography.labelSmall,
+                            color = contentColor.copy(alpha = 0.8f),
+                        )
+                        Text(
+                            text = night.dayNumber,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = contentColor,
+                        )
+                        Box(
+                            modifier = Modifier
+                                .padding(top = 3.dp)
+                                .size(5.dp)
+                                .background(
+                                    color = if (night.isFilled) colors.primary else if (night.isMissingToFill) colors.error else Color.Transparent,
+                                    shape = CircleShape,
+                                ),
+                        )
+                    }
+                }
+            }
         }
     }
 }

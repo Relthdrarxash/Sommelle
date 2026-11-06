@@ -39,21 +39,28 @@ import fr.sommelle.core.designsystem.ScreenTitle
 import fr.sommelle.core.designsystem.SommelleButton
 import fr.sommelle.core.designsystem.SommelleButtonStyle
 import fr.sommelle.core.designsystem.SommelleColors
+import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.presentation.ReportTone
 import fr.sommelle.core.presentation.WeekBar
 import fr.sommelle.core.presentation.WeeklyReport
 
 @Composable
-fun WeekScreen(repository: SommelleRepository) {
+fun WeekScreen(
+    repository: SommelleRepository,
+    onOpenReport: () -> Unit = {},
+) {
     val viewModel: WeekViewModel = viewModel { WeekViewModel(repository) }
     val state by viewModel.state.collectAsStateWithLifecycle()
     val s = state ?: return
-    WeekContent(s)
+    WeekContent(s, onOpenReport)
 }
 
 /** Bilan sans état ni dépendance : affiché tel quel dans les captures de la documentation. */
 @Composable
-fun WeekContent(s: WeekState) {
+fun WeekContent(
+    s: WeekState,
+    onOpenReport: () -> Unit = {},
+) {
     var showHow by rememberSaveable { mutableStateOf(false) }
     var showRelapse by rememberSaveable { mutableStateOf(false) }
 
@@ -80,6 +87,13 @@ fun WeekContent(s: WeekState) {
         }
 
         Chart(s.bars, s.chartDescription)
+
+        SommelleButton(
+            text = stringResource(R.string.week_report_button),
+            onClick = onOpenReport,
+            style = SommelleButtonStyle.Outlined,
+            icon = SommelleIcons.Chart,
+        )
 
         if (s.restriction) {
             SommelleButton(

@@ -38,4 +38,5 @@
     <string name="week_outcome_text">Tu semana de observación comparada con tus últimas siete noches.</string>
     <string name="week_outcome_before">Al inicio</string>
     <string name="week_outcome_after">Hoy</string>
+    <string name="week_report_button">Resumen para mi médico</string>
 </resources>
