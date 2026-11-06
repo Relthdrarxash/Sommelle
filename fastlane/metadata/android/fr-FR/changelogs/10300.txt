@@ -1,0 +1,4 @@
+• Ruban des 7 dernières nuits sur l'accueil pour suivre l'observance et rattraper un réveil d'un clic.
+• Bouton direct « Résumé pour mon médecin » sur l'écran Bilan pour exporter la synthèse TCC-I.
+• Harmonisation de la barre de navigation avec libellé « Réglages ».
+• Découverte des applications compagnes (Respire, Lunaison) et engagement éthique unifié.
