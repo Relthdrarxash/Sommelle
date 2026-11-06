@@ -2,12 +2,14 @@ package fr.sommelle.screenshots
 
 import androidx.compose.runtime.Composable
 import fr.sommelle.core.model.AgeBand
+import fr.sommelle.core.model.DiaryEntry
 import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.ScreeningAnswers
 import fr.sommelle.core.model.SleepQuality
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.presentation.DiaryDraft
 import fr.sommelle.core.presentation.DiaryStep
+import fr.sommelle.core.presentation.RecentNightUi
 import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ReportTone
 import fr.sommelle.core.presentation.ScreeningFlow
@@ -16,6 +18,7 @@ import fr.sommelle.core.presentation.WeekBadge
 import fr.sommelle.core.presentation.WeekChart
 import fr.sommelle.core.presentation.WeeklyReport
 import fr.sommelle.core.presentation.WindowStep
+import fr.sommelle.core.presentation.recentNights
 import fr.sommelle.core.protocol.PeriodSummary
 import fr.sommelle.core.protocol.ScreeningEvaluator
 import fr.sommelle.core.presentation.ClinicianReport
@@ -128,6 +131,7 @@ object Samples {
             nightsToFill = listOf(tuesday),
             lastNight = tuesday,
             askDaytimeImpact = true,
+            recentNights = sampleRecentNights(0),
         ),
         onFillNight = {},
         onChooseWakeTime = {},
@@ -217,20 +221,43 @@ object Samples {
         OnboardingContent(state, onStart = {}, onChooseAge = {}, onAnswer = {}, onBack = {}, onConfirm = {})
 
     @Composable
-    private fun home(step: WindowStep, badge: WeekBadge, week: Int) = HomeContent(
-        s = HomeState(
-            date = Texts.current().longDate(tuesday),
-            badge = badge,
-            week = week,
-            pathway = Pathway.FULL,
-            step = step,
-            nightsToFill = listOf(tuesday),
-            lastNight = tuesday,
-        ),
-        onFillNight = {},
-        onChooseWakeTime = {},
-        onCantSleep = {},
-    )
+    private fun home(step: WindowStep, badge: WeekBadge, week: Int): Unit {
+        val count = if (step is WindowStep.Baseline) step.loggedNights else 6
+        HomeContent(
+            s = HomeState(
+                date = Texts.current().longDate(tuesday),
+                badge = badge,
+                week = week,
+                pathway = Pathway.FULL,
+                step = step,
+                nightsToFill = listOf(tuesday),
+                lastNight = tuesday,
+                recentNights = sampleRecentNights(count),
+            ),
+            onFillNight = {},
+            onChooseWakeTime = {},
+            onCantSleep = {},
+        )
+    }
+
+    private fun sampleRecentNights(loggedCount: Int = 6): List<RecentNightUi> {
+        val entries = (1L..loggedCount.toLong()).map { i ->
+            val night = tuesday.minusDays(i)
+            val out = night.atTime(LocalTime.of(6, 45))
+            DiaryEntry(
+                nightOf = night,
+                bedTime = out.minusHours(7),
+                lightsOutTime = out.minusHours(7),
+                sleepOnsetLatency = Duration.ofMinutes(15),
+                awakeningCount = 1,
+                wakeAfterSleepOnset = Duration.ofMinutes(15),
+                finalWakeTime = out,
+                outOfBedTime = out,
+                quality = if (i % 2 == 0L) SleepQuality.GOOD else SleepQuality.FAIR,
+            )
+        }
+        return recentNights(tuesday, entries, listOf(tuesday))
+    }
 
     private fun period(inBed: Long, asleep: Long) = PeriodSummary(
         loggedNights = 7,
