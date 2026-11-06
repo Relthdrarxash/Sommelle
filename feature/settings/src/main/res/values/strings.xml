@@ -30,4 +30,14 @@
     <string name="settings_contact_button">Send an email</string>
     <string name="settings_on">On</string>
     <string name="settings_off">Off</string>
+    <string name="settings_about">About &amp; Approach</string>
+    <string name="settings_version" translatable="false">Sommelle %1$s</string>
+    <string name="settings_commitment">100% offline • Zero trackers, zero account • Open and auditable source code</string>
+    <string name="settings_source">Source code</string>
+    <string name="settings_suite_title">In the same spirit</string>
+    <string name="settings_suite_subtitle">Free, 100% offline apps that respect your health and attention.</string>
+    <string name="settings_app_respire_name">Respire</string>
+    <string name="settings_app_respire_desc">Breathing pause &amp; anti-doomscrolling, free and offline</string>
+    <string name="settings_app_lunaison_name">Lunaison</string>
+    <string name="settings_app_lunaison_desc">Menstrual cycle &amp; hormonal health tracking, free and offline</string>
 </resources>

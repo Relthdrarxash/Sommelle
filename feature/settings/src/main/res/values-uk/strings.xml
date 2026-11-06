@@ -30,4 +30,14 @@
     <string name="settings_contact_button">Надіслати листа</string>
     <string name="settings_on">Увімкнено</string>
     <string name="settings_off">Вимкнено</string>
+    <string name="settings_about">Про застосунок та підхід</string>
+    <string name="settings_version" translatable="false">Sommelle %1$s</string>
+    <string name="settings_commitment">100% офлайн • Без трекерів, без облікового запису • Відкритий вихідний код</string>
+    <string name="settings_source">Вихідний код</string>
+    <string name="settings_suite_title">У тому ж дусі</string>
+    <string name="settings_suite_subtitle">Вільні, на 100% офлайн-програми, що поважають ваше здоров\'я та увагу.</string>
+    <string name="settings_app_respire_name">Respire</string>
+    <string name="settings_app_respire_desc">Дихальна пауза та захист від думскролінгу, вільна та офлайн</string>
+    <string name="settings_app_lunaison_name">Lunaison</string>
+    <string name="settings_app_lunaison_desc">Відстеження менструального циклу та гормональне здоров\'я, вільна та офлайн</string>
 </resources>
