@@ -5,16 +5,20 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
@@ -29,6 +33,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalUriHandler
 import fr.sommelle.core.designsystem.openSafely
@@ -37,6 +42,7 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -221,6 +227,42 @@ fun SettingsContent(
 
         Text(stringResource(R.string.settings_help), style = MaterialTheme.typography.bodySmall)
         SommelleButton(stringResource(R.string.settings_call_3114), { uriHandler.openSafely("tel:3114") }, style = SommelleButtonStyle.Quiet)
+
+        Section(stringResource(R.string.settings_suite_title)) {
+            Text(stringResource(R.string.settings_suite_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            CompanionAppRow(
+                badge = "🌿",
+                name = stringResource(R.string.settings_app_respire_name),
+                description = stringResource(R.string.settings_app_respire_desc),
+                onClick = { uriHandler.openSafely("https://relthdrarxash.github.io/respire/") },
+            )
+            HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
+            CompanionAppRow(
+                badge = "🌙",
+                name = stringResource(R.string.settings_app_lunaison_name),
+                description = stringResource(R.string.settings_app_lunaison_desc),
+                onClick = { uriHandler.openSafely("https://relthdrarxash.github.io/lunaison/") },
+            )
+        }
+
+        Section(stringResource(R.string.settings_about)) {
+            Text(stringResource(R.string.settings_version, "1.2.0"), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(R.string.settings_commitment), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                SommelleButton(
+                    stringResource(R.string.settings_source),
+                    { uriHandler.openSafely("https://github.com/Relthdrarxash/sommelle") },
+                    modifier = Modifier.weight(1f),
+                    style = SommelleButtonStyle.Outlined,
+                )
+                SommelleButton(
+                    stringResource(R.string.settings_privacy),
+                    { uriHandler.openSafely(privacyUrl) },
+                    modifier = Modifier.weight(1f),
+                    style = SommelleButtonStyle.Outlined,
+                )
+            }
+        }
     }
 
     if (confirmErase) {
@@ -264,5 +306,37 @@ private fun ToggleRow(title: String, hint: String, checked: Boolean, onChange: (
         }
         Spacer(Modifier.width(12.dp))
         Switch(checked = checked, onCheckedChange = null, enabled = enabled)
+    }
+}
+
+@Composable
+private fun CompanionAppRow(
+    badge: String,
+    name: String,
+    description: String,
+    onClick: () -> Unit,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(MaterialTheme.shapes.medium)
+            .clickable(role = Role.Button, onClick = onClick)
+            .padding(vertical = 6.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(12.dp),
+    ) {
+        Surface(
+            shape = MaterialTheme.shapes.medium,
+            color = MaterialTheme.colorScheme.primaryContainer,
+            modifier = Modifier.size(38.dp),
+        ) {
+            Box(contentAlignment = Alignment.Center) {
+                Text(badge, fontSize = 18.sp)
+            }
+        }
+        Column(Modifier.weight(1f)) {
+            Text(name, style = MaterialTheme.typography.titleMedium)
+            Text(description, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
     }
 }

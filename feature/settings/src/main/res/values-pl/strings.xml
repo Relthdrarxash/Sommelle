@@ -30,4 +30,14 @@
     <string name="settings_contact_button">Wyślij e-mail</string>
     <string name="settings_on">Włączone</string>
     <string name="settings_off">Wyłączone</string>
+    <string name="settings_about">O aplikacji i podejściu</string>
+    <string name="settings_version" translatable="false">Sommelle %1$s</string>
+    <string name="settings_commitment">100% offline • Bez trackerów, bez konta • Otwarty i audytowalny kod źródłowy</string>
+    <string name="settings_source">Kod źródłowy</string>
+    <string name="settings_suite_title">W tym samym duchu</string>
+    <string name="settings_suite_subtitle">Wolne, w 100% działające offline aplikacje szanujące Twoje zdrowie i uwagę.</string>
+    <string name="settings_app_respire_name">Respire</string>
+    <string name="settings_app_respire_desc">Pauza oddechowa i ochrona przed doomscrollingiem, bez konta i offline</string>
+    <string name="settings_app_lunaison_name">Lunaison</string>
+    <string name="settings_app_lunaison_desc">Śledzenie cyklu menstruacyjnego i zdrowie hormonalne, bez konta i offline</string>
 </resources>

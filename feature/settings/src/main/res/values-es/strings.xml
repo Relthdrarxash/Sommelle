@@ -30,4 +30,14 @@
     <string name="settings_contact_button">Enviar un correo</string>
     <string name="settings_on">Activado</string>
     <string name="settings_off">Desactivado</string>
+    <string name="settings_about">Acerca de &amp; filosofía</string>
+    <string name="settings_version" translatable="false">Sommelle %1$s</string>
+    <string name="settings_commitment">100 % sin conexión • Cero rastreadores, cero cuentas • Código abierto y auditable</string>
+    <string name="settings_source">Código fuente</string>
+    <string name="settings_suite_title">En la misma línea</string>
+    <string name="settings_suite_subtitle">Aplicaciones libres, 100 % sin conexión que respetan tu salud y atención.</string>
+    <string name="settings_app_respire_name">Respire</string>
+    <string name="settings_app_respire_desc">Pausa de respiración y anti-doomscrolling, libre y sin conexión</string>
+    <string name="settings_app_lunaison_name">Lunaison</string>
+    <string name="settings_app_lunaison_desc">Seguimiento del ciclo menstrual y salud hormonal, libre y sin conexión</string>
 </resources>
