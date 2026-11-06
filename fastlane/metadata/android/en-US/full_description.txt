@@ -1,29 +1,16 @@
-Do you struggle to fall asleep, wake up during the night or too early, and has it been going on for a while? Sommelle guides you for six to eight weeks with cognitive behavioral therapy for insomnia (CBT-I), the first-line method recommended by European and American insomnia guidelines, before sleeping pills.
+Sommelle is an application dedicated to treating chronic insomnia through first-line Cognitive Behavioral Therapy for Insomnia (CBT-I), recommended by the European Sleep Research Society (ESRS 2023) and the American Academy of Sleep Medicine (AASM 2021).
 
-HOW IT WORKS
-• A few questions at the start, to check that the program is right for you and point you to a doctor if needed.
-• An observation week: each morning, you log your night in about twenty seconds. An estimate is enough.
-• Your sleep window: a bedtime and a rise time, adjusted every week based on your nights.
-• Support at night: if you can't sleep, a button reminds you what to do, on a dark screen, with no numbers or clock.
-• Four calming exercises with an eyes-closed voice guide: slow breathing, muscle relaxation, calming imagery and an interactive evening notepad, with offline speech synthesis and a soft 432 Hz acoustic chime.
-• A weekly review explained in one sentence, plus a structured clinician report you can copy or share with your doctor.
+Fully open-source (GPL-3.0), free, ad-free, without subscriptions, accounts, or telemetry, and 100% offline: it does not even request the Android INTERNET permission. Your private sleep data never leaves your device.
 
-DESIGNED FOR EVERYONE
-• Large text, big buttons, plain language.
-• No clock dial: big buttons to move forward or back by 15 minutes.
-• Built for TalkBack and large text sizes.
-• A warm, dark night theme, automatic in the evening, and a discreet home screen widget.
+A STRUCTURED 6-WEEK PROTOCOL
+• Clinical intake screening: Evaluates contraindications for sleep restriction (sleep apnea, bipolar disorder, epilepsy, pregnancy, safety-critical occupation) and assigns an appropriate pathway.
+• Week 1 observation: Quick daily sleep diary completed in twenty seconds without typing, calculating your baseline metrics (mean time in bed, total sleep time, initial sleep efficiency).
+• Educational transition buffer: Clear review of your baseline metrics and protocol rationale before adjusting time in bed.
+• Weeks 2 to 5 consolidation: Calibrated time-in-bed restriction with a regular wake-up anchor, stimulus control, and progressive cognitive modules (addressing sleep anxiety, sleep hygiene, defusing racing thoughts).
+• Week 6 outcome review: Objective before/after comparison of your sleep efficiency and daytime functioning.
 
-YOUR DATA STAYS WITH YOU
-• No account, no ads, no trackers.
-• The app has no Internet access: nothing is sent.
-• Sleep diary CSV export and import, plus Android encrypted device-to-device backup.
-• Free and open source (GPL-3.0): the code is public and anyone can check it.
-
-GOOD TO KNOW
-Sommelle is a self-help and education tool, not a medical device. It does not replace medical advice. It is designed for adults; it is not suited to night work or to nights interrupted by someone else (a baby, a relative who needs help). If you snore with pauses in breathing or fall asleep during the day, talk to your doctor.
-
-If you are going through a hard time, call your local emergency number or a crisis line in your country. In France, 3114 is free, day and night.
-
-Website: https://relthdrarxash.github.io/sommelle/en/
-Source code: https://github.com/Relthdrarxash/sommelle
+CLINICAL TOOLS INCLUDED
+• Standardized sleep diary inspired by the Consensus Sleep Diary (CSD).
+• Ultra-low brightness "Can't sleep" night mode to guide stimulus control without circadian disruption.
+• Local PDF and CSV clinical export to share with your physician or sleep specialist.
+• 100% offline, privacy-first, zero tracking.

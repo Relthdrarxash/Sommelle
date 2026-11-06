@@ -1,0 +1,7 @@
+Première version de Sommelle :
+• Protocole complet de TCC-I en 6 semaines
+• Agenda du sommeil sans clavier inspiré du Consensus Sleep Diary
+• Sas de transition pédagogique entre observation et restriction
+• Écran de nuit à ultra-faible luminosité pour le contrôle du stimulus
+• Export de synthèse clinique pour le médecin
+• 100 % hors-ligne, zéro permission réseau, libre GPL-3.0

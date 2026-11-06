@@ -1,0 +1,7 @@
+Initial release of Sommelle:
+• Complete 6-week CBT-I insomnia protocol
+• Consensus Sleep Diary with fast stepper inputs
+• Educational transition buffer between observation and restriction
+• Ultra-low brightness night stimulus control screen
+• Clinical report export for your physician
+• 100% offline, zero network permissions, GPL-3.0

@@ -1,29 +1,16 @@
-Vous avez du mal à vous endormir, vous vous réveillez la nuit ou trop tôt, et cela dure ? Sommelle vous accompagne pendant six à huit semaines avec la thérapie cognitivo-comportementale de l'insomnie (TCC-I), la méthode recommandée en premier par les recommandations européennes et américaines sur l'insomnie, avant les somnifères.
+Sommelle est une application dédiée au traitement de l'insomnie chronique par la thérapie cognitivo-comportementale de première intention (TCC-I), recommandée par la Haute Autorité de Santé (HAS), l'European Sleep Research Society (ESRS 2023) et l'American Academy of Sleep Medicine (AASM 2021).
 
-COMMENT ÇA MARCHE
-• Quelques questions au départ, pour vérifier que le programme vous convient et vous orienter vers un médecin si besoin.
-• Une semaine d'observation : chaque matin, vous notez votre nuit en une vingtaine de secondes. Une estimation suffit.
-• Votre fenêtre de sommeil : des horaires de coucher et de lever, ajustés chaque semaine selon vos nuits.
-• Un appui la nuit : si vous ne dormez pas, un bouton vous rappelle quoi faire, sur un écran sombre, sans chiffres ni heure.
-• Quatre exercices apaisants guidés à la voix : respiration lente, relâchement musculaire, image apaisante et carnet du soir interactif, avec lecture vocale hors-ligne et timbre acoustique doux à 432 Hz pour pratiquer les yeux fermés.
-• Un bilan chaque semaine expliqué en une phrase, et un compte rendu clinique prêt à partager avec votre médecin.
+Totalement libre (GPL-3.0), gratuite, sans publicité, sans abonnement, sans compte utilisateur et 100 % hors-ligne : elle ne demande même pas la permission d'accès à Internet dans son manifeste Android. Vos données de sommeil ne quittent jamais votre téléphone.
 
-PENSÉE POUR TOUT LE MONDE
-• Grands caractères, gros boutons, langage clair.
-• Pas de cadran d'horloge : de gros boutons pour avancer ou reculer de 15 minutes.
-• Conçue pour TalkBack et les grandes tailles de texte.
-• Un thème de nuit sombre et chaud, automatique le soir, et un widget discret sur l'écran d'accueil.
+UN PROGRAMME STRUCTURÉ EN 6 SEMAINES
+• Questionnaire initial de repérage : Vérification préalable des contre-indications à la restriction du temps au lit (apnée non traitée, trouble bipolaire, épilepsie, grossesse, métier à vigilance critique) et orientation vers un parcours adapté ou médical.
+• Semaine 1 d'observation : Remplissage quotidien de l'agenda de sommeil en 20 secondes, sans saisie clavier fastidieuse, pour calculer vos repères objectifs de base (temps moyen au lit, temps dormi, efficacité initiale).
+• Sas de transition pédagogique : Restitution claire de vos repères de départ et explication de la méthode avant d'entamer la consolidation.
+• Semaines 2 à 5 de consolidation : Restriction calibrée du temps au lit avec heure de lever fixe (ancre circadienne), contrôle du stimulus et déblocage progressif des modules cognitifs (désamorçage des pensées anxieuses, hygiène des rythmes, lâcher-prise).
+• Semaine 6 de bilan : Évaluation comparative objective avant/après de votre efficacité de sommeil et de l'impact diurne.
 
-VOS DONNÉES RESTENT CHEZ VOUS
-• Pas de compte, pas de publicité, pas de traceur.
-• L'application n'a pas accès à Internet : rien n'est envoyé.
-• Export et import de l'agenda en CSV, sauvegarde automatique chiffrée d'Android.
-• Gratuite et libre (GPL-3.0) : le code est public et chacun peut le vérifier.
-
-À SAVOIR
-Sommelle est un outil d'accompagnement et d'éducation, pas un dispositif médical. Elle ne remplace pas un avis médical. Elle est conçue pour les adultes ; elle n'est pas adaptée au travail de nuit ni aux nuits interrompues par un tiers (bébé, proche à aider). En cas de ronflements avec arrêts de respiration ou d'endormissements dans la journée, parlez-en à votre médecin.
-
-Si vous traversez un moment difficile, le 3114 est joignable gratuitement, jour et nuit.
-
-Site : https://relthdrarxash.github.io/sommelle/
-Code source : https://github.com/Relthdrarxash/sommelle
+OUTILS CLINIQUES INTÉGRÉS
+• Agenda du sommeil standardisé inspiré du Consensus Sleep Diary (CSD).
+• Écran de nuit "Je n'arrive pas à dormir" en ultra-basse luminosité pour appliquer le contrôle du stimulus sans quitter le lit avec agressivité lumineuse.
+• Export PDF et CSV anonymisé destiné à votre médecin traitant ou spécialiste du sommeil.
+• 100 % hors-ligne, aucune télémétrie, aucune revente de données.
