@@ -93,7 +93,12 @@ fun SommelleApp(repository: SommelleRepository) {
                     onCantSleep = { navController.navigate(Routes.NIGHT) },
                 )
             }
-            composable(Routes.WEEK) { WeekScreen(repository) }
+            composable(Routes.WEEK) {
+                WeekScreen(
+                    repository = repository,
+                    onOpenReport = { navController.navigate(Routes.REPORT) },
+                )
+            }
             composable(Routes.EXERCISES) {
                 ModulesScreen(repository, onOpen = { navController.navigate(Routes.exercise(it)) })
             }

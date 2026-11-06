@@ -38,4 +38,5 @@
     <string name="week_outcome_text">Порівняння тижня спостереження з останніми 7 ночами.</string>
     <string name="week_outcome_before">На старті</string>
     <string name="week_outcome_after">Сьогодні</string>
+    <string name="week_report_button">Звіт для мого лікаря</string>
 </resources>

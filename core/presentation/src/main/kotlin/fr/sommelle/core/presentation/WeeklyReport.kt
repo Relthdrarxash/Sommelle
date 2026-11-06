@@ -1,11 +1,14 @@
 package fr.sommelle.core.presentation
 
+import fr.sommelle.core.model.DiaryEntry
 import fr.sommelle.core.model.SleepWindow
 import fr.sommelle.core.protocol.PeriodSummary
 import fr.sommelle.core.protocol.ProtocolConfig
 import fr.sommelle.core.protocol.WindowChange
 import fr.sommelle.core.protocol.WindowDecision
 import java.time.Duration
+import java.time.LocalDate
+import java.util.Locale
 
 /** Ton du bilan hebdomadaire. Jamais d'échec : une semaine difficile est une information. */
 enum class ReportTone { LONGER, SHORTER, STEADY, AT_FLOOR, AT_MAXIMUM, MISSING_NIGHTS }
@@ -86,4 +89,44 @@ object WeekChart {
     /** Description complète lue par TalkBack à la place du graphique. */
     fun accessibilityDescription(bars: List<WeekBar>, text: TextFormat = Texts.current()): String =
         text.chartDescription(bars)
+}
+
+/** Représentation d'une nuit récente pour le bandeau d'accès rapide. */
+data class RecentNightUi(
+    val date: LocalDate,
+    val dayLabel: String,
+    val dayNumber: String,
+    val isFilled: Boolean,
+    val isMissingToFill: Boolean,
+    val sleepEfficiency: Int? = null,
+)
+
+fun recentNights(
+    today: LocalDate,
+    entries: List<DiaryEntry>,
+    nightsToFill: List<LocalDate>,
+    locale: Locale = Locale.getDefault(),
+): List<RecentNightUi> {
+    val entriesByDate = entries.associateBy { it.nightOf }
+    return (6 downTo 0).map { offset ->
+        val date = today.minusDays(offset.toLong())
+        val entry = entriesByDate[date]
+        val isFilled = entry != null
+        val isMissing = date in nightsToFill
+        val label = date.dayOfWeek.getDisplayName(java.time.format.TextStyle.NARROW, locale)
+        val efficiency = entry?.let {
+            val tib = Duration.between(it.bedTime, it.outOfBedTime).toMinutes()
+            val sleepPeriod = Duration.between(it.lightsOutTime, it.finalWakeTime)
+            val totalSleep = sleepPeriod.minus(it.sleepOnsetLatency).minus(it.wakeAfterSleepOnset).coerceAtLeast(Duration.ZERO).toMinutes()
+            if (tib > 0) ((totalSleep.toDouble() / tib) * 100).toInt().coerceIn(0, 100) else null
+        }
+        RecentNightUi(
+            date = date,
+            dayLabel = label,
+            dayNumber = date.dayOfMonth.toString(),
+            isFilled = isFilled,
+            isMissingToFill = isMissing,
+            sleepEfficiency = efficiency,
+        )
+    }
 }
