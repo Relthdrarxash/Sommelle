@@ -33,6 +33,12 @@
     <string name="wake_title">¿A qué hora deseas levantarte cada mañana?</string>
     <string name="wake_text">Elige una hora que puedas mantener a diario, fines de semana incluidos. Es el ancla que estabiliza tu sueño.</string>
     <string name="wake_suggested">Sugerencia: tu hora habitual de despertar esta semana</string>
+    <string name="wake_baseline_title">Balance de tus 7 noches de observación</string>
+    <string name="wake_baseline_in_bed">En la cama</string>
+    <string name="wake_baseline_sleep">Dormido</string>
+    <string name="wake_baseline_efficiency">Eficiencia</string>
+    <string name="wake_baseline_explanation">La restricción ajusta tu tiempo en la cama al que realmente duermes para reconstruir la presión de sueño. La fatiga diurna es normal durante los primeros 10 a 15 días.</string>
+    <string name="wake_projected_window">Ventana resultante: acostarse %1$s • levantarse %2$s (%3$s en cama)</string>
     <string name="wake_confirm">Confirmar</string>
     <string name="home_impact_title">Una pregunta breve</string>
     <string name="home_impact_question">En este momento, ¿hasta qué punto tus noches afectan a tus días?</string>

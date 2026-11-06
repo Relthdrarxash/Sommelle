@@ -16,12 +16,16 @@ import fr.sommelle.core.presentation.ProgramEngine
 import fr.sommelle.core.presentation.ReminderSettings
 import fr.sommelle.core.presentation.StoredWindow
 import fr.sommelle.core.presentation.WindowStep
+import fr.sommelle.core.protocol.PeriodSummary
 import fr.sommelle.core.protocol.ProtocolConfig
+import fr.sommelle.core.protocol.RestrictionProfile
 import fr.sommelle.core.protocol.ScreeningEvaluator
+import fr.sommelle.core.protocol.SleepWindowCalculator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.map
 import java.time.Clock
+import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -45,6 +49,14 @@ data class ProgramSnapshot(
     val windows: List<StoredWindow>,
 )
 
+/** Synthèse de la semaine d'observation pour le sas de transition vers la restriction (Semaine 2). */
+data class BaselineTransitionInfo(
+    val summary: PeriodSummary,
+    val profile: RestrictionProfile?,
+    val suggestedWakeTime: LocalTime?,
+    val prescribedDuration: Duration,
+)
+
 /**
  * Point d'accès unique aux données, toutes stockées sur le téléphone.
  * Aucune méthode n'envoie quoi que ce soit sur le réseau.
@@ -56,6 +68,7 @@ class SommelleRepository(
 ) {
     private val evaluator = ScreeningEvaluator(config)
     private val engine = ProgramEngine(config)
+    private val calculator = SleepWindowCalculator(config)
 
     fun today(): LocalDate = LocalDate.now(clock)
 
@@ -83,6 +96,31 @@ class SommelleRepository(
     suspend fun setWakeTime(time: LocalTime) {
         val current = dao.programOnce() ?: return
         dao.upsertProgram(current.copy(wakeTime = time))
+    }
+
+    /** Calcule les repères de la semaine d'observation pour l'écran de transition vers la restriction. */
+    suspend fun baselineTransitionInfo(): BaselineTransitionInfo? {
+        val program = dao.programOnce() ?: return null
+        val screening = evaluator.evaluate(program.answers())
+        val profile = RestrictionProfile.from(config, screening)
+        val entries = dao.entriesOnce().map { it.toModel() }
+        val baselineEnd = program.startDate.plusDays(config.baselineDays.toLong())
+        val baselineNights = entries.filter { it.nightOf >= program.startDate && it.nightOf < baselineEnd }
+        val summary = PeriodSummary.of(baselineNights) ?: PeriodSummary.of(entries) ?: return null
+        val suggested = calculator.suggestWakeTime(baselineNights.ifEmpty { entries })
+        val rawMinutes = ((summary.meanTotalSleepTime.toMinutes() + 14) / 15) * 15
+        val rawDuration = Duration.ofMinutes(rawMinutes)
+        val duration = if (profile != null) {
+            rawDuration.coerceAtLeast(profile.minimumWindow).coerceAtMost(config.maximumWindow)
+        } else {
+            rawDuration
+        }
+        return BaselineTransitionInfo(
+            summary = summary,
+            profile = profile,
+            suggestedWakeTime = suggested,
+            prescribedDuration = duration,
+        )
     }
 
     suspend fun entry(nightOf: LocalDate): DiaryEntry? = dao.entry(nightOf)?.toModel()

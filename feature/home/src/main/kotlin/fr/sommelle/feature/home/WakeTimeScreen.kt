@@ -1,6 +1,14 @@
 package fr.sommelle.feature.home
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,13 +18,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import fr.sommelle.core.data.BaselineTransitionInfo
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.designsystem.BackPill
 import fr.sommelle.core.designsystem.InfoLine
 import fr.sommelle.core.designsystem.ScreenScaffold
 import fr.sommelle.core.designsystem.ScreenTitle
 import fr.sommelle.core.designsystem.SommelleButton
+import fr.sommelle.core.designsystem.SommelleColors
 import fr.sommelle.core.designsystem.SommelleIcons
 import fr.sommelle.core.designsystem.TimeStepper
 import fr.sommelle.core.presentation.DiaryChoices
@@ -25,16 +39,19 @@ import fr.sommelle.core.presentation.WindowStep
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 
-/** Choix de l'heure de lever fixe, ancre de la fenêtre de sommeil. */
+/** Choix de l'heure de lever fixe, ancre de la fenêtre de sommeil et sas de transition vers la restriction. */
 @Composable
 fun WakeTimeScreen(repository: SommelleRepository, onDone: () -> Unit) {
     val scope = rememberCoroutineScope()
     var minutes by rememberSaveable { mutableStateOf<Int?>(null) }
     var suggested by remember { mutableStateOf(false) }
+    var transitionInfo by remember { mutableStateOf<BaselineTransitionInfo?>(null) }
 
     LaunchedEffect(Unit) {
+        val info = repository.baselineTransitionInfo()
+        transitionInfo = info
         if (minutes == null) {
-            val proposal = (repository.synchronize() as? WindowStep.NeedsWakeTime)?.suggested
+            val proposal = info?.suggestedWakeTime ?: (repository.synchronize() as? WindowStep.NeedsWakeTime)?.suggested
             suggested = proposal != null
             minutes = (proposal ?: LocalTime.of(7, 0)).toSecondOfDay() / 60
         }
@@ -45,6 +62,7 @@ fun WakeTimeScreen(repository: SommelleRepository, onDone: () -> Unit) {
     WakeTimeContent(
         time = time,
         suggested = suggested,
+        transitionInfo = transitionInfo,
         onMinus = { minutes = Math.floorMod(current - DiaryChoices.TIME_STEP_MINUTES.toInt(), 1440) },
         onPlus = { minutes = Math.floorMod(current + DiaryChoices.TIME_STEP_MINUTES.toInt(), 1440) },
         onMinusHour = { minutes = Math.floorMod(current - 60, 1440) },
@@ -59,7 +77,7 @@ fun WakeTimeScreen(repository: SommelleRepository, onDone: () -> Unit) {
     )
 }
 
-/** Choix de l'heure de lever sans état ni dépendance. */
+/** Choix de l'heure de lever et bilan d'observation sans état ni dépendance. */
 @Composable
 fun WakeTimeContent(
     time: LocalTime,
@@ -70,11 +88,44 @@ fun WakeTimeContent(
     onBack: () -> Unit,
     onMinusHour: (() -> Unit)? = null,
     onPlusHour: (() -> Unit)? = null,
+    transitionInfo: BaselineTransitionInfo? = null,
 ) {
     ScreenScaffold(
         bottom = { SommelleButton(stringResource(R.string.wake_confirm), onClick = onConfirm) },
     ) {
         BackPill(onBack)
+
+        if (transitionInfo != null) {
+            Surface(
+                shape = MaterialTheme.shapes.large,
+                color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f),
+                border = androidx.compose.foundation.BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant.copy(alpha = 0.5f)),
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Text(
+                        stringResource(R.string.wake_baseline_title),
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface,
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceAround,
+                    ) {
+                        MetricPill(stringResource(R.string.wake_baseline_in_bed), Texts.current().duration(transitionInfo.summary.meanTimeInBed))
+                        MetricPill(stringResource(R.string.wake_baseline_sleep), Texts.current().duration(transitionInfo.summary.meanTotalSleepTime))
+                        MetricPill(stringResource(R.string.wake_baseline_efficiency), Texts.current().percent(transitionInfo.summary.sleepEfficiency))
+                    }
+                    Text(
+                        stringResource(R.string.wake_baseline_explanation),
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+
         ScreenTitle(stringResource(R.string.wake_title))
         Text(stringResource(R.string.wake_text), style = MaterialTheme.typography.bodyLarge)
         TimeStepper(
@@ -89,5 +140,41 @@ fun WakeTimeContent(
                 null
             },
         )
+
+        if (transitionInfo != null) {
+            val bedTime = time.minus(transitionInfo.prescribedDuration)
+            Surface(
+                shape = MaterialTheme.shapes.medium,
+                color = SommelleColors.Night,
+                contentColor = SommelleColors.Cream,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Row(
+                    modifier = Modifier.padding(14.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(10.dp),
+                ) {
+                    Icon(SommelleIcons.Moon, contentDescription = null, tint = SommelleColors.Moon, modifier = Modifier.size(22.dp))
+                    Text(
+                        stringResource(
+                            R.string.wake_projected_window,
+                            Texts.current().time(bedTime),
+                            Texts.current().time(time),
+                            Texts.current().duration(transitionInfo.prescribedDuration),
+                        ),
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Medium,
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun MetricPill(label: String, value: String) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(value, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+        Text(label, style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
     }
 }

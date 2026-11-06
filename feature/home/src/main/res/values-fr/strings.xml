@@ -38,6 +38,12 @@
     <string name="wake_title">À quelle heure voulez-vous vous lever chaque matin ?</string>
     <string name="wake_text">Choisissez une heure tenable tous les jours, week-end compris. C\'est le repère qui stabilise votre sommeil.</string>
     <string name="wake_suggested">Proposé : votre heure de réveil habituelle cette semaine</string>
+    <string name="wake_baseline_title">Bilan de vos 7 nuits d\'observation</string>
+    <string name="wake_baseline_in_bed">Au lit</string>
+    <string name="wake_baseline_sleep">Dormi</string>
+    <string name="wake_baseline_efficiency">Efficacité</string>
+    <string name="wake_baseline_explanation">La restriction cale votre temps au lit sur ce que vous dormez réellement pour restaurer la pression de sommeil. Une fatigue en journée est normale pendant les 10 à 15 premiers jours.</string>
+    <string name="wake_projected_window">Fenêtre résultante : coucher %1$s • lever %2$s (%3$s au lit)</string>
     <string name="wake_confirm">Valider</string>
 
     <string name="home_impact_title">Une question rapide</string>

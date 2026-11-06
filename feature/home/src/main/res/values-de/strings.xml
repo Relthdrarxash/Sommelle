@@ -33,6 +33,12 @@
     <string name="wake_title">Um wie viel Uhr möchtest du morgens aufstehen?</string>
     <string name="wake_text">Wähle eine Zeit, die du täglich einhalten kannst – auch am Wochenende. Sie ist der Anker für deinen Schlafrhythmus.</string>
     <string name="wake_suggested">Vorschlag: deine durchschnittliche Aufstehzeit dieser Woche</string>
+    <string name="wake_baseline_title">Ergebnis deiner 7 Beobachtungsnächte</string>
+    <string name="wake_baseline_in_bed">Im Bett</string>
+    <string name="wake_baseline_sleep">Geschlafen</string>
+    <string name="wake_baseline_efficiency">Effizienz</string>
+    <string name="wake_baseline_explanation">Die Bettzeitverkürzung passt deine Bettzeit an deine tatsächliche Schlafzeit an, um den Schlafdruck wieder aufzubauen. Müdigkeit tagsüber ist in den ersten 10 bis 15 Tagen normal.</string>
+    <string name="wake_projected_window">Berechnetes Schlaffenster: Zubettgehen %1$s • Aufstehen %2$s (%3$s im Bett)</string>
     <string name="wake_confirm">Bestätigen</string>
     <string name="home_impact_title">Eine kurze Frage</string>
     <string name="home_impact_question">Wie stark beeinflussen deine Nächte derzeit deinen Alltag?</string>

@@ -35,6 +35,12 @@
     <string name="wake_title">O której godzinie chcesz wstawać każdego ranka?</string>
     <string name="wake_text">Wybierz porę, którą możesz utrzymać każdego dnia, również w weekendy. To kotwica stabilizująca Twój sen.</string>
     <string name="wake_suggested">Sugestia: Twoja typowa pora pobudki w tym tygodniu</string>
+    <string name="wake_baseline_title">Podsumowanie 7 nocy obserwacji</string>
+    <string name="wake_baseline_in_bed">W łóżku</string>
+    <string name="wake_baseline_sleep">Sen</string>
+    <string name="wake_baseline_efficiency">Wydajność</string>
+    <string name="wake_baseline_explanation">Ograniczenie czasu w łóżku dopasowuje czas spędzony w łóżku do rzeczywistego snu, aby odbudować presję snu. Zmęczenie w ciągu dnia jest normalne przez pierwsze 10-15 dni.</string>
+    <string name="wake_projected_window">Okno snu: sen %1$s • pobudka %2$s (%3$s w łóżku)</string>
     <string name="wake_confirm">Zatwierdź</string>
     <string name="home_impact_title">Krótkie pytanie</string>
     <string name="home_impact_question">W jakim stopniu Twoje noce wpływają obecnie na funkcjonowanie w ciągu dnia?</string>

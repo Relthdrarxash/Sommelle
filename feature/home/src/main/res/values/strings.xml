@@ -37,6 +37,12 @@
     <string name="wake_title">What time do you want to get up every morning?</string>
     <string name="wake_text">Choose a time you can keep every day, weekends included. It is the anchor that stabilizes your sleep.</string>
     <string name="wake_suggested">Suggested: your usual wake-up time this week</string>
+    <string name="wake_baseline_title">Your 7-night observation summary</string>
+    <string name="wake_baseline_in_bed">In bed</string>
+    <string name="wake_baseline_sleep">Asleep</string>
+    <string name="wake_baseline_efficiency">Efficiency</string>
+    <string name="wake_baseline_explanation">Sleep restriction aligns your time in bed with your actual sleep time to restore sleep pressure. An increase in daytime fatigue is normal during the first 10 to 15 days.</string>
+    <string name="wake_projected_window">Resulting window: bedtime %1$s • rise %2$s (%3$s in bed)</string>
     <string name="wake_confirm">Confirm</string>
 
     <string name="home_impact_title">A quick question</string>

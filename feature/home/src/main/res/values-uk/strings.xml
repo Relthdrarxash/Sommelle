@@ -35,6 +35,12 @@
     <string name="wake_title">О котрій годині ви хочете прокидатися щоранку?</string>
     <string name="wake_text">Оберіть час, якого зможете дотримуватися щодня, включно з вихідними. Це якір, який стабілізує ваш сон.</string>
     <string name="wake_suggested">Рекомендація: ваш звичний час підйому цього тижня</string>
+    <string name="wake_baseline_title">Підсумок 7 ночей спостереження</string>
+    <string name="wake_baseline_in_bed">У ліжку</string>
+    <string name="wake_baseline_sleep">Сон</string>
+    <string name="wake_baseline_efficiency">Ефективність</string>
+    <string name="wake_baseline_explanation">Обмеження часу в ліжку узгоджує перебування в ліжку з реальним часом сну для відновлення тиску сну. Денна втома є нормальною в перші 10-15 днів.</string>
+    <string name="wake_projected_window">Розраховане вікно: сон %1$s • підйом %2$s (%3$s у ліжку)</string>
     <string name="wake_confirm">Підтвердити</string>
     <string name="home_impact_title">Коротке запитання</string>
     <string name="home_impact_question">Наскільки ваші ночі зараз впливають на самопочуття вдень?</string>
