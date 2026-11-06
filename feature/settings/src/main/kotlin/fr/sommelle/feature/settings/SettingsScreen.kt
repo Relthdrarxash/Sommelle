@@ -185,6 +185,8 @@ fun SettingsContent(
                     value = Texts.current().time(state.morningTime),
                     onMinus = { onMorningShift(-15) },
                     onPlus = { onMorningShift(15) },
+                    onMinusHour = { onMorningShift(-60) },
+                    onPlusHour = { onMorningShift(60) },
                 )
             }
             ToggleRow(
@@ -231,14 +233,14 @@ fun SettingsContent(
         Section(stringResource(R.string.settings_suite_title)) {
             Text(stringResource(R.string.settings_suite_subtitle), style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
             CompanionAppRow(
-                badge = "🌿",
+                badge = "R",
                 name = stringResource(R.string.settings_app_respire_name),
                 description = stringResource(R.string.settings_app_respire_desc),
                 onClick = { uriHandler.openSafely("https://relthdrarxash.github.io/respire/") },
             )
             HorizontalDivider(color = MaterialTheme.colorScheme.outlineVariant)
             CompanionAppRow(
-                badge = "🌙",
+                badge = "L",
                 name = stringResource(R.string.settings_app_lunaison_name),
                 description = stringResource(R.string.settings_app_lunaison_desc),
                 onClick = { uriHandler.openSafely("https://relthdrarxash.github.io/lunaison/") },

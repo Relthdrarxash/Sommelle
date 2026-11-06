@@ -172,6 +172,8 @@ private fun TimeQuestion(@StringRes title: Int, @StringRes hint: Int?, draft: Di
         value = Texts.current().time(draft.time(field)),
         onMinus = { actions.shift(field, -DiaryChoices.TIME_STEP_MINUTES) },
         onPlus = { actions.shift(field, DiaryChoices.TIME_STEP_MINUTES) },
+        onMinusHour = { actions.shift(field, -60L) },
+        onPlusHour = { actions.shift(field, 60L) },
         footer = if (source != null) {
             { PrefillLine(source) }
         } else {

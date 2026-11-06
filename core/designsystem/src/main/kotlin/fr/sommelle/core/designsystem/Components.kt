@@ -161,13 +161,15 @@ fun ScreenTitle(text: String, modifier: Modifier = Modifier) {
     )
 }
 
-/** Heure en très grand avec deux gros boutons ±15 min : pas de cadran d'horloge (documentation/design.md, section 5). */
+/** Heure en très grand avec boutons ±15 min et ±1 h : pas de cadran d'horloge (documentation/design.md, section 5). */
 @Composable
 fun TimeStepper(
     value: String,
     onMinus: () -> Unit,
     onPlus: () -> Unit,
     modifier: Modifier = Modifier,
+    onMinusHour: (() -> Unit)? = null,
+    onPlusHour: (() -> Unit)? = null,
     footer: (@Composable () -> Unit)? = null,
 ) {
     Surface(
@@ -179,7 +181,7 @@ fun TimeStepper(
         Column(
             modifier = Modifier.padding(horizontal = 20.dp, vertical = 26.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(22.dp),
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(
                 text = value,
@@ -191,25 +193,58 @@ fun TimeStepper(
                 StepButton(stringResource(R.string.ds_minus_15), stringResource(R.string.ds_minus_15_description), onMinus, Modifier.weight(1f))
                 StepButton(stringResource(R.string.ds_plus_15), stringResource(R.string.ds_plus_15_description), onPlus, Modifier.weight(1f))
             }
+            if (onMinusHour != null && onPlusHour != null) {
+                Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
+                    StepButton(
+                        stringResource(R.string.ds_minus_1h),
+                        stringResource(R.string.ds_minus_1h_description),
+                        onMinusHour,
+                        Modifier.weight(1f),
+                        secondary = true,
+                    )
+                    StepButton(
+                        stringResource(R.string.ds_plus_1h),
+                        stringResource(R.string.ds_plus_1h_description),
+                        onPlusHour,
+                        Modifier.weight(1f),
+                        secondary = true,
+                    )
+                }
+            }
             footer?.invoke()
         }
     }
 }
 
 @Composable
-private fun StepButton(label: String, description: String, onClick: () -> Unit, modifier: Modifier) {
+private fun StepButton(
+    label: String,
+    description: String,
+    onClick: () -> Unit,
+    modifier: Modifier,
+    secondary: Boolean = false,
+) {
+    val containerColor = if (secondary) {
+        MaterialTheme.colorScheme.surfaceVariant
+    } else {
+        MaterialTheme.colorScheme.primaryContainer
+    }
+    val contentColor = if (secondary) {
+        MaterialTheme.colorScheme.onSurfaceVariant
+    } else {
+        MaterialTheme.colorScheme.onPrimaryContainer
+    }
     Button(
         onClick = onClick,
-        modifier = modifier.heightIn(min = 64.dp).semantics { contentDescription = description },
+        modifier = modifier.heightIn(min = if (secondary) 48.dp else 64.dp).semantics { contentDescription = description },
         shape = MaterialTheme.shapes.medium,
-        // Marges réduites : « − 15 min » tient sur une ligne même dans une carte étroite.
         contentPadding = PaddingValues(horizontal = 8.dp, vertical = 8.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+            containerColor = containerColor,
+            contentColor = contentColor,
         ),
     ) {
-        Text(label, style = MaterialTheme.typography.labelLarge)
+        Text(label, style = if (secondary) MaterialTheme.typography.labelMedium else MaterialTheme.typography.labelLarge)
     }
 }
 

@@ -35,7 +35,7 @@
     <string name="onb_h_private">Votre réponse reste sur votre téléphone.</string>
 
     <string name="onb_result_full_title">Le programme complet vous convient</string>
-    <string name="onb_result_full_text">1. Pendant 1 semaine d\'observation, dormez comme d\'habitude et notez votre nuit chaque matin.\n2. Pendant 6 semaines, Sommelle rapproche d\'abord votre temps au lit de votre temps réellement dormi pour consolider le sommeil, puis rallonge votre nuit chaque semaine.\n3. Après les 6 semaines, le programme est terminé et vous pouvez arrêter l\'agenda.</string>
+    <string name="onb_result_full_text">1. Semaine 1 (observation) : dormez comme d\'habitude et notez votre nuit chaque matin.\n2. Semaines 2 à 7 (consolidation) : Sommelle aligne temporairement votre temps au lit sur votre sommeil réel pour le rendre profond et continu. Les 10 à 15 premiers jours entraînent une fatigue transitoire (comme des courbatures lors d\'une reprise sportive) : c\'est le signe que la pression de sommeil se reconstruit. Puis Sommelle rallonge vos nuits semaine après semaine.\n3. Après les 6 semaines : le sommeil est consolidé et vous pouvez ranger l\'agenda.</string>
     <string name="onb_result_partial_title">Un programme adapté pour vous</string>
     <string name="onb_result_partial_text">D\'après vos réponses, Sommelle ne réduira pas votre temps passé au lit. Pendant 6 semaines, vous suivrez l\'agenda du matin, les repères pour la nuit et un exercice par semaine pour apaiser le sommeil.</string>
     <string name="onb_result_out_title">Sommelle n\'est pas adaptée à votre situation</string>

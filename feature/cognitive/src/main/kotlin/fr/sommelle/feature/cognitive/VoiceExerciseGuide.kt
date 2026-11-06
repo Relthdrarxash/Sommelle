@@ -6,6 +6,7 @@ import android.media.AudioFormat
 import android.media.AudioTrack
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
+import android.speech.tts.Voice
 import java.util.Locale
 import kotlin.math.exp
 import kotlin.math.PI
@@ -27,6 +28,16 @@ internal class VoiceExerciseGuide(
     init {
         tts = TextToSpeech(context.applicationContext) { status ->
             if (status == TextToSpeech.SUCCESS) {
+                // Optimisation acoustique pour la voix parlée
+                val audioAttributes = AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                    .build()
+                tts?.setAudioAttributes(audioAttributes)
+
+                // Sélectionne la meilleure voix locale naturelle
+                selectBestNaturalVoice()
+
                 tts?.setSpeechRate(0.86f)
                 tts?.setPitch(0.95f)
                 ready = true
@@ -35,6 +46,25 @@ internal class VoiceExerciseGuide(
             } else {
                 onFinished()
             }
+        }
+    }
+
+    private fun selectBestNaturalVoice() {
+        try {
+            val voices = tts?.voices ?: return
+            val frenchVoices = voices.filter { voice ->
+                voice.locale.language == Locale.FRENCH.language && !voice.isNetworkConnectionRequired
+            }
+            if (frenchVoices.isNotEmpty()) {
+                val bestVoice = frenchVoices.maxWithOrNull(
+                    compareBy<Voice> { it.quality }
+                        .thenBy { if (it.name.contains("neural", ignoreCase = true) || it.name.contains("natural", ignoreCase = true)) 1 else 0 }
+                        .thenByDescending { !it.name.contains("low", ignoreCase = true) }
+                )
+                bestVoice?.let { tts?.voice = it }
+            }
+        } catch (_: Exception) {
+            // Repli transparent
         }
     }
 

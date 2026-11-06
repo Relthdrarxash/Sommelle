@@ -106,9 +106,10 @@ fun recentNights(
     entries: List<DiaryEntry>,
     nightsToFill: List<LocalDate>,
     locale: Locale = Locale.getDefault(),
+    daysCount: Int = 56,
 ): List<RecentNightUi> {
     val entriesByDate = entries.associateBy { it.nightOf }
-    return (6 downTo 0).map { offset ->
+    return (daysCount - 1 downTo 0).map { offset ->
         val date = today.minusDays(offset.toLong())
         val entry = entriesByDate[date]
         val isFilled = entry != null

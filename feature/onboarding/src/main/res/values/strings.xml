@@ -35,7 +35,7 @@
     <string name="onb_h_private">Your answer stays on your phone.</string>
 
     <string name="onb_result_full_title">The full program is right for you</string>
-    <string name="onb_result_full_text">1. For 1 observation week, sleep as usual and log your night each morning.\n2. For 6 weeks, Sommelle first matches your time in bed to the time you actually sleep to consolidate sleep, then lengthens your night each week.\n3. After the 6 weeks, the program is complete and you can stop the diary.</string>
+    <string name="onb_result_full_text">1. Week 1 (observation): sleep as usual and log your night each morning.\n2. Weeks 2 to 7 (consolidation): Sommelle temporarily matches your time in bed to your actual sleep time to make it deep and continuous. The first 10 to 15 days cause temporary daytime tiredness (like muscle soreness when resuming exercise): this is the sign that sleep pressure is rebuilding. Sommelle then lengthens your nights week after week.\n3. After 6 weeks: sleep is consolidated and you can put the diary away.</string>
     <string name="onb_result_partial_title">A program adapted for you</string>
     <string name="onb_result_partial_text">Based on your answers, Sommelle will not reduce your time in bed. Over 6 weeks, you will follow the morning diary, the night guidance and one exercise per week to calm your sleep.</string>
     <string name="onb_result_out_title">Sommelle is not suited to your situation</string>

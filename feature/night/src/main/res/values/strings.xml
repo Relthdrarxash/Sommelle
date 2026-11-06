@@ -6,7 +6,7 @@
     <string name="night_step_2">Do something calm, in soft light, away from screens.</string>
     <string name="night_step_3">Go back to bed when you feel sleep coming.</string>
     <string name="night_bell_start">Gently chime in 20 minutes (no clock)</string>
-    <string name="night_bell_active">Chime set: set the phone down. A soft chime will sound in about twenty minutes, with no clock on screen.</string>
+    <string name="night_bell_active">Chime active: set your phone down with the screen on (brightness is at minimum and the clock is hidden) or face down. A soft chime will sound in about twenty minutes.</string>
     <string name="night_bell_done">The chime has sounded: if your eyelids feel heavy, you can go back to bed.</string>
     <string name="night_ok">Okay, I\'m getting up</string>
     <string name="night_auto_close">This screen will close by itself.</string>

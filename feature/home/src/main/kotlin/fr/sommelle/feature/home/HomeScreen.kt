@@ -2,6 +2,8 @@ package fr.sommelle.feature.home
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -22,9 +24,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.heading
@@ -277,14 +285,65 @@ private fun RecentNightsStrip(
     recentNights: List<RecentNightUi>,
     onNightClick: (LocalDate) -> Unit,
 ) {
+    var weekOffset by rememberSaveable { mutableIntStateOf(0) }
+    var totalDrag by remember { mutableFloatStateOf(0f) }
+    val totalWeeks = (recentNights.size / 7).coerceAtLeast(1)
+    val currentNights = remember(recentNights, weekOffset) {
+        val end = recentNights.size - weekOffset * 7
+        val start = (end - 7).coerceAtLeast(0)
+        if (start < end) recentNights.subList(start, end) else recentNights.takeLast(7)
+    }
     val colors = MaterialTheme.colorScheme
-    Column(verticalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth().padding(top = 4.dp)) {
+
+    Column(
+        verticalArrangement = Arrangement.spacedBy(6.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .pointerInput(weekOffset, totalWeeks) {
+                detectHorizontalDragGestures(
+                    onDragStart = { totalDrag = 0f },
+                    onDragEnd = {
+                        if (totalDrag < -50f && weekOffset > 0) {
+                            weekOffset--
+                        } else if (totalDrag > 50f && weekOffset < totalWeeks - 1) {
+                            weekOffset++
+                        }
+                    },
+                    onHorizontalDrag = { change, dragAmount ->
+                        change.consume()
+                        totalDrag += dragAmount
+                    }
+                )
+            }
+            .padding(top = 4.dp),
+    ) {
+        if (weekOffset > 0 && currentNights.isNotEmpty()) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = "Il y a $weekOffset sem. (${currentNights.first().date.dayOfMonth}/${currentNights.first().date.monthValue} – ${currentNights.last().date.dayOfMonth}/${currentNights.last().date.monthValue})",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = colors.primary,
+                )
+                Text(
+                    text = "Aujourd'hui",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = colors.secondary,
+                    modifier = Modifier.clickable { weekOffset = 0 }
+                )
+            }
+        }
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(6.dp),
             verticalAlignment = Alignment.CenterVertically,
         ) {
-            recentNights.forEach { night ->
+            currentNights.forEach { night ->
                 val containerColor = when {
                     night.isFilled -> colors.primaryContainer
                     night.isMissingToFill -> colors.errorContainer.copy(alpha = 0.6f)

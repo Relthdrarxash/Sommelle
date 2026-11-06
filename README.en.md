@@ -8,7 +8,7 @@ An Android app that supports people with insomnia, based on CBT-I (cognitive beh
 
 Sommelle is a self-help and education tool. It is not a medical device and does not replace medical advice.
 
-**[Sommelle website](https://relthdrarxash.github.io/sommelle/en/)** · **[Download APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [For health professionals](https://relthdrarxash.github.io/sommelle/en/professionals.html) · [Scientific dossier](https://relthdrarxash.github.io/sommelle/en/protocol.html) · [Privacy](https://relthdrarxash.github.io/sommelle/en/privacy.html)
+**[Sommelle website](https://relthdrarxash.github.io/sommelle/en/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.sommelle)** · **[Download APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [For health professionals](https://relthdrarxash.github.io/sommelle/en/professionals.html) · [Scientific dossier](https://relthdrarxash.github.io/sommelle/en/protocol.html) · [Privacy](https://relthdrarxash.github.io/sommelle/en/privacy.html)
 
 ## What the app does
 

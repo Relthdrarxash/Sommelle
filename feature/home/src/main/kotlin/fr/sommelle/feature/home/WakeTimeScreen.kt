@@ -47,6 +47,8 @@ fun WakeTimeScreen(repository: SommelleRepository, onDone: () -> Unit) {
         suggested = suggested,
         onMinus = { minutes = Math.floorMod(current - DiaryChoices.TIME_STEP_MINUTES.toInt(), 1440) },
         onPlus = { minutes = Math.floorMod(current + DiaryChoices.TIME_STEP_MINUTES.toInt(), 1440) },
+        onMinusHour = { minutes = Math.floorMod(current - 60, 1440) },
+        onPlusHour = { minutes = Math.floorMod(current + 60, 1440) },
         onConfirm = {
             scope.launch {
                 repository.setWakeTime(time)
@@ -66,6 +68,8 @@ fun WakeTimeContent(
     onPlus: () -> Unit,
     onConfirm: () -> Unit,
     onBack: () -> Unit,
+    onMinusHour: (() -> Unit)? = null,
+    onPlusHour: (() -> Unit)? = null,
 ) {
     ScreenScaffold(
         bottom = { SommelleButton(stringResource(R.string.wake_confirm), onClick = onConfirm) },
@@ -77,6 +81,8 @@ fun WakeTimeContent(
             value = Texts.current().time(time),
             onMinus = onMinus,
             onPlus = onPlus,
+            onMinusHour = onMinusHour,
+            onPlusHour = onPlusHour,
             footer = if (suggested) {
                 { InfoLine(SommelleIcons.History, stringResource(R.string.wake_suggested)) }
             } else {

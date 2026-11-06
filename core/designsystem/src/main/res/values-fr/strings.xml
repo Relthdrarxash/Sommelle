@@ -7,6 +7,10 @@
     <string name="ds_plus_15">+ 15 min</string>
     <string name="ds_minus_15_description">Quinze minutes plus tôt</string>
     <string name="ds_plus_15_description">Quinze minutes plus tard</string>
+    <string name="ds_minus_1h">− 1 h</string>
+    <string name="ds_plus_1h">+ 1 h</string>
+    <string name="ds_minus_1h_description">Une heure plus tôt</string>
+    <string name="ds_plus_1h_description">Une heure plus tard</string>
     <string name="ds_yes">Oui</string>
     <string name="ds_no">Non</string>
 </resources>
