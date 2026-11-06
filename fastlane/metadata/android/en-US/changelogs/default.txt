@@ -1,4 +1,4 @@
-• Offline voice guide and soft 432 Hz acoustic chime to practice calming exercises with your eyes closed.
-• Interactive evening notepad inside the "Put your day to rest" exercise (stored locally on your phone).
-• Sleep diary CSV backup import and restore, alongside CSV export and the clinician summary.
-• Discreet home screen widget showing tonight's sleep window.
+• Recent 7 nights strip on Home to track adherence and backfill mornings in one tap.
+• Direct "Summary for my doctor" button on the Week screen to export CBT-I reports.
+• Polished bottom navigation bar with unified "Settings" label.
+• Companion suite discovery (Respire, Lunaison) and unified ethical privacy pledge.
