@@ -95,6 +95,8 @@ If you are going through a hard time, call your local emergency number or a cris
 
 Sommelle is distributed under the [GNU GPL v3.0](LICENSE) license. You can use, study, modify and redistribute it, provided that any redistributed version remains published under the same license, with its source code.
 
+An [additional permission](LICENSE-EXCEPTION.md) (GPL section 7) allows distribution through app stores, including the Apple App Store, as long as the source code remains available under the same license.
+
 ## A note on development
 
 Sommelle's code was developed with the help of an AI assistant (Claude, by Anthropic): the app itself embeds no artificial intelligence, all content and calculations rely on the clinical CBT-I protocol (HAS, Réseau Morphée, ESRS, CBT-i Coach), the program engine and screen logic are deterministic and covered by automated tests, and I personally maintain the project and answer issues and messages myself.

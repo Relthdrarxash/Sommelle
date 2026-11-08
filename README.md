@@ -110,6 +110,8 @@ Si vous traversez une période difficile, le 3114 (numéro national de préventi
 
 Sommelle est distribuée sous licence [GNU GPL v3.0](LICENSE). Vous pouvez l'utiliser, l'étudier, la modifier et la redistribuer, à condition que toute version redistribuée reste publiée sous la même licence, avec son code source.
 
+Une [permission additionnelle](LICENSE-EXCEPTION.md) (article 7 de la GPL) autorise la distribution par les magasins d'applications, App Store compris, tant que le code source reste disponible sous la même licence.
+
 ## Note sur le développement
 
 Le code de Sommelle a été développé avec l'aide d'un assistant IA (Claude, d'Anthropic) : l'application elle-même n'embarque aucune intelligence artificielle, tous les contenus et calculs reposent sur le protocole clinique de la TCC-I (HAS, Réseau Morphée, ESRS, CBT-i Coach), le moteur du programme et la logique des écrans sont déterministes et couverts par des tests automatiques, et je maintiens personnellement le projet en répondant moi-même aux tickets et aux messages.
