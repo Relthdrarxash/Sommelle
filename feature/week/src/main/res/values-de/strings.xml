@@ -39,4 +39,8 @@
     <string name="week_outcome_before">Zu Beginn</string>
     <string name="week_outcome_after">Heute</string>
     <string name="week_report_button">Bericht für meine Ärztin / meinen Arzt</string>
+    <string name="week_review_title">Hilft dir Sommelle?</string>
+    <string name="week_review_text">Sommelle ist kostenlos, quelloffen, werbefrei und ohne Server. Eine kurze Bewertung im Play Store hilft anderen Menschen mit Schlafstörungen, sie zu finden.</string>
+    <string name="week_review_yes">Bewertung abgeben</string>
+    <string name="week_review_no">Nein danke</string>
 </resources>

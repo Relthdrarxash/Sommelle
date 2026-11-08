@@ -39,4 +39,8 @@
     <string name="week_outcome_before">Na początku</string>
     <string name="week_outcome_after">Dziś</string>
     <string name="week_report_button">Raport dla mojego lekarza</string>
+    <string name="week_review_title">Czy Sommelle Ci pomaga?</string>
+    <string name="week_review_text">Sommelle jest darmowa, otwarta, bez reklam i bez serwerów. Krótka opinia w Sklepie Play pomoże innym osobom z bezsennością ją znaleźć.</string>
+    <string name="week_review_yes">Wystaw opinię</string>
+    <string name="week_review_no">Nie, dziękuję</string>
 </resources>
