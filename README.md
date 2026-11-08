@@ -108,9 +108,7 @@ Si vous traversez une période difficile, le 3114 (numéro national de préventi
 
 ## Licence
 
-Sommelle est distribuée sous licence [GNU GPL v3.0](LICENSE). Vous pouvez l'utiliser, l'étudier, la modifier et la redistribuer, à condition que toute version redistribuée reste publiée sous la même licence, avec son code source.
-
-Une [permission additionnelle](LICENSE-EXCEPTION.md) (article 7 de la GPL) autorise la distribution par les magasins d'applications, App Store compris, tant que le code source reste disponible sous la même licence.
+Sommelle est distribuée sous licence [Mozilla Public License 2.0](LICENSE) (MPL-2.0) : vous pouvez l'utiliser, l'étudier, la modifier et la redistribuer ; les fichiers que vous modifiez doivent rester publiés sous la même licence, avec leur code source.
 
 ## Note sur le développement
 
