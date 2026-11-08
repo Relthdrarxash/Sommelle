@@ -6,6 +6,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
@@ -19,6 +20,7 @@ import androidx.work.WorkerParameters
 import androidx.work.workDataOf
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.data.SommelleRepositoryProvider
+import fr.sommelle.core.presentation.AppLinks
 import fr.sommelle.core.presentation.Texts
 import fr.sommelle.core.presentation.ReminderKind
 import fr.sommelle.core.presentation.ReminderPlanner
@@ -75,17 +77,38 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         if (snapshot != null) {
             when (kind) {
                 ReminderKind.MORNING -> {
+                    // Le bilan de la semaine se calcule d'habitude à l'ouverture de l'appli :
+                    // on le fait ici pour pouvoir l'annoncer, c'est le meilleur moment du programme.
+                    val windowsBefore = snapshot.windows.size
+                    repository.synchronize()
+                    val windowsAfter = repository.snapshot.first()?.windows?.size ?: windowsBefore
+                    if (windowsBefore > 0 && windowsAfter > windowsBefore) {
+                        notify(
+                            WEEK_NOTIFICATION_ID,
+                            applicationContext.getString(R.string.reminder_week_title),
+                            applicationContext.getString(R.string.reminder_week_text),
+                            AppLinks.WEEK,
+                        )
+                    }
                     // Pas de rappel si la nuit est déjà notée.
                     val filled = snapshot.entries.any { it.nightOf == repository.today() }
-                    if (!filled) notify(kind, applicationContext.getString(R.string.reminder_morning_title), applicationContext.getString(R.string.reminder_morning_text))
+                    if (!filled) {
+                        notify(
+                            kind.ordinal + 1,
+                            applicationContext.getString(R.string.reminder_morning_title),
+                            applicationContext.getString(R.string.reminder_morning_text),
+                            AppLinks.DIARY,
+                        )
+                    }
                 }
                 ReminderKind.EVENING -> {
                     val window = snapshot.windows.maxByOrNull { it.window.effectiveFrom }?.window
                     if (window != null) {
                         notify(
-                            kind,
+                            kind.ordinal + 1,
                             applicationContext.getString(R.string.reminder_evening_title, Texts.current().time(window.bedTime)),
                             applicationContext.getString(R.string.reminder_evening_text),
+                            link = null,
                         )
                     }
                 }
@@ -97,7 +120,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
 
     // L'autorisation est vérifiée au début de la fonction.
     @SuppressLint("MissingPermission")
-    private fun notify(kind: ReminderKind, title: String, text: String) {
+    private fun notify(id: Int, title: String, text: String, link: String?) {
         val context = applicationContext
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
             ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
@@ -105,9 +128,12 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
             return
         }
         ensureChannel(context)
+        // Le rappel du matin ouvre directement le journal de la nuit, le bilan ouvre la semaine.
         val launch = context.packageManager.getLaunchIntentForPackage(context.packageName)
+            ?.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            ?.apply { if (link != null) putExtra(AppLinks.EXTRA_OPEN, link) }
         val pending = launch?.let {
-            PendingIntent.getActivity(context, kind.ordinal, it, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
+            PendingIntent.getActivity(context, id, it, PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT)
         }
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
@@ -118,11 +144,12 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
-        NotificationManagerCompat.from(context).notify(kind.ordinal + 1, notification)
+        NotificationManagerCompat.from(context).notify(id, notification)
     }
 
     companion object {
         const val KIND = "kind"
+        private const val WEEK_NOTIFICATION_ID = 10
         private const val CHANNEL_ID = "rappels"
 
         fun ensureChannel(context: Context) {

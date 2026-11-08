@@ -57,4 +57,9 @@
     <string name="onb_notice_pregnancy">During pregnancy, Sommelle will not reduce your time in bed.</string>
     <string name="onb_notice_crisis">If you are going through a hard time, please reach out now: call your local emergency number or a crisis line in your country, such as 988 in the United States. In France, 3114 is free, day and night, with trained people who listen.</string>
     <string name="onb_call_3114">Call 3114 (France)</string>
+    <string name="onb_rem_title">A reminder each morning?</string>
+    <string name="onb_rem_text">The program relies on your sleep diary: twenty seconds each morning. Sommelle can remind you after you wake up, and in the evening shortly before your sleep window starts.</string>
+    <string name="onb_rem_later">You can change this at any time in the settings.</string>
+    <string name="onb_rem_yes">Yes, remind me</string>
+    <string name="onb_rem_no">Not now</string>
 </resources>

@@ -13,6 +13,7 @@ import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
@@ -30,6 +31,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.designsystem.SommelleIcons
+import fr.sommelle.core.presentation.AppLinks
 import fr.sommelle.core.presentation.CognitiveModule
 import fr.sommelle.feature.cognitive.ModuleScreen
 import fr.sommelle.feature.cognitive.ModulesScreen
@@ -60,7 +62,7 @@ private object Routes {
 }
 
 @Composable
-fun SommelleApp(repository: SommelleRepository) {
+fun SommelleApp(repository: SommelleRepository, link: String? = null, onLinkHandled: () -> Unit = {}) {
     // null tant que l'on ne sait pas encore si le questionnaire a été rempli.
     val start by produceState<String?>(initialValue = null) {
         value = if (repository.snapshot.first() == null) Routes.ONBOARDING else Routes.HOME
@@ -70,6 +72,23 @@ fun SommelleApp(repository: SommelleRepository) {
     val backStack by navController.currentBackStackEntryAsState()
     val route = backStack?.destination?.route
     val showBar = route in setOf(Routes.HOME, Routes.WEEK, Routes.EXERCISES, Routes.SETTINGS)
+
+    // Notification ou widget : ouvrir directement le journal de la nuit ou le bilan, une fois le programme commencé.
+    LaunchedEffect(link, route == null) {
+        val target = link ?: return@LaunchedEffect
+        // Le graphe de navigation n'est prêt qu'une fois la première destination affichée.
+        if (route == null) return@LaunchedEffect
+        if (startRoute == Routes.HOME) {
+            when (target) {
+                AppLinks.DIARY -> navController.navigate(Routes.diary(repository.today())) { launchSingleTop = true }
+                AppLinks.WEEK -> navController.navigate(Routes.WEEK) {
+                    popUpTo(navController.graph.findStartDestination().id) { saveState = true }
+                    launchSingleTop = true
+                }
+            }
+        }
+        onLinkHandled()
+    }
 
     Scaffold(
         containerColor = MaterialTheme.colorScheme.background,

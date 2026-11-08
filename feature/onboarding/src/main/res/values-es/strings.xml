@@ -54,4 +54,9 @@
     <string name="onb_notice_pregnancy">Durante el embarazo, Sommelle no reducirá tu tiempo en la cama.</string>
     <string name="onb_notice_crisis">Si estás pasando por un momento difícil, dispones de líneas de atención gratuitas para ayudarte.</string>
     <string name="onb_call_3114">Llamar al 024 (España)</string>
+    <string name="onb_rem_title">¿Un recordatorio cada mañana?</string>
+    <string name="onb_rem_text">El programa se basa en tu diario de sueño: veinte segundos cada mañana. Sommelle puede recordártelo al levantarte y, por la noche, poco antes de que empiece tu ventana de sueño.</string>
+    <string name="onb_rem_later">Puedes cambiarlo cuando quieras en los ajustes.</string>
+    <string name="onb_rem_yes">Sí, recuérdamelo</string>
+    <string name="onb_rem_no">Ahora no</string>
 </resources>

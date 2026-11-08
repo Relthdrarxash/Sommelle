@@ -54,4 +54,9 @@
     <string name="onb_notice_pregnancy">W trakcie ciąży Sommelle nie będzie ograniczać Twojego czasu w łóżku.</string>
     <string name="onb_notice_crisis">Jeśli przechodzisz trudne chwile, możesz skorzystać z bezpłatnej linii wsparcia kryzysowego.</string>
     <string name="onb_call_3114">Zadzwoń pod 116 123 (Polska)</string>
+    <string name="onb_rem_title">Przypomnienie każdego ranka?</string>
+    <string name="onb_rem_text">Program opiera się na dzienniku snu: dwadzieścia sekund każdego ranka. Sommelle może przypomnieć Ci o nim po przebudzeniu, a wieczorem tuż przed początkiem Twojego okna snu.</string>
+    <string name="onb_rem_later">Możesz to zmienić w dowolnej chwili w ustawieniach.</string>
+    <string name="onb_rem_yes">Tak, przypominaj mi</string>
+    <string name="onb_rem_no">Nie teraz</string>
 </resources>

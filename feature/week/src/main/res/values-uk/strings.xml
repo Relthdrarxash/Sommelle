@@ -39,4 +39,8 @@
     <string name="week_outcome_before">На старті</string>
     <string name="week_outcome_after">Сьогодні</string>
     <string name="week_report_button">Звіт для мого лікаря</string>
+    <string name="week_review_title">Sommelle вам допомагає?</string>
+    <string name="week_review_text">Sommelle безкоштовна, відкрита, без реклами й серверів. Короткий відгук у Play Store допоможе іншим людям з безсонням її знайти.</string>
+    <string name="week_review_yes">Залишити відгук</string>
+    <string name="week_review_no">Ні, дякую</string>
 </resources>

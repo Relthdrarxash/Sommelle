@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Dwadzieścia sekund, aby zapisać ją w dzienniku.</string>
     <string name="reminder_evening_title">Twoje okno snu zaczyna się o %1$s</string>
     <string name="reminder_evening_text">Pozostań na nogach do tej pory: to właśnie pogłębia sen.</string>
+    <string name="reminder_week_title">Podsumowanie tygodnia jest gotowe</string>
+    <string name="reminder_week_text">Sommelle dostosowała Twoje okno snu na nadchodzący tydzień. Zobacz wynik.</string>
 </resources>

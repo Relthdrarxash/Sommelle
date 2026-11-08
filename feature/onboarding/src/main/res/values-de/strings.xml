@@ -54,4 +54,9 @@
     <string name="onb_notice_pregnancy">In der Schwangerschaft schränkt Sommelle deine Bettzeit nicht ein.</string>
     <string name="onb_notice_crisis">Wenn du dich in einer seelischen Krise befindest, ist die TelefonSeelsorge rund um die Uhr kostenfrei für dich da.</string>
     <string name="onb_call_3114">0800 111 0 111 anrufen (D)</string>
+    <string name="onb_rem_title">Jeden Morgen eine Erinnerung?</string>
+    <string name="onb_rem_text">Das Programm baut auf deinem Schlaftagebuch auf: zwanzig Sekunden jeden Morgen. Sommelle kann dich nach dem Aufstehen daran erinnern und abends kurz bevor dein Schlaffenster beginnt.</string>
+    <string name="onb_rem_later">Du kannst das jederzeit in den Einstellungen ändern.</string>
+    <string name="onb_rem_yes">Ja, erinnere mich</string>
+    <string name="onb_rem_no">Jetzt nicht</string>
 </resources>

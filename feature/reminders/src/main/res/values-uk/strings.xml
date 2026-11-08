@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Двадцять секунд, щоб записати її у щоденник.</string>
     <string name="reminder_evening_title">Ваше вікно сну починається о %1$s</string>
     <string name="reminder_evening_text">Не лягайте спати до цього часу: саме це робить сон глибшим.</string>
+    <string name="reminder_week_title">Підсумок вашого тижня готовий</string>
+    <string name="reminder_week_text">Sommelle скоригувала ваше вікно сну на наступний тиждень. Перегляньте результат.</string>
 </resources>

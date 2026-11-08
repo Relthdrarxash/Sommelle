@@ -93,7 +93,7 @@ If you are going through a hard time, call your local emergency number or a cris
 
 ## License
 
-Sommelle is distributed under the [GNU GPL v3.0](LICENSE) license. You can use, study, modify and redistribute it, provided that any redistributed version remains published under the same license, with its source code.
+Sommelle is distributed under the [Mozilla Public License 2.0](LICENSE) (MPL-2.0): you can use, study, modify and redistribute it; files you modify must stay under the same license, with their source code.
 
 ## A note on development
 

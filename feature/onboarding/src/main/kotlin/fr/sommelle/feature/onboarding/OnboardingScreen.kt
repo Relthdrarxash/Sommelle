@@ -1,6 +1,10 @@
 package fr.sommelle.feature.onboarding
 
+import android.Manifest
+import android.os.Build
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -42,7 +46,24 @@ fun OnboardingScreen(repository: SommelleRepository, onDone: () -> Unit) {
     val viewModel: OnboardingViewModel = viewModel { OnboardingViewModel(repository) }
     val state by viewModel.state.collectAsStateWithLifecycle()
 
-    BackHandler(enabled = state != OnboardingState.Welcome) { viewModel.back() }
+    BackHandler(enabled = state != OnboardingState.Welcome && state != OnboardingState.Reminders) { viewModel.back() }
+
+    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        viewModel.chooseReminders(granted, onDone)
+    }
+    if (state == OnboardingState.Reminders) {
+        RemindersStep(
+            onAccept = {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    permission.launch(Manifest.permission.POST_NOTIFICATIONS)
+                } else {
+                    viewModel.chooseReminders(true, onDone)
+                }
+            },
+            onDecline = { viewModel.chooseReminders(false, onDone) },
+        )
+        return
+    }
 
     OnboardingContent(
         state = state,
@@ -83,6 +104,7 @@ fun OnboardingContent(
                 onAnswer = onAnswer,
             )
         }
+        OnboardingState.Reminders -> RemindersStep(onAccept = {}, onDecline = {})
         is OnboardingState.Result -> ResultStep(
             pathway = s.result.pathway,
             referrals = s.result.referrals,
@@ -99,11 +121,12 @@ private fun Welcome(onStart: () -> Unit) {
         bottom = { SommelleButton(stringResource(R.string.onb_welcome_start), onStart) },
     ) {
         ScreenTitle(stringResource(R.string.onb_welcome_title))
+        // La durée d'abord : on sait à quoi s'attendre avant de lire le reste.
+        Body(R.string.onb_intro_questions)
         Body(R.string.onb_welcome_1)
         Body(R.string.onb_welcome_2)
         Body(R.string.onb_welcome_3)
         Body(R.string.onb_welcome_4)
-        Body(R.string.onb_intro_questions)
     }
 }
 
@@ -183,6 +206,21 @@ private fun ResultStep(
                 }
             }
         }
+    }
+}
+
+/** Rappels du matin (journal) et du soir (fenêtre), proposés une fois le programme commencé. */
+@Composable
+private fun RemindersStep(onAccept: () -> Unit, onDecline: () -> Unit) {
+    ScreenScaffold(
+        bottom = {
+            SommelleButton(stringResource(R.string.onb_rem_yes), onAccept)
+            SommelleButton(stringResource(R.string.onb_rem_no), onDecline, style = SommelleButtonStyle.Quiet)
+        },
+    ) {
+        ScreenTitle(stringResource(R.string.onb_rem_title))
+        Body(R.string.onb_rem_text)
+        Body(R.string.onb_rem_later)
     }
 }
 

@@ -1,6 +1,6 @@
 Sommelle is an application dedicated to treating chronic insomnia through first-line Cognitive Behavioral Therapy for Insomnia (CBT-I), recommended by the European Sleep Research Society (ESRS 2023) and the American Academy of Sleep Medicine (AASM 2021).
 
-Fully open-source (GPL-3.0), free, ad-free, without subscriptions, accounts, or telemetry, and 100% offline: it does not even request the Android INTERNET permission. Your private sleep data never leaves your device.
+Fully open-source (MPL-2.0), free, ad-free, without subscriptions, accounts, or telemetry, and 100% offline: it does not even request the Android INTERNET permission. Your private sleep data never leaves your device.
 
 A STRUCTURED 6-WEEK PROTOCOL
 • Clinical intake screening: Evaluates contraindications for sleep restriction (sleep apnea, bipolar disorder, epilepsy, pregnancy, safety-critical occupation) and assigns an appropriate pathway.

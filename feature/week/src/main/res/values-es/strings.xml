@@ -39,4 +39,8 @@
     <string name="week_outcome_before">Al inicio</string>
     <string name="week_outcome_after">Hoy</string>
     <string name="week_report_button">Resumen para mi médico</string>
+    <string name="week_review_title">¿Te está ayudando Sommelle?</string>
+    <string name="week_review_text">Sommelle es gratuita, libre, sin anuncios y sin servidores. Una breve opinión en Google Play ayuda a otras personas con insomnio a encontrarla.</string>
+    <string name="week_review_yes">Dejar una opinión</string>
+    <string name="week_review_no">No, gracias</string>
 </resources>

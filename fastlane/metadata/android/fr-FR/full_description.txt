@@ -1,6 +1,6 @@
 Sommelle est une application dédiée au traitement de l'insomnie chronique par la thérapie cognitivo-comportementale de première intention (TCC-I), recommandée par la Haute Autorité de Santé (HAS), l'European Sleep Research Society (ESRS 2023) et l'American Academy of Sleep Medicine (AASM 2021).
 
-Totalement libre (GPL-3.0), gratuite, sans publicité, sans abonnement, sans compte utilisateur et 100 % hors-ligne : elle ne demande même pas la permission d'accès à Internet dans son manifeste Android. Vos données de sommeil ne quittent jamais votre téléphone.
+Totalement libre (MPL-2.0), gratuite, sans publicité, sans abonnement, sans compte utilisateur et 100 % hors-ligne : elle ne demande même pas la permission d'accès à Internet dans son manifeste Android. Vos données de sommeil ne quittent jamais votre téléphone.
 
 UN PROGRAMME STRUCTURÉ EN 6 SEMAINES
 • Questionnaire initial de repérage : Vérification préalable des contre-indications à la restriction du temps au lit (apnée non traitée, trouble bipolaire, épilepsie, grossesse, métier à vigilance critique) et orientation vers un parcours adapté ou médical.

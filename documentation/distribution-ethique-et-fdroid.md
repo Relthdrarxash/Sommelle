@@ -10,7 +10,7 @@ Ce document regroupe les fiches techniques prêtes à copier-coller pour référ
 Categories:
   - Science & Education
   - Sports & Health
-License: GPL-3.0-or-later
+License: MPL-2.0
 AuthorName: Pilmil Studio
 AuthorEmail: pilmil.studio@proton.me
 WebSite: https://relthdrarxash.github.io/sommelle/

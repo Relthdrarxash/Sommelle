@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.model.AgeBand
+import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.ScreeningAnswers
 import fr.sommelle.core.model.ScreeningResult
 import fr.sommelle.core.presentation.ScreeningFlow
@@ -17,6 +18,9 @@ sealed interface OnboardingState {
     data object Welcome : OnboardingState
     data class Questions(val flow: ScreeningFlow) : OnboardingState
     data class Result(val flow: ScreeningFlow, val answers: ScreeningAnswers, val result: ScreeningResult) : OnboardingState
+
+    /** Dernière étape : proposer les rappels, sans lesquels le journal du matin s'oublie vite. */
+    data object Reminders : OnboardingState
 }
 
 class OnboardingViewModel(private val repository: SommelleRepository) : ViewModel() {
@@ -33,7 +37,7 @@ class OnboardingViewModel(private val repository: SommelleRepository) : ViewMode
     /** Retour à l'étape précédente ; depuis l'âge, retour à l'accueil du questionnaire. */
     fun back() = _state.update { state ->
         when (state) {
-            OnboardingState.Welcome -> state
+            OnboardingState.Welcome, OnboardingState.Reminders -> state
             is OnboardingState.Questions ->
                 if (state.flow.isAgeStep) OnboardingState.Welcome else OnboardingState.Questions(state.flow.back())
             is OnboardingState.Result -> OnboardingState.Questions(state.flow.back())
@@ -44,6 +48,17 @@ class OnboardingViewModel(private val repository: SommelleRepository) : ViewMode
         val result = _state.value as? OnboardingState.Result ?: return
         viewModelScope.launch {
             repository.startProgram(result.answers)
+            // Hors programme, pas de journal à tenir : pas de rappel à proposer.
+            if (result.result.pathway == Pathway.OUT_OF_SCOPE) onDone() else _state.value = OnboardingState.Reminders
+        }
+    }
+
+    /** Active le rappel du matin (journal) et celui du soir (fenêtre), ou aucun. */
+    fun chooseReminders(enabled: Boolean, onDone: () -> Unit) {
+        viewModelScope.launch {
+            if (enabled) {
+                repository.saveReminderSettings(repository.reminderSettingsOnce().copy(morningEnabled = true, eveningEnabled = true))
+            }
             onDone()
         }
     }

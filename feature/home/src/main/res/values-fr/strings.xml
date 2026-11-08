@@ -53,4 +53,10 @@
     <string name="home_impact_2">Moyennement</string>
     <string name="home_impact_3">Beaucoup</string>
     <string name="home_impact_4">Énormément</string>
+    <string name="home_nights_previous">Semaine précédente</string>
+    <string name="home_nights_next">Semaine suivante</string>
+    <string name="home_reminder_title">Pour ne pas oublier le journal</string>
+    <string name="home_reminder_text">Un rappel le matin aide beaucoup à noter chaque nuit, et le programme en dépend. Aucun rappel n\'est envoyé si la nuit est déjà notée.</string>
+    <string name="home_reminder_enable">Activer les rappels</string>
+    <string name="home_reminder_dismiss">Non merci</string>
 </resources>

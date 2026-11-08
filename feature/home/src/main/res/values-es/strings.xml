@@ -47,4 +47,10 @@
     <string name="home_impact_2">Moderadamente</string>
     <string name="home_impact_3">Bastante</string>
     <string name="home_impact_4">Enormemente</string>
+    <string name="home_nights_previous">Semana anterior</string>
+    <string name="home_nights_next">Semana siguiente</string>
+    <string name="home_reminder_title">Para no olvidar el diario</string>
+    <string name="home_reminder_text">Un recordatorio por la mañana ayuda mucho a anotar cada noche, y el programa depende de ello. No se envía ningún recordatorio si la noche ya está anotada.</string>
+    <string name="home_reminder_enable">Activar recordatorios</string>
+    <string name="home_reminder_dismiss">No, gracias</string>
 </resources>

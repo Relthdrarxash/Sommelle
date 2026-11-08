@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Vingt secondes pour la noter dans votre agenda.</string>
     <string name="reminder_evening_title">Votre fenêtre commence à %1$s</string>
     <string name="reminder_evening_text">Restez debout jusque-là : c\'est ce qui rend le sommeil plus profond.</string>
+    <string name="reminder_week_title">Le bilan de votre semaine est prêt</string>
+    <string name="reminder_week_text">Sommelle a ajusté votre fenêtre de sommeil pour la semaine qui vient. Venez voir le résultat.</string>
 </resources>

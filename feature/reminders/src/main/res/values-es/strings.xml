@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Veinte segundos para anotarla en tu diario.</string>
     <string name="reminder_evening_title">Tu ventana comienza a las %1$s</string>
     <string name="reminder_evening_text">Permanece despierto hasta esa hora: es lo que hace que el sueño sea más profundo.</string>
+    <string name="reminder_week_title">El resumen de tu semana está listo</string>
+    <string name="reminder_week_text">Sommelle ha ajustado tu ventana de sueño para la próxima semana. Echa un vistazo al resultado.</string>
 </resources>
