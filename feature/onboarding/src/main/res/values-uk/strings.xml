@@ -54,4 +54,9 @@
     <string name="onb_notice_pregnancy">Під час вагітності Sommelle не обмежуватиме ваш час перебування в ліжку.</string>
     <string name="onb_notice_crisis">Якщо ви переживаєте важкий період, зателефонуйте на лінію психологічної підтримки — це безкоштовно та конфіденційно.</string>
     <string name="onb_call_3114">Зателефонувати на 7333 (Україна)</string>
+    <string name="onb_rem_title">Нагадування щоранку?</string>
+    <string name="onb_rem_text">Програма спирається на щоденник сну: двадцять секунд щоранку. Sommelle може нагадати вам про нього після пробудження, а ввечері незадовго до початку вашого вікна сну.</string>
+    <string name="onb_rem_later">Ви можете змінити це будь-коли в налаштуваннях.</string>
+    <string name="onb_rem_yes">Так, нагадувати</string>
+    <string name="onb_rem_no">Не зараз</string>
 </resources>

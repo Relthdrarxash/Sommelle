@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Zwanzig Sekunden, um sie in dein Tagebuch einzutragen.</string>
     <string name="reminder_evening_title">Dein Schlaffenster beginnt um %1$s</string>
     <string name="reminder_evening_text">Bleibe bis dahin wach: Das vertieft deinen Schlaf.</string>
+    <string name="reminder_week_title">Dein Wochenrückblick ist da</string>
+    <string name="reminder_week_text">Sommelle hat dein Schlaffenster für die kommende Woche angepasst. Schau dir das Ergebnis an.</string>
 </resources>

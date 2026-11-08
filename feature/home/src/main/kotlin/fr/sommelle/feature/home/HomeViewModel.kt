@@ -67,6 +67,13 @@ class HomeViewModel(private val repository: SommelleRepository) : ViewModel() {
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
 
+    /** Rappel du matin pour le journal, et du soir avant la fenêtre. */
+    fun enableReminders() {
+        viewModelScope.launch {
+            repository.saveReminderSettings(repository.reminderSettingsOnce().copy(morningEnabled = true, eveningEnabled = true))
+        }
+    }
+
     fun saveDaytimeImpact(score: Int) {
         viewModelScope.launch { repository.saveDaytimeImpact(score) }
     }

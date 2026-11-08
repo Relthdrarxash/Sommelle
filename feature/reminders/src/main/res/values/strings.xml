@@ -6,4 +6,6 @@
     <string name="reminder_morning_text">Twenty seconds to log it in your diary.</string>
     <string name="reminder_evening_title">Your window starts at %1$s</string>
     <string name="reminder_evening_text">Stay up until then: that is what makes sleep deeper.</string>
+    <string name="reminder_week_title">Your week in review is ready</string>
+    <string name="reminder_week_text">Sommelle has adjusted your sleep window for the coming week. Take a look at the result.</string>
 </resources>

@@ -47,4 +47,10 @@
     <string name="home_impact_2">Mäßig</string>
     <string name="home_impact_3">Ziemlich stark</string>
     <string name="home_impact_4">Extrem stark</string>
+    <string name="home_nights_previous">Vorherige Woche</string>
+    <string name="home_nights_next">Nächste Woche</string>
+    <string name="home_reminder_title">Damit du das Tagebuch nicht vergisst</string>
+    <string name="home_reminder_text">Eine Erinnerung am Morgen hilft sehr, jede Nacht einzutragen, und das Programm hängt davon ab. Ist die Nacht schon eingetragen, kommt keine Erinnerung.</string>
+    <string name="home_reminder_enable">Erinnerungen einschalten</string>
+    <string name="home_reminder_dismiss">Nein danke</string>
 </resources>

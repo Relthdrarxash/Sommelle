@@ -57,4 +57,9 @@
     <string name="onb_notice_pregnancy">Pendant la grossesse, Sommelle ne réduira pas votre temps passé au lit.</string>
     <string name="onb_notice_crisis">Si vous traversez un moment difficile, vous pouvez appeler le 3114, gratuitement, jour et nuit. Des personnes formées vous écoutent.</string>
     <string name="onb_call_3114">Appeler le 3114</string>
+    <string name="onb_rem_title">Un rappel chaque matin ?</string>
+    <string name="onb_rem_text">Le programme repose sur votre journal de sommeil : vingt secondes chaque matin. Sommelle peut vous le rappeler après le lever, et le soir peu avant le début de votre fenêtre de sommeil.</string>
+    <string name="onb_rem_later">Vous pourrez changer d\'avis à tout moment dans les réglages.</string>
+    <string name="onb_rem_yes">Oui, me le rappeler</string>
+    <string name="onb_rem_no">Pas maintenant</string>
 </resources>

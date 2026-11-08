@@ -6,6 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import fr.sommelle.core.presentation.AppLinks
 import android.widget.RemoteViews
 import fr.sommelle.core.data.ProgramSnapshot
 import fr.sommelle.core.data.SommelleRepositoryProvider
@@ -23,9 +24,15 @@ class SommelleWidget : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         val provider = context.applicationContext as? SommelleRepositoryProvider ?: return
+        // goAsync garde le récepteur en vie jusqu'à la fin de la lecture en base.
+        val pending = goAsync()
         CoroutineScope(Dispatchers.IO).launch {
-            val snapshot = provider.repository.snapshot.first()
-            updateWidgets(context, appWidgetManager, appWidgetIds, snapshot)
+            try {
+                val snapshot = provider.repository.snapshot.first()
+                updateWidgets(context, appWidgetManager, appWidgetIds, snapshot)
+            } finally {
+                pending.finish()
+            }
         }
     }
 
@@ -52,7 +59,11 @@ class SommelleWidget : AppWidgetProvider() {
                 context.getString(R.string.widget_observation)
             }
 
+            // Nuit pas encore notée : le widget ouvre directement le journal, comme promis.
+            val nightFilled = snapshot?.entries?.any { it.nightOf == java.time.LocalDate.now() } ?: true
             val launchIntent = Intent(context, MainActivity::class.java)
+                .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                .apply { if (!nightFilled) putExtra(AppLinks.EXTRA_OPEN, AppLinks.DIARY) }
             val pendingIntent = PendingIntent.getActivity(
                 context,
                 0,

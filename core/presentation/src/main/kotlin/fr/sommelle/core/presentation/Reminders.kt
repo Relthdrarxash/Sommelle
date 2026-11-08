@@ -33,3 +33,14 @@ object ReminderPlanner {
         return if (today.isAfter(now)) today else today.plusDays(1)
     }
 }
+
+/** Écran à ouvrir depuis une notification ou le widget, passé en extra de l'intention de lancement. */
+object AppLinks {
+    const val EXTRA_OPEN = "fr.sommelle.OPEN"
+
+    /** Journal de la nuit dernière. */
+    const val DIARY = "diary"
+
+    /** Bilan de la semaine. */
+    const val WEEK = "week"
+}

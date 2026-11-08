@@ -1,5 +1,16 @@
 package fr.sommelle.feature.home
 
+import android.Manifest
+import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material3.IconButton
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -74,8 +85,39 @@ fun HomeScreen(
     val viewModel: HomeViewModel = viewModel { HomeViewModel(repository) }
     val state by viewModel.state.collectAsStateWithLifecycle()
     val s = state ?: return
-    HomeContent(s, onFillNight, onChooseWakeTime, onCantSleep, onDaytimeImpact = viewModel::saveDaytimeImpact)
+    val context = LocalContext.current
+    val prefs = remember { context.getSharedPreferences(HOME_PREFS, Context.MODE_PRIVATE) }
+    var promptDismissed by remember { mutableStateOf(prefs.getBoolean(KEY_REMINDER_PROMPT_DISMISSED, false)) }
+    val reminders by repository.reminderSettings.collectAsStateWithLifecycle(initialValue = null)
+    val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) viewModel.enableReminders()
+    }
+    HomeContent(
+        s,
+        onFillNight,
+        onChooseWakeTime,
+        onCantSleep,
+        onDaytimeImpact = viewModel::saveDaytimeImpact,
+        showReminderPrompt = !promptDismissed && reminders?.morningEnabled == false,
+        onEnableReminders = {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+                ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED
+            ) {
+                permission.launch(Manifest.permission.POST_NOTIFICATIONS)
+            } else {
+                viewModel.enableReminders()
+            }
+        },
+        onDismissReminders = {
+            prefs.edit().putBoolean(KEY_REMINDER_PROMPT_DISMISSED, true).apply()
+            promptDismissed = true
+        },
+    )
 }
+
+private const val HOME_PREFS = "home"
+private const val KEY_REMINDER_PROMPT_DISMISSED = "reminder_prompt_dismissed"
+
 
 /** Accueil sans état ni dépendance : affiché tel quel dans les captures d'écran de la documentation. */
 @Composable
@@ -85,6 +127,9 @@ fun HomeContent(
     onChooseWakeTime: () -> Unit,
     onCantSleep: () -> Unit,
     onDaytimeImpact: (Int) -> Unit = {},
+    showReminderPrompt: Boolean = false,
+    onEnableReminders: () -> Unit = {},
+    onDismissReminders: () -> Unit = {},
 ) {
     val diaryAvailable = s.pathway != Pathway.OUT_OF_SCOPE
     ScreenScaffold(
@@ -103,6 +148,19 @@ fun HomeContent(
         if (s.askDaytimeImpact) DaytimeImpactCard(onDaytimeImpact)
         ProgramCard(s, onChooseWakeTime)
         if (diaryAvailable) DiarySection(s, onFillNight)
+        if (diaryAvailable && showReminderPrompt) ReminderPromptCard(onEnableReminders, onDismissReminders)
+    }
+}
+
+/** Pour les personnes entrées dans le programme avant que les rappels soient proposés à l'accueil. */
+@Composable
+private fun ReminderPromptCard(onEnable: () -> Unit, onDismiss: () -> Unit) {
+    InfoCard(
+        title = stringResource(R.string.home_reminder_title),
+        text = stringResource(R.string.home_reminder_text),
+    ) {
+        SommelleButton(stringResource(R.string.home_reminder_enable), onEnable)
+        SommelleButton(stringResource(R.string.home_reminder_dismiss), onDismiss, style = SommelleButtonStyle.Quiet)
     }
 }
 
@@ -317,25 +375,26 @@ private fun RecentNightsStrip(
             }
             .padding(top = 4.dp),
     ) {
-        if (weekOffset > 0 && currentNights.isNotEmpty()) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 4.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
+        // Flèches en plus du glissement : tout le monde n'arrive pas à faire le geste (WCAG 2.5.1).
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            IconButton(onClick = { weekOffset++ }, enabled = weekOffset < totalWeeks - 1) {
+                Icon(Icons.AutoMirrored.Filled.KeyboardArrowLeft, contentDescription = stringResource(R.string.home_nights_previous))
+            }
+            if (weekOffset > 0 && currentNights.isNotEmpty()) {
+                val first = currentNights.first().date
+                val last = currentNights.last().date
                 Text(
-                    text = "Il y a $weekOffset sem. (${currentNights.first().date.dayOfMonth}/${currentNights.first().date.monthValue} – ${currentNights.last().date.dayOfMonth}/${currentNights.last().date.monthValue})",
-                    style = MaterialTheme.typography.labelSmall,
+                    text = "${first.dayOfMonth}/${first.monthValue} – ${last.dayOfMonth}/${last.monthValue}",
+                    style = MaterialTheme.typography.labelMedium,
                     color = colors.primary,
                 )
-                Text(
-                    text = "Aujourd'hui",
-                    style = MaterialTheme.typography.labelSmall,
-                    color = colors.secondary,
-                    modifier = Modifier.clickable { weekOffset = 0 }
-                )
+            }
+            IconButton(onClick = { weekOffset-- }, enabled = weekOffset > 0) {
+                Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = stringResource(R.string.home_nights_next))
             }
         }
         Row(

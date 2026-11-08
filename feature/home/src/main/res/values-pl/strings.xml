@@ -49,4 +49,10 @@
     <string name="home_impact_2">Umiarkowanie</string>
     <string name="home_impact_3">Mocno</string>
     <string name="home_impact_4">Ogromnie</string>
+    <string name="home_nights_previous">Poprzedni tydzień</string>
+    <string name="home_nights_next">Następny tydzień</string>
+    <string name="home_reminder_title">Żeby nie zapomnieć o dzienniku</string>
+    <string name="home_reminder_text">Poranne przypomnienie bardzo pomaga notować każdą noc, a program od tego zależy. Jeśli noc jest już zapisana, przypomnienie nie zostanie wysłane.</string>
+    <string name="home_reminder_enable">Włącz przypomnienia</string>
+    <string name="home_reminder_dismiss">Nie, dziękuję</string>
 </resources>

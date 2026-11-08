@@ -52,4 +52,10 @@
     <string name="home_impact_2">Moderately</string>
     <string name="home_impact_3">A lot</string>
     <string name="home_impact_4">Enormously</string>
+    <string name="home_nights_previous">Previous week</string>
+    <string name="home_nights_next">Next week</string>
+    <string name="home_reminder_title">Don\'t forget your diary</string>
+    <string name="home_reminder_text">A morning reminder makes it much easier to log every night, and the program depends on it. No reminder is sent once the night is logged.</string>
+    <string name="home_reminder_enable">Turn on reminders</string>
+    <string name="home_reminder_dismiss">No thanks</string>
 </resources>

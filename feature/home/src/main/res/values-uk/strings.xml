@@ -49,4 +49,10 @@
     <string name="home_impact_2">Помірно</string>
     <string name="home_impact_3">Сильно</string>
     <string name="home_impact_4">Надзвичайно сильно</string>
+    <string name="home_nights_previous">Попередній тиждень</string>
+    <string name="home_nights_next">Наступний тиждень</string>
+    <string name="home_reminder_title">Щоб не забувати про щоденник</string>
+    <string name="home_reminder_text">Ранкове нагадування дуже допомагає записувати кожну ніч, а від цього залежить програма. Якщо ніч уже записано, нагадування не надходить.</string>
+    <string name="home_reminder_enable">Увімкнути нагадування</string>
+    <string name="home_reminder_dismiss">Ні, дякую</string>
 </resources>
