@@ -15,6 +15,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import fr.sommelle.core.designsystem.openSafely
@@ -48,11 +51,14 @@ fun OnboardingScreen(repository: SommelleRepository, onDone: () -> Unit) {
 
     BackHandler(enabled = state != OnboardingState.Welcome && state != OnboardingState.Reminders) { viewModel.back() }
 
+    // Notifications refusées : on le dit et on laisse continuer, sans bloquer ni insister.
+    var permissionDenied by rememberSaveable { mutableStateOf(false) }
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
-        viewModel.chooseReminders(granted, onDone)
+        if (granted) viewModel.chooseReminders(true, onDone) else permissionDenied = true
     }
     if (state == OnboardingState.Reminders) {
         RemindersStep(
+            denied = permissionDenied,
             onAccept = {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     permission.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -104,7 +110,7 @@ fun OnboardingContent(
                 onAnswer = onAnswer,
             )
         }
-        OnboardingState.Reminders -> RemindersStep(onAccept = {}, onDecline = {})
+        OnboardingState.Reminders -> RemindersStep(denied = false, onAccept = {}, onDecline = {})
         is OnboardingState.Result -> ResultStep(
             pathway = s.result.pathway,
             referrals = s.result.referrals,
@@ -126,6 +132,23 @@ private fun Welcome(onStart: () -> Unit) {
         Body(R.string.onb_welcome_1)
         Body(R.string.onb_welcome_2)
         Body(R.string.onb_welcome_3)
+        Body(R.string.onb_welcome_effort)
+        Body(R.string.onb_welcome_4)
+    }
+}
+
+/** Introduction revue depuis les réglages : même texte que l'accueil, sans questionnaire ni rien à enregistrer. */
+@Composable
+fun IntroScreen(onBack: () -> Unit) {
+    ScreenScaffold(
+        bottom = { SommelleButton(stringResource(R.string.onb_understood), onBack) },
+    ) {
+        BackPill(onBack)
+        ScreenTitle(stringResource(R.string.onb_welcome_title))
+        Body(R.string.onb_welcome_1)
+        Body(R.string.onb_welcome_2)
+        Body(R.string.onb_welcome_3)
+        Body(R.string.onb_welcome_effort)
         Body(R.string.onb_welcome_4)
     }
 }
@@ -211,16 +234,26 @@ private fun ResultStep(
 
 /** Rappels du matin (journal) et du soir (fenêtre), proposés une fois le programme commencé. */
 @Composable
-private fun RemindersStep(onAccept: () -> Unit, onDecline: () -> Unit) {
+private fun RemindersStep(denied: Boolean, onAccept: () -> Unit, onDecline: () -> Unit) {
     ScreenScaffold(
         bottom = {
-            SommelleButton(stringResource(R.string.onb_rem_yes), onAccept)
-            SommelleButton(stringResource(R.string.onb_rem_no), onDecline, style = SommelleButtonStyle.Quiet)
+            if (denied) {
+                SommelleButton(stringResource(R.string.onb_rem_continue), onDecline)
+            } else {
+                SommelleButton(stringResource(R.string.onb_rem_yes), onAccept)
+                SommelleButton(stringResource(R.string.onb_rem_no), onDecline, style = SommelleButtonStyle.Quiet)
+            }
         },
     ) {
         ScreenTitle(stringResource(R.string.onb_rem_title))
         Body(R.string.onb_rem_text)
-        Body(R.string.onb_rem_later)
+        if (denied) {
+            Surface(shape = MaterialTheme.shapes.medium, color = MaterialTheme.colorScheme.surface) {
+                InfoLine(Icons.Filled.Info, stringResource(R.string.onb_rem_denied), Modifier.padding(16.dp))
+            }
+        } else {
+            Body(R.string.onb_rem_later)
+        }
     }
 }
 

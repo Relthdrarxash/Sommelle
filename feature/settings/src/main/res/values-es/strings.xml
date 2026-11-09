@@ -40,4 +40,5 @@
     <string name="settings_app_respire_desc">Pausa de respiración y anti-doomscrolling, libre y sin conexión</string>
     <string name="settings_app_lunaison_name">Lunaison</string>
     <string name="settings_app_lunaison_desc">Seguimiento del ciclo menstrual y salud hormonal, libre y sin conexión</string>
+    <string name="settings_replay_intro">Volver a ver la introducción</string>
 </resources>

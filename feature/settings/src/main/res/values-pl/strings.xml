@@ -40,4 +40,5 @@
     <string name="settings_app_respire_desc">Pauza oddechowa i ochrona przed doomscrollingiem, bez konta i offline</string>
     <string name="settings_app_lunaison_name">Lunaison</string>
     <string name="settings_app_lunaison_desc">Śledzenie cyklu menstruacyjnego i zdrowie hormonalne, bez konta i offline</string>
+    <string name="settings_replay_intro">Zobacz ponownie wprowadzenie</string>
 </resources>

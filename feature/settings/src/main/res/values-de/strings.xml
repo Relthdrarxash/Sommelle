@@ -40,4 +40,5 @@
     <string name="settings_app_respire_desc">Atempause &amp; Anti-Doomscrolling, frei und offline</string>
     <string name="settings_app_lunaison_name">Lunaison</string>
     <string name="settings_app_lunaison_desc">Menstruationszyklus- &amp; Hormongesundheits-Tracking, frei und offline</string>
+    <string name="settings_replay_intro">Einführung noch einmal ansehen</string>
 </resources>

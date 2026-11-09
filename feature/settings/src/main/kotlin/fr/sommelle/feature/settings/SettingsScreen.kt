@@ -108,7 +108,7 @@ class SettingsViewModel(private val repository: SommelleRepository) : ViewModel(
 }
 
 @Composable
-fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onErased: () -> Unit) {
+fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onOpenIntro: () -> Unit, onErased: () -> Unit) {
     val viewModel: SettingsViewModel = viewModel { SettingsViewModel(repository) }
     val state by viewModel.state.collectAsStateWithLifecycle()
     val s = state ?: return
@@ -147,6 +147,7 @@ fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onE
             viewModel.update { r, _ -> r.copy(eveningEnabled = enabled) }
         },
         onOpenReport = onOpenReport,
+        onOpenIntro = onOpenIntro,
         onImportCsv = { csvPicker.launch("*/*") },
         importedCount = importedCount,
         onErase = { viewModel.erase(onErased) },
@@ -163,6 +164,7 @@ fun SettingsContent(
     onEvening: (Boolean) -> Unit,
     onOpenReport: () -> Unit,
     onErase: () -> Unit,
+    onOpenIntro: () -> Unit = {},
     onImportCsv: () -> Unit = {},
     importedCount: Int? = null,
 ) {
@@ -248,6 +250,7 @@ fun SettingsContent(
         }
 
         Section(stringResource(R.string.settings_about)) {
+            SommelleButton(stringResource(R.string.settings_replay_intro), onOpenIntro, style = SommelleButtonStyle.Outlined)
             Text(stringResource(R.string.settings_version, "1.2.0"), style = MaterialTheme.typography.titleMedium)
             Text(stringResource(R.string.settings_commitment), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {

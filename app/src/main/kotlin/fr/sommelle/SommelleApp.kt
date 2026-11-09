@@ -40,6 +40,7 @@ import fr.sommelle.feature.export.ExportScreen
 import fr.sommelle.feature.home.HomeScreen
 import fr.sommelle.feature.home.WakeTimeScreen
 import fr.sommelle.feature.night.NightScreen
+import fr.sommelle.feature.onboarding.IntroScreen
 import fr.sommelle.feature.onboarding.OnboardingScreen
 import fr.sommelle.feature.settings.SettingsScreen
 import fr.sommelle.feature.week.WeekScreen
@@ -57,6 +58,7 @@ private object Routes {
     const val EXERCISE = "exercise/{module}"
     const val SETTINGS = "settings"
     const val REPORT = "report"
+    const val INTRO = "intro"
     fun diary(nightOf: LocalDate) = "diary/$nightOf"
     fun exercise(module: CognitiveModule) = "exercise/${module.name}"
 }
@@ -132,11 +134,13 @@ fun SommelleApp(repository: SommelleRepository, link: String? = null, onLinkHand
                 SettingsScreen(
                     repository = repository,
                     onOpenReport = { navController.navigate(Routes.REPORT) },
+                    onOpenIntro = { navController.navigate(Routes.INTRO) },
                     onErased = {
                         navController.navigate(Routes.ONBOARDING) { popUpTo(0) { inclusive = true } }
                     },
                 )
             }
+            composable(Routes.INTRO) { IntroScreen(onBack = { navController.popBackStack() }) }
             composable(Routes.REPORT) { ExportScreen(repository, onBack = { navController.popBackStack() }) }
             composable(Routes.WAKE_TIME) { WakeTimeScreen(repository, onDone = { navController.popBackStack() }) }
             composable(Routes.NIGHT) { NightScreen(onClose = { navController.popBackStack() }) }
