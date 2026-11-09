@@ -1,0 +1,166 @@
+{
+  "brand": {
+    "name": "Sommelle",
+    "bg1": "#2F3A6B",
+    "bg2": "#171E3F",
+    "accent": "#E8A33D",
+    "onBg": "#F6F3EE",
+    "icon": "fastlane/metadata/android/fr-FR/images/icon.png",
+    "font": {
+      "file": "docs/fonts/atkinson-800.woff2",
+      "weight": 800,
+      "body_file": "docs/fonts/atkinson-400.woff2",
+      "bold_file": "docs/fonts/atkinson-700.woff2"
+    }
+  },
+  "langs": {
+    "fr": {
+      "tagline": "L'insomnie, méthode TCC-I",
+      "social_line": "Accompagnement à l'insomnie fondé sur la TCC-I. Gratuit, sans compte, sans collecte.",
+      "chips": [
+        "Sans compte",
+        "Hors ligne"
+      ],
+      "screens": [
+        {
+          "slug": "accueil",
+          "capture": "docs/marketing/captures/fr/accueil.png",
+          "layout": "solo",
+          "tilt": -3,
+          "title": "Votre fenêtre de sommeil",
+          "subtitle": "Calculée après une semaine d'observation, puis ajustée chaque semaine.",
+          "chips": [
+            "Gratuit",
+            "Sans compte"
+          ]
+        },
+        {
+          "slug": "agenda",
+          "capture": "docs/marketing/captures/fr/agenda_heure.png",
+          "layout": "duo",
+          "tilt": 3,
+          "title": "L'agenda du sommeil, sans clavier",
+          "subtitle": "Il se remplit chaque matin en une vingtaine de secondes.",
+          "chips": [],
+          "second": "docs/marketing/captures/fr/agenda_estimation.png"
+        },
+        {
+          "slug": "bilan",
+          "capture": "docs/marketing/captures/fr/bilan.png",
+          "layout": "duo",
+          "tilt": -3,
+          "title": "Un bilan chaque semaine",
+          "subtitle": "Temps au lit et temps dormi, pour ajuster la fenêtre suivante.",
+          "chips": [],
+          "second": "docs/marketing/captures/fr/bilan_programme.png"
+        },
+        {
+          "slug": "nuit",
+          "capture": "docs/marketing/captures/fr/nuit.png",
+          "layout": "solo",
+          "tilt": 3,
+          "title": "Une nuit sans horloge",
+          "subtitle": "Un écran presque noir rappelle quoi faire, avec un timbre doux à 20 minutes.",
+          "chips": []
+        },
+        {
+          "slug": "medecin",
+          "capture": "docs/marketing/captures/fr/resume_medecin.png",
+          "layout": "solo",
+          "tilt": -3,
+          "title": "Un résumé pour le médecin",
+          "subtitle": "À montrer à l'écran ou à partager en PDF et en tableur.",
+          "chips": []
+        },
+        {
+          "slug": "confidentialite",
+          "capture": "docs/marketing/captures/fr/bienvenue.png",
+          "layout": "solo",
+          "tilt": 3,
+          "title": "Sans compte, sans collecte",
+          "subtitle": "Aucune donnée ne quitte le téléphone. Pas de permission Internet.",
+          "chips": [
+            "Hors ligne",
+            "Libre",
+            "Sans publicité"
+          ],
+          "scroll": 625
+        }
+      ]
+    },
+    "en": {
+      "tagline": "Insomnia support, CBT-I method",
+      "social_line": "Insomnia support based on CBT-I. Free, no account, no data collection.",
+      "chips": [
+        "No account",
+        "Offline"
+      ],
+      "screens": [
+        {
+          "slug": "accueil",
+          "capture": "docs/marketing/captures/en/accueil.png",
+          "layout": "solo",
+          "tilt": -3,
+          "title": "Your sleep window",
+          "subtitle": "Worked out after a week of observation, then adjusted every week.",
+          "chips": [
+            "Free",
+            "No account"
+          ]
+        },
+        {
+          "slug": "agenda",
+          "capture": "docs/marketing/captures/en/agenda_heure.png",
+          "layout": "duo",
+          "tilt": 3,
+          "title": "A sleep diary, no keyboard",
+          "subtitle": "Filled in each morning in about twenty seconds.",
+          "chips": [],
+          "second": "docs/marketing/captures/en/agenda_estimation.png"
+        },
+        {
+          "slug": "bilan",
+          "capture": "docs/marketing/captures/en/bilan.png",
+          "layout": "duo",
+          "tilt": -3,
+          "title": "A review every week",
+          "subtitle": "Time in bed and time asleep, to adjust the next window.",
+          "chips": [],
+          "second": "docs/marketing/captures/en/bilan_programme.png"
+        },
+        {
+          "slug": "nuit",
+          "capture": "docs/marketing/captures/en/nuit.png",
+          "layout": "solo",
+          "tilt": 3,
+          "title": "A night without a clock",
+          "subtitle": "A nearly black screen says what to do, with a soft chime at 20 minutes.",
+          "chips": []
+        },
+        {
+          "slug": "medecin",
+          "capture": "docs/marketing/captures/en/resume_medecin.png",
+          "layout": "solo",
+          "tilt": -3,
+          "title": "A summary for your doctor",
+          "subtitle": "To show on screen or share as a PDF and a spreadsheet.",
+          "chips": []
+        },
+        {
+          "slug": "confidentialite",
+          "capture": "docs/marketing/captures/en/bienvenue.png",
+          "layout": "solo",
+          "tilt": 3,
+          "title": "No account, no data collection",
+          "subtitle": "No data leaves the phone. No Internet permission.",
+          "chips": [
+            "Offline",
+            "Open source",
+            "No ads"
+          ],
+          "scroll": 855
+        }
+      ]
+    }
+  }
+}
