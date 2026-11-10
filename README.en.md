@@ -18,7 +18,7 @@ Over six to eight weeks:
 - **A sleep diary** is filled in each morning in about twenty seconds, without a keyboard, with reassuring guidance during the first week of sleep restriction.
 - **A sleep window** (bedtime and rise time) is calculated after an observation week, then adjusted each week based on your nights, with personalized evening landmarks (quiet wind-down 1h before bed, last caffeine 8h before bed).
 - **A night screen**, almost black and clock-free, reminds you what to do when sleep does not come and offers an optional **20-minute gentle chime** (stimulus control rule without a visible countdown).
-- **Five cognitive exercises and evening habit commitments** unlock over the program: ideas about sleep, putting the day to rest (with an interactive evening notepad on the phone), paradoxical intention, decatastrophizing, relaxation — each playable **with your eyes closed** via a calm offline voice guide and gentle acoustic chime — alongside 5 checkable bedroom and evening habits.
+- **Five cognitive exercises and evening habit commitments** unlock over the program: ideas about sleep, putting the day to rest (with an interactive evening notepad on the phone), paradoxical intention, decatastrophizing, relaxation, each playable **with your eyes closed** via a calm offline voice guide and gentle acoustic chime, alongside 5 checkable bedroom and evening habits.
 - **A before/after review and relapse-prevention guide** compare the observation week with the latest nights and explain what to do if an occasional bad night comes back later.
 - **A summary for the doctor**, to show on screen or share as a PDF and a spreadsheet, plus **CSV backup import** in settings.
 - Optional **reminders** in the morning and evening, and a **discreet home screen widget** showing the evening sleep window.
@@ -55,6 +55,8 @@ Screenshots are generated from the screen code on every change.
 
 - **[Lunaison](https://github.com/Relthdrarxash/lunaison)**: free, open-source offline menstrual cycle tracker with referenced medical guides and serverless partner sharing.
 - **[Respire](https://github.com/Relthdrarxash/respire)**: a short breathing pause before the apps you open on autopilot, especially helpful in the evening before bed.
+- **[Sauve](https://github.com/Relthdrarxash/sauve)**: anti-panic first aid guide, free, open source and offline, with hands-free voice and haptic guidance.
+- **[Sillon](https://github.com/Relthdrarxash/sillon)**: living vegetable garden planner and agronomic calendar based on the last frost date, free, open source and offline.
 
 ## Why Sommelle is free
 

@@ -18,7 +18,7 @@ Pendant six à huit semaines :
 - **Un agenda du sommeil** se remplit chaque matin en une vingtaine de secondes, sans clavier, avec un accompagnement rassurant pendant la première semaine de restriction.
 - **Une fenêtre de sommeil** (heures de coucher et de lever) est calculée après une semaine d'observation, puis ajustée chaque semaine selon les nuits, avec des repères horaires adaptés (sas calme 1 h avant, arrêt de la caféine 8 h avant).
 - **Un écran pour la nuit**, presque noir et sans horloge, rappelle quoi faire quand le sommeil ne vient pas et propose un **repère sonore doux à 20 minutes** (règle du contrôle du stimulus, sans afficher de décompte).
-- **Cinq exercices cognitifs et une liste d'engagements du soir** se débloquent au fil du programme : idées sur le sommeil, mise au repos de la journée (avec un carnet du soir interactif sur le téléphone), intention paradoxale, décatastrophisation, relaxation — chacun pouvant être écouté **les yeux fermés** grâce à une lecture vocale hors ligne à débit apaisé et une cloche acoustique douce — complétés par 5 habitudes cochables de chambre et de soirée.
+- **Cinq exercices cognitifs et une liste d'engagements du soir** se débloquent au fil du programme : idées sur le sommeil, mise au repos de la journée (avec un carnet du soir interactif sur le téléphone), intention paradoxale, décatastrophisation, relaxation, chacun pouvant être écouté **les yeux fermés** grâce à une lecture vocale hors ligne à débit apaisé et une cloche acoustique douce, complétés par 5 habitudes cochables de chambre et de soirée.
 - **Un bilan avant/après et un guide anti-rechute** comparent la semaine d'observation aux dernières nuits et rappellent la conduite à tenir si une mauvaise nuit isolée revient plus tard.
 - **Un résumé pour le médecin**, à montrer à l'écran ou à partager en PDF et en tableur, ainsi qu'un **import de sauvegarde CSV** dans les réglages.
 - **Des rappels** optionnels le matin et le soir, et un **widget discret sur l'écran d'accueil** affichant la fenêtre de sommeil du soir.
@@ -60,6 +60,8 @@ Les captures sont générées à partir du code des écrans à chaque modificati
 
 - **[Lunaison](https://github.com/Relthdrarxash/lunaison)** : suivi du cycle menstruel libre, gratuit et sans accès à Internet, avec fiches médicales sourcées et partage partenaire hors-ligne.
 - **[Respire](https://github.com/Relthdrarxash/respire)** : une courte pause de respiration avant les applications que l'on ouvre par réflexe, particulièrement utile le soir avant le coucher.
+- **[Sauve](https://github.com/Relthdrarxash/sauve)** : premiers secours « anti-panique », gratuit, libre et sans accès à Internet, avec guidage vocal et haptique mains libres.
+- **[Sillon](https://github.com/Relthdrarxash/sillon)** : potager vivant et calendrier agronomique indexé sur la date des dernières gelées, gratuit, libre et sans accès à Internet.
 
 ## Pourquoi Sommelle est gratuite
 
