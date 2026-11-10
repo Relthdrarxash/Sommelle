@@ -4,4 +4,4 @@ Initial release of Sommelle:
 • Educational transition buffer between observation and restriction
 • Ultra-low brightness night stimulus control screen
 • Clinical report export for your physician
-• 100% offline, zero network permissions, GPL-3.0
+• 100% offline, zero network permissions, MPL-2.0
