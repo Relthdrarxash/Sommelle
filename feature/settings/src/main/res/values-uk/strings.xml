@@ -40,4 +40,5 @@
     <string name="settings_app_respire_desc">Дихальна пауза та захист від думскролінгу, вільна та офлайн</string>
     <string name="settings_app_lunaison_name">Lunaison</string>
     <string name="settings_app_lunaison_desc">Відстеження менструального циклу та гормональне здоров\'я, вільна та офлайн</string>
+    <string name="settings_replay_intro">Переглянути вступ ще раз</string>
 </resources>
