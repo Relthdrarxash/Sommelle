@@ -38,7 +38,7 @@ Kotlin, Jetpack Compose, Material 3, Room, Navigation Compose, WorkManager. minS
 - Les rappels sont planifiés localement par WorkManager.
 - Le PDF et le CSV du résumé sont générés dans le cache de l'appli et partagés via le sélecteur Android : rien n'est envoyé sans action de la personne.
 - Effacement complet en un geste depuis les réglages.
-- Si la sauvegarde Android est activée sur le téléphone, elle peut inclure les données de Sommelle dans le compte Google de la personne, chiffrées. La [politique de confidentialité](https://relthdrarxash.github.io/sommelle/confidentialite.html) le précise.
+- Les données de Sommelle sont exclues de la sauvegarde Android dans le cloud (`data_extraction_rules.xml`, `fullBackupContent="false"`). Le transfert direct vers un nouveau téléphone (Android 12 et plus) reste possible, ainsi que l'export et l'import CSV.
 
 ## Accessibilité
 
