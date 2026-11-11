@@ -14,6 +14,9 @@
     <string name="settings_report_hint">A summary of your program and your diary, to show or share.</string>
     <string name="settings_data">Your data</string>
     <string name="settings_data_hint">Everything stays on your phone. Nothing is sent.</string>
+    <string name="settings_cloud_backup">Copy to my Google account</string>
+    <string name="settings_cloud_backup_hint">Off by default. Android copies your data to your Google account, encrypted with your phone\'s lock code: neither Google nor Sommelle can read it. The old phone\'s code is needed to get it back. Turning this off does not delete a copy already sent.</string>
+    <string name="settings_cloud_backup_unavailable">Unavailable: set a screen lock first. Without it, Android does not encrypt the copy and Sommelle does not send it.</string>
     <string name="settings_import_csv">Import a CSV diary</string>
     <string name="settings_import_result">%1$d night(s) imported into your diary.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/en/privacy.html</string>

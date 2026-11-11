@@ -14,6 +14,9 @@
     <string name="settings_report_hint">Podsumowanie programu i dziennika snu, do pokazania lub udostępnienia.</string>
     <string name="settings_data">Twoje dane</string>
     <string name="settings_data_hint">Wszystko pozostaje na Twoim telefonie. Nic nie jest wysyłane.</string>
+    <string name="settings_cloud_backup">Kopia na moim koncie Google</string>
+    <string name="settings_cloud_backup_hint">Domyślnie wyłączona. Android kopiuje Twoje dane na konto Google, zaszyfrowane kodem blokady telefonu: ani Google, ani Sommelle nie mogą ich odczytać. Do przywrócenia potrzebny będzie kod starego telefonu. Wyłączenie nie usuwa kopii już wysłanej.</string>
+    <string name="settings_cloud_backup_unavailable">Niedostępne: najpierw ustaw blokadę ekranu. Bez niej Android nie szyfruje kopii, a Sommelle jej nie wysyła.</string>
     <string name="settings_import_csv">Importuj dziennik z pliku CSV</string>
     <string name="settings_import_result">Zaimportowano %1$d nocy do dziennika.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
