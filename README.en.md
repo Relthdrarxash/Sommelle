@@ -10,6 +10,8 @@ Sommelle is a self-help and education tool. It is not a medical device and does 
 
 **[Sommelle website](https://relthdrarxash.github.io/sommelle/en/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.sommelle)** · **[Download APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [For health professionals](https://relthdrarxash.github.io/sommelle/en/professionals.html) · [Scientific dossier](https://relthdrarxash.github.io/sommelle/en/protocol.html) · [Privacy](https://relthdrarxash.github.io/sommelle/en/privacy.html)
 
+**Before the Google Play release:** [join the internal test](https://play.google.com/apps/internaltest/4701568611212235635) (only for people already on the tester list: [ask for access by e-mail](mailto:pilmil.studio@proton.me?subject=Tester%20Sommelle)).
+
 ## What the app does
 
 Over six to eight weeks:

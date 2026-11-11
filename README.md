@@ -10,6 +10,8 @@ Sommelle est un outil d'accompagnement et d'éducation. Ce n'est pas un disposit
 
 **[Site de Sommelle](https://relthdrarxash.github.io/sommelle/)** · **[Google Play](https://play.google.com/store/apps/details?id=fr.sommelle)** · **[Télécharger l'APK](https://github.com/Relthdrarxash/sommelle/releases/latest)** · [Pour les professionnels de santé](https://relthdrarxash.github.io/sommelle/professionnels.html) · [Dossier scientifique](https://relthdrarxash.github.io/sommelle/protocole.html) · [Confidentialité](https://relthdrarxash.github.io/sommelle/confidentialite.html)
 
+**Avant la sortie sur Google Play :** [rejoindre le test interne](https://play.google.com/apps/internaltest/4701568611212235635) (réservé aux personnes déjà ajoutées à la liste de testeurs : [demandez l'accès par mail](mailto:pilmil.studio@proton.me?subject=Tester%20Sommelle)).
+
 ## Ce que fait l'appli
 
 Pendant six à huit semaines :
