@@ -14,6 +14,9 @@
     <string name="settings_report_hint">Un résumé de votre programme et de votre agenda, à montrer ou à partager.</string>
     <string name="settings_data">Vos données</string>
     <string name="settings_data_hint">Tout reste sur votre téléphone. Rien n\'est envoyé.</string>
+    <string name="settings_cloud_backup">Copie dans mon compte Google</string>
+    <string name="settings_cloud_backup_hint">Désactivée par défaut. Android copie vos données dans votre compte Google, chiffrées avec le code de verrouillage de votre téléphone : ni Google ni Sommelle ne peuvent les lire. Il faudra le code de l\'ancien téléphone pour les retrouver. Désactiver n\'efface pas une copie déjà envoyée.</string>
+    <string name="settings_cloud_backup_unavailable">Indisponible : définissez d\'abord un verrouillage d\'écran. Sans lui, Android ne chiffre pas la copie et Sommelle ne l\'envoie pas.</string>
     <string name="settings_import_csv">Importer un agenda CSV</string>
     <string name="settings_import_result">%1$d nuit(s) importée(s) dans votre agenda.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>

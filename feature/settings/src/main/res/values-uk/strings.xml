@@ -14,6 +14,9 @@
     <string name="settings_report_hint">Огляд програми та щоденника сну, щоб показати або надіслати лікарю.</string>
     <string name="settings_data">Ваші дані</string>
     <string name="settings_data_hint">Усі дані залишаються на телефоні. Нічого нікуди не передається.</string>
+    <string name="settings_cloud_backup">Копія в моєму акаунті Google</string>
+    <string name="settings_cloud_backup_hint">Вимкнено за замовчуванням. Android копіює ваші дані в акаунт Google, зашифровані кодом блокування телефону: ні Google, ні Sommelle не можуть їх прочитати. Щоб відновити, знадобиться код старого телефону. Вимкнення не видаляє копію, яку вже надіслано.</string>
+    <string name="settings_cloud_backup_unavailable">Недоступно: спершу налаштуйте блокування екрана. Без нього Android не шифрує копію, а Sommelle її не надсилає.</string>
     <string name="settings_import_csv">Імпортувати щоденник із CSV</string>
     <string name="settings_import_result">Імпортовано ночей: %1$d.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>

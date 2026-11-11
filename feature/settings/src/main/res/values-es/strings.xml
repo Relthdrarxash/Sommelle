@@ -14,6 +14,9 @@
     <string name="settings_report_hint">Un resumen de tu programa y de tu diario, para mostrar o compartir.</string>
     <string name="settings_data">Tus datos</string>
     <string name="settings_data_hint">Todo se queda en tu teléfono. No se envía nada.</string>
+    <string name="settings_cloud_backup">Copia en mi cuenta de Google</string>
+    <string name="settings_cloud_backup_hint">Desactivada por defecto. Android copia tus datos en tu cuenta de Google, cifrados con el código de bloqueo de tu teléfono: ni Google ni Sommelle pueden leerlos. Para recuperarlos hará falta el código del teléfono anterior. Desactivarla no borra una copia ya enviada.</string>
+    <string name="settings_cloud_backup_unavailable">No disponible: configura primero un bloqueo de pantalla. Sin él, Android no cifra la copia y Sommelle no la envía.</string>
     <string name="settings_import_csv">Importar un diario en CSV</string>
     <string name="settings_import_result">%1$d noche(s) importada(s) en tu diario.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>

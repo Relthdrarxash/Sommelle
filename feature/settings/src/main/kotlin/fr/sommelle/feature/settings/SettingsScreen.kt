@@ -50,6 +50,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import fr.sommelle.core.data.SommelleRepository
+import fr.sommelle.core.data.backup.BackupPolicy
+import fr.sommelle.core.data.backup.CloudBackupConsent
 import fr.sommelle.core.designsystem.InfoLine
 import fr.sommelle.core.designsystem.ScreenScaffold
 import fr.sommelle.core.designsystem.ScreenTitle
@@ -113,6 +115,11 @@ fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onO
     val state by viewModel.state.collectAsStateWithLifecycle()
     val s = state ?: return
     val context = LocalContext.current
+    val cloudConsent = remember { CloudBackupConsent(context.noBackupFilesDir) }
+    var cloudBackupOn by remember { mutableStateOf(cloudConsent.enabled) }
+    val deviceSecure = remember {
+        (context.getSystemService(android.content.Context.KEYGUARD_SERVICE) as? android.app.KeyguardManager)?.isDeviceSecure == true
+    }
     var notificationsAllowed by remember { mutableStateOf(NotificationManagerCompat.from(context).areNotificationsEnabled()) }
     var importedCount by rememberSaveable { mutableStateOf<Int?>(null) }
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
@@ -150,6 +157,13 @@ fun SettingsScreen(repository: SommelleRepository, onOpenReport: () -> Unit, onO
         onOpenIntro = onOpenIntro,
         onImportCsv = { csvPicker.launch("*/*") },
         importedCount = importedCount,
+        cloudBackupAvailable = BackupPolicy.settingAvailable(Build.VERSION.SDK_INT),
+        cloudBackupPossible = deviceSecure,
+        cloudBackupOn = cloudBackupOn,
+        onCloudBackupChange = { on ->
+            cloudConsent.enabled = on
+            cloudBackupOn = on
+        },
         onErase = { viewModel.erase(onErased) },
     )
 }
@@ -167,6 +181,10 @@ fun SettingsContent(
     onOpenIntro: () -> Unit = {},
     onImportCsv: () -> Unit = {},
     importedCount: Int? = null,
+    cloudBackupAvailable: Boolean = false,
+    cloudBackupPossible: Boolean = false,
+    cloudBackupOn: Boolean = false,
+    onCloudBackupChange: (Boolean) -> Unit = {},
 ) {
     val uriHandler = LocalUriHandler.current
     var confirmErase by rememberSaveable { mutableStateOf(false) }
@@ -211,6 +229,15 @@ fun SettingsContent(
         val privacyUrl = stringResource(R.string.settings_privacy_url)
         Section(stringResource(R.string.settings_data)) {
             InfoLine(SommelleIcons.History, stringResource(R.string.settings_data_hint))
+            if (cloudBackupAvailable) {
+                ToggleRow(
+                    title = stringResource(R.string.settings_cloud_backup),
+                    hint = stringResource(if (cloudBackupPossible) R.string.settings_cloud_backup_hint else R.string.settings_cloud_backup_unavailable),
+                    checked = cloudBackupOn && cloudBackupPossible,
+                    enabled = cloudBackupPossible,
+                    onChange = onCloudBackupChange,
+                )
+            }
             SommelleButton(stringResource(R.string.settings_import_csv), onImportCsv, style = SommelleButtonStyle.Outlined)
             if (importedCount != null) {
                 Text(stringResource(R.string.settings_import_result, importedCount), style = MaterialTheme.typography.bodySmall)

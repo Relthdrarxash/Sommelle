@@ -14,6 +14,9 @@
     <string name="settings_report_hint">Eine Übersicht über dein Programm und Tagebuch zum Zeigen oder Teilen.</string>
     <string name="settings_data">Deine Daten</string>
     <string name="settings_data_hint">Alles bleibt auf deinem Handy. Nichts wird übertragen.</string>
+    <string name="settings_cloud_backup">Kopie in mein Google-Konto</string>
+    <string name="settings_cloud_backup_hint">Standardmäßig aus. Android kopiert deine Daten in dein Google-Konto, verschlüsselt mit dem Sperrcode deines Handys: Weder Google noch Sommelle können sie lesen. Zum Wiederherstellen brauchst du den Code des alten Handys. Das Ausschalten löscht keine bereits gesendete Kopie.</string>
+    <string name="settings_cloud_backup_unavailable">Nicht verfügbar: Richte zuerst eine Displaysperre ein. Ohne sie verschlüsselt Android die Kopie nicht, und Sommelle sendet sie nicht.</string>
     <string name="settings_import_csv">CSV-Tagebuch importieren</string>
     <string name="settings_import_result">%1$d Nacht/Nächte in dein Tagebuch importiert.</string>
     <string name="settings_privacy_url">https://relthdrarxash.github.io/sommelle/confidentialite.html</string>
