@@ -7,6 +7,7 @@
     <string name="onb_welcome_4">Sommelle is a support tool, not a medical device, and it does not replace medical advice. Your data stays on your phone (no account, nothing is sent).</string>
     <string name="onb_welcome_effort">It takes some effort: the diary every morning and, depending on your answers, a tighter sleep window that can make you more tired at first.</string>
     <string name="onb_welcome_start">Get started</string>
+    <string name="onb_welcome_more">How it works</string>
     <string name="onb_intro_questions">A few questions first, to check that the program is right for you. It takes two to three minutes.</string>
 
     <string name="onb_age_title">How old are you?</string>
@@ -27,6 +28,12 @@
     <string name="onb_q_bipolar">Has a doctor told you that you have bipolar disorder?</string>
     <string name="onb_q_epilepsy">Do you have epilepsy?</string>
     <string name="onb_q_pregnancy">Are you pregnant?</string>
+    <string name="onb_medical_title">Do any of these apply to you?</string>
+    <string name="onb_medical_hint">Tick what applies. Your answers stay on your phone.</string>
+    <string name="onb_medical_bipolar">A doctor has told me I have bipolar disorder</string>
+    <string name="onb_medical_epilepsy">I have epilepsy</string>
+    <string name="onb_medical_pregnancy">I am pregnant</string>
+    <string name="onb_medical_none">None of these</string>
     <string name="onb_q_safety">Do you drive for work, or operate dangerous machinery?</string>
     <string name="onb_h_safety">Or a job where a moment of inattention could have serious consequences.</string>
     <string name="onb_q_prefers_no_restriction">Would you prefer a program without reducing your time in bed?</string>

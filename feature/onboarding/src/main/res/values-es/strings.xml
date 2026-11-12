@@ -7,6 +7,7 @@
     <string name="onb_welcome_4">Sommelle es una herramienta de acompañamiento, no un producto sanitario, y no sustituye el consejo médico. Tus datos se quedan en tu teléfono (sin cuenta, nada se envía a servidores).</string>
     <string name="onb_welcome_effort">Requiere cierto esfuerzo: el diario cada mañana y, según tus respuestas, una ventana de sueño más ajustada que puede cansarte más al principio.</string>
     <string name="onb_welcome_start">Empezar</string>
+    <string name="onb_welcome_more">Cómo funciona</string>
     <string name="onb_intro_questions">Primero unas breves preguntas para comprobar que el programa es adecuado para ti. Llevará de dos a tres minutos.</string>
     <string name="onb_age_title">¿Qué edad tienes?</string>
     <string name="onb_age_under_18">Menos de 18 años</string>
@@ -25,6 +26,12 @@
     <string name="onb_q_bipolar">¿Te ha diagnosticado un médico un trastorno bipolar?</string>
     <string name="onb_q_epilepsy">¿Tienes epilepsia?</string>
     <string name="onb_q_pregnancy">¿Estás embarazada?</string>
+    <string name="onb_medical_title">¿Te afecta alguna de estas situaciones?</string>
+    <string name="onb_medical_hint">Marca lo que corresponda. Tus respuestas se quedan en tu teléfono.</string>
+    <string name="onb_medical_bipolar">Un médico me ha diagnosticado un trastorno bipolar</string>
+    <string name="onb_medical_epilepsy">Tengo epilepsia</string>
+    <string name="onb_medical_pregnancy">Estoy embarazada</string>
+    <string name="onb_medical_none">Ninguna de estas situaciones</string>
     <string name="onb_q_safety">¿Conduces por trabajo o manejas maquinaria pesada/peligrosa?</string>
     <string name="onb_h_safety">O ejerces una profesión en la que un despiste pueda tener consecuencias graves.</string>
     <string name="onb_q_prefers_no_restriction">¿Prefieres un programa sin reducción del tiempo en la cama?</string>

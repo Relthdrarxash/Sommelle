@@ -26,6 +26,14 @@ enum class ScreeningQuestion(
 
     fun applies(answers: ScreeningAnswers): Boolean = appliesTo(answers)
     fun answer(answers: ScreeningAnswers, yes: Boolean): ScreeningAnswers = set(answers, yes)
+
+    companion object {
+        /**
+         * Situations médicales rares, présentées ensemble sur un seul écran à cocher plutôt qu'en
+         * trois écrans oui/non. L'écran est repéré par la première question du groupe.
+         */
+        val MEDICAL_GROUP: List<ScreeningQuestion> = listOf(BIPOLAR, EPILEPSY, PREGNANCY)
+    }
 }
 
 /** Progression dans le questionnaire : l'âge d'abord, puis les questions qui s'appliquent. */
@@ -34,15 +42,28 @@ data class ScreeningFlow(
     val current: ScreeningQuestion? = null,
     val finished: Boolean = false,
 ) {
-    /** Étape actuelle (1 = âge) et nombre total estimé, pour la barre de progression. */
+    /** Étape actuelle (1 = âge) et nombre total estimé d'écrans, pour la barre de progression. */
     val stepNumber: Int get() = when {
         finished -> totalSteps
         current == null -> 1
-        else -> 2 + current.ordinal
+        else -> 2 + SCREENS.indexOf(current)
     }
-    val totalSteps: Int get() = 1 + ScreeningQuestion.entries.size
+    val totalSteps: Int get() = 1 + SCREENS.size
 
     val isAgeStep: Boolean get() = !finished && current == null
+
+    /** Vrai sur l'écran qui regroupe les situations médicales : on y répond avec [answerMedical]. */
+    val isMedicalStep: Boolean get() = !finished && current == MEDICAL_HEAD
+
+    /** Situations déjà cochées, pour retrouver ses réponses en revenant en arrière. */
+    val medicalSelection: Set<ScreeningQuestion> get() {
+        val a = answers ?: return emptySet()
+        return buildSet {
+            if (a.bipolarDisorder) add(ScreeningQuestion.BIPOLAR)
+            if (a.epilepsy) add(ScreeningQuestion.EPILEPSY)
+            if (a.pregnancy) add(ScreeningQuestion.PREGNANCY)
+        }
+    }
 
     fun chooseAge(ageBand: AgeBand): ScreeningFlow {
         val a = answers?.copy(ageBand = ageBand) ?: ScreeningAnswers(ageBand = ageBand)
@@ -51,8 +72,20 @@ data class ScreeningFlow(
 
     fun answer(yes: Boolean): ScreeningFlow {
         val q = checkNotNull(current) { "aucune question en cours" }
+        check(!isMedicalStep) { "l'écran des situations médicales se valide avec answerMedical" }
         val a = q.answer(checkNotNull(answers), yes)
         return copy(answers = a).advanceFrom(q)
+    }
+
+    /**
+     * Valide l'écran des situations médicales : chaque situation du groupe est enregistrée, cochée
+     * ou non. Ne rien cocher revient à répondre non aux trois.
+     */
+    fun answerMedical(selected: Set<ScreeningQuestion>): ScreeningFlow {
+        check(isMedicalStep) { "l'écran des situations médicales n'est pas en cours" }
+        var a = checkNotNull(answers)
+        for (question in ScreeningQuestion.MEDICAL_GROUP) a = question.answer(a, question in selected)
+        return copy(answers = a).advanceFrom(ScreeningQuestion.MEDICAL_GROUP.last())
     }
 
     /** Retour à la question précédente, ou à l'âge. Les réponses déjà données sont conservées. */
@@ -61,13 +94,24 @@ data class ScreeningFlow(
         val a = checkNotNull(answers)
         val from = if (finished) ScreeningQuestion.entries.size else checkNotNull(current).ordinal
         val previous = ScreeningQuestion.entries.take(from).lastOrNull { it.applies(a) }
-        return copy(current = previous, finished = false)
+        // Revenir sur une question du groupe médical ramène à son écran commun.
+        return copy(current = previous?.let(::screenOf), finished = false)
     }
 
     private fun advanceFrom(question: ScreeningQuestion?): ScreeningFlow {
         val a = checkNotNull(answers)
         val start = question?.ordinal?.plus(1) ?: 0
         val next = ScreeningQuestion.entries.drop(start).firstOrNull { it.applies(a) }
-        return if (next == null) copy(current = null, finished = true) else copy(current = next, finished = false)
+        return if (next == null) copy(current = null, finished = true) else copy(current = screenOf(next), finished = false)
+    }
+
+    private fun screenOf(question: ScreeningQuestion): ScreeningQuestion =
+        if (question in ScreeningQuestion.MEDICAL_GROUP) MEDICAL_HEAD else question
+
+    private companion object {
+        val MEDICAL_HEAD = ScreeningQuestion.MEDICAL_GROUP.first()
+
+        /** Un écran par question, sauf le groupe médical qui n'en occupe qu'un. */
+        val SCREENS = ScreeningQuestion.entries.filter { it !in ScreeningQuestion.MEDICAL_GROUP || it == MEDICAL_HEAD }
     }
 }

@@ -7,6 +7,7 @@
     <string name="onb_welcome_4">Sommelle jest narzędziem wspierającym, a nie wyrobem medycznym, i nie zastępuje porady lekarskiej. Twoje dane pozostają na telefonie (brak konta, nic nie jest wysyłane).</string>
     <string name="onb_welcome_effort">Wymaga to pewnego wysiłku: dziennika każdego ranka oraz, zależnie od Twoich odpowiedzi, węższego okna snu, które na początku może bardziej męczyć.</string>
     <string name="onb_welcome_start">Rozpocznij</string>
+    <string name="onb_welcome_more">Jak to działa</string>
     <string name="onb_intro_questions">Kilka pytań na początek, aby upewnić się, że program jest dla Ciebie odpowiedni. Zajmie to 2–3 minuty.</string>
     <string name="onb_age_title">Ile masz lat?</string>
     <string name="onb_age_under_18">Poniżej 18 lat</string>
@@ -25,6 +26,12 @@
     <string name="onb_q_bipolar">Czy lekarz zdiagnozował u Ciebie chorobę afektywną dwubiegunową?</string>
     <string name="onb_q_epilepsy">Czy chorujesz na padaczkę?</string>
     <string name="onb_q_pregnancy">Czy jesteś w ciąży?</string>
+    <string name="onb_medical_title">Czy dotyczy Cię któraś z tych sytuacji?</string>
+    <string name="onb_medical_hint">Zaznacz to, co Cię dotyczy. Twoje odpowiedzi pozostają na Twoim telefonie.</string>
+    <string name="onb_medical_bipolar">Lekarz zdiagnozował u mnie chorobę afektywną dwubiegunową</string>
+    <string name="onb_medical_epilepsy">Choruję na padaczkę</string>
+    <string name="onb_medical_pregnancy">Jestem w ciąży</string>
+    <string name="onb_medical_none">Żadna z tych sytuacji</string>
     <string name="onb_q_safety">Czy prowadzisz zawodowo pojazdy lub obsługujesz niebezpieczne maszyny?</string>
     <string name="onb_h_safety">Lub wykonujesz zawód, w którym chwila nieuwagi stwarza poważne ryzyko.</string>
     <string name="onb_q_prefers_no_restriction">Czy wolisz program bez ograniczania czasu w łóżku?</string>

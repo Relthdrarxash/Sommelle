@@ -6,10 +6,19 @@ import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,7 +27,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.platform.LocalUriHandler
 import fr.sommelle.core.designsystem.openSafely
 import androidx.compose.ui.res.stringResource
@@ -76,6 +88,7 @@ fun OnboardingScreen(repository: SommelleRepository, onDone: () -> Unit) {
         onStart = viewModel::start,
         onChooseAge = viewModel::chooseAge,
         onAnswer = viewModel::answer,
+        onAnswerMedical = viewModel::answerMedical,
         onBack = viewModel::back,
         onConfirm = { viewModel.confirm(onDone) },
     )
@@ -90,6 +103,7 @@ fun OnboardingContent(
     onAnswer: (Boolean) -> Unit,
     onBack: () -> Unit,
     onConfirm: () -> Unit,
+    onAnswerMedical: (Set<ScreeningQuestion>) -> Unit = {},
 ) {
     when (val s = state) {
         OnboardingState.Welcome -> Welcome(onStart = onStart)
@@ -100,6 +114,14 @@ fun OnboardingContent(
                 selected = s.flow.answers?.ageBand,
                 onBack = onBack,
                 onSelect = onChooseAge,
+            )
+        } else if (s.flow.isMedicalStep) {
+            MedicalStep(
+                step = s.flow.stepNumber,
+                total = s.flow.totalSteps,
+                initial = s.flow.medicalSelection,
+                onBack = onBack,
+                onAnswer = onAnswerMedical,
             )
         } else {
             QuestionStep(
@@ -123,15 +145,24 @@ fun OnboardingContent(
 
 @Composable
 private fun Welcome(onStart: () -> Unit) {
+    // Le détail de la méthode reste à un appui, sans alourdir le premier écran.
+    var details by rememberSaveable { mutableStateOf(false) }
+    if (details) {
+        BackHandler { details = false }
+        IntroScreen(onBack = { details = false })
+        return
+    }
     ScreenScaffold(
-        bottom = { SommelleButton(stringResource(R.string.onb_welcome_start), onStart) },
+        bottom = {
+            SommelleButton(stringResource(R.string.onb_welcome_start), onStart)
+            SommelleButton(stringResource(R.string.onb_welcome_more), { details = true }, style = SommelleButtonStyle.Quiet)
+        },
     ) {
         ScreenTitle(stringResource(R.string.onb_welcome_title))
         // La durée d'abord : on sait à quoi s'attendre avant de lire le reste.
         Body(R.string.onb_intro_questions)
+        // L'essentiel pour décider : la méthode, l'effort demandé, ce que l'appli n'est pas.
         Body(R.string.onb_welcome_1)
-        Body(R.string.onb_welcome_2)
-        Body(R.string.onb_welcome_3)
         Body(R.string.onb_welcome_effort)
         Body(R.string.onb_welcome_4)
     }
@@ -179,6 +210,68 @@ private fun QuestionStep(question: ScreeningQuestion, step: Int, total: Int, onB
         ScreenTitle(stringResource(question.text()))
         question.hint()?.let { Body(it) }
         if (question == ScreeningQuestion.DISTRESS) Body(R.string.onb_h_private)
+    }
+}
+
+/**
+ * Situations médicales rares, réunies sur un écran à cocher. Ne rien cocher vaut « non » aux trois :
+ * le bouton le dit en toutes lettres tant qu'aucune case n'est cochée.
+ */
+@Composable
+private fun MedicalStep(
+    step: Int,
+    total: Int,
+    initial: Set<ScreeningQuestion>,
+    onBack: () -> Unit,
+    onAnswer: (Set<ScreeningQuestion>) -> Unit,
+) {
+    var selectedNames by rememberSaveable { mutableStateOf(initial.map { it.name }) }
+    val selected = ScreeningQuestion.MEDICAL_GROUP.filter { it.name in selectedNames }.toSet()
+    ScreenScaffold(
+        bottom = {
+            SommelleButton(
+                stringResource(if (selected.isEmpty()) R.string.onb_medical_none else R.string.onb_next),
+                { onAnswer(selected) },
+            )
+        },
+    ) {
+        BackPill(onBack)
+        StepProgress(step, total)
+        ScreenTitle(stringResource(R.string.onb_medical_title))
+        Body(R.string.onb_medical_hint)
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            ScreeningQuestion.MEDICAL_GROUP.forEach { question ->
+                CheckRow(
+                    text = stringResource(question.statement()),
+                    checked = question in selected,
+                    onToggle = {
+                        selectedNames = if (question.name in selectedNames) selectedNames - question.name else selectedNames + question.name
+                    },
+                )
+            }
+        }
+    }
+}
+
+/** Grande case à cocher, annoncée comme telle, de la même taille que les pastilles de choix. */
+@Composable
+private fun CheckRow(text: String, checked: Boolean, onToggle: () -> Unit) {
+    val colors = MaterialTheme.colorScheme
+    val shape = MaterialTheme.shapes.medium
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .heightIn(min = 72.dp)
+            .clip(shape)
+            .background(colors.surface)
+            .border(2.dp, if (checked) colors.primary else colors.outline, shape)
+            .toggleable(value = checked, role = Role.Checkbox, onValueChange = { onToggle() })
+            .padding(horizontal = 16.dp, vertical = 10.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Checkbox(checked = checked, onCheckedChange = null)
+        Spacer(Modifier.width(12.dp))
+        Text(text, style = MaterialTheme.typography.titleLarge, color = colors.onSurface)
     }
 }
 
@@ -284,6 +377,15 @@ private fun ScreeningQuestion.text(): Int = when (this) {
     ScreeningQuestion.PREFERS_NO_RESTRICTION -> R.string.onb_q_prefers_no_restriction
     ScreeningQuestion.LATE_SCHEDULE -> R.string.onb_q_late
     ScreeningQuestion.DISTRESS -> R.string.onb_q_distress
+}
+
+/** Formulation à la première personne pour l'écran à cocher. */
+@StringRes
+private fun ScreeningQuestion.statement(): Int = when (this) {
+    ScreeningQuestion.BIPOLAR -> R.string.onb_medical_bipolar
+    ScreeningQuestion.EPILEPSY -> R.string.onb_medical_epilepsy
+    ScreeningQuestion.PREGNANCY -> R.string.onb_medical_pregnancy
+    else -> text()
 }
 
 @StringRes
