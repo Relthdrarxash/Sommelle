@@ -7,6 +7,7 @@
     <string name="onb_welcome_4">Sommelle є інструментом підтримки, а не медичним виробом, і не замінює консультацію лікаря. Ваші дані залишаються на телефоні (без створення облікового запису, нічого нікуди не надсилається).</string>
     <string name="onb_welcome_effort">Це потребує певних зусиль: щоденник щоранку та, залежно від ваших відповідей, вужче вікно сну, яке спочатку може втомлювати більше.</string>
     <string name="onb_welcome_start">Почати</string>
+    <string name="onb_welcome_more">Як це працює</string>
     <string name="onb_intro_questions">Спершу кілька запитань, щоб переконатися, чи підходить вам програма. Це займе дві-три хвилини.</string>
     <string name="onb_age_title">Скільки вам років?</string>
     <string name="onb_age_under_18">Менше 18 років</string>
@@ -25,6 +26,12 @@
     <string name="onb_q_bipolar">Чи діагностував у вас лікар біполярний розлад?</string>
     <string name="onb_q_epilepsy">Чи є у вас епілепсія?</string>
     <string name="onb_q_pregnancy">Ви вагітні?</string>
+    <string name="onb_medical_title">Чи стосується вас якась із цих ситуацій?</string>
+    <string name="onb_medical_hint">Позначте те, що вас стосується. Ваші відповіді залишаються на телефоні.</string>
+    <string name="onb_medical_bipolar">Лікар діагностував у мене біполярний розлад</string>
+    <string name="onb_medical_epilepsy">У мене епілепсія</string>
+    <string name="onb_medical_pregnancy">Я вагітна</string>
+    <string name="onb_medical_none">Жодна з цих ситуацій</string>
     <string name="onb_q_safety">Ви керуєте авто по роботі чи працюєте з небезпечними механізмами?</string>
     <string name="onb_h_safety">Або займаєтеся діяльністю, де секундна неуважність становить загрозу.</string>
     <string name="onb_q_prefers_no_restriction">Чи віддаєте ви перевагу програмі без обмеження часу в ліжку?</string>

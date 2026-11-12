@@ -8,6 +8,7 @@ import fr.sommelle.core.model.Pathway
 import fr.sommelle.core.model.ScreeningAnswers
 import fr.sommelle.core.model.ScreeningResult
 import fr.sommelle.core.presentation.ScreeningFlow
+import fr.sommelle.core.presentation.ScreeningQuestion
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -33,6 +34,9 @@ class OnboardingViewModel(private val repository: SommelleRepository) : ViewMode
     fun chooseAge(ageBand: AgeBand) = advance { it.chooseAge(ageBand) }
 
     fun answer(yes: Boolean) = advance { it.answer(yes) }
+
+    /** Valide l'écran des situations médicales, avec les cases cochées (aucune : non aux trois). */
+    fun answerMedical(selected: Set<ScreeningQuestion>) = advance { it.answerMedical(selected) }
 
     /** Retour à l'étape précédente ; depuis l'âge, retour à l'accueil du questionnaire. */
     fun back() = _state.update { state ->

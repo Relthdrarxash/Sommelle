@@ -73,7 +73,7 @@ C'est l'écran le plus important : s'il est pénible, les gens abandonnent, et l
 **Des estimations, pas des chronométrages.** La TCC-I repose sur le ressenti, et demander des minutes exactes pousse à surveiller l'horloge la nuit. Le temps d'endormissement et les éveils se choisissent parmi de grandes pastilles (« Moins de 5 min », « 15 min », « 30 min »…).
 
 **Deux modes, qui évoluent avec la personne :**
-1. **Guidé**, les deux premières semaines : une question par écran, une barre de progression, un gros bouton « Suivant ».
+1. **Guidé**, les deux premières semaines : une question par écran (seule exception : les trois situations médicales rares du questionnaire d'entrée, réunies sur un écran à cocher), une barre de progression, un gros bouton « Suivant ».
 2. **Résumé**, une fois l'habitude prise : toute la nuit sur une carte, chaque élément modifiable d'un appui.
 
 **Oublis tolérés.** Une nuit peut être remplie jusqu'à 48 h après, sans reproche.

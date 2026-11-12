@@ -7,6 +7,7 @@
     <string name="onb_welcome_4">Sommelle est un outil d\'accompagnement, pas un dispositif médical, et ne remplace pas un avis médical. Vos données restent sur votre téléphone (pas de compte, rien n\'est envoyé).</string>
     <string name="onb_welcome_effort">Cela demande un peu d\'effort : l\'agenda chaque matin et, selon vos réponses, une fenêtre de sommeil resserrée qui peut d\'abord vous fatiguer davantage.</string>
     <string name="onb_welcome_start">Commencer</string>
+    <string name="onb_welcome_more">Comment ça marche</string>
     <string name="onb_intro_questions">Quelques questions d\'abord, pour vérifier que le programme vous convient. Comptez deux à trois minutes.</string>
 
     <string name="onb_age_title">Quel âge avez-vous ?</string>
@@ -27,6 +28,12 @@
     <string name="onb_q_bipolar">Un médecin vous a-t-il dit que vous aviez un trouble bipolaire ?</string>
     <string name="onb_q_epilepsy">Avez-vous de l\'épilepsie ?</string>
     <string name="onb_q_pregnancy">Êtes-vous enceinte ?</string>
+    <string name="onb_medical_title">L\'une de ces situations vous concerne-t-elle ?</string>
+    <string name="onb_medical_hint">Cochez ce qui s\'applique. Vos réponses restent sur votre téléphone.</string>
+    <string name="onb_medical_bipolar">Un médecin m\'a dit que j\'avais un trouble bipolaire</string>
+    <string name="onb_medical_epilepsy">J\'ai de l\'épilepsie</string>
+    <string name="onb_medical_pregnancy">Je suis enceinte</string>
+    <string name="onb_medical_none">Aucune de ces situations</string>
     <string name="onb_q_safety">Conduisez-vous pour votre travail, ou utilisez-vous des machines dangereuses ?</string>
     <string name="onb_h_safety">Ou exercez-vous un métier où un moment d\'inattention peut être grave.</string>
     <string name="onb_q_prefers_no_restriction">Préférez-vous un programme sans réduction du temps passé au lit ?</string>
