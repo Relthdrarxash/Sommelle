@@ -55,6 +55,7 @@ kotlin {
 }
 
 dependencies {
+    implementation("fr.pilmil.core:core-platform:0.1.0")
     implementation(project(":core:designsystem"))
     implementation(project(":core:data"))
     implementation(project(":feature:onboarding"))

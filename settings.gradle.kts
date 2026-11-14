@@ -15,6 +15,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "sommelle"
+includeBuild("pilmil-core")
 
 include(":app")
 
