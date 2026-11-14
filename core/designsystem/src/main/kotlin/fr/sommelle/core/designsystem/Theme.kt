@@ -1,6 +1,10 @@
 package fr.sommelle.core.designsystem
 
+import android.app.Activity
 import android.content.Context
+import android.os.Build
+import android.view.View
+import android.view.WindowInsetsController
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ColorScheme
@@ -10,10 +14,12 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -209,6 +215,28 @@ fun SommelleTheme(
     val config by NightThemeStore.config.collectAsState()
     val systemDark = isSystemInDarkTheme()
     val effectiveNight = night ?: config.isNightActive(LocalTime.now(), systemDark)
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            val window = (view.context as? Activity)?.window ?: return@SideEffect
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                val mask = WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or
+                    WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                val value = if (effectiveNight) 0 else mask
+                window.insetsController?.setSystemBarsAppearance(value, mask)
+            } else {
+                @Suppress("DEPRECATION")
+                val flags = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR else 0
+                @Suppress("DEPRECATION")
+                window.decorView.systemUiVisibility = if (effectiveNight) {
+                    window.decorView.systemUiVisibility and flags.inv()
+                } else {
+                    window.decorView.systemUiVisibility or flags
+                }
+            }
+        }
+    }
     MaterialTheme(
         colorScheme = if (effectiveNight) NightColors else DayColors,
         typography = SommelleTypography,
