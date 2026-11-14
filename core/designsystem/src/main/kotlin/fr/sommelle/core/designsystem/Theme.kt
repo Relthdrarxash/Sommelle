@@ -1,5 +1,6 @@
 package fr.sommelle.core.designsystem
 
+import android.content.Context
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ColorScheme
@@ -9,13 +10,18 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import java.time.LocalTime
 
 /** Palette de documentation/design.md, section 9. Contrastes de texte vérifiés à 4,5:1 minimum. */
@@ -118,16 +124,93 @@ private val SommelleShapes = Shapes(
     extraLarge = RoundedCornerShape(40.dp),
 )
 
-/** Le thème de nuit s'applique automatiquement entre 21 h et 7 h, ou si le téléphone est en mode sombre. */
-fun isNightHours(time: LocalTime): Boolean = time >= LocalTime.of(21, 0) || time < LocalTime.of(7, 0)
+enum class NightThemeMode {
+    AUTO_HOURS,
+    ALWAYS_DAY,
+    ALWAYS_NIGHT,
+    FOLLOW_SYSTEM,
+}
+
+data class NightThemeConfig(
+    val mode: NightThemeMode = NightThemeMode.AUTO_HOURS,
+    val startHour: Int = 21,
+    val endHour: Int = 7,
+) {
+    fun isNightActive(now: LocalTime, systemDark: Boolean): Boolean = when (mode) {
+        NightThemeMode.AUTO_HOURS -> isNightHours(now, startHour, endHour)
+        NightThemeMode.ALWAYS_DAY -> false
+        NightThemeMode.ALWAYS_NIGHT -> true
+        NightThemeMode.FOLLOW_SYSTEM -> systemDark
+    }
+}
+
+object NightThemeStore {
+    private const val PREFS_NAME = "sommelle_theme_prefs"
+    private const val KEY_MODE = "night_mode"
+    private const val KEY_START_HOUR = "night_start_hour"
+    private const val KEY_END_HOUR = "night_end_hour"
+
+    private val _config = MutableStateFlow(NightThemeConfig())
+    val config: StateFlow<NightThemeConfig> = _config
+
+    @Volatile
+    private var loaded = false
+
+    fun load(context: Context): NightThemeConfig {
+        if (!loaded) {
+            val prefs = context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            val modeName = prefs.getString(KEY_MODE, NightThemeMode.AUTO_HOURS.name)
+            val mode = NightThemeMode.entries.firstOrNull { it.name == modeName } ?: NightThemeMode.AUTO_HOURS
+            val start = prefs.getInt(KEY_START_HOUR, 21).coerceIn(0, 23)
+            val end = prefs.getInt(KEY_END_HOUR, 7).coerceIn(0, 23)
+            _config.value = NightThemeConfig(mode, start, end)
+            loaded = true
+        }
+        return _config.value
+    }
+
+    fun update(context: Context, transform: (NightThemeConfig) -> NightThemeConfig) {
+        val current = load(context)
+        val next = transform(current).let {
+            it.copy(
+                startHour = ((it.startHour % 24) + 24) % 24,
+                endHour = ((it.endHour % 24) + 24) % 24,
+            )
+        }
+        context.applicationContext.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .putString(KEY_MODE, next.mode.name)
+            .putInt(KEY_START_HOUR, next.startHour)
+            .putInt(KEY_END_HOUR, next.endHour)
+            .apply()
+        loaded = true
+        _config.value = next
+    }
+}
+
+/** Vrai si [time] est dans la plage nocturne [startHour]..[endHour]. */
+fun isNightHours(time: LocalTime, startHour: Int = 21, endHour: Int = 7): Boolean {
+    val start = LocalTime.of(startHour.coerceIn(0, 23), 0)
+    val end = LocalTime.of(endHour.coerceIn(0, 23), 0)
+    return if (start <= end) {
+        time >= start && time < end
+    } else {
+        time >= start || time < end
+    }
+}
 
 @Composable
 fun SommelleTheme(
-    night: Boolean = isSystemInDarkTheme() || isNightHours(LocalTime.now()),
+    night: Boolean? = null,
     content: @Composable () -> Unit,
 ) {
+    val context = LocalContext.current
+    NightThemeStore.load(context)
+    val config by NightThemeStore.config.collectAsState()
+    val systemDark = isSystemInDarkTheme()
+    val effectiveNight = night ?: config.isNightActive(LocalTime.now(), systemDark)
     MaterialTheme(
-        colorScheme = if (night) NightColors else DayColors,
+        colorScheme = if (effectiveNight) NightColors else DayColors,
         typography = SommelleTypography,
         shapes = SommelleShapes,
         content = content,
