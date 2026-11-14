@@ -17,6 +17,8 @@ android {
         // En publication, la CI fournit le numéro et le nom de version (étiquette v1.2.3).
         versionCode = System.getenv("SOMMELLE_VERSION_CODE")?.toIntOrNull() ?: 1
         versionName = System.getenv("SOMMELLE_VERSION_NAME")?.removePrefix("v") ?: "0.1.0"
+        manifestPlaceholders["allowAutoBackup"] =
+            providers.gradleProperty("pilmil.allowAutoBackup").getOrElse("false")
     }
 
     // La clé de signature n'est jamais dans le dépôt : elle vient des secrets de la CI.

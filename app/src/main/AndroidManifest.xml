@@ -5,7 +5,7 @@
 
     <application
         android:name=".SommelleApplication"
-        android:allowBackup="true"
+        android:allowBackup="${allowAutoBackup}"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
