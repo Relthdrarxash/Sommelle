@@ -130,6 +130,100 @@
       </div>
     </section>
 
+    <section class="block" id="simulateur">
+      <div class="wrap">
+        <h2>Essayer l'application en direct</h2>
+        <p class="section-intro">Parcourez les écrans de Sommelle et testez la bascule entre le thème jour et l'écran de nuit sans lumière bleue.</p>
+        <div style="display:flex;justify-content:center">
+          <div id="so-phone" style="width:min(340px,100%);border:8px solid #1e2233;border-radius:32px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.22);font-size:14px">
+            <div id="so-top" style="padding:10px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700">
+              <span>Sommelle</span>
+              <button type="button" id="so-night" style="border:1px solid currentColor;border-radius:999px;padding:3px 9px;background:none;color:inherit;font-size:11px;cursor:pointer">Mode nuit</button>
+            </div>
+            <div id="so-screen" style="padding:14px;min-height:350px;display:grid;gap:10px;align-content:start"></div>
+            <div id="so-bar" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(128,128,128,.25)">
+              <button type="button" class="so-tab" data-tab="home" style="padding:10px 4px;border:0;background:none;font:inherit;cursor:pointer">Accueil</button>
+              <button type="button" class="so-tab" data-tab="diary" style="padding:10px 4px;border:0;background:none;font:inherit;cursor:pointer">Agenda</button>
+              <button type="button" class="so-tab" data-tab="week" style="padding:10px 4px;border:0;background:none;font:inherit;cursor:pointer">Bilan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+    (function(){
+      let tab = "home", night = false, bed = 23.5, wake = 6.75;
+      function fmtH(v) {
+        const h = Math.floor(v) % 24, m = Math.round((v - Math.floor(v)) * 60);
+        return `${String(h).padStart(2,"0")}h${String(m).padStart(2,"0")}`;
+      }
+      function render() {
+        const bg = night ? "#120d0a" : "#f6f3ee";
+        const card = night ? "#1e1611" : "#fffdf9";
+        const fg = night ? "#c9a98a" : "#1e2233";
+        const accent = night ? "#b9853a" : "#2f3a6b";
+        const border = night ? "#3a2c22" : "#e2ddd3";
+        const phone = document.getElementById("so-phone");
+        phone.style.background = bg; phone.style.color = fg;
+        document.getElementById("so-top").style.background = night ? "#1e1611" : "#2f3a6b";
+        document.getElementById("so-top").style.color = night ? "#c9a98a" : "#fff";
+        document.getElementById("so-night").textContent = night ? "Mode jour" : "Mode nuit";
+        document.getElementById("so-bar").style.background = card;
+        document.querySelectorAll(".so-tab").forEach(b => {
+          const act = b.dataset.tab === tab;
+          b.style.color = act ? accent : (night ? "#9c8169" : "#4a4f63");
+          b.style.fontWeight = act ? "700" : "500";
+        });
+        const scr = document.getElementById("so-screen");
+        if (tab === "home") {
+          scr.innerHTML = `
+            <div style="font-size:12px;opacity:.8">Programme · Semaine 3</div>
+            <div style="background:${night?'#2a2019':'#2f3a6b'};color:${night?'#c9a98a':'#fff'};border-radius:16px;padding:14px">
+              <div style="font-size:12px;opacity:.85">Fenêtre de sommeil</div>
+              <div style="font-size:22px;font-weight:800;margin-top:4px">${fmtH(bed)} → ${fmtH(wake)}</div>
+            </div>
+            <div style="background:${card};border:1px solid ${border};border-radius:14px;padding:12px;font-size:13px">
+              <strong>Nuit dernière</strong> : 6h30 dormi · Efficacité 90 %
+            </div>
+            <div style="background:${card};border:1px solid ${border};border-radius:14px;padding:12px;font-size:13px">
+              Exercice du soir : <em>Relaxation guidée à la voix (5 min)</em>
+            </div>
+          `;
+        } else if (tab === "diary") {
+          const dur = (wake + 24 - bed).toFixed(1);
+          scr.innerHTML = `
+            <div style="font-weight:800;font-size:16px">Agenda du matin (20 s)</div>
+            <label style="font-size:12px">Couché : <strong>${fmtH(bed)}</strong>
+              <input id="so-bed" type="range" min="21" max="25" step="0.25" value="${bed}" style="width:100%">
+            </label>
+            <label style="font-size:12px">Levé : <strong>${fmtH(wake)}</strong>
+              <input id="so-wake" type="range" min="5" max="9" step="0.25" value="${wake}" style="width:100%">
+            </label>
+            <div style="background:${card};border:1px solid ${border};border-radius:12px;padding:10px;font-size:13px">Temps au lit estimé : <strong>${dur} h</strong></div>
+          `;
+        } else {
+          scr.innerHTML = `
+            <div style="font-weight:800;font-size:16px">Bilan hebdomadaire</div>
+            <div style="background:${card};border:1px solid ${border};border-radius:14px;padding:12px;font-size:13px;display:grid;gap:6px">
+              <div>Semaine 1 : <strong>76 %</strong> d'efficacité</div>
+              <div>Semaine 3 : <strong>89 %</strong> d'efficacité</div>
+              <div style="font-size:12px;opacity:.8">Export PDF prêt pour votre médecin.</div>
+            </div>
+          `;
+        }
+      }
+      document.getElementById("simulateur").addEventListener("click", (e) => {
+        if (e.target.id === "so-night") { night = !night; render(); return; }
+        const t = e.target.closest(".so-tab"); if (t) { tab = t.dataset.tab; render(); }
+      });
+      document.getElementById("simulateur").addEventListener("input", (e) => {
+        if (e.target.id === "so-bed") { bed = parseFloat(e.target.value); render(); }
+        if (e.target.id === "so-wake") { wake = parseFloat(e.target.value); render(); }
+      });
+      render();
+    })();
+    </script>
+
     <section class="block">
       <div class="wrap">
         <h2>Du même atelier (Pilmil Studio)</h2>
