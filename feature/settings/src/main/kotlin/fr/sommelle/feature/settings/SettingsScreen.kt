@@ -51,6 +51,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import fr.sommelle.core.data.SommelleRepository
 import fr.sommelle.core.designsystem.InfoLine
+import fr.sommelle.core.designsystem.NightThemeMode
+import fr.sommelle.core.designsystem.NightThemeStore
 import fr.sommelle.core.designsystem.ScreenScaffold
 import fr.sommelle.core.designsystem.ScreenTitle
 import fr.sommelle.core.designsystem.SommelleButton
@@ -203,6 +205,8 @@ fun SettingsContent(
             }
         }
 
+        NightAppearanceSection()
+
         Section(stringResource(R.string.settings_for_doctor)) {
             Text(stringResource(R.string.settings_report_hint), style = MaterialTheme.typography.bodyMedium)
             SommelleButton(stringResource(R.string.settings_report), onOpenReport, style = SommelleButtonStyle.Outlined)
@@ -282,6 +286,83 @@ fun SettingsContent(
                 TextButton(onClick = { confirmErase = false }) { Text(stringResource(R.string.settings_erase_cancel)) }
             },
         )
+    }
+}
+
+@Composable
+private fun NightAppearanceSection() {
+    val context = LocalContext.current
+    NightThemeStore.load(context)
+    val nightConfig by NightThemeStore.config.collectAsStateWithLifecycle()
+    val modes = listOf(
+        NightThemeMode.AUTO_HOURS to "Horaires automatiques",
+        NightThemeMode.ALWAYS_DAY to "Toujours clair (jour)",
+        NightThemeMode.ALWAYS_NIGHT to "Toujours sombre (nuit)",
+        NightThemeMode.FOLLOW_SYSTEM to "Suivre le téléphone",
+    )
+    Section("Apparence de nuit") {
+        Text(
+            text = "Le thème sombre sans lumière bleue peut s'activer selon votre plage horaire.",
+            style = MaterialTheme.typography.bodyMedium,
+        )
+        modes.forEach { (mode, label) ->
+            val selected = nightConfig.mode == mode
+            Surface(
+                shape = MaterialTheme.shapes.small,
+                color = if (selected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surface,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(MaterialTheme.shapes.small)
+                    .clickable { NightThemeStore.update(context) { it.copy(mode = mode) } },
+            ) {
+                Text(
+                    text = label,
+                    style = MaterialTheme.typography.titleSmall,
+                    color = if (selected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+                )
+            }
+        }
+        if (nightConfig.mode == NightThemeMode.AUTO_HOURS) {
+            Text(
+                text = "Plage active : ${nightConfig.startHour} h → ${nightConfig.endHour} h",
+                style = MaterialTheme.typography.titleSmall,
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                SommelleButton(
+                    text = "Début ${nightConfig.startHour}h (-1h)",
+                    onClick = { NightThemeStore.update(context) { it.copy(startHour = it.startHour - 1) } },
+                    style = SommelleButtonStyle.Outlined,
+                    modifier = Modifier.weight(1f),
+                )
+                SommelleButton(
+                    text = "Début ${nightConfig.startHour}h (+1h)",
+                    onClick = { NightThemeStore.update(context) { it.copy(startHour = it.startHour + 1) } },
+                    style = SommelleButtonStyle.Outlined,
+                    modifier = Modifier.weight(1f),
+                )
+            }
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                SommelleButton(
+                    text = "Fin ${nightConfig.endHour}h (-1h)",
+                    onClick = { NightThemeStore.update(context) { it.copy(endHour = it.endHour - 1) } },
+                    style = SommelleButtonStyle.Outlined,
+                    modifier = Modifier.weight(1f),
+                )
+                SommelleButton(
+                    text = "Fin ${nightConfig.endHour}h (+1h)",
+                    onClick = { NightThemeStore.update(context) { it.copy(endHour = it.endHour + 1) } },
+                    style = SommelleButtonStyle.Outlined,
+                    modifier = Modifier.weight(1f),
+                )
+            }
+        }
     }
 }
 
